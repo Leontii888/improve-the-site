@@ -1,0 +1,64 @@
+.bitcoin-panel
+{
+    display: flex;
+    /*flex-direction: row;*/
+    justify-content: space-around;
+    align-content: center;
+    padding: 0.5rem;
+     /*width: 100%;*/
+
+    text-align: right;
+    background-color: rgba(222,222,222, .3);
+}
+
+#bitcoin-rate, #bitcoin-mypose
+{
+    flex-basis: 33%;
+    font-family: arial;
+    align-items: center;
+    margin:0 ;
+    text-align: left;
+
+    letter-spacing: 8px;
+}
+#bitcoin-btn{
+    margin: 0 auto 
+    /*display: flex;
+    align-items:center;*/
+    flex-basis: 25%;
+}
+
+/*#btn-count
+{
+    /*margin: 0 1.8rem;*/
+    background-color: #ff6a00ff;
+}
+#btn-count:hover
+*/
+{
+    color: #decda5;
+    box-shadow: inset 0 -3.75em 0 #40382d, .125rem .225rem .388rem rgba(0,0,0,.5);
+}
+/*.btn-clearVal
+{
+    margin: 0.4rem 1.8rem;
+
+    background-color: #eee;
+    background-image: radial-gradient(#35c 10px, transparent .9em);
+    background-size: 20rem 19.25rem;
+    box-shadow: none;
+}*/
+/*.btn-clearVal:hover
+{
+    font-size: 1.05rem;
+
+    color: #eee;
+    background-size: .6rem 1rem;
+    box-shadow: .125rem .225rem .388rem rgba(0,0,0,.5);
+    border: none;
+}*/
+/*.custom
+{
+    cursor: url(https://html5book.ru/wp-content/uploads/2015/09/fox.png), pointer;
+}
+*/

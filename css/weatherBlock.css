@@ -1,0 +1,45 @@
+.mapsWeather{
+    background: #E0EAFAFF;
+    color: inherit;
+    padding: 2rem
+}
+
+
+.maps{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 40rem;
+}
+
+.maps-data_show{
+    padding: 0;
+    margin: 0 1 rem;
+}
+
+#maps_mapBoxCom{
+    height: 40%;
+    height: 40rem;
+    width: 100%;
+}
+.maps-data{
+    width: 70%;
+    overflow: auto;
+    height: 40rem;
+    margin: 0;
+}
+
+.maps-datablock_conditions{
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-between;
+padding: 1rem
+}
+.maps-data_conditions{
+
+padding: 1rem;
+border: 1px solid rgba(0,170,255,0.5);
+margin: 1rem;
+/*height: 10rem*/
+}

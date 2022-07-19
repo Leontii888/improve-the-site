@@ -1,0 +1,56 @@
+#main-modal
+{
+    position: absolute;
+    top: 0;
+    left: 70%;
+    color: #ccc;
+    /*background-color:  rgba(1,1,1,0.8);*/
+    /*background-color:  rgba(2, 1, 79, .9);*/
+    background-color:  #35c;
+    width: 30%;
+    height: 100vh;
+    margin: 0 1rem 0;
+    padding: 0.5rem;
+    overflow: scroll;
+    display: none;
+
+}
+#main-nav-block
+{
+    position: absolute;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 15vh;
+    color: #ccc;
+    background-color:  rgba(1,1,1,0.6);
+    display: none;
+}
+#burger-close
+{
+    position: absolute;
+    top: 21%;
+    left: 90%;
+}
+
+#burger{
+    position: absolute;
+    top: 7.5%;
+    left: 90%;
+    display: none;
+}
+#main-modal p
+{
+    font-size: 1.2rem;
+
+}
+#modal-close
+{
+    position: absolute;
+    top: 4%;
+    left: 85%;
+    font-size: 1rem;
+    cursor: pointer;
+
+}

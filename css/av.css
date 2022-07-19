@@ -1,0 +1,106 @@
+/*@import "mediaAv.css";*/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Didact+Gothic');
+/*import * url("mediaAv.css");*/
+@import "mediaAv.css" screen;
+@import "header.css" screen;
+@import "mainWindow.css" screen;
+@import "modalWindow.css" screen;
+@import "bitcoin.css" screen;
+@import "menuAndCounters.css" screen;
+@import "menuLinks.css" screen;
+@import "minnerviniCountChart.css" screen;
+@import "books.css" screen;
+@import "business.css" screen;
+@import "weatherBlock.css" screen;
+@import "footer.css" screen;
+
+
+body
+{
+    /*font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-image: url(D:/programming/java/mySite/img/techno-bg-op1.png) ;
+
+}
+section
+{
+    overflow: hidden;
+    height: 60rem;
+}
+section h4{
+    margin: 0;
+    font-weight: bold;
+
+    padding: 4.5rem ;
+
+    text-align: center;
+}
+
+h3,h5
+{
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    padding: 1.5rem;
+}
+
+
+span
+{
+    font-weight: bold;
+}
+p{
+    margin: 1.5rem 1.7rem 1.7rem;
+}
+button{
+    font-size: 1rem;
+
+    width: 9.4rem;
+    margin: 1.7rem 0 .4rem 2.4rem;
+    padding: 1rem;
+
+    cursor: pointer;
+    transition: .4s ease-in-out;
+
+    border: none;
+    border-radius: .15rem;
+    box-shadow: inset 0 -.3rem 0 #40382d;
+}
+a{
+    text-decoration: none;
+
+    color: #444;
+}
+a:hover{
+    color: black;
+    /*text-decoration: underline;*/
+    /*border-bottom: 1px solid #ff6a00ff;*/
+    border-bottom: 1px solid #35c;
+}
+
+
+.back
+{
+    width: 10rem;
+    position: fixed;
+    top: 45rem;
+    left: 126rem;
+
+    cursor: pointer;
+}
+.clear
+{
+    clear: both;
+}
+.white{
+    color: #eee;
+}
+.btn-bigger{
+    padding: 1.6rem;
+    color: #2953CCFF;
+
+}
+

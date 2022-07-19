@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+
+
+	<title>mySite.Links.Maps.Weather</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<!-- 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css">
+
+	 <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.js"></script>
+	<link rel="stylesheet" href="css/av.css"/>
+</head>
+<body>
+	<a name="top"></a>
+	<header class="header">
+		
+		<div id="burger">
+			<img src="img/burger2_small.png" alt="closeburger">
+		</div>
+		<div class="logo">
+			<div class="logo-picture">
+			<img src="img/earthWhite.png" alt="logo-picture" />
+
+		</div>
+		</div>
+		<form action="https://duckduckgo.com/" method="GET">
+			<label for="search">Search on DuckDuckGo</label>
+			<input id="search" name="q" placeholder="Search some..." target='_blank' type="text">
+			<button type="submit" id ='searchMain' >Go</button>
+		</form>
+
+		<nav>
+			<ul>
+				<li id= "abp">About project</li>
+				<li><a href="#countAncor">Count Smth</a></li>
+				<li><a href="#linksAncor">my Links</a></li>
+				<li><a href="#booksAncor">Books</a></li>
+				<li><a href="#contactsAncor">Contacts</a></li>
+				<li><a href="#businessAncor">Business</a></li>
+				<li><a  target="blank" href="https://www.windy.com/ru/-%D0%94%D0%BE%D0%B6%D0%B4%D1%8C-%D0%B3%D1%80%D0%BE%D0%B7%D0%B0-rain?rain,55.738,37.845,14,m:fd3ahei">MapsWeather</a></li>
+			</ul>
+		</nav>
+		<div id="main-nav-block">
+			<div id="burger-close">
+				<img src="img/closebutton_white.png" alt="closebutton">
+			</div>
+		</div>
+	</header>
+
+	<div class="main">
+		<section class="main-frontpage">
+			<div class="main-picture">
+				<div id="main-modal">
+					<div id="modal-close">
+						<img src="img/closebutton_white.png" alt="closebutton">
+					</div>
+					<h4>Idea</h4>
+					<p>Идея была простой. В одном месте собрать всю необходимую для трейдинга, программирования информацию. Нужны ссылки- их есть у меня. Можно делать расчеты по торговой позиции. Вобщем, все под рукой.</p>
+					<h4>History</h4>
+					<p>История создания весьма занятна. Несколько лет назад я увидел рекламу о доходных сайтах. Сайтах, которые можно купить и получать доход, похожий на доход от аренды квартиры. Начав разбираться с оценкой сайта при покупке, вдруг с удивлением обнаружил, что сайт можно научиться сделать своими руками. Для этого нужно всего то - изучить HTML, CSS, Javascript, Nodejs. Нашел видео, скачал. Несколько месяцев изучал все это самостоятельно. В итоге, в какой-то момент, я понял что могу уже чтото сделать сам, но ... почуствовал, что теряю к этому интерес. Я возвращаюсь сюда периодически. Жаль, но кажется без ментора научиться проблема. Мне по-прежнему это  интересно, но я трачу на пустяки слишком много времени.  </p>
+					<h4>Wherami</h4>
+					<p>Москва, сеть</p>
+				</div>
+				<h1>Needful things and lasyMe</h1>
+				<h3>All you need is code.</h3>
+			</br>
+			<h5>(Little bit more often)</h5>
+			<!-- <button class="btn-clearVal btn-bigger">Смотреть</button> -->
+		</div>
+
+	</section> 
+
+	<section class="main-count">
+		<div class="modalCalc ">sdfsdfsdfsdf</div>
+		<a name="countAncor"></a>
+		<a name="linksAncor"></a>
+			<h4 >Расчеты</h4>
+		<div class="main-count-countbox">
+			<div id= "calc">
+
+				<div id="nums">
+					<label for="firstPrice">Price In</label>
+					<input type="text" name ="firstPrice" value="" id="firstPrice" class="tocount">
+					<label for="secondPrice">Price Out</label>
+					<input type="text" name="secondPrice" value="" id="secondPrice" class="tocount">
+					<label for="loss" >Loss, RUB.</label>
+					<input type="text" title="default =RUB2000, to count press Enter" name="loss" placeholder="2000" id="loss">
+					<label for="tocount">Listing lots (1,2,...)</label>
+					<input type="text" name="tocount" title="to count press Enter" placeholder="1,2..." id="averagePrice" class="tocount">
+
+				</div>
+			</div> 
+			<!-- calc-->
+			<div class="links-wrap">
+				<div class="bitcoin-panel">
+					<div id="bitcoin-rate"></div>
+					<div id="bitcoin-mypose"></div>
+					<span id="bitcoin-btn">
+						<button id="btn-count" class="fetch-currencies">Fetch rates</button>
+					</span>
+					
+					
+				</div>
+				<div class='links-block'>
+					<span>Полезные ссылки</span>
+					<div class ="links-block-nav">
+						<ul class="topmenu">
+							<li class="down">
+								<ul class="submenu">
+									<li class="sub-common">common</li>
+								</ul>
+							common</li>	 
+							<li class="down">
+								<ul class="submenu">
+									<li class="sub-css">cSS</li>
+									<li class="sub-js">javaScript</li>
+									<li class="sub-html">html</li>
+									<li class="sub-design">design</li>
+								</ul>	
+							frontEnd</li>
+							<li class="down">
+								<ul class="submenu">
+									<li class="sub-pows">powerShell</li>
+								</ul>	
+							powerShell</li>
+							<li class="down">
+								<ul class="submenu">
+									<li class="sub-trading">trading</li>
+								</ul>	
+							trading</li>
+							<li class="down">
+								<ul class="submenu">
+									<li class="sub-youtube">youTubeGuru</li>
+								</ul>	
+							youTube</li>
+							<li class="down">
+								<ul class="submenu">
+									<li class="sub-youtube">TendersRosAtom</li>
+								</ul>	
+							TendersRosAtom</li>
+						</ul>
+					</div>	<!--links-block-nav-->
+				</div><!--links-block-->
+					
+				
+				
+				<div id="links">
+					<div id="links--common" class="links visible"><span>commonLinks</span>
+						<br/><hr>
+					</div>
+
+					<div id="links--css" class="links"> <span>Css</span>
+						<br/><hr>
+					</div>
+
+					<div id="links--javaScript" class="links"><span>JavaScript</span>
+						<br/><hr>
+					</div>
+
+					<div id="links--html" class="links"><span>Html</span>
+						<br/><hr>
+					</div>
+
+					<div id="links--design" class="links"><span>Design</span>
+						<br/><hr>
+					</div>
+
+					<div id="links--PowS" class="links"><span>PowerShell</span>
+						<br/><hr>
+					</div>
+
+					<div id = "links--trading" class="links visible"><span>Trading</span>
+						<br/><hr>
+					</div>
+
+					<div id="links--youtube" class="links"> <span>YouTubeGurus</span>
+						<br/><hr>
+
+					</div>
+					<div id="links--tenders" class="links "><span>TendersRosAtom</span>
+						<br/><hr>
+					</div>
+
+				</div> <!--links-->
+			</div><!--links-wrap-->
+		</div><!--main-count-countbox-->
+	</section> <!--main-count-->
+
+	<section class="earningCount">
+		<div id="can">
+			<h4> Расчет Миннервини</h4>
+			<canvas id="myChart" style="height: 35rem" ></canvas>
+			<div>
+				<input id= 'data' type="text" placeholder="40,10,2" title="Процент успешных сделок из 100, количество сделок 10, соотношение величин прибыли и убытка для депозита 100К">
+				<input id="getCount" type="button"  value="CountAll">
+			</div>
+			<div>
+				<input id= 'single' type="text" placeholder="interest,%" title="Процент прибыли в каждой сделке">
+				<input id="getCountSingle" type="button"  value="showSingle">
+			</div>		
+		</div>
+
+
+	</section>
+
+
+	<section class="main-books">
+		<a name="booksAncor"></a>
+		<h4>Books</h4>
+		<!--сохранение ссылок в сторедже-->
+		<p class="myInpLinks">База сохраненных ссылок</p>
+		<input type="text" id="newLinks" >
+		<div class="buts">
+			<button id="buts__putLink">putLink</button>
+			<button id="buts__getLink">showBase</button>
+			<button id="buts__clearBase">clearBase</button>
+			<button id="buts__setStorage">saveLocalstorage</button>
+		</div>
+
+		<div id="wholeListbox">
+			<div id="wholeListbox__Text"></div>
+			<div id="wholeListbox__close">
+				<img  src="img/close.png" alt="cross">
+			</div>
+		</div>
+
+	</section > <!--main-books-->
+	<section class="main-contacts">
+		<a name="contactsAncor"></a>
+		<h4>Котактная информация</h4>
+	</section> 
+	<!--main-contacts-->
+	<section class="main-business">
+		<a name="businessAncor"></a>
+		<h4>Для бизнеса</h4>
+		<div class="bz-block-row">
+			<div class="bz-block">
+				<div class="bz-block-image">
+					<a href="www.javascript.ru" rel="js" title="javascript.ru" target="_blank"><img src="#"></a>
+				</div>
+				<h3>Насколько вы хорошо разбираетесь в программировании?</h3>
+				<a href="https://learn.javascript.ru/" target="_blank" title="javascript.ru. Насколько вы хорошо разбираетесь в системном программировании?">javascript.ru</a>
+				<div class="bz-block-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore </div>		
+
+			</div>
+			<!--bz-block-->
+			<div class="bz-block">
+				
+				<div class="bz-block-image">
+					<a href="https://google.github.io/styleguide/jsguide.html" target="_blank"><img  src="#" ></a>
+				</div>
+				<h3>Google JavaScript Style Guide (google.github.io)</h3>
+				<a href="https://google.github.io/styleguide/jsguide.html" target="_blank" rel="js" title="github">google.github.io/styleguide</a>
+				<div class="bz-block-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			</div>
+			
+			<div class="bz-block">
+				
+				<div class="bz-block-image">
+					<a href="https://10minutemail.net/" title="10minutemail" target="_blank"><img   src="#"></a>
+				</div>
+				<h3>10minutemail</h3>
+				<a href="https://10minutemail.net/"  target="_blank" title="10minutemail">10minutemail</a>
+				<div class="bz-block-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			</div>
+
+		</div><!--td-block-->
+	</section> <!--main-business-->
+	<section class="mapsWeather">
+		<a name="mapsWeather"></a>
+		<h4>Погода и карты</h4>
+
+		<div class="maps">
+				<div class="maps-data">
+						<label>
+							Город поиска:<input type="text" id="maps-data_city" value="" placeholder = "Moscow"/>
+						</label>
+						<p class="maps-data_show">Погода в</p>
+						<div class="maps-datablock_conditions">
+							<div class="maps-data_conditions"></div>	
+							<div class="maps-data_conditions"></div>	
+							<div class="maps-data_conditions"></div>	
+							<div class="maps-data_conditions"></div>	
+						</div>	
+				</div>
+				<div id="maps_mapBoxCom">
+				</div>
+		</div>
+
+	</section>
+</div><!--main-->
+<footer>
+	<div class="logo">
+		<img src="img/earthWhite.png" alt="footer-logo" class="logo-picture ">
+	</div>
+	<div class="footer-info">
+		<div>
+			<p>Сайт полезных вещей</p>
+			<p>2019 / Все права защищены.</p>
+			<p><a href="#">Политика конфиденциальности</a></p>
+			<p>Мой адрес: <a href="mailto:comm2011@yandex.ru"> &#10000 comm2011@yandex.ru</a></p>
+		</div>
+		<ul class="footer-socials">
+			<li><a href="https://twitter.com/8thpiper" target="blank">twitter</a></li>
+			<li><a href="https://www.pinterest.ru/news_hub/4940064254991542922/" target="blank">pinterest</a></li>
+			<li><a href="https://www.facebook.com/nrykalin" target="blank">facebook</a></li>
+			<li><a href="https://github.com/Leontii888?tab=repositories" target="blank">gitHub</a></li>
+			<li><a href="https://www.codewars.com/kata/stop-the-zombie-apocalypse/train/javascript" target="blank">CodeWars</a></li>
+			<li><a href="https://vk.com/amguema" target="blank">vk</a></li>
+			<li><a href="https://www.youtube.com/channel/UCWR-uSfGiCFGqahN27k-6AQ" target="blank">youTube</a></li>
+		</ul>
+	</div>
+</footer>
+<div class="back">
+	<a href="#top">Назад</a><br>
+<!-- 	<a href="#" onclick="this.innerHTML =  history.length+ ' items in your history' ; return false">View history.length</a> -->
+</div>
+</body>
+<script  src="js/initialVar.js"></script>
+<script  src="js/mySite070422.js"></script>
+<script  src="js/fillbase.js"></script>
+<script  src="js/bitcoinBlock.js"></script>
+<script  src="js/saveLinksLocStorage.js"></script>
+<script  src="js/minnervini.js"></script>
+<script  src="js/weatherBlock.js"></script>
+<script  src="js/onEventFoo.js"></script>
+</html>

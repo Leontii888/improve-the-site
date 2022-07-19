@@ -1,0 +1,97 @@
+
+
+.main-count
+{
+    position:  relative;
+    background-color: rgba(251,251,251);
+    margin: 0;
+}
+.main-count-countbox
+{
+    display: flex;
+    flex-direction: row
+    justify-content: space-between; 
+}
+.links-wrap
+{
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    flex-basis: 85%;
+
+
+    /*max-width: 100%;*/
+    /*max-height: 100vw;*/
+
+    /*flex-basis: 75%;*/
+}
+.links-wrap h3
+{
+    margin: 0;
+}
+
+
+#calc
+{
+
+    flex-basis: 15%;
+}
+/*
+p#tableAvPr.custom{
+	margin: 13em 2em;
+}*/
+
+#nums
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15.625rem;
+    height: 40vh;
+    padding: 1rem;
+}
+.nums label{
+    text-align: left;
+}
+#averagePrice
+{
+    margin-top: 0.4rem;
+}
+
+
+
+.modalCalc{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 12rem;
+    height: 8rem;
+    padding: 2rem;
+    text-align: center;
+    color: #222;
+    background-color:  rgba(170,218,255,0.3); 
+    /*border: 1px solid black;*/
+    display: none;
+}
+.links-block{
+    display: flex;
+    /*justify-content: space-between;*/
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 10%;
+}
+.links-block > span{
+    margin:  1rem;
+    font-size: 1.5rem;
+    width:20%;
+    /*color: blue;*/
+
+}
+.links-block-nav
+{
+    width:80%;
+    height: 4rem;
+    padding: 0 1.5rem;
+
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+}
