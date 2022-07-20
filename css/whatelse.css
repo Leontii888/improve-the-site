@@ -14,32 +14,40 @@
 }
 
 .bz-block{
-	
-	background: #ee8;
-	min-width: 25rem;
-	width: 25%;
+	box-sizing: border-box;
+	background: #f2f3f4;
+	/*min-width: 25rem;*/
+	width: 31%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	align-content: space-around;
-	padding: 1rem;
+	padding: 3rem;
 
 }
+.bz-block-image{
+	margin:1rem; 
+	height: 10rem;
+	text-align: center;
+}
 .bz-block > *{
-	padding: .5rem;
+	padding: 1.5rem;
 	margin:0;
 	text-align: center;
 
+align-content: center;
 }
-.bz-block img{
 
-	width:10rem;
+.bz-block img{
+	
+	width:8rem;
 
 }
 .bz-block > h2,h3{
 	padding: .5rem;
 	margin:0;
 	text-align: center;
+
+}
+.bz-block-text{
 
 }
 .td_module{
