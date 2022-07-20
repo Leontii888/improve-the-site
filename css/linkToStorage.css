@@ -41,6 +41,8 @@
 
 #wholeListbox {
     display: none;
+    box-sizing: border-box;
+
 
     position: relative;
     background: #ddd;
@@ -48,13 +50,32 @@
     
     margin: 0 30px;
     padding: 20px 40px;
-    width: 36rem;
+    width: 42rem;
     height: 15rem;
 
     opacity: 0.7;
 
 
 
+}
+#checkStorage{
+    box-sizing: border-box;
+     display: none;
+     /*position: relative;*/
+    background: #f2f3f4;
+
+    
+    margin: 1rem 2rem;
+    padding: 1rem;
+    width: 42rem;
+    height: 4rem;
+
+
+    opacity: 1;
+}
+#checkStorage span{
+    font-weight: normal;
+    color: #bbb;
 }
 #wholeListbox__Text {
     /*background: #fff;*/
@@ -66,10 +87,6 @@
     font-size: 1rem;
     color: black;
     text-overflow: auto;
-
-    
-
-
 }
 #wholeListbox__close {
     position: absolute;
