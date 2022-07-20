@@ -37,8 +37,8 @@ let newlink = document.getElementById('newLinks'),
 	wholeListbox = document.getElementById('wholeListbox'),
 	checkStorage = document.getElementById('checkStorage'),
 	wholeListbox__Text = document.getElementById('wholeListbox__Text'),
-	wholeListbox__close = document.getElementById('wholeListbox__close');
-
+	wholeListbox__close = document.getElementById('wholeListbox__close'),
+	link =[],
+	arrayBaseLinks = {t:`${new Date().toLocaleString()}`,link},
+	saveLinkTime = `${new Date().toLocaleString()}`;
 	
-const arrayBaseLinks = [],
-saveLinkTime = `${new Date()}`;
