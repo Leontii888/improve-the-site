@@ -1,9 +1,10 @@
 //Миннервини расчеты  и графики
 //==============================================================
 //
-let chart = document.getElementById('myChart'),
-ctx = chart.getContext('2d');
-chart = new Chart(ctx, data);
+let chartDiv = document.getElementById('myChart'),
+ctx = chartDiv.getContext('2d');
+
+let chart = new Chart(ctx, data);
 
 
 let buffer;
@@ -163,6 +164,7 @@ function showChart (){
 					`% earnings at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) and best result  ${earningsBestValue} at ${bestInterestValue}% at samples ${samples} `));
 				chart.canvas.parentNode.style.width = "100%";
 				chart.canvas.parentNode.style.height ='40rem';
+				chartDiv.style.opacity =1;
 };
 function getSingleChartForInterest(){
 	let interestRate = +singleInt.value;
@@ -178,6 +180,7 @@ function getSingleChartForInterest(){
 		chart = new Chart(ctx, putDataToChart(scaleX,interestAllCountsArray[interestRate-1].depoProgressArray,"depo",`Changing the deposit max/min = ${maxDepo}/${minDepo}  at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) to ${interestAllCountsArray[interestRate-1].depoProgressArray[scaleX.length-1].toFixed(1)} at samples ${scaleX.length} `));
 		chart.canvas.parentNode.style.width = "100%";
 		chart.canvas.parentNode.style.height ='40rem';
+		// chart.canvas.parentNode.style.border = "2px";
 };
 function prepareObjForChartData (chartCountData){
 
