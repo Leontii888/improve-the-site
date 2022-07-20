@@ -15,7 +15,7 @@
 
 body
 {
-    /*font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial,
+/*    font-family: "Roboto","Helvetica","Helvetica Neue",  "Arial";
     sans-serif;*/
     box-sizing: border-box;
     margin: 0;
@@ -25,12 +25,12 @@ body
 }
 section
 {
-    overflow: hidden;
+    /*overflow: hidden;*/
     height: 60rem;
 }
-section h4{
+h4 {
     margin: 0;
-    font-weight: bold;
+    /*font-weight: bold;*/
 
     padding: 4.5rem ;
 
