@@ -1,44 +1,47 @@
 footer
 {
-    height: 20rem;
-    /*background-color: #25292C;*/
-    background-color: #010120FF;
+  height: 20rem;
+  background-color: #010120FF;
 }
 .logo{
   width: 3%;
   
 }
 .logo img{
-height: 2.4rem;
+  height: 2.4rem;
 }
 
-.footer-info{
-    float: left;
-    color: #ddd;
-    padding: 1rem;
+.footer-info {
+  margin: 1.5rem;
+  float: left;
+  color: #ddd;
+  padding: 1rem;
 
 }
+
 .footer-info a{
-       margin: 0;
-    color: #ddd;
+ margin: 0;
+ color: #ddd;
+}
 
-
-
+.footer-info p{
+  font-size: .9rem;
+  margin:0;
+  margin-bottom: 0.8rem;
 }
 .footer-info a:hover{
-    color: #3e66ae;
-    
-
+  color: #3e66ae;
 }
-.footer-socials 
-{
-      padding:  0 1.5rem;
- 
 
+.footer-socials {
+  padding:  0 1.5rem 0 0;
 }
+
 .footer-socials li
 {
-      margin: 0;
+    font-size: .9rem;
+
+  margin: 0;
   display: inline-block;
   padding-right:2rem ;
   cursor: pointer;

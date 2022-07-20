@@ -7,8 +7,8 @@ async function getWeather(point){
 	const  {city,list} = await (await fetch(
 		`https://api.openweathermap.org/data/2.5/forecast?q=${point}&APPID=2281c7fed03ac47a4b272784c3b8ea80&units=metric`)).json();
 	
- 	weatherBlock.innerHTML = `<span><font color="#f35">Погода в ${city.name}</font>
- 	 (долгота ${city.coord.lat}, широта ${city.coord.lon})</span>`
+ 	weatherBlock.innerHTML = `<span><font color="#f35">Weather in ${city.name}</font>
+ 	 (altitude ${city.coord.lat}, longitude ${city.coord.lon})</span>`
 	
 	// console.log(city,list)
 
@@ -50,13 +50,13 @@ const drawWeather = (placeToShow, city,list) => {
 
 						[...document.querySelectorAll('.maps-data_conditions')].forEach((el,i)=>{
 									placeToShow =el; 
-										placeToShow.innerHTML = `на дату: ${weatherOnDays[i].dt_txt}<br \/>
-										Температура: <font color="#f35">${weatherOnDays[i].tm}</font><br \/>
-										Давление: ${(weatherOnDays[i].prs/1.333).toFixed(1)}<br \/>
-										Описание: ${weatherOnDays[i].main}<br \/>
-										Облачность: ${weatherOnDays[i].cl}<br \/>
-										Влажность: ${weatherOnDays[i].hm}<br \/>
-										Ветер: ${weatherOnDays[i].windSp}<br \/>`
+										placeToShow.innerHTML = `on date: ${weatherOnDays[i].dt_txt}<br \/>
+										Temperature: <font color="#f35">${weatherOnDays[i].tm}</font><br \/>
+										Atmosphere pressure: ${(weatherOnDays[i].prs/1.333).toFixed(1)}<br \/>
+										Other: ${weatherOnDays[i].main}<br \/>
+										Cloudness: ${weatherOnDays[i].cl}<br \/>
+										Humidity: ${weatherOnDays[i].hm}<br \/>
+										Winds: ${weatherOnDays[i].windSp}<br \/>`
 							})
 						}
                 	drawWeather(weatherBlock,city,list);
