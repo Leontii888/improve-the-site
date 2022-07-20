@@ -14,7 +14,7 @@
 
 .maps-data_show{
     padding: 0;
-    margin: 0 1 rem;
+    margin: 0  0 0 2rem;
 }
 
 #maps_mapBoxCom{
@@ -28,7 +28,14 @@
     height: 40rem;
     margin: 0;
 }
-
+.maps-data label {
+    
+    margin: 2rem;
+    padding: 1rem 1rem 1rem 0 ;
+}
+.maps-data input {
+    margin:  1rem;
+}
 .maps-datablock_conditions{
 display: flex;
 flex-wrap: wrap;
@@ -41,5 +48,4 @@ padding: 1rem
 padding: 1rem;
 border: 1px solid rgba(0,170,255,0.5);
 margin: 1rem;
-/*height: 10rem*/
 }
