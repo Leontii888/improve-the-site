@@ -24,13 +24,18 @@ const putSomelinks = () => {
 };
 const showBaseLinks = () => {
 	wholeListbox.style.display = 'block';
+	storageLength.innerHTML = `${localStorage.length}`
+	checkStorage.style.display = 'block';
 
 };
 const closeBaseBox = () => {
+
 	wholeListbox.style.display = 'none';
+	checkStorage.style.display = 'none';
 
 };
 const clearLinksInBox = () => {
+	newlink.value ='';
 	wholeListbox__Text.innerHTML = ``;
 
 };

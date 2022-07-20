@@ -33,7 +33,9 @@ let newlink = document.getElementById('newLinks'),
 	buts__getLink = document.getElementById('buts__getLink'),
 	buts__clearBase = document.getElementById('buts__clearBase'),
 	buts__setStorage = document.getElementById('buts__setStorage'),
+	storageLength = document.querySelector('.storage-length'),
 	wholeListbox = document.getElementById('wholeListbox'),
+	checkStorage = document.getElementById('checkStorage'),
 	wholeListbox__Text = document.getElementById('wholeListbox__Text'),
 	wholeListbox__close = document.getElementById('wholeListbox__close');
 
