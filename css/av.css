@@ -16,102 +16,112 @@
 body
 {
 /*    font-family: "Roboto","Helvetica","Helvetica Neue",  "Arial";
-    sans-serif;*/
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-image: url(D:/programming/java/mySite/img/techno-bg-op1.png) ;
+sans-serif;*/
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+background-image: url(D:/programming/java/mySite/img/techno-bg-op1.png) ;
 
 }
 section
 {
-    height: 60rem;
+height: 60rem;
+padding: 1rem;
+}
+.main{
+padding: 1rem;
 }
 
 /*flexes------*/
 .flex{
-    display: flex;
-    flex-wrap: wrap;
+display: flex;
+flex-wrap: wrap;
 }
 .flex-nowrap{
-    flex-wrap: nowrap;
+flex-wrap: nowrap;
 }
 .flex-align-center{
-    align-items: center;
+align-items: center;
 }
 
-.flex-space-between{
-    justify-content: space-between;
+.flex-space-between
+{
+justify-content: space-between;
     
 }
 .flex-dir-col{
-    flex-direction: column;
+flex-direction: column;
 }
 
 /*------*/
 .ta-center{
-        text-align: center;
+text-align: center;
 }
 .title{
-    padding: 4.5rem ;
+padding: 4.5rem ;
+}
+.white{
+color: #eee;
+}
+.clear
+{
+clear: both;
 }
 
 h3,h5
 {
-    /*font-size: 1.4rem;*/
+/*font-size: 1.4rem;*/
 }
 
 p
 {
-    margin: 1.5rem 1.7rem 1.7rem;
+margin: 1.5rem 1.7rem 1.7rem;
 }
 button{
-    font-size: 1rem;
+font-size: 1rem;
 
-    width: 9.4rem;
-    margin: 1.7rem 0 .4rem 2.4rem;
-    padding: 1rem;
+width: 9.4rem;
+margin: 1.7rem 0 .4rem 2.4rem;
+padding: 1rem;
 
-    cursor: pointer;
-    transition: .4s ease-in-out;
+cursor: pointer;
+transition: .4s ease-in-out;
 
-    border: none;
-    border-radius: .15rem;
-    box-shadow: inset 0 -.3rem 0 #40382d;
+border: none;
+border-radius: .15rem;
+box-shadow: inset 0 -.3rem 0 #40382d;
 }
 a{
-    text-decoration: none;
+text-decoration: none;
 
-    color: #444;
+color: #444;
 }
 a:hover
 {
-    color: black;
-    /*text-decoration: underline;*/
-    /*border-bottom: 1px solid #ff6a00ff;*/
-    border-bottom: 1px solid #35c;
+color: black;
+/*text-decoration: underline;*/
+/*border-bottom: 1px solid #ff6a00ff;*/
+border-bottom: 1px solid #35c;
 }
 
 
 .back
 {
-    position: fixed;
-    top: 90%;
-    left: calc(100vw - 500px)/2);
-    cursor: pointer;
-    margin:2rem; 
+position: fixed;
+top: 90%;
+left: calc(100vw - 500px)/2);
+
+margin:2rem; 
+}
+.back a{
+color: #ff6a00;
+cursor: pointer;
 }
 
-.clear
-{
-    clear: both;
-}
-.white{
-    color: #eee;
-}
-.btn-bigger{
-    padding: 1.6rem;
-    color: #2953CCFF;
+
+.btn-big{
+padding: 1.6rem;
+color: #2953CCFF;
 
 }
 
