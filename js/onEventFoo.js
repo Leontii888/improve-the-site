@@ -4,6 +4,7 @@ btn.onclick= countAveragePrice;
 abp.onclick= getmodal;			// открыть модальное окно
 // burger.onclick= getburgerBlock;	// открыть навигацию под бургером
 mcl.onclick= closemodal;		// иконка закрытия модального окна
+modalCalc.onclick= closeCalc;		
 count.onclick = showChart;
 countInt.onclick = getSingleChartForInterest;
 fetchCurrencies.onclick = showBitcoinRate;

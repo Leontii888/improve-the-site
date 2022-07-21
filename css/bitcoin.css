@@ -3,10 +3,11 @@
     box-sizing: border-box;
     padding: 2rem;
     margin-bottom: 1rem;
+    width: 95%;
     height: 7rem;
 
     text-align: right;
-    background-color: rgba(222,222,222, .3);
+    background-color: rgba(222,222,222, .2);
 }
 
 #bitcoin-rate

@@ -32,10 +32,10 @@
 			class=" header-form flex flex-nowrap"
 			action="https://duckduckgo.com/"
 			method="GET">
-			<label for="header-form">Search on DuckDuckGo</label>
+			<label for="header-form__search">Search on DuckDuckGo</label>
 			<input
 			class="header-form__search"
-			name="q"
+			name="header-form__search"
 			placeholder="Search some..."
 			type="text">
 
@@ -48,8 +48,8 @@
 		<nav class="header-nav">
 			<ul class="header-nav__list ancors">
 				<li class="ancors__about">About</li>
-				<li><a href="#countAncor">Calculate</a></li>
-				<li><a href="#linksAncor">my Links</a></li>
+				<li><a href="#calc-ancor">Calculate</a></li>
+				<li><a href="#links-ancor">my Links</a></li>
 				<li><a href="#booksAncor">Keeper</a></li>
 				<li><a href="#contactsAncor">Contacts</a></li>
 				<li><a href="#newsblock-ancor">News</a></li>
@@ -86,25 +86,45 @@
 
 	</section> 
 
-	<section class="main-count">
-		<div class="modalCalc "></div>
-		<a name="countAncor"></a>
-		<a name="linksAncor"></a>
-		<h4 class=" title ta-center">Links and calculations</h4>
-		<div class="main-count-countbox">
-			<div id= "calc">
+	<section class="calcandlinks">
+		<div class="calcandlinks-modalCalc"></div>
+			<a name="calc-ancor"></a>
+			<a name="links-ancor"></a>
+			<h4 class=" calcandlinks__title title ta-center">Links and calculations</h4>
+			<div class="calcandlinks-mainblock">
+				<div class= "calcandlinks-mainblock__calc">
 
-				<div id="nums">
-					<label for="firstPrice">Price In</label>
-					<input type="text" name ="firstPrice" value="" id="firstPrice" class="tocount">
-					<label for="secondPrice">Price Out</label>
-					<input type="text" name="secondPrice" value="" id="secondPrice" class="tocount">
-					<label for="loss" >Loss, RUB.</label>
-					<input type="text" title="default =RUB2000, to count press Enter" name="loss" placeholder="2000" id="loss">
-					<label for="tocount">Listing lots (1,2,...)</label>
-					<input type="text" name="tocount" title="to count press Enter" placeholder="1,2..." id="averagePrice" class="tocount">
+					<div class="calcandlinks-mainblock__nums">
+						<label for="first-price">Price In</label>
+						<input
 
-				</div>
+						id="calcandlinks-mainblock__first-price"
+						class="tocount"
+						type="text"
+						name ="first-price"
+						value="">
+						<label for="second-price">Price Out</label>
+						<input
+						id="calcandlinks-mainblock__second-price"
+						class="tocount"
+						type="text"
+						name="second-price"
+						value="">
+						<label for="loss" >Loss, RUB.</label>
+						<input
+						id="loss"
+						title="default =RUB2000, to count press Enter" name="loss"
+						placeholder="2000"
+						type="text">
+						<label for="tocount">Listing lots (1,2,...)</label>
+						<input
+						id="averagePrice"
+						class="tocount"
+						name="tocount"
+						title="to count press Enter"
+						placeholder="1,2..."
+						type="text">
+					</div>
 			</div> 
 			<!-- calc-->
 			<div class="links-wrap">
@@ -201,8 +221,8 @@
 
 				</div> <!--links-->
 			</div><!--links-wrap-->
-		</div><!--main-count-countbox-->
-	</section> <!--main-count-->
+		</div><!---->
+	</section> <!--calcandlinks-->
 
 	<section class="earningCount">
 		<div id="can">
