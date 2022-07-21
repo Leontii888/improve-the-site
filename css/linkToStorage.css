@@ -78,7 +78,7 @@
     color: #bbb;
 }
 #wholeListbox__Text {
-    /*background: #fff;*/
+   overflow: hidden;
     padding: 10px;
 
     width: 33rem;;
@@ -86,7 +86,6 @@
 
     font-size: 1rem;
     color: black;
-    text-overflow: auto;
 }
 #wholeListbox__close {
     position: absolute;
