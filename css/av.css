@@ -25,25 +25,32 @@ body
 }
 section
 {
-    /*overflow: hidden;*/
     height: 60rem;
-    /*padding: 2rem;*/
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-space-between{
+    justify-content: space-between;
+    
+}
+.flex-dir-col{
+    flex-direction: column;
+}
+.ta-center{
+        text-align: center;
 }
 h4 {
-    margin: 0;
     /*font-weight: bold;*/
-
     padding: 4.5rem ;
-
-    text-align: center;
 }
 
 h3,h5
 {
     font-size: 1.4rem;
-    font-weight: bold;
-
-    padding: 1.5rem;
+    /*font-weight: bold;*/
+    /*padding: 1.5rem;*/
 }
 
 
