@@ -68,11 +68,12 @@ label
 }
 
  #searchMain {
-    width: 2.8em;
+    width: 2.7em;
     margin: auto;
     box-shadow: none;
     border-style: none;
-    padding: 0.6rem;
+    border-radius: 2px;
+    padding: 0.45rem;
 
 }
 

@@ -16,7 +16,7 @@
 	<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.js"></script>
-	<link rel="stylesheet" href="css/av.css"/>
+	<link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
 	<a name="top"></a>
@@ -36,8 +36,8 @@
 
 		<nav>
 			<ul>
-				<li id= "abp">About project</li>
-				<li><a href="#countAncor">Count Smth</a></li>
+				<li id= "abp">About</li>
+				<li><a href="#countAncor">Calculate</a></li>
 				<li><a href="#linksAncor">my Links</a></li>
 				<li><a href="#booksAncor">Keeper</a></li>
 				<li><a href="#contactsAncor">Contacts</a></li>
@@ -93,12 +93,14 @@
 			</div> 
 			<!-- calc-->
 			<div class="links-wrap">
-				<div class="bitcoin-panel">
+				<div class="bitcoin-panel
+							flex flex-space-between
+							flex-align-top">
 					<div id="bitcoin-rate"></div>
 					<div id="bitcoin-mypose"></div>
-					<span id="bitcoin-btn">
+					<div id="bitcoin-btn" class="flex flex-align-center">
 						<button id="btn-count" class="fetch-currencies">Fetch rate</button>
-					</span>
+					</div>
 					
 					
 				</div>
