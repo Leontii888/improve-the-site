@@ -1,18 +1,14 @@
 
 header
 {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    align-items: center;
     height: 7rem;
     padding: .5rem .5rem 0.5rem 0.2rem;
-    color: #ddd;
 
+    color: #ddd;
     background-color: #F67908;
 }
-nav{
-    
+nav
+{
      width:70%;
 }
 nav ul{
@@ -34,12 +30,11 @@ nav ul li{
 form {
     width:30%;
     height: 80px;
-    display: flex;
     margin:0;
     padding: 1rem;
-    /*align-items: center;*/
 }
-label{
+label
+{
          margin: auto;
 }
 
@@ -54,7 +49,7 @@ label{
  }  
    
 
-.logo-picture img
+.logo img
 {
     height: 2.4rem;
 }

@@ -20,18 +20,15 @@
 </head>
 <body>
 	<a name="top"></a>
-	<header class="header">
+	<header class="flex flex-space-between flex-nowrap flex-align-center">
 		
 		<div id="burger">
 			<img src="img/burger2_small.png" alt="closeburger">
 		</div>
 		<div class="logo">
-			<div class="logo-picture">
 				<img src="img/earthWhite.png" alt="logo-picture" />
-
-			</div>
 		</div>
-		<form action="https://duckduckgo.com/" method="GET">
+		<form  class="flex flex-nowrap" action="https://duckduckgo.com/" method="GET">
 			<label for="search">Search on DuckDuckGo</label>
 			<input id="search" name="q" placeholder="Search some..." target='_blank' type="text">
 			<button type="submit" id ='searchMain' >Go</button>
@@ -330,9 +327,9 @@
 	<div class="footer-info">
 		<div>
 			<p>Needful stuff site</p>
-			<p>2019 / All rights reserved</p>
+			<p>2019 / All rights reserved<span>&ensp;&copy;</span></p>
 			<p><a href="#">Privacy policy</a></p>
-			<p>My address: <a href="mailto:comm2011@yandex.ru"> &#10000 comm2011@yandex.ru</a></p>
+			<p>My post&ensp;&#9993;: <a href="mailto:comm2011@yandex.ru">&ensp; comm2011@yandex.ru</a></p>
 		</div>
 		<ul class="footer-socials">
 			<li><a href="https://twitter.com/8thpiper" target="blank">twitter</a></li>
@@ -346,7 +343,7 @@
 	</div>
 </footer>
 <div class="back">
-	<a href="#top">Назад</a><br>
+	<a href="#top">upward&ensp;&#9650;<span></span></a><br>
 	<!-- 	<a href="#" onclick="this.innerHTML =  history.length+ ' items in your history' ; return false">View history.length</a> -->
 </div>
 <script  src="js/initialVar.js"></script>
