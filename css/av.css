@@ -41,16 +41,13 @@ section
 .ta-center{
         text-align: center;
 }
-h4 {
-    /*font-weight: bold;*/
+.title{
     padding: 4.5rem ;
 }
 
 h3,h5
 {
     font-size: 1.4rem;
-    /*font-weight: bold;*/
-    /*padding: 1.5rem;*/
 }
 
 
