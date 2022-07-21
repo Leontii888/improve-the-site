@@ -1,5 +1,5 @@
 
-header
+.header
 {
     height: 7rem;
     padding: .5rem .5rem 0.5rem 0.2rem;
@@ -7,16 +7,17 @@ header
     color: #ddd;
     background-color: #F67908;
 }
-nav
+
+.header-nav
 {
      width:70%;
 }
-nav ul{
+.header-nav__list{
     position: relative;
     float: right;
 }
 
-nav ul li{
+.header-nav__list li{
     font-size: 1.2rem;
 
     display: inline-block;
@@ -26,20 +27,20 @@ nav ul li{
     cursor: pointer;
 }
 
-
-form {
+.header-form
+{
     width:30%;
     height: 80px;
     margin:0;
     padding: 1rem;
 }
-label
+.header-form label
 {
-         margin: auto;
+ margin: auto;
 }
 
 
-.logo
+.header-logo
 {
     position: relative;
     width: 8%;
@@ -49,7 +50,7 @@ label
  }  
    
 
-.logo img
+.header-logo img
 {
     height: 2.4rem;
 }
@@ -60,14 +61,15 @@ label
 
 
 
-#search{
+.header-form__search{
     color: #ccc;
     border-style: none;
     margin: auto 1rem;
     padding: 0.5rem;
+    border-radius: 2px;
 }
 
- #searchMain {
+.header-form__button{
     width: 2.7em;
     margin: auto;
     box-shadow: none;
