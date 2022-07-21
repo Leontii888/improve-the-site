@@ -4,16 +4,16 @@ function getmodal() {
 	frontModal.style.display = 'block';
 }
 
-function getburgerBlock() {
-	burgerBlock.style.display = 'block';
-}
+// function getburgerBlock() {
+// 	burgerBlock.style.display = 'block';
+// }
 
 function closemodal() {
 	frontModal.style.display = 'none';
 }
-function closeBurger() {
-	burgerBlock.style.display = 'none';
-}
+// function closeBurger() {
+// 	burgerBlock.style.display = 'none';
+// }
 
 let isSaved=false;
 

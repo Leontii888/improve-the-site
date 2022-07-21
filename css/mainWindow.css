@@ -1,21 +1,21 @@
-.main-frontpage
+.frontpage
 {
     position: relative;
     height: 100vh;
     filter: blur(3px);
 }
-.main-frontpage h3
+.frontpage h3
 {
     font-size: 2.5rem;
     text-align: center;
 }
-.main-frontpage h5
+.frontpage h5
 {
     margin: -2rem auto 1rem;
 
     text-align: center;
 }
-.main-frontpage h1
+.frontpage h1
 {
     font-size: 7rem;
     margin: 5rem;
@@ -24,7 +24,7 @@
     text-align: center;
     /*letter-spacing: 0.1rem;*/
 }
-.main-picture
+.frontpage-block
 {
     width: 100%;
     height: 100vh;
@@ -36,13 +36,13 @@
     background-repeat: no-repeat;
 }
 
-.main-picture button{
+.frontpage-block button{
 
     font-size: 1.2rem;
     margin: 1rem 62rem;
     padding: 1rem auto;
 }
-.main-picture button:hover
+.frontpage-block button:hover
 {
     font-size: 1.25rem;
 } 

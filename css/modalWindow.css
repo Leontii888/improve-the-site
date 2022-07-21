@@ -1,19 +1,29 @@
-#main-modal
+.frontpage-block-modal
 {
+    display: none;
     position: absolute;
-    top: 0;
-    left: 70%;
+    top: -54;
+    left: 56%;
     color: #ccc;
     background-color:  #35c;
-    width: 30%;
+    width: 40rem;
     height: 100vh;
     margin: 0 1rem 0;
     padding: 0.5rem;
     overflow: scroll;
-    display: none;
 
 }
-#main-nav-block
+.frontpage-block-modal p
+{
+    font-size: 1.2rem;
+
+}
+.frontpage-block-modal h4
+{
+  padding-bottom: 1rem;
+
+}
+/*.nav-block
 {
     display: none;
     position: absolute;
@@ -24,26 +34,30 @@
     height: 15vh;
     color: #ccc;
     background-color:  #35c;
-}
-#burger-close
+}*/
+/*.nav-block-close
 {
     position: absolute;
     top: 21%;
     left: 90%;
-}
-
-#burger{
+}*/
+/*#burger{
     position: absolute;
     top: 7.5%;
     left: 90%;
     display: none;
-}
-#main-modal p
-{
-    font-size: 1.2rem;
+}*/
+
+.frontpage-block-modal-close__position{
+    position: absolute;
+    top: 5%;
+    left: 81%;
+    font-size: 1rem;
+    cursor: pointer;
 
 }
-#modal-close
+
+.frontpage-block-modal-close
 {
     position: absolute;
     top: 4%;
