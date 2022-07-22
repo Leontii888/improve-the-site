@@ -1,18 +1,34 @@
-.main-books
+.storage
 {
-    /*background-color: #bad193ff;*/
+    margin:0;
+    padding:0;
     background-color: #35c;
     color: #ccc;
 }
+.storage__container
+{
+    margin: 0 auto;
+    /*border: 3px solid green;*/
+    width: 50%;
+}
+.storage__note{
+    width: 100%;
+    background-color: red;
 
-/* сохарнить ссылки в сторедже*/
+}
+.storage__input{
+    /*width: 100%;*/
+}
 
-.buts  {
+
+/* buttons styles*/
+
+/*.storage__but-list  {
     width: 55rem;
     margin: 0 0 0 2rem;
     /*padding: 0;*/
-}
-.buts button {
+/*}
+.storage__but-list button {
     margin: 0.3rem 1.6rem 1rem 0;
     width: 11rem;
     height: 2.3em;
@@ -20,9 +36,9 @@
     padding: 0.1em;
     box-shadow: none;
     cursor: pointer;
-}
-.buts button:hover {
-    /*background: #ccc;*/
+}*/
+/*.storage__but-list button:hover {
+    /*background: #ccc;
     transition: .4s ease-in-out;
     border: none;
     border-radius: .15rem;
@@ -30,68 +46,68 @@
     color: #decda5;
     box-shadow: inset 0 -3.75em 0 #40382d, .125rem .225rem .388rem rgba(0,0,0,.5);
 }
-.myInpLinks{
-    padding: 0 2.5rem;
+*/
+.storage__but-list{
+    display: flex;
+    background-color: blue;
+    /*padding: 0 2rem;*/
+    /*width: 47rem;*/
+    width: 100%;
+}
+.storage__but-list-item{
+
+    margin-right: 2.5rem;
+    width: 9rem;
+    height: 1.7rem
 }
 
-#newLinks{
-    width: 47rem;
-    margin: 10px 30px;
-    padding-left: 2rem; 
-}
-
-#wholeListbox {
-    display: none;
-    box-sizing: border-box;
-
-
-    position: relative;
-    background: #ddd;
-
-    
-    margin: 0 30px;
-    padding: 20px 40px;
-    width: 42rem;
-    height: 15rem;
-
-    opacity: 0.7;
-
-
-
-}
-#checkStorage{
-    box-sizing: border-box;
+.storage__check{
      display: none;
-     /*position: relative;*/
+     background: #f2f3f4;
+     /*box-sizing: border-box;*/
+
+    /*padding: 2rem;*/
+    /*width: 47rem;*/
+    /*margin: 2rem 2rem;*/
+}
+.storage__length-title{
+    display: flex;
+    align-items: center;
+
+    height: 3rem;
     background: #f2f3f4;
 
+    /*margin:0 0 2rem 0;*/
+    /*padding:1rem;*/
+    /*width:41.5rem;*/
     
-    margin: 1rem 2rem;
-    padding: 1rem;
-    width: 42rem;
-    height: 4rem;
+}
+.storage__length-title span {
+    margin-left: 1rem;
+}
+.storage__info-box{
+    background:#f2f3f4;
+    width: 100%;
+    height: 20rem;
 
 
-    opacity: 1;
 }
-#checkStorage span{
-    font-weight: normal;
-    color: #bbb;
+.showbox{
+    position: relative;
 }
-#wholeListbox__Text {
+.showbox__text{
    overflow: hidden;
-    padding: 10px;
 
-    width: 33rem;;
-    /*height: 10rem;*/
+    width: 100%;;
+    height: 15rem;
 
     font-size: 1rem;
     color: black;
+
 }
-#wholeListbox__close {
+.showbox__close {
     position: absolute;
-    display: block;
-    top: 1rem;
-    left: 39rem;
+    top: 0;
+    left: 43rem;
 
 }

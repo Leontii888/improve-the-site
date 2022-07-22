@@ -25,6 +25,7 @@ background-image: url(D:/programming/java/mySite/img/techno-bg-op1.png) ;
 section
 {
 height: 60rem;
+padding:1rem;
 }
 
 /*flexes------*/

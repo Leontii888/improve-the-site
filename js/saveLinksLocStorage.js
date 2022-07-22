@@ -1,3 +1,9 @@
+let isSaved=false,
+	isRepeated =0,
+	isOpened =false,
+	tempInfoDinamicCreatedEl ={};
+
+
 // save links to LocStorage
 
 function getmodal() {
@@ -15,14 +21,15 @@ function closemodal() {
 // 	burgerBlock.style.display = 'none';
 // }
 
-let isSaved=false;
 
 
 
 const writeLinks = ()=> {
-	wholeListbox__Text.innerHTML += `${newlink.value}<br \/>`;
+	wholeListbox__Text.innerHTML += `<span>${newlink.value}</span><hr>`;
 	link =[...link, newlink.value]
 	arrayBaseLinks = {t:`${new Date().toLocaleString()}`, link};
+	// clearLinksInBox()
+	newlink.value ='';
 };
 
 const putSomelinks = () => {
@@ -38,7 +45,8 @@ const putSomelinks = () => {
 const showBaseLinks = () => {
 	wholeListbox.style.display = 'block';
 	storageLength.innerHTML = `${localStorage.length}`
-	checkStorage.style.display = 'block';
+	checkStorage.style.display = 'inline';
+
 
 };
 const closeBaseBox = () => {
@@ -47,23 +55,116 @@ const closeBaseBox = () => {
 	checkStorage.style.display = 'none';
 	newlink.value ='';
 	wholeListbox__Text.innerHTML = ``;
+
+	storageContainer.removeEventListener("click", closeWarn);
+	isOpened =false;
 	
 
 
 };
 const clearLinksInBox = () => {
-	newlink.value ='';
-	// wholeListbox__Text.innerHTML = ``;
+	wholeListbox__Text.innerHTML = ``;
 
+	isRepeated =0;
 };
+
+function warnModalAbsolutePosition(
+									tag,
+									parent,
+									top,
+									left,
+									className,
+									background,
+									width,
+									height,
+									padding,
+									opacity,
+									warning){
+	let createdItem = document.createElement(tag);
+		createdItem.style.position = "absolute";
+
+		createdItem.className = className;
+		createdItem.innerHTML =warning;
+
+		createdItem.style.background = background;
+		createdItem.style.opacity = opacity;
+		createdItem.style.width = width;
+		createdItem.style.height = height;
+		createdItem.style.borderRadius = "2px";
+
+		createdItem.style.padding = padding;
+		createdItem.style.top = top;
+		createdItem.style.left = left;
+
+		parent.style.position ="relative";
+		parent.appendChild(createdItem);
+		let querylink =document.querySelector(`.${className}`)
+		tempInfoDinamicCreatedEl = {
+									tag,
+									parent,
+									top,
+									left,
+									className,
+									background,
+									width,
+									height,
+									padding,
+									opacity,
+									warning,
+									querylink
+
+		};
+			return createdItem
+}
+storageContainer.addEventListener("click", closeWarn);
+
+function closeWarn(){
+					if(isOpened){
+						storageContainer.removeChild(tempInfoDinamicCreatedEl.querylink)
+						isOpened= false;
+						console.log("deleted!")
+					} else{
+						console.log("nothing to delete!")
+
+					}
+}
+
 const saveIntoStorage = () => {
 	let index = Math.floor(Math.random() * 10000000000).toString().padStart(10, "0");
-	console.log(index);
+	if(localStorage.getItem(`myLinks (${isRepeated})`)){
+		if(!isOpened){
+			warnModalAbsolutePosition("div",
+				storageContainer,
+				"0",
+				"0",
+				'warn',
+				"#000",
+				"575px",
+				"305px",
+				"50px",
+				0.7,
+				 `<div>WOW! YOU HAVE ALREADY PUT THE LINK!</div>
+				 <div>PLEASE, DO NOT DOUBLE INFO</div> 
+				 <div>PLEASE, CLEAR PANEL UP.</div> 
+				<div>LOCAL STORAGE UPLOAD IT!</div>`);
+			setTimeout(()=> {
+				isOpened= true;
+				storageContainer.addEventListener("click", closeWarn)
+				},1000);
+		}else {	};
+		
+	} else {
+		localStorage.setItem(`myLinks (${index})`, JSON.stringify(arrayBaseLinks));
+		const data = JSON.stringify(localStorage.getItem(`myLinks (${index})`));
+		wholeListbox__Text.innerHTML = `<span>${data}</span>`;
+		storageLength.innerHTML = `<span style={ "margin:0 2rem"}>${localStorage.length}</span>`;
+		isRepeated = index;
+		}
 	
-	localStorage.setItem(`myLinks (${index})`, JSON.stringify(arrayBaseLinks));
-	const data = JSON.stringify(localStorage.getItem(`myLinks (${index})`));
-	wholeListbox__Text.innerHTML = `${data}`;
-	storageLength.innerHTML = `${localStorage.length}`
-	console.log(data);
-	isSaved= true;
+		isSaved= true;
 };
+
+
+
+// !!delete all in LS
+localStorage.clear()

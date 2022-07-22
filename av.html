@@ -50,7 +50,7 @@
 				<li class="ancors__about">About</li>
 				<li><a href="#calc-ancor">Calculate</a></li>
 				<li><a href="#links-ancor">my Links</a></li>
-				<li><a href="#booksAncor">Keeper</a></li>
+				<li><a href="#storage">Keeper</a></li>
 				<li><a href="#contactsAncor">Contacts</a></li>
 				<li><a href="#newsblock-ancor">News</a></li>
 				<li>
@@ -243,28 +243,55 @@
 	</section>
 
 
-	<section class="main-books">
-		<a name="booksAncor"></a>
+	<section class="storage">
+		<a name="storage"></a>
 		<h4 class=" title ta-center">Keep links</h4>
+		<div  id="storage__container" class="storage__container">
+			
 		<!--сохранение ссылок в сторедже-->
-		<p class="myInpLinks">Save links here</p>
-		<input type="text" id="newLinks" placeholder="type some..." >
-		<div class="buts">
-			<button id="buts__putLink">Put link</button>
-			<button id="buts__getLink">Show base</button>
-			<button id="buts__clearBase">Clear base</button>
-			<button id="buts__setStorage">Save to Localstorage</button>
-		</div>
-		<div id="checkStorage">
-			<span> so far in localStorage:</span>
-			<span class="storage-length"></span>
-		</div>
-		<div id="wholeListbox">
-			<div id="wholeListbox__Text"></div>
-			<div id="wholeListbox__close">
-				<img  src="img/close.png" alt="cross">
+			<div class="storage__note">
+				<p class="storage__note-title">Save links here</p>
+				<input class="storage__input"
+						type="text"
+						placeholder="type some..." >
 			</div>
+			
+			<div class="storage__but-list">
+				<button
+					class="storage__put-link
+					storage__but-list-item">
+					Put link</button>
+				<button
+					class="storage__get-link
+					storage__but-list-item">
+					Show base</button>
+				<button
+					class="storage__clear-input
+					storage__but-list-item">
+					Clear note</button>
+				<button
+					class="storage__save-to-storage
+					storage__but-list-item">
+					Save to storage</button>
+			</div>
+			<div class="storage__check">
+				<div class="storage__length-title">
+					<span> so far in localStorage:</span>
+					<span class="storage__check-length"></span>
+				</div>
+				<div class="storage__info-box
+				 			showbox">
+					<div class="showbox__text">
+					</div>
+					<div class="showbox__close">
+						<img  src="img/close.png"
+								alt="cross">
+					</div>
+				</div>
+			</div>
+		
 		</div>
+		
 
 
 	</section > <!--main-books-->
