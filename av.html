@@ -16,6 +16,7 @@
 	<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.js"></script>
+	
 	<link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
@@ -224,18 +225,31 @@
 		</div><!---->
 	</section> <!--calcandlinks-->
 
-	<section class="earningCount">
-		<div id="can">
+	<section class="minnervini">
+		<div id="minnervini__container">
 			<h4 class=" title ta-center"> Minnervini graphs</h4>
-			<canvas id="myChart" style="height: 2rem" ></canvas>
-			<div class ="myChart-controls"> 
-				<div class ="myChart-controls-box">
-					<input id= 'data' type="text" placeholder="40,10,2" title="Процент успешных сделок из 100, количество сделок 10, соотношение величин прибыли и убытка для депозита 100К">
-					<input id="getCount" type="button"  value="CountAll">
+			
+			<canvas id="minnervini__canvas-chart" style="height: 2rem" ></canvas>
+			<div class ="minnervini__block-controls"> 
+				<div class ="minnervini__controls-main-graph">
+					<input id= "minnervini__put-data-main-graph"
+					type="text"
+					placeholder="40,10,2"
+					title="Процент успешных сделок из 100, количество сделок 10, соотношение величин прибыли и убытка для депозита 100К">
+					
+					<input id="minnervini__count-main-graph"
+					type="button"
+					value="ShowAll">
 				</div>
-				<div class ="myChart-controls-box">
-					<input id= 'single' type="text" placeholder="interest,%" title="Процент прибыли в каждой сделке">
-					<input id="getCountSingle" type="button"  value="ShowSingle">
+				<div class ="minnervini__controls-sub-graph">
+					<input id= "minnervini__put-data-sub-graph"
+					type="text"
+					placeholder="interest,%"
+					title="Процент прибыли в каждой сделке">
+
+					<input id="minnervini__count-sub-graph"
+					type="button"
+					value="ShowSingle">
 				</div>		
 			</div>
 			

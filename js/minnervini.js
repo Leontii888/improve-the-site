@@ -1,10 +1,10 @@
 //Миннервини расчеты  и графики
 //==============================================================
 //
-let chartDiv = document.getElementById('myChart'),
-ctx = chartDiv.getContext('2d');
-
-let chart = new Chart(ctx, data);
+let chartDiv = document.getElementById('minnervini__canvas-chart');
+// console.log(data);
+	let ctx = chartDiv.getContext('2d');
+	let chart =null;
 
 
 let buffer;
@@ -45,17 +45,17 @@ function getCountMainTaskArray ({sucsessTradesProportion,samples, trades,ratio,d
 			depoProgressArray = [],
 			earnProgressArray = [];
 			//депозит всегда один и тот же
-			function getTradeConstDepoArray(step){
-					depoProgressArray = (step)?
-					[...depoProgressArray, +deposit * (1 + interest / 100)-feeTrade]
-						:
-						[...depoProgressArray, +(deposit * (1 - interest / (100 * ratio))-feeTrade).toFixed(1)];
+			// function getTradeConstDepoArray(step){
+			// 		depoProgressArray = (step)?
+			// 		[...depoProgressArray, +deposit * (1 + interest / 100)-feeTrade]
+			// 			:
+			// 			[...depoProgressArray, +(deposit * (1 - interest / (100 * ratio))-feeTrade).toFixed(1)];
 
-							earnProgressArray = (step)?
-							 [...earnProgressArray,+(100 * ( depoProgressArray[depoProgressArray.length-1] - deposit) /deposit).toFixed(2)]
-								:
-								[...earnProgressArray,+(100 * ( depoProgressArray[depoProgressArray.length-1] - deposit) /deposit).toFixed(2)];
-			}
+			// 				earnProgressArray = (step)?
+			// 				 [...earnProgressArray,+(100 * ( depoProgressArray[depoProgressArray.length-1] - deposit) /deposit).toFixed(2)]
+			// 					:
+			// 					[...earnProgressArray,+(100 * ( depoProgressArray[depoProgressArray.length-1] - deposit) /deposit).toFixed(2)];
+			// }
 			// депозитом является последняя сумма 
 			function getTradeArray(step){
 					depo = isNextInterest? depo: depoProgressArray[depoProgressArray.length-1];
@@ -159,15 +159,24 @@ function showChart (){
 							bestInterestValue
 							} = prepareObjForChartData(newobjInitial);
 								buffer= newobjInitial;
-				chart.destroy();
-				chart = new Chart(ctx, putDataToChart(interestscale,earningsSamplesFinalValues,"% earnings",
-					`% earnings at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) and best result  ${earningsBestValue} at ${bestInterestValue}% at samples ${samples} `));
-				chart.canvas.parentNode.style.width = "100%";
-				chart.canvas.parentNode.style.height ='30rem';
-				chartDiv.style.opacity =1;
+								if(chart){
+										chart.destroy();
+											chart = new Chart(ctx, putDataToChart(interestscale,earningsSamplesFinalValues,"% earnings",
+												`% earnings at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) and best result  ${earningsBestValue} at ${bestInterestValue}% at samples ${samples} `));
+											chart.canvas.parentNode.style.width = "100%";
+											chart.canvas.parentNode.style.height ='30rem';
+											chartDiv.style.opacity =1;
+								} else {
+										chart = new Chart(ctx, putDataToChart(interestscale,earningsSamplesFinalValues,"% earnings",
+											`% earnings at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) and best result  ${earningsBestValue} at ${bestInterestValue}% at samples ${samples} `));
+										chart.canvas.parentNode.style.width = "100%";
+										chart.canvas.parentNode.style.height ='30rem';
+										chartDiv.style.opacity =1;
+														}
 };
 function getSingleChartForInterest(){
 	let interestRate = +singleInt.value;
+	console.log(interestRate)
 	const {sucsessTradesProportion,ratio,deposit} = buffer;
 	const interestAllCountsArray = getCountMainTaskArray(buffer);
 	let scaleX =Array.from({ length: interestAllCountsArray[0].depoProgressArray.length }, (i,j) => j);
@@ -180,7 +189,6 @@ function getSingleChartForInterest(){
 		chart = new Chart(ctx, putDataToChart(scaleX,interestAllCountsArray[interestRate-1].depoProgressArray,"depo",`Changing the deposit max/min = ${maxDepo}/${minDepo}  at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) to ${interestAllCountsArray[interestRate-1].depoProgressArray[scaleX.length-1].toFixed(1)} at samples ${scaleX.length} `));
 		chart.canvas.parentNode.style.width = "100%";
 		chart.canvas.parentNode.style.height ='30rem';
-		// chart.canvas.parentNode.style.border = "2px";
 };
 function prepareObjForChartData (chartCountData){
 

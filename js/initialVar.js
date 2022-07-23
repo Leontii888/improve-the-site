@@ -17,16 +17,18 @@ const fp = document.getElementById('calcandlinks-mainblock__first-price'),
 	// burgercl = document.querySelector('.frontpage-block-modal-close'),
 	abp = document.querySelector('.ancors__about'),
 	headerSrc = document.getElementById('header-search'),
-	count = document.getElementById('getCount'),
-	dataBlock = document.getElementById('data'),
-	countInt = document.getElementById('getCountSingle'),
-	singleInt = document.getElementById('single'),
-	fetchCurrencies = document.querySelector('.fetch-currencies');
+// minnervini block
+	count = document.getElementById('minnervini__count-main-graph'),
+	dataBlock = document.getElementById('minnervini__put-data-main-graph'),
+	countInt = document.getElementById('minnervini__count-sub-graph'),
+	singleInt = document.getElementById('minnervini__put-data-sub-graph'),
+	
+	fetchCurrencies = document.querySelector('.fetch-currencies'),
 	arr = [],
 	weatherBlock = document.querySelector('.maps-data_show'),
 	getReqWeather = document.querySelector('#maps-data_city'),
 	mapsDataConditions = document.querySelector('.maps-data_conditions');
-	// блок для сохранения ссылок в Сторедже
+	// storage block
 
 let newlink = document.querySelector('.storage__input'),
 	storage = document.querySelector('.storage'),

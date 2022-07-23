@@ -1,38 +1,38 @@
-.earningCount{
+.minnervini{
     margin: 2rem;
     padding: 2rem;
     display: flex;
     justify-content:space-around; 
 }
 
-#can{   
+#minnervini__container{   
 
-    width: 100%;
-    flex-wrap: wrap;
-    align-items: center;
+    /*width: 100%;*/
+/*    flex-wrap: wrap;
+    align-items: center;*/
 }
 
-#myChart{
+#minnervini__canvas-chart{
     width:40rem;
     margin: 0 2rem 0 2rem;
     background-color: #aadaff;
     opacity: 0.5
 }
-.myChart-controls{
+.minnervini__block-controls{
     width:40rem;
     margin: 1rem 0 0 2rem
 }
 
-.myChart-controls input{
+.minnervini__block-controls input{
     
     padding-right: 2rem;
     margin-right: 1rem;
 }
 
-.myChart-controls-box{
+.minnervini__controls-main-graph{
     margin: 2rem 1.5rem 1.5rem 0;
 }
-#getCount, #getCountSingle{
+#minnervini__count-main-graph, #minnervini__count-sub-graph{
     width:7rem;
     cursor: pointer;
 }
