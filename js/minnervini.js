@@ -162,13 +162,13 @@ function showChart (){
 								if(chart){
 										chart.destroy();
 											chart = new Chart(ctx, putDataToChart(interestscale,earningsSamplesFinalValues,"% earnings",
-												`% earnings at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) and best result  ${earningsBestValue} at ${bestInterestValue}% at samples ${samples} `));
+												`% earnings at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) and best result  ${earningsBestValue} at interest ${bestInterestValue}%, at samples ${samples} `));
 											chart.canvas.parentNode.style.width = "100%";
 											chart.canvas.parentNode.style.height ='30rem';
 											chartDiv.style.opacity =1;
 								} else {
 										chart = new Chart(ctx, putDataToChart(interestscale,earningsSamplesFinalValues,"% earnings",
-											`% earnings at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) and best result  ${earningsBestValue} at ${bestInterestValue}% at samples ${samples} `));
+											`% earnings at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) and best result  ${earningsBestValue} at interest ${bestInterestValue}%, at samples ${samples} `));
 										chart.canvas.parentNode.style.width = "100%";
 										chart.canvas.parentNode.style.height ='30rem';
 										chartDiv.style.opacity =1;
@@ -186,7 +186,7 @@ function getSingleChartForInterest(){
 	let minDepo =((Math.min.apply(null,interestAllCountsArray[interestRate-1].depoProgressArray) - deposit)*100/deposit).toFixed(1);
 
 		chart.destroy();
-		chart = new Chart(ctx, putDataToChart(scaleX,interestAllCountsArray[interestRate-1].depoProgressArray,"depo",`Changing the deposit max/min = ${maxDepo}/${minDepo}  at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) to ${interestAllCountsArray[interestRate-1].depoProgressArray[scaleX.length-1].toFixed(1)} at samples ${scaleX.length} `));
+		chart = new Chart(ctx, putDataToChart(scaleX,interestAllCountsArray[interestRate-1].depoProgressArray,"depo",`Changing the deposit max/min = ${maxDepo}/${minDepo}  at constant interest ${interestRate},  succsess trades ${sucsessTradesProportion }% (ratio ${ratio}) to ${interestAllCountsArray[interestRate-1].depoProgressArray[scaleX.length-1].toFixed(1)} at samples ${scaleX.length} `));
 		chart.canvas.parentNode.style.width = "100%";
 		chart.canvas.parentNode.style.height ='30rem';
 };
