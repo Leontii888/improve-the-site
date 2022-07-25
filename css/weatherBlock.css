@@ -1,51 +1,56 @@
 .mapsWeather{
     background: #E0EAFAFF;
-    color: inherit;
-    padding: 2rem
 }
-
-
-.maps{
+.mapsWeather__container{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    height: 40rem;
+    height: 50rem;
+    padding: 2rem;
+}
+.mapsWeather__container *{
+ margin: 0 0 2rem 2rem;
 }
 
-.maps-data_show{
-    padding: 0;
-    margin: 0  0 0 2rem;
-}
-
-#maps_mapBoxCom{
-    height: 40%;
-    height: 40rem;
-    width: 100%;
-}
-.maps-data{
-    width: 70%;
+.mapsWeather__info{
+    height: 45rem;
+    flex-basis: 50%;
     overflow: auto;
-    height: 40rem;
-    margin: 0;
+    padding: 0 0 2rem 0;
 }
-.maps-data label {
+
+.mapsWeather__info label {
     
-    margin: 2rem;
-    padding: 1rem 1rem 1rem 0 ;
+    padding: 0 1rem 0 0 ;
 }
-.maps-data input {
+/*.mapsWeather__info input {
     margin:  1rem;
+}*/
+
+#mapsWeather__city{
+    width: 36%;
+    /*height: 40%;*/
+    /*height: 40rem;*/
 }
-.maps-datablock_conditions{
+
+
+.mapsWeather__conditions{
 display: flex;
 flex-wrap: wrap;
 align-items: center;
-justify-content: space-between;
-padding: 1rem
+/*justify-content: space-between;*/
 }
-.maps-data_conditions{
+.mapsWeather__item-data{
 
 padding: 1rem;
-border: 1px solid rgba(0,170,255,0.5);
-margin: 1rem;
+border: 1px solid rgba(0,170,255,0.2);
+margin: 0 2rem 0 0;
+}
+.mapsWeather__show{
+    margin: 0  0 2rem 2rem;
+}
+#mapsWeather__map{
+    padding: 0;
+    height: 32rem;
+    flex-basis: 50%;
 }

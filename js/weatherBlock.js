@@ -48,7 +48,7 @@ const drawWeather = (placeToShow, city,list) => {
 							});
 						console.log(weatherOnDays);
 
-						[...document.querySelectorAll('.maps-data_conditions')].forEach((el,i)=>{
+						[...document.querySelectorAll('.mapsWeather__item-data')].forEach((el,i)=>{
 									placeToShow =el; 
 										placeToShow.innerHTML = `on date: ${weatherOnDays[i].dt_txt}<br \/>
 										Temperature: <font color="#f35">${weatherOnDays[i].tm}</font><br \/>
@@ -81,7 +81,7 @@ const drawWeather = (placeToShow, city,list) => {
 								// .addTo(map);
 								//+++++++++++++++++++++++++++
 								const map = new mapboxgl.Map({
-							container: 'maps_mapBoxCom', // container ID
+							container: 'mapsWeather__map', // container ID
 							style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
 							center: [11.255, 43.77], // starting position
 							zoom: 13 // starting zoom

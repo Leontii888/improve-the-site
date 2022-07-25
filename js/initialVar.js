@@ -26,9 +26,10 @@ const myBody = document.getElementsByTagName('body'),
 	
 	fetchCurrencies = document.querySelector('.fetch-currencies'),
 	arr = [],
-	weatherBlock = document.querySelector('.maps-data_show'),
-	getReqWeather = document.querySelector('#maps-data_city'),
-	mapsDataConditions = document.querySelector('.maps-data_conditions');
+	
+	weatherBlock = document.querySelector('.mapsWeather__show'),
+	getReqWeather = document.querySelector('#mapsWeather__city'),
+	mapsDataConditions = document.querySelector('.mapsWeather__item-data');
 	// storage block
 
 let newlink = document.querySelector('.storage__input'),
