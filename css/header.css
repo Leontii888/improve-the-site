@@ -8,39 +8,22 @@
     background-color: #F67908;
 }
 
-.header-nav
-{
-     width:70%;
-}
-.header-nav__list{
-    position: relative;
-    float: right;
-}
 
-.header-nav__list li{
-    font-size: 1.2rem;
 
-    display: inline-block;
-
-    padding: .4rem 1rem;
-
-    cursor: pointer;
-}
-
-.header-form
+.header__form
 {
     width:30%;
     height: 80px;
     margin:0;
     padding: 1rem;
 }
-.header-form label
+.header__form label
 {
  margin: auto;
 }
 
 
-.header-logo
+.logo
 {
     position: relative;
     width: 8%;
@@ -49,11 +32,6 @@
 
  }  
    
-
-.header-logo img
-{
-    height: 2.4rem;
-}
 .logo--small
 {
     height: 2.4rem;
@@ -61,7 +39,7 @@
 
 
 
-.header-form__search{
+.header__search{
     color: #ccc;
     border-style: none;
     margin: auto 1rem;
@@ -69,7 +47,7 @@
     border-radius: 2px;
 }
 
-.header-form__button{
+.header__button{
     width: 2.7em;
     margin: auto;
     box-shadow: none;
@@ -79,4 +57,22 @@
 
 }
 
+.header__nav
+{
+     width:70%;
+}
+.header__list{
+    position: relative;
+    float: right;
+}
+
+.header__list li{
+    font-size: 1.2rem;
+
+    display: inline-block;
+
+    padding: .4rem 1rem;
+
+    cursor: pointer;
+}
 

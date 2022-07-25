@@ -33,32 +33,32 @@ padding:1rem;
 display: flex;
 flex-wrap: wrap;
 }
-.flex-nowrap{
+.flex--nowrap{
 flex-wrap: nowrap;
 }
-.flex-align-center{
+.flex--align-center{
 align-items: center;
 }
-.flex-align-top{
+.flex--align-top{
 align-items: top;
 }
-.flex-space-between
+.flex--space-between
 {
 justify-content: space-between;
     
 }
-.flex-dir-col{
+.flex--dir-col{
 flex-direction: column;
 }
 
 /*------*/
-.ta-center{
+.style--textalign-center{
 text-align: center;
 }
 .title{
 padding: 4.5rem ;
 }
-.white{
+.style--grey{
 color: #eee;
 }
 .clear

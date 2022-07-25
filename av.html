@@ -21,34 +21,33 @@
 </head>
 <body>
 	<a name="top"></a>
-	<header class=" header flex flex-space-between flex-nowrap flex-align-center">
+	<header class=" header flex flex--space-between flex--nowrap flex--align-center">
 		
 <!-- 		<div id="burger">
 			<img src="img/burger2_small.png" alt="closeburger">
 		</div> -->
-		<div class="header-logo">
+		<div class="logo">
 				<img src="img/earthWhite.png" alt="logo-picture" />
 		</div>
 		<form 
-			class=" header-form flex flex-nowrap"
+			class=" header__form flex flex--nowrap"
 			action="https://duckduckgo.com/"
 			method="GET">
-			<label for="header-form__search">Search on DuckDuckGo</label>
+			<label for="header__search">Search on DuckDuckGo</label>
 			<input
-			class="header-form__search"
-			name="header-form__search"
+			class="header__search"
+			name="header__search"
 			placeholder="Search some..."
 			type="text">
 
 			<button 
 			type="submit"
 			target='_blank'
-			class ='header-form__button'>Go</button>
+			class ='header__button'>Go</button>
 		</form>
-
-		<nav class="header-nav">
-			<ul class="header-nav__list ancors">
-				<li class="ancors__about">About</li>
+		<nav class="header__nav">
+			<ul class="header__list ancors">
+				<li class="header__item-about">About</li>
 				<li><a href="#calc-ancor">Calculate</a></li>
 				<li><a href="#links-ancor">my Links</a></li>
 				<li><a href="#storage">Keeper</a></li>
@@ -71,11 +70,11 @@
 						<!--add folder img/closebutt-->
 						<img src="img/closebutton_white.png" alt="closebutton">
 					</div>
-					<h4 class=" title ta-center">Idea</h4>
+					<h4 class=" title style--textalign-center">Idea</h4>
 					<p>Идея была простой. В одном месте собрать всю необходимую для трейдинга, программирования информацию. Нужны ссылки- их есть у меня. Можно делать расчеты по торговой позиции. Вобщем, все под рукой.</p>
-					<h4 class=" title ta-center">History</h4>
+					<h4 class=" title style--textalign-center">History</h4>
 					<p>История создания весьма занятна. Несколько лет назад я увидел рекламу о доходных сайтах. Сайтах, которые можно купить и получать доход, похожий на доход от аренды квартиры. Начав разбираться с оценкой сайта при покупке, вдруг с удивлением обнаружил, что сайт можно научиться сделать своими руками. Для этого нужно всего то - изучить HTML, CSS, Javascript, Nodejs. Нашел видео, скачал. Несколько месяцев изучал все это самостоятельно. В итоге, в какой-то момент, я понял что могу уже чтото сделать сам, но ... почуствовал, что теряю к этому интерес. Я возвращаюсь сюда периодически. Жаль, но кажется без ментора научиться проблема. Мне по-прежнему это  интересно, но я трачу на пустяки слишком много времени.  </p>
-					<h4 class=" title ta-center">Wherami</h4>
+					<h4 class=" title style--textalign-center">Wherami</h4>
 					<p>Москва, сеть. 2019</p>
 				</div>
 				<h1>Needful things and lasyMe</h1>
@@ -91,7 +90,7 @@
 		<div class="calcandlinks-modalCalc"></div>
 			<a name="calc-ancor"></a>
 			<a name="links-ancor"></a>
-			<h4 class=" calcandlinks__title title ta-center">Links and calculations</h4>
+			<h4 class=" calcandlinks__title title style--textalign-center">Links and calculations</h4>
 			<div class="calcandlinks-mainblock">
 				<div class= "calcandlinks-mainblock__calc">
 
@@ -130,11 +129,11 @@
 			<!-- calc-->
 			<div class="links-wrap">
 				<div class="bitcoin-panel
-							flex flex-space-between
-							flex-align-top">
+							flex flex--space-between
+							flex--align-top">
 					<div id="bitcoin-rate"></div>
 					<div id="bitcoin-mypose"></div>
-					<div id="bitcoin-btn" class="flex flex-align-center">
+					<div id="bitcoin-btn" class="flex flex--align-center">
 						<button id="btn-count" class="fetch-currencies">Fetch rate</button>
 					</div>
 					
@@ -227,7 +226,7 @@
 
 	<section class="minnervini">
 		<div id="minnervini__container">
-			<h4 class=" title ta-center"> Minnervini graphs</h4>
+			<h4 class=" title style--textalign-center"> Minnervini graphs</h4>
 			
 			<canvas id="minnervini__canvas-chart" style="height: 2rem" ></canvas>
 			<div class ="minnervini__block-controls"> 
@@ -259,7 +258,7 @@
 
 	<section class="storage">
 		<a name="storage"></a>
-		<h4 class=" title ta-center">Keep links</h4>
+		<h4 class=" title style--textalign-center">Keep links</h4>
 		<div  id="storage__container" class="storage__container">
 			
 		<!--сохранение ссылок в сторедже-->
@@ -311,15 +310,15 @@
 	</section > <!--main-books-->
 	<section class="main-contacts">
 		<a name="contactsAncor"></a>
-		<h4 class="title ta-center">Contact me</h4>
+		<h4 class="title style--textalign-center">Contact me</h4>
 	</section> 
 	<!--main-contacts-->
 	<section class="newsblock">
 		<a name="newsblock-ancor"></a>
-		<h4 class=" title ta-center">What else?</h4>
-		<div class="newsblock-row flex flex-space-between">
-			<div class="newsblock-row__block flex flex-dir-col">
-				<div class="newsblock-row__block__image ta-center">
+		<h4 class=" title style--textalign-center">What else?</h4>
+		<div class="newsblock-row flex flex--space-between">
+			<div class="newsblock-row__block flex flex--dir-col">
+				<div class="newsblock-row__block__image style--textalign-center">
 					<img src="img/JSTips.png">
 				</div>
 				<div class="newsblock-row__block__title">
@@ -333,9 +332,9 @@
 
 			</div>
 			<!--bz-block-->
-			<div class="newsblock-row__block flex flex-dir-col">
+			<div class="newsblock-row__block flex flex--dir-col">
 				
-				<div class="newsblock-row__block__image ta-center">
+				<div class="newsblock-row__block__image style--textalign-center">
 					<img  src="img/git.png">
 				</div>
 				<div class="newsblock-row__block__title">
@@ -351,8 +350,8 @@
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 			</div>
 			
-			<div class="newsblock-row__block flex flex-dir-col ">
-				<div class="newsblock-row__block__image ta-center">
+			<div class="newsblock-row__block flex flex--dir-col ">
+				<div class="newsblock-row__block__image style--textalign-center">
 					<img   src="img/mails.png">
 				</div>
 				<div class="newsblock-row__block__title">
@@ -373,7 +372,7 @@
 	</section> <!--newsblocks-->
 	<section class="mapsWeather">
 		<a name="mapsWeather"></a>
-		<h4 class=" title ta-center">Weather map</h4>
+		<h4 class=" title style--textalign-center">Weather map</h4>
 
 		<div class="maps">
 			<div class="maps-data">
@@ -394,17 +393,17 @@
 
 	</section>
 <footer>
-	<div class="header-logo">
+	<div class="logo">
 		<img src="img/earthWhite.png" alt="footer-logo" class="logo-picture ">
 	</div>
-	<div class="footer-info">
+	<div class="footer__info">
 		<div>
 			<p>Needful stuff site</p>
 			<p>2019 / All rights reserved<span>&ensp;&copy;</span></p>
 			<p><a href="#">Privacy policy</a></p>
 			<p>My post&ensp;&#9993;: <a href="mailto:comm2011@yandex.ru">&ensp; comm2011@yandex.ru</a></p>
 		</div>
-		<ul class="footer-socials">
+		<ul class="footer__socials">
 			<li><a href="https://twitter.com/8thpiper" target="blank">twitter</a></li>
 			<li><a href="https://www.pinterest.ru/news_hub/4940064254991542922/" target="blank">pinterest</a></li>
 			<li><a href="https://www.facebook.com/nrykalin" target="blank">facebook</a></li>
