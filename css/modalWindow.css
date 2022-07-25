@@ -14,13 +14,12 @@
     overflow: scroll;
 }
 .frontpage__block-modal *{
-    margin: 0 0 1rem 0; 
+    margin: 1rem 0 1rem 0; 
 }
 
 .frontpage__block-modal-close
 {
     position: absolute;
-    top: 6%;
-    left: 86%;
-
+    top: 1%;
+    left: 91%;
 }

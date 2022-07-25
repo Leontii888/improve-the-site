@@ -3,7 +3,7 @@
 @import "frontpage.css" screen;
 @import "modalWindow.css" screen;
 @import "bitcoin.css" screen;
-@import "menuAndCounters.css" screen;
+@import "linksNCalculations.css" screen;
 @import "menuLinks.css" screen;
 @import "minervini.css" screen;
 @import "linksToStorage.css" screen;
@@ -83,7 +83,6 @@ padding: 4.5rem ;
 }
 .modalBlock{
 	box-sizing: border-box;
-
 
     padding: 3.5rem;
 }
