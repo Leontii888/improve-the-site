@@ -2,15 +2,12 @@ footer
 {
   height: 20rem;
   background-color: #010120FF;
+  padding:  1.5rem;
 }
-.logo{
-  width: 3%;
-  
-}
-.logo img{
-  height: 2.4rem;
-}
+.footer__logo{
+    float: left;
 
+}
 .footer__info {
   margin: 1.5rem;
   float: left;

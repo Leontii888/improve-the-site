@@ -15,7 +15,7 @@ const fp = document.getElementById('calcandlinks-mainblock__first-price'),
 	// burgerBlock = document.querySelector('.nav-block'),
 	mcl = document.querySelector('.frontpage-block-modal-close'),
 	// burgercl = document.querySelector('.frontpage-block-modal-close'),
-	abp = document.querySelector('.ancors__about'),
+	abp = document.querySelector('.header__item-about'),
 	headerSrc = document.getElementById('header-search'),
 // minnervini block
 	count = document.getElementById('minnervini__count-main-graph'),
