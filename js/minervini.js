@@ -1,7 +1,7 @@
 //Миннервини расчеты  и графики
 //==============================================================
 //
-let chartDiv = document.getElementById('minnervini__canvas-chart');
+let chartDiv = document.getElementById('minervini__canvas-chart');
 // console.log(data);
 	let ctx = chartDiv.getContext('2d');
 	let chart =null;

@@ -1,0 +1,30 @@
+
+.minervini__container{
+width: 50% ; 
+margin:  0 auto;
+}
+
+#minervini__canvas-chart{
+    width:40rem;
+    margin: 0 2rem 0 2rem;
+    background-color: #aadaff;
+    opacity: 0.5
+}
+.minervini__block-controls{
+    width:40rem;
+    margin: 1rem 0 0 2rem
+}
+
+.minervini__block-controls input{
+    
+    padding-right: 2rem;
+    margin-right: 1rem;
+}
+
+.minervini__controls-main-graph{
+    margin: 2rem 1.5rem 1.5rem 0;
+}
+#minervini__count-main-graph, #minervini__count-sub-graph{
+    width:7rem;
+    cursor: pointer;
+}

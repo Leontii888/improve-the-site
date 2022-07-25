@@ -68,27 +68,29 @@
 
 	</header>
 	<section class="frontpage">
-			<div class="frontpage-block">
-				<div class="frontpage-block-modal">
-					<div class="frontpage-block-modal-close frontpage-block-modal-close__position">
+			<div class="frontpage__block">
+				<div class="frontpage__block-modal modalBlock">
+					<div class="frontpage__block-modal-close closeIcon">
 
 						<!--add folder img/closebutt-->
 						<img src="img/closebutton_white.png" alt="closebutton">
 					</div>
-					<h4 class=" title style--textalign-center">Idea</h4>
+					<h4 class="  style--textalign-center">Idea</h4>
 					<p>Идея была простой. В одном месте собрать всю необходимую для трейдинга, программирования информацию. Нужны ссылки- их есть у меня. Можно делать расчеты по торговой позиции. Вобщем, все под рукой.</p>
-					<h4 class=" title style--textalign-center">History</h4>
+					<h4 class="  style--textalign-center">History</h4>
 					<p>История создания весьма занятна. Несколько лет назад я увидел рекламу о доходных сайтах. Сайтах, которые можно купить и получать доход, похожий на доход от аренды квартиры. Начав разбираться с оценкой сайта при покупке, вдруг с удивлением обнаружил, что сайт можно научиться сделать своими руками. Для этого нужно всего то - изучить HTML, CSS, Javascript, Nodejs. Нашел видео, скачал. Несколько месяцев изучал все это самостоятельно. В итоге, в какой-то момент, я понял что могу уже чтото сделать сам, но ... почуствовал, что теряю к этому интерес. Я возвращаюсь сюда периодически. Жаль, но кажется без ментора научиться проблема. Мне по-прежнему это  интересно, но я трачу на пустяки слишком много времени.  </p>
-					<h4 class=" title style--textalign-center">Wherami</h4>
+					<h4 class="  style--textalign-center">Wherami</h4>
 					<p>Москва, сеть. 2019</p>
 				</div>
-				<h1>Needful things and lasyMe</h1>
-				<h3>All you need is code.</h3>
+				<h1 class="frontpage__title
+						   style--textalign-center">Needful things and lasyMe</h1>
+				<h3 class="frontpage__subtitle
+						   style--textalign-center">All you need is code.</h3>
 			</br>
-			<h5>(Little bit more often)</h5>
-			<!-- <button class="btn-clearVal btn-big">Смотреть</button> -->
+			<h5 class="frontpage__sub-subtitle
+					   style--textalign-center">(Little bit more often)</h5>
+			<!-- <button class="btn-clearVal btn--big">Смотреть</button> -->
 		</div>
-
 	</section> 
 
 	<section class="calcandlinks">
@@ -229,29 +231,29 @@
 		</div><!---->
 	</section> <!--calcandlinks-->
 
-	<section class="minnervini">
-		<div id="minnervini__container">
-			<h4 class=" title style--textalign-center"> Minnervini graphs</h4>
+	<section class="minervini">
+		<h4 class=" title style--textalign-center"> Minervini graphs</h4>
+		<div class="minervini__container">
 			
-			<canvas id="minnervini__canvas-chart" style="height: 2rem" ></canvas>
-			<div class ="minnervini__block-controls"> 
-				<div class ="minnervini__controls-main-graph">
-					<input id= "minnervini__put-data-main-graph"
+			<canvas id="minervini__canvas-chart" style="height: 2rem" ></canvas>
+			<div class ="minervini__block-controls"> 
+				<div class ="minervini__controls-main-graph">
+					<input id= "minervini__put-data-main-graph"
 					type="text"
 					placeholder="40,10,2"
 					title="Процент успешных сделок из 100, количество сделок 10, соотношение величин прибыли и убытка для депозита 100К">
 					
-					<input id="minnervini__count-main-graph"
+					<input id="minervini__count-main-graph"
 					type="button"
 					value="ShowAll">
 				</div>
-				<div class ="minnervini__controls-sub-graph">
-					<input id= "minnervini__put-data-sub-graph"
+				<div class ="minervini__controls-sub-graph">
+					<input id= "minervini__put-data-sub-graph"
 					type="text"
 					placeholder="interest,%"
 					title="Процент прибыли в каждой сделке">
 
-					<input id="minnervini__count-sub-graph"
+					<input id="minervini__count-sub-graph"
 					type="button"
 					value="ShowSingle">
 				</div>		
@@ -271,7 +273,7 @@
 				<p class="storage__note-title">Save links here</p>
 				<input class="storage__input"
 						type="text"
-						placeholder="type some..." >
+						placeholder="type some link..." >
 			</div>
 			
 			<div class="storage__but-list">
@@ -293,7 +295,7 @@
 					Save to storage</button>
 			</div>
 			<div class="storage__check">
-				<div class="storage__length-title">
+				<div class="storage__length-title flex style--textalign-center">
 					<span> so far in localStorage:</span>
 					<span class="storage__check-length"></span>
 				</div>
@@ -428,7 +430,7 @@
 <script  src="js/fillbase.js"></script>
 <script  src="js/bitcoinBlock.js"></script>
 <script  src="js/saveLinksLocStorage.js"></script>
-<script  src="js/minnervini.js"></script>
+<script  src="js/minervini.js"></script>
 <script  src="js/weatherBlock.js"></script>
 <script  src="js/onEventFoo.js"></script>
 </body>

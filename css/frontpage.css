@@ -2,29 +2,17 @@
 {
     position: relative;
     height: 100vh;
-    filter: blur(3px);
+    filter: blur(2px);
 }
-.frontpage h3
+.frontpage__subtitle
 {
     font-size: 2.5rem;
-    text-align: center;
 }
-.frontpage h5
+.frontpage__title
 {
-    margin: -2rem auto 1rem;
-
-    text-align: center;
+    font-size: 5rem;
 }
-.frontpage h1
-{
-    font-size: 7rem;
-    margin: 5rem;
-    padding: 7rem auto;
-
-    text-align: center;
-    /*letter-spacing: 0.1rem;*/
-}
-.frontpage-block
+.frontpage__block
 {
     width: 100%;
     height: 100vh;
@@ -32,17 +20,14 @@
     /*background-image: url(D:/programming/java/mySite/img/bg.jpg);*/
     background-image: url(D:/programming/java/mySite/img/flowerBlue_only.png);
     background-position: -44% -55%;
-    /*background-size: cover;*/
     background-repeat: no-repeat;
 }
 
-.frontpage-block button{
+.frontpage__block button{
 
     font-size: 1.2rem;
-    margin: 1rem 62rem;
-    padding: 1rem auto;
 }
-.frontpage-block button:hover
+.frontpage__block button:hover
 {
     font-size: 1.25rem;
 } 

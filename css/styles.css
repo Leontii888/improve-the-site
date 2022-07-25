@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Didact+Gothic');
 @import "header.css" screen;
-@import "mainWindow.css" screen;
+@import "frontpage.css" screen;
 @import "modalWindow.css" screen;
 @import "bitcoin.css" screen;
 @import "menuAndCounters.css" screen;
 @import "menuLinks.css" screen;
-@import "minnerviniCountChart.css" screen;
-@import "linkToStorage.css" screen;
+@import "minervini.css" screen;
+@import "linksToStorage.css" screen;
 @import "whatelse.css" screen;
 @import "weatherBlock.css" screen;
 @import "footer.css" screen;
@@ -26,6 +26,7 @@ section
 {
 height: 60rem;
 padding:1rem;
+margin-bottom: 2rem;
 }
 
 /*flexes------*/
@@ -64,6 +65,7 @@ color: #eee;
 clear: both;
 }
 .title{
+margin: 0;
 padding: 4.5rem ;
 }
 .logo
@@ -74,16 +76,18 @@ padding: 4.5rem ;
 .logo img{
   height: 2.4rem;
 }
-a
-{
-text-decoration: none;
-color: #444;
+.closeIcon{
+
+    font-size: 1rem;
+    cursor: pointer;
 }
-a:hover
-{
-color: black;
-border-bottom: 1px solid #35c;
+.modalBlock{
+	box-sizing: border-box;
+
+
+    padding: 3.5rem;
 }
+
 .button--styled
 {
 font-size: 1rem;
@@ -99,7 +103,16 @@ border: none;
 border-radius: .15rem;
 box-shadow: inset 0 -.3rem 0 #40382d;
 }
-
+a
+{
+text-decoration: none;
+color: #444;
+}
+a:hover
+{
+color: black;
+border-bottom: 1px solid #35c;
+}
 
 
 
@@ -117,10 +130,10 @@ color: #ff6a00;
 cursor: pointer;
 }
 
-
-.btn-big{
+/*
+.btn--big{
 padding: 1.6rem;
 color: #2953CCFF;
 
-}
+}*/
 
