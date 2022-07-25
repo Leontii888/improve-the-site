@@ -25,7 +25,7 @@
     margin: 0 0 0 2rem;
     /*padding: 0;*/
 /*}
-.storage__but-list button {
+.storage__but-list-item {
     margin: 0.3rem 1.6rem 1rem 0;
     width: 11rem;
     height: 2.3em;
@@ -34,7 +34,7 @@
     box-shadow: none;
     cursor: pointer;
 }*/
-/*.storage__but-list button:hover {
+/*.storage__but-list-item:hover {
     /*background: #ccc;
     transition: .4s ease-in-out;
     border: none;
@@ -61,11 +61,6 @@
 .storage__check{
      display: none;
      background: #f2f3f4;
-     /*box-sizing: border-box;*/
-
-    /*padding: 2rem;*/
-    /*width: 47rem;*/
-    /*margin: 2rem 2rem;*/
 }
 .storage__length-title{
 

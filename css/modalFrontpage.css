@@ -1,7 +1,11 @@
+.frontpage__block{
+    position: relative;
+
+}
+
 .frontpage__block-modal
 {
-    display: none;
-    position: absolute;
+    
     top: 0%;
     left: 59%;
 
@@ -19,7 +23,6 @@
 
 .frontpage__block-modal-close
 {
-    position: absolute;
     top: 1%;
     left: 91%;
 }

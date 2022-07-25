@@ -31,18 +31,23 @@
     text-align: left;
 }
 
-.calcandlinks-modalCalc{
-    position: absolute;
+.calcandlinks__modalCalc{
+    position: relative;
+    
     top:0;
     left: 0;
-    width: 12rem;
-    height: 8rem;
-    padding: 2rem;
-    text-align: center;
+
+    width: 19rem;
+    height: 12rem;
+
+    text-align: left;
     color: #222;
     background-color:  rgba(170,218,255,0.3); 
-    /*border: 1px solid black;*/
-    display: none;
+    padding: 2rem;
+}
+.calcandlinks__modalCalc-close{
+    top:0;
+    left: 0;
 }
 .tocount
 {

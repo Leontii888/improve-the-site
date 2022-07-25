@@ -4,7 +4,7 @@ const myBody = document.getElementsByTagName('body'),
 	sp = document.getElementById('calcandlinks-mainblock__second-price'),
 	losscount = document.getElementById('loss'),
 	averagePrice = document.getElementById('averagePrice'),
-	modalCalc = document.querySelector('.calcandlinks-modalCalc'),
+	// modalCalc = document.querySelector('.calcandlinks__modalCalc'),
 	
 	abp = document.querySelector('.header__item-about'),
 	headerSrc = document.getElementById('header-search'),
