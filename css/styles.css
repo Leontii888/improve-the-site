@@ -4,8 +4,8 @@
 @import "frontpage.css" screen;
 @import "modalFrontpage.css" screen;
 @import "bitcoin.css" screen;
-@import "linksNCalculations.css" screen;
-@import "menuLinks.css" screen;
+@import "calc.css" screen;
+@import "showcaseLinks.css" screen;
 @import "minervini.css" screen;
 @import "linksToStorage.css" screen;
 @import "newsblock.css" screen;

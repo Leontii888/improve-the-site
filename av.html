@@ -96,62 +96,71 @@
 		</div>
 	</section> 
 
-	<section class="calcandlinks">
-		<div class="calcandlinks-modalCalc"></div>
+	<section class="linksandcalc">
+		<div class="linksandcalc__modalCalc">
+			<p class="calc-data"></p>
+			<div class="closeIcon
+								linksandcalc__block-modal-close ">
 
-
+						<!-- change icon
+							add folder img/close
+						-->
+						<img src="img/close.png" alt="closebutton">
+					</div>
+		</div>
 
 			<a name="calc-ancor"></a>
 			<a name="links-ancor"></a>
+
 			<h4 class=" calcandlinks__title title style--textalign-center">Links and calculations</h4>
-			<div class="calcandlinks-mainblock">
-				<div class= "calcandlinks-mainblock__calc">
 
-					<div class="calcandlinks-mainblock__nums">
-						<label for="first-price">Price In</label>
+			<div class="linksandcalc__container-calc">
+				<div class= "linksandcalc__calc">
+
+					<div class="linksandcalc__nums">
+						<label for="data-first-price">Price In</label>
 						<input
 
-						id="calcandlinks-mainblock__first-price"
+						id="linksandcalc__data-first-price"
 						class="tocount"
 						type="text"
-						name ="first-price"
+						name ="data-first-price"
 						value="">
-						<label for="second-price">Price Out</label>
+						<label for="data-second-price">Price Out</label>
 						<input
-						id="calcandlinks-mainblock__second-price"
+						id="linksandcalc__data-second-price"
 						class="tocount"
 						type="text"
-						name="second-price"
+						name="data-second-price"
 						value="">
 						<label for="loss" >Loss, RUB.</label>
 						<input
-						id="loss"
+						id="linksandcalc__loss"
 						title="default =RUB2000, to count press Enter" name="loss"
 						placeholder="2000"
 						type="text">
-						<label for="tocount">Listing lots (1,2,...)</label>
+						<label for="makeCount">Listing lots (1,2,...)</label>
 						<input
-						id="averagePrice"
-						class="tocount"
-						name="tocount"
+						id="linksandcalc__averagePrice"
+						name="makeCount"
 						title="to count press Enter"
 						placeholder="1,2..."
 						type="text">
 					</div>
 			</div> 
-			<!-- calc-->
-			<div class="links-wrap">
-				<div class="bitcoin-panel
+<!-- calc-->
+			<div class="linksandcalc__container-bitcoin-showcase">
+				<div class="linksandcalc__bitcoin
 							flex flex--space-between
 							flex--align-top">
-					<div id="bitcoin-rate"></div>
-					<div id="bitcoin-mypose"></div>
-					<div id="bitcoin-btn" class="flex flex--align-center">
-						<button id="btn-count" class="fetch-currencies">Fetch rate</button>
+					<div id="linksandcalc__bitcoin-rate"></div>
+					<div id="linksandcalc__bitcoin-mypose"></div>
+					<div id="linksandcalc__bitcoin-btn" class="flex flex--align-center">
+						<button id="linksandcalc__bitcoin-batton" class="fetch-currencies">Fetch rate</button>
 					</div>
-					
-					
 				</div>
+<!-- bitcoin-->
+
 				<div class='links-block'>
 					<span>Choose good link to</span>
 					<div class ="links-block-nav">
@@ -233,7 +242,7 @@
 					</div>
 
 				</div> <!--links-->
-			</div><!--links-wrap-->
+			</div>
 		</div><!---->
 	</section> <!--calcandlinks-->
 
@@ -434,13 +443,13 @@
 	<a href="#top">upward&ensp;&#9650;<span></span></a><br>
 	<!-- 	<a href="#" onclick="this.innerHTML =  history.length+ ' items in your history' ; return false">View history.length</a> -->
 </div>
-<script  src="js/initialVar.js"></script>
-<script  src="js/mySite070422.js"></script>
-<script  src="js/fillbase.js"></script>
+<script  src="js/initVariablesBlock.js"></script>
+<script  src="js/baseJsBlock.js"></script>
+<script  src="js/stateBlock.js"></script>
 <script  src="js/bitcoinBlock.js"></script>
-<script  src="js/saveLinksLocStorage.js"></script>
-<script  src="js/minervini.js"></script>
+<script  src="js/putLinksToStorageBlock.js"></script>
+<script  src="js/minerviniBlock.js"></script>
 <script  src="js/weatherBlock.js"></script>
-<script  src="js/onEventFoo.js"></script>
+<script  src="js/onEventFooBlock.js"></script>
 </body>
 </html>

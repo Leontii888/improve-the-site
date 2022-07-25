@@ -1,17 +1,18 @@
 const myBody = document.getElementsByTagName('body'),
 
-	fp = document.getElementById('calcandlinks-mainblock__first-price'),
-	sp = document.getElementById('calcandlinks-mainblock__second-price'),
-	losscount = document.getElementById('loss'),
-	averagePrice = document.getElementById('averagePrice'),
-	// modalCalc = document.querySelector('.calcandlinks__modalCalc'),
+	fp = document.getElementById('linksandcalc__data-first-price'),
+	sp = document.getElementById('linksandcalc__data-second-price'),
+	calcData = document.querySelector('.calc-data'),
+	losscount = document.getElementById('linksandcalc__loss'),
+	averagePrice = document.getElementById('linksandcalc__averagePrice'),
+	modalCalc = document.querySelector('.linksandcalc__modalCalc'),
 	
 	abp = document.querySelector('.header__item-about'),
 	headerSrc = document.getElementById('header-search'),
 
-	btn = document.getElementById('btn-count'),
-	gr= document.getElementById('bitcoin-rate'), 
-	myPoseBitcoin= document.getElementById('bitcoin-mypose'),
+	btn = document.getElementById('bitcoin__btn-count'),
+	gr= document.getElementById('linksandcalc__bitcoin-rate'), 
+	myPoseBitcoin= document.getElementById('linksandcalc__bitcoin-mypose'),
 	 
 	topmenu = document.getElementsByClassName('topmenu'),
 	submenu = document.getElementsByClassName('submenu'),

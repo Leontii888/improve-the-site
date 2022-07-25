@@ -1,54 +1,46 @@
-.bitcoin-panel
+.linksandcalc__container-bitcoin-showcase {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    /*height: 7rem;*/
+    flex-basis: 85%;
+}
+.linksandcalc__container h3
 {
+    margin: 0;
+}
+
+
+.linksandcalc__bitcoin
+{
+    width: 100%;
     box-sizing: border-box;
     padding: 2rem;
-    margin-bottom: 1rem;
-    width: 95%;
+    width: 100%;
     height: 7rem;
+    float:right;
 
-    text-align: right;
     background-color: rgba(222,222,222, .2);
 }
 
-#bitcoin-rate
+#linksandcalc__bitcoin-rate
 {
-    flex-basis: 25%;
-    font-family: arial;
-    /*align-items: center;*/
+    flex-basis: 20%;
     margin:0 ;
     text-align: left;
-
-    letter-spacing: 5px;
 }
-#bitcoin-mypose{
-   flex-basis: 55%;
-    font-family: arial;
-    /*align-items: center;*/
+#linksandcalc__bitcoin-mypose{
+   flex-basis: 50%;
     margin:0 ;
     text-align: left;
-
-    letter-spacing: 5px;
 }
-#bitcoin-btn{
+#linksandcalc__bitcoin-btn{
     margin-left: 3rem; 
-    flex-basis: 15%;
+    flex-basis: 20%;
     justify-content: center;
 }
 
-#btn-count
+#linksandcalc__bitcoin-batton
 {
-    margin: 0;
-    /*background-color: #ff6a00ff;*/
+    /*margin: 0;
 }
-/*
-#btn-count:hover
-{
-    color: #decda5;
-    box-shadow: inset 0 -3.75em 0 #40382d, .125rem .225rem .388rem rgba(0,0,0,.5);
-}
-
-.custom
-{
-    cursor: url(https://html5book.ru/wp-content/uploads/2015/09/fox.png), pointer;
-}
-*/

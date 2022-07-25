@@ -31,7 +31,7 @@ function countOptimalLot(){
 			fee = (fp.value*2*lot/1000000*330).toFixed(1),
 			fond = (fp.value*lot/1000000).toFixed(3);	
 
-			modalCalc.innerHTML=`Искомый лот: ${lot}
+			calcData.innerHTML=`Искомый лот: ${lot}
 			Стоимость сделки: ${fond} млн.,
 			в том числе комиссия ${fee} рублей`;
 			console.log(`Лот ${lot}, стоимость  ${fond} млн
@@ -42,7 +42,7 @@ function countOptimalLot(){
 			let pts = (loss/(35000/fp.value)).toFixed(1);
 			console.log(pts)
 			let stopLOssPrice = (fp.value- pts)
-			modalCalc.innerHTML=`S/l: ${stopLOssPrice}</br>
+			calcData.innerHTML=`S/l: ${stopLOssPrice}</br>
 			t/p: ${(stopLOssPrice+pts*3)}</br>
 			купить ${(35000/fp.value).toFixed(0)}шт.</br>
 
@@ -53,12 +53,12 @@ function countOptimalLot(){
 		
 };
 function countAveragePrice(){
-		modalCalc.innerHTML=``;
+		calcData.innerHTML=``;
 		if(averagePrice.value){
 			const cleanArray   = averagePrice.value.split(',').filter(Boolean);
 			const quantity= cleanArray.length;
 					sum = cleanArray.map(Number).reduce((sum, el)=> sum+el,0);
-			modalCalc.innerHTML = `Средняя цена лота:${(sum/quantity).toFixed(1)}`;
+			calcData.innerHTML = `Средняя цена лота:${(sum/quantity).toFixed(1)}`;
 			modalCalc.style.display ='block';
 			console.log(`Средняя цена лота:${(sum/quantity).toFixed(1)}`);
 		} else {
