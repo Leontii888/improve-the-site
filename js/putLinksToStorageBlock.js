@@ -116,11 +116,11 @@ function warnModalAbsolutePosition(
 		};
 			return createdItem
 }
-storageContainer.addEventListener("click", closeWarn);
+storage.addEventListener("click", closeWarn);
 
 function closeWarn(){
 					if(isOpened){
-						storageContainer.removeChild(tempInfoDinamicCreatedEl.querylink)
+						storage.removeChild(tempInfoDinamicCreatedEl.querylink)
 						isOpened= false;
 						console.log("deleted!")
 					} else{
@@ -134,19 +134,21 @@ const saveIntoStorage = () => {
 	if(localStorage.getItem(`myLinks (${isRepeated})`)){
 		if(!isOpened){
 			warnModalAbsolutePosition("div",
-				storageContainer,
+				storage,
 				"0",
 				"0",
 				'warn',
 				"#000",
-				"575px",
-				"305px",
+				"100%",
+				"100%",
 				"50px",
 				0.7,
-				 `<div>WOW! YOU HAVE ALREADY PUT THE LINK!</div>
-				 <div>PLEASE, DO NOT DOUBLE INFO</div> 
-				 <div>PLEASE, CLEAR PANEL UP.</div> 
-				<div>LOCAL STORAGE UPLOAD IT!</div>`);
+				 `<div class="warn__list">
+				 <div class ="warn__item">WOW! YOU HAVE ALREADY PUT THE LINK!</div>
+				 <div class ="warn__item">LOCAL STORAGE UPLOAD IT!</div> 
+				 <div class ="warn__item">DO NOT DOUBLE INFORMATION.</div> 
+				<div class ="warn__item">PLEASE, <span>CLEAR PANEL</span> UP.</div>
+				</div>`);
 			setTimeout(()=> {
 				isOpened= true;
 				storageContainer.addEventListener("click", closeWarn)

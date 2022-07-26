@@ -93,3 +93,25 @@ padding:    2rem;
     left: 94%;
 
 }
+.warn{
+    padding: 0;
+    margin: 0;
+
+    
+}
+.warn__list{
+
+   display: flex;
+   flex-direction: column;
+    align-items: left; 
+    width: 45%;
+    margin: 20% auto;
+}
+.warn__item{
+font-size: 1.6rem;
+margin: 0 0 1rem 0
+}
+
+.warn__item span {
+    color: red;
+}
