@@ -110,36 +110,42 @@ color: #fff;
 }
 
 /*---card-icon---*/
+.cards{
+	display: flex;
+	justify-content: space-between;
+
+}
 .cards__item{
+	display: flex;
+	flex-direction: column;
 	box-sizing: border-box;
-	padding: 3rem 2rem;
+	padding:  2rem;
 
 	height: 40rem;
-	width: 31%;
+	width: 28%;
 
 	background: #f2f3f4;
-	
 }
 .cards__item *
 {
 	margin: 0;
 	margin-bottom: 2rem;
 }
-
+.cards__image{
+	text-align: center;
+	margin-bottom: 3rem;
+}
 .cards__image img{
 	width:6rem;
 }
 .cards__title{
-	height: 6rem;
-	
 	text-align: center;
+	margin-bottom: 1rem;
 }
-.cards__item > h2,h3{
-	text-align: center;
 
-}
 .cards__text{
-	height: 13rem;
+	height: 15rem
+	min-height: 13rem;
 	overflow: hidden;
 }
 /*---buttons---*/
