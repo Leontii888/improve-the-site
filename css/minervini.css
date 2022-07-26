@@ -25,19 +25,19 @@ margin:  0 auto;
     margin: 2rem 1.5rem 1.5rem 0;
 }
 #minervini__count-main-graph, #minervini__count-sub-graph{
-    width:7rem;
-    cursor: pointer;
+
+    /*cursor: pointer;*/
 }
 
 .minervini__put-main-button{
-
+   
 }
 .minervini__count-main-button{
-
+    width:9rem;
 }
 .minervini__put-subdata-button{
 
 }
 .minervini__count-subdata-button{
-    
+ width:9rem;
 }

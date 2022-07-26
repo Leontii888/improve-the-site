@@ -33,7 +33,7 @@ margin: 0 0 2rem 0;
 .storage__but-list{
     display: flex;
     align-items: center;
-    background-color: rgba(55,94,173,.5);
+    background-color: rgba(55,94,173,.2);
     width: 100%;
 
 }

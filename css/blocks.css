@@ -17,6 +17,9 @@ overflow: hidden;
 	margin: 0;
     width: 50%;
 }
+input{
+	padding: 2px 0 2px 1rem;
+}
 /*---nav-list---*/
 .nav-block{
 width:100%;
@@ -44,8 +47,9 @@ padding: 4.5rem ;
 .mybutton{
 	width: 6rem;
 	margin: 0 1rem 2rem 1rem;
-	padding:  2px;
+	padding: 3px;
 	cursor: pointer;
+	border:none;
 
     background-color: rgba(255, 106, 0, .4);
 }

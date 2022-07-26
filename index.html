@@ -109,6 +109,7 @@
 							class="tocount"
 							type="text"
 							name ="data-first-price"
+							title="type start price"
 							value="">
 						</div> 
 
@@ -119,6 +120,7 @@
 							class="trade__count"
 							type="text"
 							name="data-second-price"
+							title="type finish price"
 							value="">
 						</div> 
 						<div class="block-inputs__item trade__input">
@@ -154,7 +156,7 @@
 <!-- calc-->
 			<div class="trade__bitcoin">
 				<h5>Get bitcoin rate</h5>
-				<button class="  trade__bitcoin-item mybutton fetch-currencies">Fetch rate</button>
+				<button class="mybutton  trade__bitcoin-item  fetch-currencies">Fetch rate</button>
 				<div id="trade__bitcoin-rate" class="trade__bitcoin-item"></div>
 				<div id="trade__bitcoin-mypose" class="trade__bitcoin-item"></div>
 				<div id5rem="trade__bitcoin-btn" class="trade__bitcoin-item"></div>
@@ -269,7 +271,7 @@
 					title="Процент успешных сделок из 100, количество сделок 10, соотношение величин прибыли и убытка для депозита 100К">
 					
 					<input id="minervini__count-main-graph"
-					class="minervini__count-main-button" 
+					class=" mybutton minervini__count-main-button" 
 					type="button"
 					value="ShowAll">
 				</div>
@@ -281,7 +283,7 @@
 					title="Процент прибыли в каждой сделке">
 
 					<input id="minervini__count-sub-graph"
-					class="minervini__count-subdata-button" 
+					class=" mybutton minervini__count-subdata-button" 
 					type="button"
 					value="ShowSingle">
 				</div>		
@@ -306,19 +308,19 @@
 				
 				<div class="storage__but-list">
 					<button
-						class="storage__put-link
+						class="mybutton storage__put-link
 						storage__but-list-item">
 						Put link</button>
 					<button
-						class="storage__get-link
+						class="mybutton storage__get-link
 						storage__but-list-item">
 						Show base</button>
 					<button
-						class="storage__clear-input
+						class="mybutton storage__clear-input
 						storage__but-list-item">
 						Clear note</button>
 					<button
-						class="storage__save-to-storage
+						class="mybutton storage__save-to-storage
 						storage__but-list-item">
 						Save to storage</button>
 				</div>
@@ -412,7 +414,13 @@
 		<div class="mapsWeather__container">
 			<div class="mapsWeather__info">
 				<label>
-					Search city:<input type="text" id="mapsWeather__city" value="" placeholder = "Moscow"/>
+					Search city:<input type="text"
+					id="mapsWeather__city"
+					class="mapsWeather__city"
+					target="adsa"
+					value=""
+					title="type city"
+					placeholder = "Moscow"/>
 				</label>
 				<p class="mapsWeather__show">Weather in</p>
 				<div class="mapsWeather__conditions">

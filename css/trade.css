@@ -62,6 +62,7 @@ position: relative;
 	/*justify-content: center;*/
 }
 .trade__bitcoin-item{
+	  width:9rem;
 	margin: 0 0 2rem 0;
 	font-style: inherit;
 
