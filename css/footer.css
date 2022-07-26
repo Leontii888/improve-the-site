@@ -1,18 +1,23 @@
 footer
 {
   height: 20rem;
+  max-height: 20rem;
   background-color: #010120FF;
-  padding:  1.5rem;
+  padding:  2rem;
 }
 .footer__logo{
     float: left;
 
+    height: 100vh;
+    margin: 0;
+    /*padding: 1rem 0 0 1rem;*/
+
 }
 .footer__info {
-  margin: 1.5rem;
-  float: left;
+  margin: 0;
+  /*float: left;*/
   color: #ddd;
-  padding: 1rem;
+  padding:0;
 
 }
 
@@ -44,3 +49,18 @@ footer
   cursor: pointer;
 
 }
+
+.back
+{
+position: fixed;
+top: 88%;
+left: calc(100vw - 500px)/2);
+
+margin:2rem; 
+}
+
+.back a{
+color: #ff6a00;
+cursor: pointer;
+}
+
