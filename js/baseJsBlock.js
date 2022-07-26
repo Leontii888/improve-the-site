@@ -1,15 +1,5 @@
 
 
-	//find collections
-function srchCollClassBeginWith(classBeginWith){
-		let matched = new Array();
-		 [...document.getElementsByTagName("*")].forEach(el=> {
-				if( el.matches("[class^="+classBeginWith+"]")){
-				matched = [...matched,el]
-			};
-		})
-		return matched;
-};
 	//clean inputs
 function cleanInp(){
 		document.querySelectorAll('input').forEach(function(el,i){
@@ -69,8 +59,6 @@ function closeCalc(){
 		modalCalc.style.display ='none';
 		cleanInp()
 };
-//show 
-const  showsubMenu = srchCollClassBeginWith("sub-");
 
 for (var i=0; i< showsubMenu.length; i++){
 		showsubMenu[i].setAttribute('ind', i);
@@ -78,7 +66,7 @@ for (var i=0; i< showsubMenu.length; i++){
 			let pointed = this.getAttribute('ind');
 			// console.log(this.getAttribute('ind'));
 			e.target.style.color= '#C5A639FF';
-			links[pointed].classList.toggle('visible');
+			linkToShow[pointed].classList.toggle('visible');
 		})
 }
 		
