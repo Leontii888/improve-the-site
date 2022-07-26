@@ -1,0 +1,81 @@
+.trade {
+	background-color: rgb(170,218,255,0.5)
+	;
+}
+.trade__title {
+
+}
+
+
+.trade__container {
+	padding: 0 2rem 2rem 2rem;
+		padding: 0;
+
+		display: flex;
+}
+.trade__calc {
+
+	padding: 0 2rem;
+	border: 1px solid rgba(170,218,255,0.2);
+	width: 20%;
+	height:  41rem;
+	min-height:  41rem;
+}
+
+.trade__block-inputs {
+}
+.trade__input {
+}
+.tocount {
+}
+.trade__count {
+}
+.trade__modal-parent{
+position: relative;
+}
+.trade__modalCalc {
+    background-color:  rgba(170,218,255,0.7);
+
+	width: 18rem;
+	height: 15rem;
+	padding: 2rem;
+}
+.trade__calc-output {
+
+}
+
+.trade__block-modal-close {
+	top: 10%;
+	left: 82%;
+}
+.trade__bitcoin {
+		border: 1px solid rgba(170,218,255);
+
+	padding: 0 2rem 2rem 2rem;
+	width: 15%;
+	height: 41rem;
+	min-height: 41rem;
+	/*border: 1px solid blue;*/
+
+	display: flex;
+	flex-direction: column;
+	/*justify-content: center;*/
+}
+.trade__bitcoin-item{
+	margin: 0 0 2rem 0;
+	font-style: inherit;
+
+}
+
+}
+.fetch-currencies {
+}
+.trade__some{
+	border: 1px solid rgba(170,218,255,0.2);
+	padding: 0 2rem 2rem 2rem;
+
+	width: 50%;
+	height: 41rem;
+	min-height: 41rem;
+
+}

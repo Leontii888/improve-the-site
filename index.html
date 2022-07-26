@@ -53,11 +53,11 @@
 		<nav class="header__nav">
 			<ul class="header__list ">
 				<li class="header__item-about">About</li>
-				<li><a href="#calc-ancor">Calculate</a></li>
-				<li><a href="#links-ancor">my Links</a></li>
-				<li><a href="#storage">Keeper</a></li>
-				<li><a href="#contactsAncor">Contacts</a></li>
-				<li><a href="#newsblock-ancor">News</a></li>
+				<li><a href="#trade--ancor">Trade-nfo</a></li>
+				<li><a href="#showcase--ancor">my Links</a></li>
+				<li><a href="#storage--ancor">Keeper</a></li>
+				<li><a href="#contacts--ancor">Contacts</a></li>
+				<li><a href="#newsblock--ancor">News</a></li>
 				<li>
 					<a
 					target="_blank"
@@ -82,7 +82,7 @@
 						<!-- change icon
 							add folder img/close
 						-->
-						<img src="img/close.png" alt="closebutton">
+						<img src="img/w-cross-close2.png" alt="closebutton">
 					</div>
 				</div>
 				<h1 class="frontpage__title
@@ -92,161 +92,171 @@
 			</br>
 			<h5 class="frontpage__sub-subtitle
 					   style--textalign-center">(Little bit more often)</h5>
-			<!-- <button class="btn-clearVal btn--big">Смотреть</button> -->
 		</div>
 	</section> 
 
-	<section class="linksandcalc">
-		<div class="linksandcalc__modalCalc">
-			<p class="calc-data"></p>
-			<div class="closeIcon
-								linksandcalc__block-modal-close ">
+<section class="trade">
+	<a name="trade--ancor"></a>
+	<h4 class=" trade__title title style--textalign-center">Trader's helpful</h4>
 
-						<!-- change icon
-							add folder img/close
-						-->
-						<img src="img/close.png" alt="closebutton">
+		<div class="trade__container">
+			<div class= "trade__calc">
+					<h5>Get calc pose</h5>
+					<div class="block-inputs trade__block-inputs ">
+						<div class="block-inputs__item trade__input">
+							<label for="data-first-price">Price In</label>
+							<input
+							id="trade__data-first-price"
+							class="tocount"
+							type="text"
+							name ="data-first-price"
+							value="">
+						</div> 
+
+						<div class="block-inputs__item trade__input">
+							<label for="data-second-price">Price Out</label>
+							<input
+							id="trade__data-second-price"
+							class="trade__count"
+							type="text"
+							name="data-second-price"
+							value="">
+						</div> 
+						<div class="block-inputs__item trade__input">
+							<label for="loss" >Loss, RUB.</label>
+							<input
+							id="trade__loss"
+							title="default =RUB2000, to count press Enter" name="loss"
+							placeholder="2000"
+							type="text">
+						</div>
+						<div class="block-inputs__item trade__input">
+							<label for="makeCount">Listing lots (1,2,...)</label>
+							<input
+							id="trade__averagePrice"
+							name="makeCount"
+							title="to count press Enter"
+							placeholder="1,2..."
+							type="text">
+						</div>
 					</div>
-		</div>
-
-			<a name="calc-ancor"></a>
-			<a name="links-ancor"></a>
-
-			<h4 class=" calcandlinks__title title style--textalign-center">Links and calculations</h4>
-
-			<div class="linksandcalc__container-calc">
-				<div class= "linksandcalc__calc">
-
-					<div class="linksandcalc__nums">
-						<label for="data-first-price">Price In</label>
-						<input
-
-						id="linksandcalc__data-first-price"
-						class="tocount"
-						type="text"
-						name ="data-first-price"
-						value="">
-						<label for="data-second-price">Price Out</label>
-						<input
-						id="linksandcalc__data-second-price"
-						class="tocount"
-						type="text"
-						name="data-second-price"
-						value="">
-						<label for="loss" >Loss, RUB.</label>
-						<input
-						id="linksandcalc__loss"
-						title="default =RUB2000, to count press Enter" name="loss"
-						placeholder="2000"
-						type="text">
-						<label for="makeCount">Listing lots (1,2,...)</label>
-						<input
-						id="linksandcalc__averagePrice"
-						name="makeCount"
-						title="to count press Enter"
-						placeholder="1,2..."
-						type="text">
+					<div class="trade__modal-parent">
+							<div class="modalBlock trade__modalCalc ">
+							<!-- <p class="calc-data"></p> -->
+								<p class="trade__calc-output"></p>
+								<div class="closeIcon
+											trade__block-modal-close ">
+									<!-- change icon add folder img/close-->
+									<img src="img/w-cross-close.png" alt="closebut">
+								</div>
+							</div> 
 					</div>
-			</div> 
-<!-- calc-->
-			<div class="linksandcalc__container-bitcoin-showcase">
-				<div class="linksandcalc__bitcoin
-							flex flex--space-between
-							flex--align-top">
-					<div id="linksandcalc__bitcoin-rate"></div>
-					<div id="linksandcalc__bitcoin-mypose"></div>
-					<div id="linksandcalc__bitcoin-btn" class="flex flex--align-center">
-						<button id="linksandcalc__bitcoin-batton" class="fetch-currencies">Fetch rate</button>
-					</div>
-				</div>
-<!-- bitcoin-->
-
-				<div class='links-block'>
-					<span>Choose good link to</span>
-					<div class ="links-block-nav">
-						<ul class="topmenu">
-							<li class="down">
-								<ul class="submenu">
-									<li class="sub-common">common</li>
-								</ul>
-							common</li>	 
-							<li class="down">
-								<ul class="submenu">
-									<li class="sub-css">cSS</li>
-									<li class="sub-js">javaScript</li>
-									<li class="sub-html">html</li>
-									<li class="sub-design">design</li>
-								</ul>	
-							frontEnd</li>
-							<li class="down">
-								<ul class="submenu">
-									<li class="sub-pows">powerShell</li>
-								</ul>	
-							powerShell</li>
-							<li class="down">
-								<ul class="submenu">
-									<li class="sub-trading">trading</li>
-								</ul>	
-							trading</li>
-							<li class="down">
-								<ul class="submenu">
-									<li class="sub-youtube">youTubeGuru</li>
-								</ul>	
-							youTube</li>
-							<li class="down">
-								<ul class="submenu">
-									<li class="sub-youtube">TendersRosAtom</li>
-								</ul>	
-							TendersRosAtom</li>
-						</ul>
-					</div>	<!--links-block-nav-->
-				</div><!--links-block-->
-
-				
-				
-				<div id="links">
-					<div id="links--common" class="links visible"><span>commonLinks</span>
-						<br/><hr>
-					</div>
-
-					<div id="links--css" class="links"> <span>Css</span>
-						<br/><hr>
-					</div>
-
-					<div id="links--javaScript" class="links"><span>JavaScript</span>
-						<br/><hr>
-					</div>
-
-					<div id="links--html" class="links"><span>Html</span>
-						<br/><hr>
-					</div>
-
-					<div id="links--design" class="links"><span>Design</span>
-						<br/><hr>
-					</div>
-
-					<div id="links--PowS" class="links"><span>PowerShell</span>
-						<br/><hr>
-					</div>
-
-					<div id = "links--trading" class="links visible"><span>Trading</span>
-						<br/><hr>
-					</div>
-
-					<div id="links--youtube" class="links"> <span>YouTubeGurus</span>
-						<br/><hr>
-
-					</div>
-					<div id="links--tenders" class="links "><span>TendersRosAtom</span>
-						<br/><hr>
-					</div>
-
-				</div> <!--links-->
 			</div>
-		</div><!---->
-	</section> <!--calcandlinks-->
+<!-- calc-->
+			<div class="trade__bitcoin">
+				<h5>Get bitcoin rate</h5>
+				<button class="  trade__bitcoin-item mybutton fetch-currencies">Fetch rate</button>
+				<div id="trade__bitcoin-rate" class="trade__bitcoin-item"></div>
+				<div id="trade__bitcoin-mypose" class="trade__bitcoin-item"></div>
+				<div id5rem="trade__bitcoin-btn" class="trade__bitcoin-item"></div>
+			</div>
+	<!-- bitcoin-->
+			<div class="trade__some">
+				<h5>Get some rates</h5>
+				
+			</div>
+	</div>
+</section>
+<section class="showcase">
+	<a name="showcase--ancor"></a>
 
-	<section class="minervini">
+	<h4 class=" trade__title title style--textalign-center">Showcase of links</h4>
+	<div class=" container showcase__container">
+		<div class='showcase__block-outer'>
+			<h5>Choose good link to</h5>
+			<div class ="showcase__block-nav">
+				<ul class="showcase__topmenu">
+					<li class="showcase__down">
+						<ul class="showcase__down-submenu">
+							<li class="showcase__down-el showcase__sub-common ">common</li>
+						</ul>
+					common</li>	 
+					<li class="showcase__down">
+						<ul class="showcase__submenu">
+							<li class=" showcase__down-el showcase__sub-css">cSS</li>
+							<li class=" showcase__down-el showcase__sub-js">javaScript</li>
+							<li class=" showcase__down-el showcase__sub-html">html</li>
+							<li class=" showcase__down-el showcase__sub-design">design</li>
+						</ul>	
+					frontEnd</li>
+					<li class="showcase__down">
+						<ul class="showcase__submenu">
+							<li class=" showcase__down-el showcase__sub-pows">powerShell</li>
+						</ul>	
+					powerShell</li>
+					<li class="showcase__down">
+						<ul class="showcase__submenu">
+							<li class=" showcase__down-el showcase__sub-trading">trading</li>
+						</ul>	
+					trading</li>
+					<li class="showcase__down">
+						<ul class="showcase__submenu">
+							<li class=" showcase__down-el showcase__sub-youtube">youTubeGuru</li>
+						</ul>	
+					youTube</li>
+					<li class="showcase__down">
+						<ul class="showcase__submenu">
+							<li class=" showcase__down-el showcase__sub-youtube">TendersRosAtom</li>
+						</ul>	
+					TendersRosAtom</li>
+				</ul>
+			</div>	<!--links-block-nav-->
+		</div>
+		<!--links-block-->
+		
+		<div id="showcase__links">
+			<div id="showcase__link-common" class="links visible"><span>commonLinks</span>
+				<br/><hr>
+			</div>
+
+			<div id="showcase__link-trading" class="links"> <span>Css</span>
+				<br/><hr>
+			</div>
+
+			<div id="showcase__link-javaScript" class="links"><span>JavaScript</span>
+				<br/><hr>
+			</div>
+
+			<div id="showcase__link-html" class="links"><span>Html</span>
+				<br/><hr>
+			</div>
+
+			<div id="showcase__link-design" class="links"><span>Design</span>
+				<br/><hr>
+			</div>
+
+			<div id="showcase__link-PowS" class="links"><span>PowerShell</span>
+				<br/><hr>
+			</div>
+
+			<div id = "showcase__link-trading" class="links "><span>Trading</span>
+				<br/><hr>
+			</div>
+
+			<div id="showcase__link-youtube" class="links"> <span>YouTubeGurus</span>
+				<br/><hr>
+
+			</div>
+			<div id="showcase__link-tenders" class="links "><span>TendersRosAtom</span>
+				<br/><hr>
+			</div>
+		</div> <!--showcase__links-->
+
+	</div>
+		
+</section> <!--showcase-->
+
+<section class="minervini">
 		<h4 class=" title style--textalign-center"> Minervini graphs</h4>
 		<div class="minervini__container">
 			
@@ -279,7 +289,7 @@
 
 
 	<section class="storage">
-		<a name="storage"></a>
+		<a name="storage--ancor"></a>
 		<h4 class=" title style--textalign-center">Keep links</h4>
 		<div  id="storage__container" class="storage__container">
 			
@@ -320,7 +330,7 @@
 					</div>
 					<div class="closeIcon
 								storage__close">
-						<img src="img/close.png" alt="closebutton">
+						<img src="img/w-cross-close.png" alt="closebutton">
 					</div>
 					</div>
 				</div>
@@ -331,7 +341,7 @@
 
 	</section > <!--main-books-->
 	<section class="main-contacts">
-		<a name="contactsAncor"></a>
+		<a name="contacts--ancor"></a>
 		<h4 class="title style--textalign-center">Contact me</h4>
 	</section> 
 	<!--main-contacts-->
@@ -339,7 +349,7 @@
 
 
 	<section class="newsblock">
-		<a name="newsblock-ancor"></a>
+		<a name="newsblock--ancor"></a>
 		<h4 class=" title style--textalign-center">What else?</h4>
 		<div class="newsblock__row  cards flex flex--space-between">
 			<div class="cards__item flex flex--dir-col">

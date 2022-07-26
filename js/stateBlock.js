@@ -1,17 +1,3 @@
-//именуем целевые блоки
-const blockCommonBase = document.getElementById('links--common');
-const blockTradingBase = document.getElementById('links--trading');
-const blockCssBase = document.getElementById('links--css');
-const blockPowShBase = document.getElementById('links--PowS');
-const blockYoutubeBase = document.getElementById('links--youtube');
-const blockDesignBase = document.getElementById('links--design');
-const blockHtmlBase = document.getElementById('links--html');
-const blockJavascriptBase = document.getElementById('links--javaScript');
-const blocktendersBase = document.getElementById('links--tenders');
-
-
-
-
 const commonLinks = [
 	{address: 'https://hangouts.google.com/?hl=ru"', title:'hangOuts'},
 	{address: 'https://cloud.mail.ru/home/js/?from-page=home&from=logout"', title:'Mail.ru cloud'},

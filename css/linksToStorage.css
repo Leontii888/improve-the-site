@@ -1,6 +1,6 @@
 .storage
 {
-    background-color: #35c;
+    background-color: rgba(51, 85, 204, .4);;
     color: #ccc;
 }
 .storage__container

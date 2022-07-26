@@ -9,50 +9,34 @@ background-image: url(D:/programming/java/mySite/img/techno-bg-op1.png) ;
 }
 section
 {
-height: 60rem;
+	height: 60rem;
+max-height: 60rem;
+overflow: hidden;
+}
+.container{
+	margin: 0;
+    width: 50%;
 }
 
 
-/*flexes------*/
-.flex{
-display: flex;
-flex-wrap: wrap;
-}
-.flex--nowrap{
-flex-wrap: nowrap;
-}
-.flex--align-center{
-align-items: center;
-}
-.flex--align-top{
-align-items: top;
-}
-.flex--space-between
-{
-justify-content: space-between;
-    
-}
-.flex--dir-col{
-flex-direction: column;
-}
-
-/*------*/
-.style--textalign-center{
-text-align: center;
-}
-
-.style--grey{
-color: #eee;
-}
-.clear
-{
-clear: both;
-}
+/*---title---*/
 .title{
 margin: 0;
 padding: 4.5rem ;
 }
+/*---mybutton---*/
+.mybutton{
+	width: 6rem;
+	margin: 0 1rem 2rem 1rem;
+	padding:  3px;
+	border-radius: 2px;
+}
+.mybutton:hover{
+background-color: grey;
+color: #fff;
+}
 
+/*---logo---*/
 
 .logo
 {
@@ -63,26 +47,46 @@ padding: 4.5rem ;
   height: 2.4rem;
 }
 
-
+/*---modal---*/
 .modalBlock{
 	display: none;
+	background-color: #ff3;
     position: absolute;
     z-index: 20;
     
 	box-sizing: border-box;
 
-    padding: 3.5rem;
+    /*padding: 3.5rem;*/
 }
 
-
+/*---close-icon---*/
 .closeIcon{
 	position: absolute;
 
     font-size: 1rem;
     cursor: pointer;
 }
-/* cards*/
+.closeIcon img{
+	width: 1.5rem;
+}
+/*---block-inputs---*/
+.block-inputs {box-sizing: border-box;
 
+	display: flex;
+	flex-direction: column;
+
+	width: 15rem;
+
+}
+.block-inputs__item {
+	margin-bottom: 1rem; 
+	/*padding: 0 1rem;*/
+	align-items: center;
+
+	height: 4rem;
+}
+
+/*---card-icon---*/
 .cards__item{
 	box-sizing: border-box;
 	padding: 3rem 2rem;
@@ -115,8 +119,8 @@ padding: 4.5rem ;
 	height: 13rem;
 	overflow: hidden;
 }
-
-.button--styled
+/*---buttons---*/
+.buttons--styled
 {
 font-size: 1rem;
 
@@ -131,6 +135,8 @@ border: none;
 border-radius: .15rem;
 box-shadow: inset 0 -.3rem 0 #40382d;
 }
+
+/*---links---*/
 a
 {
 text-decoration: none;
@@ -140,4 +146,42 @@ a:hover
 {
 color: black;
 border-bottom: 1px solid #35c;
+}
+/*flexes------*/
+.flex{
+display: flex;
+flex-wrap: wrap;
+}
+.flex--nowrap{
+flex-wrap: nowrap;
+}
+.flex--align-center{
+align-items: center;
+}
+.flex--align-top{
+align-items: top;
+}
+.flex--space-between
+{
+justify-content: space-between;
+    
+}
+.flex--dir-col{
+flex-direction: column;
+}
+
+
+
+
+/*---styles---*/
+.style--textalign-center{
+text-align: center;
+}
+
+.style--grey{
+color: #eee;
+}
+.clear
+{
+clear: both;
 }

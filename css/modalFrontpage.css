@@ -1,5 +1,6 @@
 .frontpage__block{
     position: relative;
+    padding:0;
 
 }
 
@@ -14,15 +15,17 @@
 
     width: 40rem;
     height: 100vh;
+    margin: 0;
+    padding: 3.5rem;
 
     overflow: scroll;
 }
 .frontpage__block-modal *{
-    margin: 1rem 0 1rem 0; 
+    margin: 0 0 2rem 0; 
 }
 
 .frontpage__block-modal-close
 {
-    top: 1%;
+    top: 8%;
     left: 91%;
 }

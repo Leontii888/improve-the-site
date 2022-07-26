@@ -3,9 +3,13 @@
 @import "header.css" screen;
 @import "frontpage.css" screen;
 @import "modalFrontpage.css" screen;
-@import "bitcoin.css" screen;
-@import "calc.css" screen;
-@import "showcaseLinks.css" screen;
+/*@import "bitcoin.css" screen;*/
+/*@import "calc.css" screen;*/
+/*@import "showcaseLinks.css" screen;*/
+/*@import "calcbitcoinShowcase.css" screen;*/
+
+@import "trade.css" screen;
+@import "showcase.css" screen;
 @import "minervini.css" screen;
 @import "linksToStorage.css" screen;
 @import "newsblock.css" screen;
