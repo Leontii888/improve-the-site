@@ -7,7 +7,7 @@
 .frontpage__block-modal
 {
     
-    top: 0%;
+    top: 0px;
     left: 59%;
 
     color: #ccc;
@@ -26,6 +26,6 @@
 
 .frontpage__block-modal-close
 {
-    top: 8%;
+    top: 5%;
     left: 91%;
 }

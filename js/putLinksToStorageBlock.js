@@ -157,7 +157,7 @@ const saveIntoStorage = () => {
 		localStorage.setItem(`myLinks (${index})`, JSON.stringify(arrayBaseLinks));
 		const data = JSON.stringify(localStorage.getItem(`myLinks (${index})`));
 		wholeListbox__Text.innerHTML = `<span>${data}</span>`;
-		storageLength.innerHTML = `<span style={ "margin:0 2rem"}>${localStorage.length}</span>`;
+		storageLength.innerHTML = `<span>${localStorage.length}</span>`;
 		isRepeated = index;
 		}
 	

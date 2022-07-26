@@ -32,16 +32,17 @@ footer
   margin-bottom: 0.8rem;
 }
 .footer__info a:hover{
-  color: #3e66ae;
+  color: #F67908;
 }
 
 .footer__socials {
+  margin: 0;
   padding:  0 1.5rem 0 0;
 }
 
-.footer__socials li
+.footer__item
 {
-    font-size: .9rem;
+  font-size: .9rem;
 
   margin: 0;
   display: inline-block;

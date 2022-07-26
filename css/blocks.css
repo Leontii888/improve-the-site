@@ -17,6 +17,22 @@ overflow: hidden;
 	margin: 0;
     width: 50%;
 }
+/*---nav-list---*/
+.nav-block{
+width:100%;
+}
+.nav-block__list{
+
+}
+.nav-block__item{
+    font-size: 1rem;
+
+    display: inline-block;
+
+    /*padding: .4rem 1rem;*/
+
+    cursor: pointer;
+}
 
 
 /*---title---*/

@@ -32,7 +32,8 @@
 
 
 .header__search{
-    color: #ccc;
+    color: #999;
+    background-color: #f0f0f0;
     border-style: none;
     margin: auto 1rem;
     padding: 0.5rem;
@@ -48,17 +49,17 @@
     padding: 0.45rem;
 
 }
+.header__nav-block{
 
-.header__nav
-{
      width:70%;
 }
+
 .header__list{
     position: relative;
     float: right;
 }
 
-.header__list li{
+.header__item{
     font-size: 1.2rem;
 
     display: inline-block;

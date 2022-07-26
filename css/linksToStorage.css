@@ -1,57 +1,44 @@
 .storage
 {
-    background-color: rgba(51, 85, 204, .4);;
+    background-color: rgba(51, 85, 204, .4);
     color: #ccc;
+}
+.storage__title{
+color: #444
 }
 .storage__container
 {
     margin: 0 auto;
-    width: 50%;
+    width: 60%;
+    padding: 0 2rem;
+    /*border: 1px solid blue;*/
+}
+.storage__container *
+{
+margin: 0 0 2rem 0;
 }
 .storage__note{
-    width: 100%;
-    background-color: red;
+    width: 50%;
+    /*background-color:#e2ea93;*/
+    color: #444;
+
 
 }
 .storage__input{
-    /*width: 100%;*/
+    width: 100%;
+    margin: 0;
 }
 
 
-/* buttons styles*/
-
-/*.storage__but-list  {
-    width: 55rem;
-    margin: 0 0 0 2rem;
-    /*padding: 0;*/
-/*}
-.storage__but-list-item {
-    margin: 0.3rem 1.6rem 1rem 0;
-    width: 11rem;
-    height: 2.3em;
-    font-size: 1em;
-    padding: 0.1em;
-    box-shadow: none;
-    cursor: pointer;
-}*/
-/*.storage__but-list-item:hover {
-    /*background: #ccc;
-    transition: .4s ease-in-out;
-    border: none;
-    border-radius: .15rem;
-    box-shadow: inset 0 -0.3rem 0 #40382d;
-    color: #decda5;
-    box-shadow: inset 0 -3.75em 0 #40382d, .125rem .225rem .388rem rgba(0,0,0,.5);
-}
-*/
 .storage__but-list{
     display: flex;
-    background-color: blue;
-    /*padding: 0 2rem;*/
-    /*width: 47rem;*/
+    align-items: center;
+    background-color: rgba(55,94,173,.5);
     width: 100%;
+
 }
 .storage__but-list-item{
+            margin: 0;
 
     margin-right: 2.5rem;
     width: 9rem;
@@ -66,21 +53,28 @@
 
     height: 3rem;
     background: #f2f3f4;
+    color: #444;
 
+
+}
+.storage__length-title span{
+margin: 2rem 1rem 0 2rem;
 }
 .storage__length-title span {
     margin-left: 1rem;
+
 }
 .storage__info-box{
     background:#f2f3f4;
     width: 100%;
     height: 20rem; 
-
+    
     position: relative;
+   
 
 }
 
-.storage__text{
+.storage__showroom{
    overflow: hidden;
 
     width: 100%;
@@ -90,9 +84,12 @@
     color: black;
 
 }
+.storage__showroom-note{
+padding:    2rem;
+}
 .storage__close {
     position: absolute;
-    top: 0;
-    left: 43rem;
+    top: -15%;
+    left: 94%;
 
 }

@@ -50,18 +50,17 @@
 			target='_blank'
 			class ='header__button'>Go</button>
 		</form>
-		<nav class="header__nav">
-			<ul class="header__list ">
-				<li class="header__item-about">About</li>
-				<li><a href="#trade--ancor">Trade-nfo</a></li>
-				<li><a href="#showcase--ancor">my Links</a></li>
-				<li><a href="#storage--ancor">Keeper</a></li>
-				<li><a href="#contacts--ancor">Contacts</a></li>
-				<li><a href="#newsblock--ancor">News</a></li>
-				<li>
-					<a
-					target="_blank"
-					href="https://www.windy.com/ru/-%D0%94%D0%BE%D0%B6%D0%B4%D1%8C-%D0%B3%D1%80%D0%BE%D0%B7%D0%B0-rain?rain,55.738,37.845,14,m:fd3ahei">MapsWeather</a>
+		<nav class="nav-block header__nav-block">
+			<ul class="nav-block__list header__list ">
+				<li class="nav-block__item header__item header__item-about">About</li>
+				<li class="nav-block__item header__item"><a href="#trade--ancor">Trade-nfo</a></li>
+				<li class="nav-block__item header__item"><a href="#showcase--ancor">my Links</a></li>
+				<li class="nav-block__item header__item"><a href="#storage--ancor">Keeper</a></li>
+				<li class="nav-block__item header__item"><a href="#contacts--ancor">Contacts</a></li>
+				<li class="nav-block__item header__item"><a href="#newsblock--ancor">News</a></li>
+				<li class="nav-block__item header__item"><a
+										target="_blank"
+										href="https://www.windy.com/ru/-%D0%94%D0%BE%D0%B6%D0%B4%D1%8C-%D0%B3%D1%80%D0%BE%D0%B7%D0%B0-rain?rain,55.738,37.845,14,m:fd3ahei">MapsWeather</a>
 				</li>
 			</ul>
 		</nav>
@@ -288,58 +287,55 @@
 	</section>
 
 
-	<section class="storage">
+<section class="storage">
 		<a name="storage--ancor"></a>
-		<h4 class=" title style--textalign-center">Keep links</h4>
+		<h4 class=" title  storage__title style--textalign-center">Keep links</h4>
 		<div  id="storage__container" class="storage__container">
 			
-		<!--сохранение ссылок в сторедже-->
-			<div class="storage__note">
-				<p class="storage__note-title">Save links here</p>
-				<input class="storage__input"
-						type="text"
-						placeholder="type some link..." >
-			</div>
-			
-			<div class="storage__but-list">
-				<button
-					class="storage__put-link
-					storage__but-list-item">
-					Put link</button>
-				<button
-					class="storage__get-link
-					storage__but-list-item">
-					Show base</button>
-				<button
-					class="storage__clear-input
-					storage__but-list-item">
-					Clear note</button>
-				<button
-					class="storage__save-to-storage
-					storage__but-list-item">
-					Save to storage</button>
-			</div>
-			<div class="storage__check">
-				<div class="storage__length-title flex style--textalign-center">
-					<span> so far in localStorage:</span>
-					<span class="storage__check-length"></span>
+			<!--сохранение ссылок в сторедже-->
+				<div class="storage__note">
+					<h5 class="storage__note-title">Save links here</h5>
+					<input class="storage__input"
+							type="text"
+							placeholder="type some link..." >
 				</div>
-				<div class="storage__info-box
-				 			">
-					<div class="storage__text">
+				
+				<div class="storage__but-list">
+					<button
+						class="storage__put-link
+						storage__but-list-item">
+						Put link</button>
+					<button
+						class="storage__get-link
+						storage__but-list-item">
+						Show base</button>
+					<button
+						class="storage__clear-input
+						storage__but-list-item">
+						Clear note</button>
+					<button
+						class="storage__save-to-storage
+						storage__but-list-item">
+						Save to storage</button>
+				</div>
+				<div class="storage__check">
+					<div class="storage__length-title flex style--textalign-center">
+						<span> so far in localStorage:</span>
+						<span class="storage__check-length"></span>
 					</div>
-					<div class="closeIcon
-								storage__close">
-						<img src="img/w-cross-close.png" alt="closebutton">
-					</div>
+					<div class="storage__info-box">
+						<div class="storage__showroom">
+							<p class="storage__showroom-note"></p>
+						</div>
+						<div class="closeIcon
+									storage__close">
+							<img src="img/w-cross-close.png" alt="closebutton">
+						</div>
 					</div>
 				</div>
-			</div>
 		</div>
-		
+</section > <!--main-books-->
 
-
-	</section > <!--main-books-->
 	<section class="main-contacts">
 		<a name="contacts--ancor"></a>
 		<h4 class="title style--textalign-center">Contact me</h4>
@@ -428,7 +424,7 @@
 
 	</section>
 <footer>
-	<div class="footer__logo logo">
+	<div class="logo footer__logo ">
 		<img src="img/earthWhite.png" alt="footer-logo" class="logo-picture ">
 	</div>
 	<div class="footer__info">
@@ -438,15 +434,28 @@
 			<p><a href="#">Privacy policy</a></p>
 			<p>My post&ensp;&#9993;: <a href="mailto:comm2011@yandex.ru">&ensp; comm2011@yandex.ru</a></p>
 		</div>
-		<ul class="footer__socials">
-			<li><a href="https://twitter.com/8thpiper" target="blank">twitter</a></li>
-			<li><a href="https://www.pinterest.ru/news_hub/4940064254991542922/" target="blank">pinterest</a></li>
-			<li><a href="https://www.facebook.com/nrykalin" target="blank">facebook</a></li>
-			<li><a href="https://github.com/Leontii888?tab=repositories" target="blank">gitHub</a></li>
-			<li><a href="https://www.codewars.com/kata/stop-the-zombie-apocalypse/train/javascript" target="blank">CodeWars</a></li>
-			<li><a href="https://vk.com/amguema" target="blank">vk</a></li>
-			<li><a href="https://www.youtube.com/channel/UCWR-uSfGiCFGqahN27k-6AQ" target="blank">youTube</a></li>
-		</ul>
+		<nav class="nav-block footer__socials">
+			<ul class="nav-block__list footer__list ">
+				<li class="nav-block__item footer__item"><a  target="_blank" href="https://twitter.com/8thpiper">Twitter</li>
+				<li class="nav-block__item footer__item"><a  target="_blank" href="https://www.facebook.com/nrykalin">Facebook</a></li>
+				<li class="nav-block__item footer__item"><a  target="_blank" href="https://www.pinterest.ru/news_hub/4940064254991542922/">Pinterest</a></li>
+				<li class="nav-block__item footer__item"><a  target="_blank" href="https://github.com/Leontii888?tab=repositories">GitHub</a></li>
+				<li class="nav-block__item footer__item"><a  target="_blank" href="https://www.codewars.com/kata/stop-the-zombie-apocalypse/train/javascript">CodeWars</a></li>
+				<li class="nav-block__item footer__item"><a  target="_blank" href="https://vk.com/amguema">Vk</a></li>
+				<li class="nav-block__item footer__item"><a	target="_blank"	href="https://www.youtube.com/channel/UCWR-uSfGiCFGqahN27k-6AQ">YouTube</a>
+				</li>
+			</ul>
+		</nav>
+
+			<!-- <ul class="footer__socials">
+				<li><a href="https://twitter.com/8thpiper" target="blank">twitter</a></li>
+				<li><a href="https://www.pinterest.ru/news_hub/4940064254991542922/" target="blank">pinterest</a></li>
+				<li><a href="https://www.facebook.com/nrykalin" target="blank">facebook</a></li>
+				<li><a href="https://github.com/Leontii888?tab=repositories" target="blank">gitHub</a></li>
+				<li><a href="https://www.codewars.com/kata/stop-the-zombie-apocalypse/train/javascript" target="blank">CodeWars</a></li>
+				<li><a href="https://vk.com/amguema" target="blank">vk</a></li>
+				<li><a href="https://www.youtube.com/channel/UCWR-uSfGiCFGqahN27k-6AQ" target="blank">youTube</a></li>
+			</ul> -->
 	</div>
 </footer>
 <div class="back">
