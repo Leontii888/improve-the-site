@@ -1,8 +1,11 @@
 .frontpage
 {
- 
+     /*background: url("img/mycover1.jpg"),url("img/flowerBlue_only.png")0 0 /30% no-repeat;*/
     height: 100vh;
     filter: blur(2px);
+         /*contain ,*/
+     background: url(d:/programming/java/average/img/mycover1.jpg),
+     url(D:/programming/java/mySite/img/flowerBlue_only.png) 0 110%/ 30% no-repeat;
 }
 
 .frontpage__block
@@ -11,11 +14,7 @@
 
     width: 100%;
     height: 100vh;
-    /*background-image: url(d:/programming/java/average/img/mycover1.jpg);*/
-    /*background-image: url(D:/programming/java/mySite/img/bg.jpg);*/
-    background-image: url(D:/programming/java/mySite/img/flowerBlue_only.png);
-    background-position: -98% -10%;
-    background-repeat: no-repeat;
+   
 }
 .frontpage__title
 {

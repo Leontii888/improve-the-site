@@ -64,13 +64,16 @@ position: relative;
 .trade__bitcoin-item{
 	  width:9rem;
 	margin: 0 0 2rem 0;
-	font-style: inherit;
 
 }
+.trade__bitcoin-item p{
+	font-size:  1.2rem;
+	
+}
+.trade__bitcoin-item span{
+	 font-weight: bold;
+}
 
-}
-.fetch-currencies {
-}
 .trade__some{
 	border: 1px solid rgba(170,218,255,0.2);
 	padding: 0 2rem 2rem 2rem;
