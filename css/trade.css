@@ -10,6 +10,7 @@
 .trade__container {
 	padding: 0 2rem 2rem 2rem;
 		padding: 0;
+		 width: 100%;
 
 		display: flex;
 }
