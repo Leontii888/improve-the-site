@@ -1,0 +1,41 @@
+/*---card-icon---*/
+.cards{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
+.cards__item{
+	box-sizing: border-box;
+
+	display: flex;
+	flex-direction: column;
+	
+	padding:  2rem;
+
+	height: 40rem;
+	width: 28%;
+
+	 background-color: rgba(51, 85, 204, .4);
+}
+.cards__item *
+{
+	margin: 0 0 2rem 0;
+}
+.cards__image{
+	text-align: center;
+	margin:2rem 0 3rem 0;
+}
+.cards__image img{
+	width:6rem;
+}
+.cards__title{
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+.cards__text{
+	height: 15rem
+	min-height: 13rem;
+	overflow: hidden;
+}

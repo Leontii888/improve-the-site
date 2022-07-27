@@ -1,0 +1,22 @@
+/*---modal---*/
+.modalBlock{
+	display: none;
+	background-color: #ff3;
+    position: absolute;
+    z-index: 20;
+    
+	box-sizing: border-box;
+
+    /*padding: 3.5rem;*/
+}
+
+/*---close-icon---*/
+.closeIcon{
+	position: absolute;
+
+    font-size: 1rem;
+    cursor: pointer;
+}
+.closeIcon img{
+	width: 1.5rem;
+}

@@ -1,0 +1,41 @@
+body
+{
+/*    font-family: "Roboto","Helvetica","Helvetica Neue",  "Arial";
+sans-serif;*/
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+background-image: url(D:/programming/java/mySite/img/techno-bg-op1.png) ;
+}
+section
+{
+	height: 60rem;
+max-height: 60rem;
+overflow: hidden;
+}
+.container{
+	margin: 0;
+    width: 50%;
+}
+input{
+	padding: 2px 0 2px 1rem;
+}
+/*---links---*/
+a
+{
+text-decoration: none;
+color: #444;
+}
+a:hover
+{
+color: black;
+border-bottom: 1px solid #35c;
+}
+.clear
+{
+clear: both;
+}
+/*---styles---*/
+.style--textalign-center{
+text-align: center;
+}
