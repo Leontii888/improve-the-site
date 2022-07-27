@@ -1,36 +1,110 @@
-body
-{
-/*    font-family: "Roboto","Helvetica","Helvetica Neue",  "Arial";
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+min-height: 100vh;
+scroll-behavior: smooth;
+text-rendering: optimizeSpeed;
+line-height: 1.5;
+
+  /*    font-family: "Roboto","Helvetica","Helvetica Neue",  "Arial";
 sans-serif;*/
-box-sizing: border-box;
 margin: 0;
 padding: 0;
-background-image: url(D:/programming/java/mySite/img/techno-bg-op1.png) ;
+background-image: url(D:/programming/java/mySite/img/techno-bg-op1.png);
 }
-section
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class]
 {
-	height: 60rem;
-max-height: 60rem;
-overflow: hidden;
+  list-style: none;
 }
-.container{
-	margin: 0;
-    width: 50%;
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class])
+{
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 input{
 	padding: 2px 0 2px 1rem;
 }
-/*---links---*/
+/*-------------------*/
+section
+{
+height: 60rem;
+max-height: 60rem;
+overflow: hidden;
+}
 a
 {
 text-decoration: none;
 color: #444;
+cursor: pointer;
+
 }
 a:hover
 {
 color: black;
 border-bottom: 1px solid #35c;
 }
+
+
+
+.container
+{
+	margin: 0;
+    width: 50%;
+}
+
 .clear
 {
 clear: both;
