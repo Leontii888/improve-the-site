@@ -10,11 +10,11 @@
 @import "flex.css" screen;
 @import "header.css" screen;
 @import "frontpage.css" screen;
-@import "modalFrontpage.css" screen;
+@import "modal-main.css" screen;
 @import "trade.css" screen;
 @import "showcase.css" screen;
 @import "minervini.css" screen;
-@import "linksToStorage.css" screen;
+@import "storage-putlinks.css" screen;
 @import "newsblock.css" screen;
 @import "weatherBlock.css" screen;
 @import "footer.css" screen;
