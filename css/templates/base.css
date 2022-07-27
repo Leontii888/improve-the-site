@@ -59,7 +59,7 @@ a:not([class])
 /* Упрощаем работу с изображениями */
 img {
   max-width: 100%;
-  display: block;
+  /*display: block;*/
 }
 
 /* Указываем понятную периодичность в потоке данных у article*/
@@ -102,7 +102,7 @@ border-bottom: 1px solid #35c;
 .container
 {
 	margin: 0;
-    width: 50%;
+  width: 50%;
 }
 
 .clear

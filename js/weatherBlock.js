@@ -50,13 +50,13 @@ const drawWeather = (placeToShow, city,list) => {
 
 						[...document.querySelectorAll('.mapsWeather__item-data')].forEach((el,i)=>{
 									placeToShow =el; 
-										placeToShow.innerHTML = `on date: ${weatherOnDays[i].dt_txt}<br \/>
-										Temperature: <font color="#f35">${weatherOnDays[i].tm}</font><br \/>
-										Atmosphere pressure: ${(weatherOnDays[i].prs/1.333).toFixed(1)}<br \/>
-										Other: ${weatherOnDays[i].main}<br \/>
-										Cloudness: ${weatherOnDays[i].cl}<br \/>
-										Humidity: ${weatherOnDays[i].hm}<br \/>
-										Winds: ${weatherOnDays[i].windSp}<br \/>`
+										placeToShow.innerHTML = `<p><span>On date:</span> ${weatherOnDays[i].dt_txt}</p>
+										<p><span>Temperature:</span> <font color="#f35">${weatherOnDays[i].tm}</font></p>
+										<p>Atmosphere pressure: ${(weatherOnDays[i].prs/1.333).toFixed(1)}</p>
+										<p>Other: ${weatherOnDays[i].main}</p>
+										<p>Cloudness: ${weatherOnDays[i].cl}</p>
+										<p>Humidity: ${weatherOnDays[i].hm}</p>
+										<p>Winds: ${weatherOnDays[i].windSp}</p>`
 							})
 						}
                 	drawWeather(weatherBlock,city,list);

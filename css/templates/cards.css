@@ -6,7 +6,7 @@
 
 }
 .cards__item{
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
 
 	display: flex;
 	flex-direction: column;
