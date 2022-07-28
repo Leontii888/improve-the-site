@@ -37,7 +37,7 @@
 
     display: inline-block;
 
-    width: 9.5rem;
+    width: 9rem;
 
     text-align: center;
 
@@ -58,10 +58,10 @@
 .showcase__down-submenu {
     position: absolute;
 
-    top: 27px;
+    top: 31px;
     left: 0;
 
-    width: 9.5rem;
+    width: 9rem;
     padding: .35rem 0 .6rem 0;
 
     cursor: pointer;

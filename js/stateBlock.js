@@ -190,6 +190,13 @@ const library = [{common:[
 	{address: 'https://webpack.js.org/"', comment:' Webpack.js.org'}
 	]
 },
+{linux:[
+	{address:"https://habr.com/ru/company/ruvds/blog/339820/", comment:' 20 приемов работы с командной строкой'},
+	{address:"https://www.opennet.ru/docs/RUS/linux_base/node149.html", comment:'Поиск файлов с FIND'},
+	{address:"https://ab57.ru/cmd.html#id4", comment:'Командные файлы Windows'},
+	{address:"https://ab57.ru/cmdlist.html", comment:'Список команд Windows ( Windows CMD )'}
+
+]},
  {tenders:[
 	{address:'file:///D:/Programming/java/CodeWars.com/ObjectIngot/ObjectIngot.html"', comment:' Расчеты для слитков'},
 	{address: 'http://rostender.info/category/tendery-pokovki"', comment:' Rostender.info'},
@@ -237,7 +244,7 @@ let preparedTempArr = [];
 //prepare on custom form
 function prepareList(arr){
 	const startString = `<li><a href="`,
- 			blank = ` "target ="_blank">`,
+ 			blank = ` " target = "_blank">`,
  			endString = `</a></li>`;
 
 	preparedTempArr = arr.map(({address,comment}) =>  `${startString}${address}${blank}${comment}${endString}`);
