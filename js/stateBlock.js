@@ -236,9 +236,9 @@ let preparedTempArr = [];
 
 //prepare on custom form
 function prepareList(arr){
-	const startString = `<a href="`,
+	const startString = `<li><a href="`,
  			blank = ` "target ="_blank">`,
- 			endString = `</a><br/>`;
+ 			endString = `</a></li>`;
 
 	preparedTempArr = arr.map(({address,comment}) =>  `${startString}${address}${blank}${comment}${endString}`);
 	return preparedTempArr 
