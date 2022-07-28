@@ -1,25 +1,27 @@
 .showcase {
 	background-color: rgba(197, 214, 40, .5);
-	padding: 2rem;
-	margin: 0;
+    padding: 2rem;
+    margin: 0;
 }
 .trade__title {
 }
 
 .showcase__container {
-	width: 100%;
+    padding: 0 2rem;
+    width: 100%;
 }
-.showcase__block-outer {
-	display: flex;
+/*.showcase__block-outer {
+    display: flex;
     align-items: center;
     flex-wrap: wrap;
-}
-.showcase__block-outer h5{
+}*/
+.showcase__block-outer h6{
+    margin: 0 0 0 0;
     flex-basis: 19%;
 }
 .showcase__block-nav {
+    margin: 0 0 2rem 0;
     padding: 0;
-    /*border: 1px solid red;*/
     width:80%;
 }
 .showcase__topmenu {
@@ -34,13 +36,12 @@
 
 .showcase__down {
 	position: relative;
-
-    display: inline-block;
-
+    /*display: inline-block;*/
     width: 9rem;
 
-    text-align: center;
+    margin: 0;
 
+    text-align: center;
     /*background-color: rgba(255, 106, 0, .4);*/
 }
 .showcase__down:after
@@ -74,60 +75,33 @@
     opacity: 0;
     color: #fff;
     background: rgba(64,56,45,.7);
-     /*visibility: hidden;*/
-    /*opacity: 0.2;*/
-    /*z-index: 5;*/
+/*     visibility: hidden;
+    opacity: 0.2;
+    z-index: 5;*/
 
-    /*transform: translate(-50%, 20px);*/
-    /*transform: perspective(600px) rotateX(-90deg);*/
+/*    transform: translate(-50%, 20px);
+    transform: perspective(600px) rotateX(-90deg);*/
 }
 #showcase__links
 {
+    
     height: 40em;
     display: flex;
     flex-direction:row;
-    justify-content: space-between;
 
     overflow: hidden;
 }
-/*.showcase__down-el{
-}*/
+.showcase__down-el{
+}
 
-/*#showcase__link-common
-{
-}
-#showcase__link--css{
-{
-}
-#showcase__link-javaScript
-{
- }
-#showcase__link-html
-{
-}
-#showcase__link-design
-{
 
-}
-#showcase__link-PowS
-{
-
-}
-#showcase__link-trading
-{
-
-}
-#showcase__link-youtube
-{
-}*/
 .link {
-    /*border: 1px solid red;*/
      display: none;
 
-     margin-right: .8rem;
-     padding: 2rem 1.25rem;
+     /*margin-right: .8rem;*/
+     /*padding: 2rem 1.25rem;*/
 
-     flex-basis: 33%;
+     flex: 0 1 33.333%;
 }
 .visible {
      display: block;

@@ -32,7 +32,7 @@ class LinkBank {
 		this.blockId = option.blockId
 
 
-	}
+};
 
 	add(link,description){
 		let string = (link.match(`http://`)) ? link	: `http://${link}`;
@@ -50,8 +50,8 @@ class LinkBank {
 // console.log(item, LinkBank.timeStamp)
 
 
-
-const library = [{common:[
+const library = [
+{common:[
 	{address: 'https://hangouts.google.com/?hl=ru"', comment:'hangOuts'},
 	{address: 'https://cloud.mail.ru/home/js/?from-page=home&from=logout"', comment:'Mail.ru cloud'},
 	{address: 'https://mega.nz/fm/i2wAma6Y"', comment:'MegaSinc Облачное хранилице'},
@@ -66,7 +66,7 @@ const library = [{common:[
 	{address: 'https://moguza.ru/service/list/?join"', comment:'Могу за...'}
 	]
 },
- {css:[
+{css:[
 	{address: 'https://cssgrid-generator.netlify.com/"', comment:'cssgrid-generator'},
 	{address: 'https://stackoverflow.com/users/11873695/piperpiper"', comment:'Stack OverflowPiperPiper'},
 	{address: 'https://wp-kama.ru/id_8045/flex-v-css.html"', comment:'Flexbox в CSS'},
@@ -84,7 +84,7 @@ const library = [{common:[
 	{address: 'https://caniuse.com/"', comment:'Can I use'}
 	]
 },
-{ trading:[
+{trading:[
 	{address: 'https://www.bestchange.ru/bitcoin-to-ruble-cash.html"', comment:'Приложения BestChange.ru'},
 	{address: 'https://news.yandex.ru/"', comment:'news.yandex.ru'},
 	{address: 'https://bcs-express.ru/dividednyj-kalendar"', comment:'БКС. Дивиденды'},
@@ -99,7 +99,7 @@ const library = [{common:[
 	{address: 'https://www.worldcoinindex.com/coin/bitcoin"', comment:'Биткойн'}
 	]
 },
- {powershell:[
+{powershell:[
 	{address: 'http://winitpro.ru/index.php/category/powershell/"', comment:'WINITPRO'},
 	{address: 'https://ss64.com/ps/set-content.html"', comment:'Set-Content'},
 	{address: 'https://wpconfig.ru/"', comment:'Наброски админа'},
@@ -114,7 +114,7 @@ const library = [{common:[
 	{address: 'http://qaru.site/tags"', comment:'Вопросник по тегам PowerShell, CSS, HTML JS, Jquery'}
 	]
 },
- {youtube:[
+{youtube:[
 	{address: 'https://www.youtube.com/channel/UCY10FZglXJ8RL3xB04VpykQ"', comment:'CodeDojo'},
 	{address: 'https://www.youtube.com/channel/UCTgx8cZRD5Jz2_zGaT27S3w"', comment:'Денис Горелов. CSS'},
 	{address: 'https://www.youtube.com/user/TheComePot"', comment:'Pa DamTuts'},
@@ -127,7 +127,7 @@ const library = [{common:[
 	{address: 'https://www.youtube.com/user/LebedevUM"', comment:'Юрий Лебедев. PowerShell'}
 	]
 },
- {design:[
+{design:[
 	{address: 'https://www.pinterest.ru/begbi9/"', comment:' Pinterest'},
 	{address: 'https://lifehacker.ru/photoshop-shortcuts/"', comment:' Лайфхакер. 55 горячих клавиш фотошопа'},
 	{address: 'https://habr.com/ru/"', comment:' Хабр'},
@@ -136,7 +136,7 @@ const library = [{common:[
 	{address: 'https://freelance.ru/freelance_bay"', comment:' Фриланс. Амгуэма'}
 	]
 },
- {html:[
+{html:[
 	{address: 'http://shpargalkablog.ru/2012/04/input-html-5.html"', comment:' Шпаргалка блог хтмл'},
 	{address: 'http://prog-time.ru/480-2/"', comment:' Горячие клавиши для Sublime Text'},
 	{address: 'http://htmlbook.ru/samcss/universalnyy-selektor"', comment:' htmlbook.ru. Справочник по HTML  и CSS'},
@@ -151,7 +151,7 @@ const library = [{common:[
 	{address: 'http://proweb63.ru/help/all-about-css/sp-sim-html"', comment:' Специальные символы'}
 	]
 },
- {javascript:[
+{javascript:[
 	{address: 'https://codepen.io/piperpiper/pen/dLWwmm"', comment:' https://codepen.io. Кодить в сети'},
 	{address: 'https://learngitbranching.js.org/?locale=ru_RU"', comment:' Обучение по git'},
 	{address: 'https://jsfiddle.net/"', comment:' jsfiddle.net Кодить в сети'},
@@ -195,9 +195,9 @@ const library = [{common:[
 	{address:"https://www.opennet.ru/docs/RUS/linux_base/node149.html", comment:'Поиск файлов с FIND'},
 	{address:"https://ab57.ru/cmd.html#id4", comment:'Командные файлы Windows'},
 	{address:"https://ab57.ru/cmdlist.html", comment:'Список команд Windows ( Windows CMD )'}
-
-]},
- {tenders:[
+	]
+},
+{tenders:[
 	{address:'file:///D:/Programming/java/CodeWars.com/ObjectIngot/ObjectIngot.html"', comment:' Расчеты для слитков'},
 	{address: 'http://rostender.info/category/tendery-pokovki"', comment:' Rostender.info'},
 	{address:'file:///D:/Programming/java/CodeWars.com/getIngotCount/getCountMetall.html"', comment:' Расчеты для слитков (первый)'},
@@ -209,15 +209,8 @@ const library = [{common:[
 	{address: 'http://metal100.ru/tenders/Pokovka"', comment:' Metal100.ru'},
 	{address: 'http://zakupki-tendery.ru/index.php?gclid=CjwKCAjw0N3nBRBvEiwAHMwvNvk4aZUeZUol6lt08M9NMCFkCUfumMkbCYNtM4D7uGQeghWuG9QZYRoCz-4QAvD_BwE&Itemid=102&option=com_content&view=article&id=5"', comment:' Zakupki-tendery.ru'},
 	{address: 'http://docs.cntd.ru/document/12001137785"', comment:' GOSTs'}
-
-]}
+	]}
 ];
-
-
-//добавить ссылку
-// addLink('rbc.ru','Сайт бизнес-информации',tradingLinks);
-
-
 // function addLink(link,discription,base){
 // 	console.log(base.length)
 // 	let string = (link.match(`http://`))
@@ -232,11 +225,7 @@ const library = [{common:[
 // 		let newbase = base.unshift(putString);
 // 	console.log(base)
 // 	return base
-	
 // }
-
-
-
 let parents = [...document.querySelectorAll(".link")];
 let titles = [...document.querySelectorAll(".link")].map(el=> el.getAttribute("data-title"));
 let preparedTempArr = [];

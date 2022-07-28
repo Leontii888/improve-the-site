@@ -1,5 +1,3 @@
-
-
 	//clean inputs
 function cleanInp(){
 		document.querySelectorAll('input').forEach(function(el,i){
@@ -60,13 +58,22 @@ function closeCalc(){
 		cleanInp()
 };
 
+
+// showcase mark-ups
 for (var i=0; i< showsubMenu.length; i++){
-		showsubMenu[i].setAttribute('ind', i);
+		showsubMenu[i].setAttribute('data-position', i);
 		showsubMenu[i].addEventListener('click', function(e){
-			let pointed = this.getAttribute('ind');
-			// console.log(this.getAttribute('ind'));
+			let pointed = this.getAttribute('data-position');
 			e.target.style.color= '#C5A639FF';
+	// open only 3 in row
+			let openedList = [...document.querySelectorAll(".visible")];
+			if(openedList.length < 3){
 			linkToShow[pointed].classList.toggle('visible');
+			} else {
+
+				openedList[0].classList.toggle('visible');
+				linkToShow[pointed].classList.toggle('visible')
+			}
 		})
 }
 		

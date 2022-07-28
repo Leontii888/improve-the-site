@@ -46,7 +46,7 @@ const drawWeather = (placeToShow, city,list) => {
 					let weatherOnDays = days.map(day=> {
 						return getCondDifferentDays(day,list)
 							});
-						console.log(weatherOnDays);
+						// console.log(weatherOnDays);
 
 						[...document.querySelectorAll('.mapsWeather__item-data')].forEach((el,i)=>{
 									placeToShow =el; 
