@@ -32,7 +32,7 @@ align-items: center;
 width: 50%;
 /*border: 1px solid rgba(0,170,255,0.2);*/
 margin: 0 -20px 2rem 0;
-padding: 0 0 0 20px
+padding: 0 0 0 26px
 }
 .mapsWeather__item-data span{
     margin:0;
