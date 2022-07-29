@@ -41,6 +41,7 @@
 
 .cards__text{
 	flex: 0 1 15rem;
+	line-height: 1.9rem;
 
 	overflow: hidden;
 }

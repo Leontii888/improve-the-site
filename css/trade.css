@@ -1,24 +1,19 @@
 .trade {
-	background-color: rgb(170,218,255,0.5)
-	;
+	background-color: rgb(170,218,255,0.5)	;
 }
-.trade__title {
-
-}
-
 
 .trade__container {
-	padding: 0 2rem 2rem 2rem;
-		padding: 0;
 		 width: 100%;
-
 		display: flex;
+}
+.trade__container h5{
+	margin: 0 0 2rem 0;
 }
 .trade__calc {
 
 	padding: 0 2rem;
 	border: 1px solid rgba(170,218,255,0.2);
-	width: 20%;
+	flex:; 0 1 25%;
 	height:  41rem;
 	min-height:  41rem;
 }
@@ -50,37 +45,36 @@ position: relative;
 	left: 82%;
 }
 .trade__bitcoin {
-		border: 1px solid rgba(170,218,255);
+	/*border: 1px solid rgba(170,218,255);*/
 
-	padding: 0 2rem 2rem 2rem;
-	width: 15%;
+	flex:  0 1 25%;
 	height: 41rem;
 	min-height: 41rem;
-	/*border: 1px solid blue;*/
 
 	display: flex;
 	flex-direction: column;
-	/*justify-content: center;*/
+}
+.trade__button{
+margin: 0 0 2rem 0;
 }
 .trade__bitcoin-item{
-	  width:9rem;
+	  /*width:9rem;*/
 	margin: 0 0 2rem 0;
 
-}
-.trade__bitcoin-item p{
-	font-size:  inherit;
-	
 }
 .trade__bitcoin-item span{
 	 font-weight: bold;
 }
 
 .trade__some{
-	border: 1px solid rgba(170,218,255,0.2);
+	/*border: 1px solid rgba(170,218,255,0.2);*/
 	padding: 0 2rem 2rem 2rem;
 
 	width: 50%;
 	height: 41rem;
 	min-height: 41rem;
 
+}
+.trade__title-text{
+	margin: 0 0 2rem 0;
 }

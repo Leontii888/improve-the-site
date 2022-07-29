@@ -1,6 +1,7 @@
 /*---mybutton---*/
 .mybutton{
-	width: 6rem;
+	width: 9rem;
+	height: 2rem;
 	margin: 0 1rem 2rem 1rem;
 	padding: 3px;
 	cursor: pointer;

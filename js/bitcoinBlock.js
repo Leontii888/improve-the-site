@@ -34,18 +34,18 @@ async function getRate(){
 								myPoseMayBe= myCurMoneyUsd/bitcoinRate,
 								procentFromOldPose = (myCurMoneyUsd*100/(bitcoinRate*0.334)).toFixed(1);
 
-								gr.innerHTML= `Today\`s 
+								gr.innerHTML= `<div class="trade__rate-data"><p>Today\`s 
 								<a  target='_blank' href ='https://www.worldcoinindex.com/coin/bitcoin'>bitcoin</a> stock price:
-								<span>$${(bitcoinRate).toFixed(0)} ($${rate})</span>`;
-								myPoseBitcoin.innerHTML= `Could get (from RUB150_000)
+								<span>$${(bitcoinRate).toFixed(0)} ($${rate})</span></p>`;
+								gr.innerHTML+= `<p>Could get (from RUB150_000)
 								${time.updated}:
 								<span>BTC${(myCurMoneyUsd/bitcoinRate).toFixed(8)}
-								(${procentFromOldPose}%)</span>`;
+								(${procentFromOldPose}%)</span></p></div>`;
 								}).catch(e=> e);
 						 
 		console.log(`Смотрите также исторические данные getHistoryBitcoinRate(mydate)`)
 	}catch(e){
-			console.erorr(e)
+			console.error(e)
 	}
 		
 };
