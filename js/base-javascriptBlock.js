@@ -1,3 +1,13 @@
+
+function getmodal() {
+	frontModal.style.display = 'block';
+}
+
+function closemodal() {
+	frontModal.style.display = 'none';
+}
+
+
 	//clean inputs
 function cleanInp(){
 		document.querySelectorAll('input').forEach(function(el,i){

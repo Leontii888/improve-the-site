@@ -9,17 +9,24 @@ function showBitcoinRate(){
 };
 
 async function getRateUsd(){
- const {rates}= await (await fetch("https://openexchangerates.org/api/latest.json?app_id=950e7939546942c5b62a3bd284959545")).json();
+	try{
+		const {rates}= await (await fetch("https://openexchangerates.org/api/latest.json?app_id=950e7939546942c5b62a3bd284959545")).json();
 	console.log(`Смотрите также исторические данные getRateUsd`)
 
 		const {RUB} = rates;
 		//  типа привожу к наличному доллару в обменнике (купить за рубли)
 		 let usd = (RUB*1.015).toFixed(1);
 		 return usd;
+	}catch(e){
+			console.erorr(e)
+	}
+ 
 };
 async function getRate(){
+	try{
 		const {bpi,time} = await (await fetch("https://api.coindesk.com/v1/bpi/currentprice.json")).json();
-		// денег у меня в долларах,сколько могу купить биткойнов,процент моей позы
+		
+// денег у меня в долларах,сколько могу купить биткойнов,процент моей позы
 					let bitcoinRate =  bpi.USD.rate_float;
 						
 					getRateUsd().then(rate=> {
@@ -37,17 +44,26 @@ async function getRate(){
 								}).catch(e=> e);
 						 
 		console.log(`Смотрите также исторические данные getHistoryBitcoinRate(mydate)`)
+	}catch(e){
+			console.erorr(e)
+	}
+		
 };
 
 //  исторические данные по битку
 
 async function  getHistoryBitcoinRate(mydate){
-  mydate = mydate ||"2019-01-01";
-  	const startUrl = `https://api.coindesk.com/v1/bpi/historical/close.json?start=`,
+	try{
+		mydate = mydate ||"2019-01-01";
+  		const startUrl = `https://api.coindesk.com/v1/bpi/historical/close.json?start=`,
   		 endUrl = `&end=2021-12-07`,
   		 url = startUrl+mydate+endUrl;
 			const  data = await (await fetch(url)).json();
 			console.log(data)
+	}catch(e){
+			console.erorr(e)
+	}
+  
 };
 
 // getHistoryBitcoinRate("2019-01-01")

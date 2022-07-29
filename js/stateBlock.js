@@ -7,49 +7,7 @@ const myDbName = "MyKeepBase";
 let request = window.indexedDB.open(myDbName, 5);
 
 
-// made options
-class Option {
-	constructor(){
-	this.url = url,
-	this.title = title,
-	this.comment = comment,
-	this.blockId = blockId
-	}
-};
-// class Option {
-// 	url:"www.rbc.ru",
-// 	title:"js",
-// 	comment:"хоршая статья",
-// 	blockId: document.querySelector(".frontpage__block-modal"),
-// }
-// make class Item-link
-class LinkBank {
-	static timeStamp = new Date().toLocaleString();
-	constructor(option){
-		this.url = option.url,
-		this.title = option.title,
-		this.comment = option.comment,
-		this.blockId = option.blockId
-
-
-};
-
-	add(link,description){
-		let string = (link.match(`http://`)) ? link	: `http://${link}`;
-
-		this.url.unshift(string);
-		this.title.unshift(description);
-		this.comment.unshift(comment);
-		this.timeStamp.unshift(timeStamp);
-	}
-
-};
-
-
-// let item = new LinkBank(options)
-// console.log(item, LinkBank.timeStamp)
-
-
+// main base
 const library = [
 {common:[
 	{address: 'https://hangouts.google.com/?hl=ru"', comment:'hangOuts'},
@@ -211,21 +169,47 @@ const library = [
 	{address: 'http://docs.cntd.ru/document/12001137785"', comment:' GOSTs'}
 	]}
 ];
-// function addLink(link,discription,base){
-// 	console.log(base.length)
-// 	let string = (link.match(`http://`))
-// 					? link
-// 					: `http://${link}`;
 
-// 		let putString = 
-// 						{
-// 							address: string,
-// 							comment:discription
-// 						}
-// 		let newbase = base.unshift(putString);
-// 	console.log(base)
-// 	return base
+// made options
+class Option {
+	constructor(){
+	this.url = url,
+	this.title = title,
+	this.comment = comment,
+	this.blockId = blockId
+	}
+};
+// class Option {
+// 	url:"www.rbc.ru",
+// 	title:"js",
+// 	comment:"хоршая статья",
+// 	blockId: document.querySelector(".frontpage__block-modal"),
 // }
+// make class Item-link
+class LinkBank {
+	static timeStamp = new Date().toLocaleString();
+	constructor(option){
+		this.url = option.url,
+		this.title = option.title,
+		this.comment = option.comment,
+		this.blockId = option.blockId
+
+
+};
+
+	add(link,description){
+		let string = (link.match(`http://`)) ? link	: `http://${link}`;
+
+		this.url.unshift(string);
+		this.title.unshift(description);
+		this.comment.unshift(comment);
+		this.timeStamp.unshift(timeStamp);
+	}
+
+};
+
+
+
 let parents = [...document.querySelectorAll(".link")];
 let titles = [...document.querySelectorAll(".link")].map(el=> el.getAttribute("data-title"));
 let preparedTempArr = [];
@@ -259,9 +243,9 @@ function hosting(arr){
 hosting(library);
 
 
-// request.onsuccsess	= function(){
-
-// 	console.log('request.onsuccsess')
-// }
-
+console.log(`IDBOpenrequest is on:`)
 console.log(request)
+
+// request.onsuccsess	= function(){
+// 	console.log('sucsess')
+// }

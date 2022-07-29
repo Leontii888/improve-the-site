@@ -56,6 +56,4 @@ let newlink = document.querySelector('.storage__input'),
 	checkStorage = document.querySelector('.storage__check-length'),
 	wholeListbox__Text = document.querySelector('.storage__showroom-note'),
 	wholeListbox__close = document.querySelector('.storage__close'),
-	link =[],
-	arrayBaseLinks = {t:`${new Date().toLocaleString()}`,link},
 	saveLinkTime = `${new Date().toLocaleString()}`;

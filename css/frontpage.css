@@ -4,10 +4,10 @@
     height: 100vh;
     filter: blur(2px);
          /*contain ,*/
-     background: url(d:/programming/java/average/img/mycover1.jpg),
-     url(D:/programming/java/mySite/img/flowerBlue_only.png) 0 110%/ 30% no-repeat;
+     background:   url("../img/flowerBlue_only.png")0 110%/ 35% no-repeat, url("../img/techno-bg-op1.png") no-repeat ;
 }
-
+/*d:/programming/java/average/img/mycover1.jpg*/
+/*D:/programming/java/mySite/img/flowerBlue_only.png*/
 .frontpage__block
 {
     position: relative;
