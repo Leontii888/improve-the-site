@@ -7,10 +7,22 @@ let flags = {
 	tempInfoDinamicCreatedEl = {},
 	link =[],
 	arrayBaseLinks = { link };
-	index = 10;
+	index=0;
 
 
-// save links to LocStorage
+// index
+//---------------------
+// function counterFrom(base){
+// 	let increment =1;
+// 	return () => {
+// 		return base +=increment;
+// 	}
+// };
+// let index = counterFrom(0);
+
+
+
+
 
 
 const writeLinks = ()=> {
@@ -35,6 +47,8 @@ const writeLinks = ()=> {
 			newlink.value ='';
 		}
 };
+
+
 
 const putSomelinks = () => {
 	if(flags.isDataSaved && flags.isPutMore){
@@ -120,9 +134,8 @@ function warnModalAbsolutePosition(	tag,
 		};
 			return createdItem
 }
-// storage.addEventListener("click", closeWarn);
 
-function closeWarn(){
+function closeWarnWindow(){
 					if(flags.isWarningOpen){
 						storage.removeChild(tempInfoDinamicCreatedEl.querylink);
 
@@ -158,7 +171,7 @@ const saveIntoStorage = () => {
 											setTimeout(()=> {
 												flags.isWarningOpen= true;
 
-												storage.addEventListener("click", closeWarn)
+												storage.addEventListener("click", closeWarnWindow)
 											},1000);
 									}else{
 										console.log("CLEAR ALL")
@@ -180,4 +193,4 @@ const saveIntoStorage = () => {
 };
 
 // !!delete all in LS
-// localStorage.clear()
+localStorage.clear()
