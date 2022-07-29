@@ -1,11 +1,3 @@
-//use IndexedDB
-	
-if (!window.indexedDB) {
-    window.alert("Ваш браузер не поддерживат стабильную версию IndexedDB. Такие-то функции будут недоступны");
-}
-const myDbName = "MyKeepBase";
-let request = window.indexedDB.open(myDbName, 5);
-
 
 // main base
 const library = [
@@ -170,6 +162,42 @@ const library = [
 	]}
 ];
 
+let parents = [...document.querySelectorAll(".link")];
+let titles = [...document.querySelectorAll(".link")].map(el=> el.getAttribute("data-title"));
+let preparedTempArr = [];
+
+//prepare on custom form
+function prepareList(arr){
+	const startString = `<li><a href="`,
+ 			blank = ` " target = "_blank">`,
+ 			endString = `</a></li>`;
+
+	preparedTempArr = arr.map(({address,comment}) =>  `${startString}${address}${blank}${comment}${endString}`);
+	return preparedTempArr 
+};
+
+//insert to parent block
+function insertToBlock(parent){
+	return  preparedTempArr.forEach(el => parent.insertAdjacentHTML('beforeend', el ))
+}
+
+//disribute to parent block
+function hosting(arr){
+	titles.forEach((titleEl,i)=> {
+				let titleItem = arr.filter((el,i)=> Object.keys(el) == titleEl);
+				titleToObj = titleItem[0];
+				prepareList(titleToObj[Object.keys(titleToObj)[0]]);
+
+				insertToBlock(parents[i]);
+	});
+}
+
+hosting(library);
+
+
+
+
+// -------------some exercises--------
 // made options
 class Option {
 	constructor(){
@@ -209,43 +237,3 @@ class LinkBank {
 };
 
 
-
-let parents = [...document.querySelectorAll(".link")];
-let titles = [...document.querySelectorAll(".link")].map(el=> el.getAttribute("data-title"));
-let preparedTempArr = [];
-
-//prepare on custom form
-function prepareList(arr){
-	const startString = `<li><a href="`,
- 			blank = ` " target = "_blank">`,
- 			endString = `</a></li>`;
-
-	preparedTempArr = arr.map(({address,comment}) =>  `${startString}${address}${blank}${comment}${endString}`);
-	return preparedTempArr 
-};
-
-//insert to parent block
-function insertToBlock(parent){
-	return  preparedTempArr.forEach(el => parent.insertAdjacentHTML('beforeend', el ))
-}
-
-//disribute to parent block
-function hosting(arr){
-	titles.forEach((titleEl,i)=> {
-				let titleItem = arr.filter((el,i)=> Object.keys(el) == titleEl);
-				titleToObj = titleItem[0];
-				prepareList(titleToObj[Object.keys(titleToObj)[0]]);
-
-				insertToBlock(parents[i]);
-	});
-}
-
-hosting(library);
-
-
-console.log(`IDBOpenrequest is on:`)
-console.log(request)
-
-// request.onsuccsess	= function(){
-// 	console.log('sucsess')
-// }

@@ -16,7 +16,7 @@ let flags = {
 const writeLinks = ()=> {
 		let newString = newlink.value.split(",");							
 		if(newString.length==1){
-			alert("Вводите внимательно. После ссылки нужна запятая и комментарий!")
+			alert("ВВОДИТЕ ВНИМАТЕЛЬНО. ПОСЛЕ ССЫЛКИ НУЖНА ЗАПЯТАЯ И КОММЕНТАРИЙ")
 			link = [];
 			wholeListbox__Text.innerHTML = ``;
 			// return
@@ -180,4 +180,4 @@ const saveIntoStorage = () => {
 };
 
 // !!delete all in LS
-localStorage.clear()
+// localStorage.clear()
