@@ -4,28 +4,31 @@ let flags = {
 	isPutMore:false,
 	isWarningOpen:false
 },
-	tempInfoDinamicCreatedEl = {},
+	tempDinamicCreatedInfoEl = {},
 	link =[],
 	arrayBaseLinks = { link };
 	index=0;
 
 
-// index
+// counterFrom
 //---------------------
 // function counterFrom(base){
-// 	let increment =1;
-// 	return () => {
-// 		return base +=increment;
+// 	 let increment = 0;
+// 	return function(){
+// 		 let total = base+=increment;
+// 		 increment++;
+// 		 return total
 // 	}
 // };
-// let index = counterFrom(0);
-
-
-
-
-
-
-const writeLinks = ()=> {
+// let counterFromTwenty =counterFrom(20);
+function modifyDataString(string) {
+	return string.split("")
+	.filter(e => e != "\\")
+	.filter(e => e != "\"")
+	.filter(Boolean)
+	.join("");
+}
+function writeLinks(){
 		let newString = newlink.value.split(",");							
 		if(newString.length==1){
 			alert("ВВОДИТЕ ВНИМАТЕЛЬНО. ПОСЛЕ ССЫЛКИ НУЖНА ЗАПЯТАЯ И КОММЕНТАРИЙ")
@@ -47,10 +50,7 @@ const writeLinks = ()=> {
 			newlink.value ='';
 		}
 };
-
-
-
-const putSomelinks = () => {
+function putSomelinks() {
 	if(flags.isDataSaved && flags.isPutMore){
 		link = [];
 		wholeListbox__Text.innerHTML = ``;
@@ -65,13 +65,13 @@ const putSomelinks = () => {
 		flags.isRepeated=false;
 	}
 };
-const showBaseLinks = () => {
+function showBaseLinks() {
 	wholeListbox.style.display = 'block';
 	storageLength.innerHTML = `${localStorage.length}`
 	checkStorage.style.display = 'inline';
 
 };
-const closeBaseBox = () => {
+function closeBaseBox() {
 
 	wholeListbox.style.display = 'none';
 	checkStorage.style.display = 'none';
@@ -79,14 +79,14 @@ const closeBaseBox = () => {
 	wholeListbox__Text.innerHTML = `НАЧНИТЕ ЗАНОСИТЬ</br>`;
 	flags.isPutMore=false;
 };
-const clearLinksInBox = () => {
+function clearLinksInBox() {
 	wholeListbox__Text.innerHTML = ``;
 	newlink.value ='';
 	arrayBaseLinks.link.length=0;
 
 	flags.isRepeated =false;
 };
-
+//ПЕРЕПИСАТЬ НА КЛАССАХ!
 function warnModalAbsolutePosition(	tag,
 									parent,
 									top,
@@ -117,7 +117,7 @@ function warnModalAbsolutePosition(	tag,
 		parent.style.position ="relative";
 		parent.appendChild(createdItem);
 		let querylink =document.querySelector(`.${className}`)
-		tempInfoDinamicCreatedEl = {
+		tempDinamicCreatedInfoEl = {
 									tag,
 									parent,
 									top,
@@ -137,7 +137,7 @@ function warnModalAbsolutePosition(	tag,
 
 function closeWarnWindow(){
 					if(flags.isWarningOpen){
-						storage.removeChild(tempInfoDinamicCreatedEl.querylink);
+						storage.removeChild(tempDinamicCreatedInfoEl.querylink);
 
 						flags.isWarningOpen= false;
 
@@ -147,7 +147,7 @@ function closeWarnWindow(){
 					}
 }
 
-const saveIntoStorage = () => {
+function saveIntoStorage() {
 		if(arrayBaseLinks.link.length===0){ return	}else{
 					// if(localStorage.getItem(`myLinks (${flags.isRepeated})`)){
 					if(flags.isRepeated){
@@ -181,8 +181,8 @@ const saveIntoStorage = () => {
 								index =Math.floor(Math.random() * 10000000000).toString().padStart(10, "0");
 										localStorage.setItem(`myLinks (${index})`, JSON.stringify(arrayBaseLinks));
 											const data = JSON.stringify(localStorage.getItem(`myLinks (${index})`));
-											console.log(`ДАТА СОХРАНЕНА В БАЗУ ${data}`)
-													wholeListbox__Text.innerHTML = `<span>ДАТА СОХРАНЕНА В LS:${data}</span>`;
+											console.log(`ДАТА СОХРАНЕНА В БАЗУ ${modifyDataString(data)}`)
+													wholeListbox__Text.innerHTML = `<span>ДАТА СОХРАНЕНА В LS:${modifyDataString(data)}</span>`;
 														storageLength.innerHTML = `<span>${localStorage.length}</span>`;
 
 															flags.isDataSaved= true;
@@ -192,5 +192,12 @@ const saveIntoStorage = () => {
 		}
 };
 
+
+
+
+
 // !!delete all in LS
 localStorage.clear()
+
+
+

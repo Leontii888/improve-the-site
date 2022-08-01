@@ -331,9 +331,53 @@
 		</div>
 </section > <!--main-books-->
 
-	<section class="main-contacts">
+	<section class="whiskey">
 		<a name="contacts--ancor"></a>
-		<h4 class="title style--textalign-center">Contact me</h4>
+		<h4 class="title style--textalign-center">Whiskey list on IndexedDB</h4>
+		<div class="whiskey__container">
+			<div class="whiskey__form-container">
+				      <form name="whiskeyForm">
+        <fieldset>
+          <p>
+            <label for="name">Whiskey: </label>
+            <input type="text" id="whiskey__name" placeholder="Whiskey Name" required />
+          </p>
+          <p>
+            <label for="country">Country of Origin: </label>
+            <input type="text" id="whiskey__country" value="" required />
+          </p>
+          <p>
+            <label for="age">Years Old: </label>
+            <input
+              type="text"
+              inputmode="numeric"
+              pattern="[\d]+"
+              id="whiskey__age"
+              required
+            />
+          </p>
+          <p>
+            <label for="isOwned">Owned: </label>
+            <input type="checkbox" id="whiskey__isOwned" value="yes" />
+          </p>
+          <p>
+            <button id="whiskey__btn-add">Add Whiskey</button>
+            <button id="whiskey__btn-update">Update Whiskey</button>
+            <button id="whiskey__btn-delete">Delete Whiskey</button>
+            <button id="whiskey__btn-clear">Reset Form</button>
+          </p>
+        </fieldset>
+      </form>
+
+      
+			</div>
+		<div class="whiskey__show-base">
+        <h3>List of Whiskeys</h3>
+        <ul class="whiskey__wish-list">
+          <!-- build list here -->
+        </ul>
+      </div>
+		</div>
 	</section> 
 	<!--main-contacts-->
 
@@ -470,14 +514,14 @@
 	
 </footer>
 
-<script  src="js/initVariablesBlock.js"></script>
-<script  src="js/base-javascriptBlock.js"></script>
-<script  src="js/stateBlock.js"></script>
-<script  src="js/bitcoinBlock.js"></script>
-<script  src="js/storageBlock.js"></script>
-<script  src="js/minerviniBlock.js"></script>
-<script  src="js/weatherBlock.js"></script>
-<script  src="js/onEventFooBlock.js"></script>
-<script  src="js/indexedDB.js"></script>
+<script   src="js/initVariablesBlock.js"></script>
+<script   src="js/base-javascriptBlock.js"></script>
+<script   src="js/stateBlock.js"></script>
+<script   src="js/bitcoinBlock.js"></script>
+<script   src="js/storageBlock.js"></script>
+<script   src="js/minerviniBlock.js"></script>
+<script   src="js/weatherBlock.js"></script>
+<script   src="js/onEventFooBlock.js"></script>
+<script   src="js/indexedDB.js"></script>
 </body>
 </html>

@@ -1,0 +1,67 @@
+.whiskey__container{
+  display: flex;
+        border: 1px solid blue;
+}
+
+
+p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 1rem 0;
+}
+li {
+  list-style-position: inside;
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+form {
+  padding: 1rem 1rem;
+}
+fieldset {
+  padding: 1rem;
+}
+form p {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 1rem 0;
+}
+label {
+  font-size: 1rem;
+}
+input[type='text'] {
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 30ch;
+}
+input[type='checkbox'] {
+  font-size: 1rem;
+  line-height: 1.5;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+button {
+  padding: 0.2rem 2rem;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  border: none;
+  color: white;
+  background-color: cornflowerblue;
+}
+.highlighted {
+  color: #333;
+  background-color: gold;
+}
+.whiskey__form-container{
+    flex: 0 1 50%;
+      border: 1px solid red;
+}
+.whiskey__show-base{
+  margin: 2rem;
+
+  flex: 0 1 50%;
+  justify-content: 
+}
