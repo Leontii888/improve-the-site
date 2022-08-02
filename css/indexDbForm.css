@@ -43,13 +43,13 @@ input[type='checkbox'] {
   height: 1.5rem;
   width: 1.5rem;
 }
-button {
+.whiskey__button {
   padding: 0.2rem 2rem;
   margin: 1rem 0;
-  font-size: 1.2rem;
+  /*font-size: 1.2rem;*/
   border: none;
-  color: white;
-  background-color: cornflowerblue;
+  /*color: white;*/
+  /*background-color: cornflowerblue;*/
 }
 .highlighted {
   color: #333;
@@ -63,5 +63,5 @@ button {
   margin: 2rem;
 
   flex: 0 1 50%;
-  justify-content: 
+  justify-content:flex-start; 
 }

@@ -14,6 +14,9 @@
 
 .header__form
 {
+    display: flex;
+    align-items: center;
+
     width:30%;
     height: 80px;
     margin:0;
@@ -41,30 +44,35 @@
 }
 
 .header__button{
-    width: 2.7em;
-    margin: auto;
-    box-shadow: none;
+    display: flex;
+    align-items: center;
+
+    width: 2rem;
+    height: 1.8rem;
+
     border-style: none;
     border-radius: 2px;
     padding: 0.45rem;
+    font-size: .8rem
 
 }
 .header__nav-block{
+
 
      width:70%;
 }
 
 .header__list{
-    position: relative;
-    float: right;
+        display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
 }
 
 .header__item{
     font-size: 1.2rem;
 
-    display: inline-block;
-
-    padding: .4rem 1rem;
+    /*padding: .4rem 1rem;*/
 
     cursor: pointer;
 }

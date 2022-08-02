@@ -12,10 +12,9 @@
 .trade__calc {
 
 	padding: 0 2rem;
-	border: 1px solid rgba(170,218,255,0.2);
+	/*border: 1px solid rgba(170,218,255,0.2);*/
 	flex: 0 1 23%;
 	height:  41rem;
-	min-height:  41rem;
 }
 
 .trade__block-inputs {
@@ -45,14 +44,13 @@ position: relative;
 	left: 82%;
 }
 .trade__bitcoin {
-	/*border: 1px solid rgba(170,218,255);*/
-
 	flex:  0 1 25%;
 	height: 41rem;
-	min-height: 41rem;
 
 	display: flex;
 	flex-direction: column;
+
+	margin: 0 4rem 0 0;
 }
 .trade__button{
 margin: 0 0 2rem 0;
@@ -67,14 +65,14 @@ margin: 0 0 2rem 0;
 }
 
 .trade__some{
-	/*border: 1px solid rgba(170,218,255,0.2);*/
-	padding: 0 2rem 2rem 2rem;
-
-	width: 50%;
+	flex:  0 1 50%;
 	height: 41rem;
-	min-height: 41rem;
+	/*padding: 0 2rem 2rem 2rem;*/
 
 }
 .trade__title-text{
 	margin: 0 0 2rem 0;
+}
+.trade__title-text p{
+	margin: 0 0 1rem 0;
 }

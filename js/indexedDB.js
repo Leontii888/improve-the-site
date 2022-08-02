@@ -63,7 +63,7 @@ if (!window.indexedDB) {
 const IDB = (function init() {
   let db = null;
   let objectStore = null;
-  let DBOpenReq = indexedDB.open('WhiskeyDB', 7);
+  let DBOpenReq = indexedDB.open('WhiskeyDB', 9);
 
   DBOpenReq.addEventListener('error', (err) => {
     //Error occurred while trying to open DB
@@ -93,7 +93,6 @@ const IDB = (function init() {
 
  document.whiskeyForm.addEventListener('submit', (ev) => {
     ev.preventDefault();
-    //one of the form buttons was clicked
 
     let name = document.getElementById('whiskey__name').value.trim();
     let country = document.getElementById('whiskey__country').value.trim();
@@ -107,9 +106,11 @@ const IDB = (function init() {
       age,
       owned,
     };
-
+console.log(1)
     let tx = makeTX('whiskeyStore', 'readwrite');
+console.log(2)
     tx.oncomplete = (ev) => {
+console.log(3)
       console.log(ev);
       buildList();
       clearForm();
@@ -122,7 +123,7 @@ const IDB = (function init() {
       console.log('successfully added an object');
     };
     request.onerror = (err) => {
-      console.log('error in request to add');
+      console.warn(err);
     };
  });
 
@@ -138,9 +139,8 @@ function buildList(){
  	// array, so need pass akey
  	getReq.onsuccess=(ev)=>{
  			//getall succsess
-	let request = ev.target; //request===getReq===ev.target
-	console.log({request});
-	list.innerHTML = request.result.map(whiskey => {
+	//getReq===ev.target
+	list.innerHTML = ev.target.result.map(whiskey => {
 						return `<li data-key ="${whiskey.id}"><span>${whiskey.name} </span><span>${whiskey.country} </span><span>${whiskey.age}</span></li>`
 					}).join('\n'); }
  	getReq.onerror=(err)=>{
@@ -149,26 +149,27 @@ function buildList(){
 }
 
 document.querySelector(".whiskey__wish-list").addEventListener("click", (ev => {
+	//closest having the [data-key]
 	let li = ev.target.closest("[data-key]");
 	let id = li.getAttribute("data-key");
-	console.log(li,id)
+	console.log(li, id);
 
 
 	let tx = makeTX('whiskeyStore','readonly');
-	let store =tx.objectStore('whiskeyStore');
+	let store = tx.objectStore('whiskeyStore');
 	let req = store.get(id);
 	
 	req.onsuccess=(ev) => {
-	let request = ev.target;
-	let whiskey = request.result;
-	document.getElementById('whiskey__name').value=whiskey.name;
+
+	let whiskey = ev.target.result;
+	document.getElementById('whiskey__name').value = whiskey.name;
     document.getElementById('whiskey__country').value = whiskey.country;
-    document.getElementById('whiskey__age').value= whiskey.age;
+    document.getElementById('whiskey__age').value = whiskey.age;
     document.getElementById('whiskey__isOwned').checked = whiskey.owned;
     document.whiskeyForm.setAttribute("data-key", whiskey.id);
 
 	}
-	req.onerror=(err)=> {
+	req.onerror = (err)=> {
 		console.warn(err);
 	}
 }))    
@@ -179,9 +180,9 @@ function makeTX(storeName, mode) {
       console.warn(err);
     };
     return tx;
- }
-
+}
 document.getElementById('whiskey__btn-clear').addEventListener('click', clearForm);
+
 function clearForm(ev){
 	if(ev) ev.preventDefault();
 	document.whiskeyForm.reset();
@@ -189,7 +190,6 @@ function clearForm(ev){
 
 
 
- // ДОБАВИТЬ САМОВПОСПРОИЗВЕДЕНИЕ ()
 })();
 
 

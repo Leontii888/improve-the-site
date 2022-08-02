@@ -36,13 +36,12 @@
 
 .showcase__down {
 	position: relative;
-    /*display: inline-block;*/
     width: 9rem;
 
     margin: 0;
+    padding: 0;
 
     text-align: center;
-    /*background-color: rgba(255, 106, 0, .4);*/
 }
 .showcase__down:after
 {

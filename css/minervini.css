@@ -6,7 +6,7 @@ margin:  0 auto;
 
 #minervini__canvas-chart{
     width:40rem;
-    margin: 0 2rem 0 2rem;
+    margin: 0 2rem 2rem 2rem;
     background-color: #aadaff;
     opacity: 0.5
 }
@@ -22,22 +22,26 @@ margin:  0 auto;
 }
 
 .minervini__controls-main-graph{
-    margin: 2rem 1.5rem 1.5rem 0;
+    display: flex;
+    align-items: center;
+    margin: 0 0 2rem 0
 }
-#minervini__count-main-graph, #minervini__count-sub-graph{
-
-    /*cursor: pointer;*/
+.minervini__controls-sub-graph{
+    display: flex;
+    align-items: center;
 }
 
 .minervini__put-main-button{
    
 }
 .minervini__count-main-button{
+    margin: 0 2rem;
     width:9rem;
 }
 .minervini__put-subdata-button{
-
+    
 }
 .minervini__count-subdata-button{
  width:9rem;
+ margin: 0 2rem;
 }

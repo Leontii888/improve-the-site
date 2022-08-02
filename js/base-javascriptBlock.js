@@ -12,8 +12,8 @@ function closemodal() {
 function cleanInp(){
 		document.querySelectorAll('input').forEach(function(el,i){
 			if(el.id!=='loss'
-				& el.id!=='getCount'
-				& el.id!=='getCountSingle'
+				& el.id!=='minervini__count-main-graph'
+				& el.id!=='minervini__count-sub-graph'
 				& el.id!=='search'){
 				console.log(`B ${i} поле было записано ${el.value}`);
 				el.value = null;

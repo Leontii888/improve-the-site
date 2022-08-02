@@ -1,13 +1,40 @@
 .newsblock{
-	background-color: rgba(226,234,147,0.8);
-	padding: 2rem;
-	margin: 0;
+background-color: rgba(226,234,147,0.8);
 }
 .newsblock__container{
-width: 100%
+width: 100%;
+margin: 2rem;
 }
-.cards__item{
-	border-radius: 3px;
+.newsblock__item *{
+padding: 0;
+margin: 0;
+}
+.newsblock__item{
+padding:  0 2rem 0 2rem;
+margin: 0 2rem;
+
+height: 38rem;
+width: 33.333%;
+
+
+border-radius: 3px;
+ background-color: rgba(51, 85, 204, .2);
+}
+.newsblock__title{
+height: 5rem;
+}
+.newsblock__title h5{
+margin: 0 auto;
+}
+.newsblock__image{
+width: 4rem;
+margin: 4rem auto;
+}
+.newsblock__text{
+margin: 0 0 2rem 0;
+}
+.newsblock__button{
+	padding: 3px;
 }
 
 
