@@ -5,6 +5,7 @@
 .trade__container {
 		 width: 100%;
 		display: flex;
+		padding: 0 0 2rem 0;
 }
 .trade__container h5{
 	margin: 0 0 2rem 0;
@@ -64,10 +65,26 @@ margin: 0 0 2rem 0;
 	 font-weight: bold;
 }
 
-.trade__some{
+.trade__article{
 	flex:  0 1 50%;
 	height: 41rem;
 	/*padding: 0 2rem 2rem 2rem;*/
+
+}
+.trade__article-image{
+	height: 10rem;
+
+
+}
+.trade__article-image img{
+	transition: 1s;
+	width: 42rem;
+
+}
+.trade__article-image img:hover{
+	transform: translateX(-10rem) translateY(-10rem);
+	transition: 3s;
+	width: 150rem;
 
 }
 .trade__title-text{

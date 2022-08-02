@@ -21,11 +21,13 @@ border-radius: 3px;
  background-color: rgba(51, 85, 204, .2);
 }
 .newsblock__title{
+display: flex;
+justify-content: center;
+
 height: 5rem;
+
 }
-.newsblock__title h5{
-margin: 0 auto;
-}
+
 .newsblock__image{
 width: 4rem;
 margin: 4rem auto;
