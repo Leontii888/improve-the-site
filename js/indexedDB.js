@@ -1,4 +1,19 @@
+// проверяем существования префикса.
 
+// window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+
+// let indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
+
+// window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
+
+// let IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction;
+
+// window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
+
+// use IndexedDB---------
+if (!window.indexedDB) {
+    window.alert("Ваш браузер не поддерживает стабильную версию IndexedDB. Такие-то функции будут недоступны");
+}
 
 
 //manual data
@@ -21,12 +36,7 @@
 // console.log(library)
 // console.log(customerData)
 
-
-
-// id------------------------
-// function idRandomStyle(){
-// 	return parseInt(Math.floor(Math.random() * 10000000000).toString().padStart(10, "0"));
-// }
+// uid-------------
 function uid() {
   let timing = Date.now().toString(36).toLocaleUpperCase();
   let randomising = parseInt(Math.random() * Number.MAX_SAFE_INTEGER);
@@ -35,31 +45,11 @@ function uid() {
 };
 
 
-
-// use IndexedDB
-
-if (!window.indexedDB) {
-    window.alert("Ваш браузер не поддерживает стабильную версию IndexedDB. Такие-то функции будут недоступны");
-}
-
-// проверяем существования префикса.
-
-// window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
-
-// let indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
-
-// window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
-
-// let IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction;
-
-// window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
-
-
 // //--------------delete base at all
  // let deleteRequest = indexedDB.deleteDatabase("linksDB");
 
 
-//-------------init base
+//-------------init a base
 const IDB = (function init() {
   let db = null;
   let objectStore = null;
@@ -187,50 +177,8 @@ function clearForm(ev){
 	if(ev) ev.preventDefault();
 	document.whiskeyForm.reset();
 }
-
-
-
 })();
 
-
-
-
-
-
-
-
-
-
-
-
-
-// -------------------add
-// addFile("names","readwrite", customerData);
-// addFile("names","readwrite", customerData2);
-
-//--------put
-// putFolder("lib","readwrite", library[4].youtube);
-// putFile("lib","readwrite", library[1].css);
-// putFile("lib","readwrite", library[5].design);
-// putFile("names","readwrite", customerData);
-// putFolder("names","readwrite", customerData3);
-
-//-----getAll
-// getAll("lib","readwrite");
-// getAll("names","readwrite");
-
-//-----deleteKey doesnt work
-// deleteValue("lib","readwrite", `"http://www.unit-conversion.info/sitemap.html"`);
-// deleteItem("lib","readwrite", `https://www.youtube.com/channel/UCY10FZglXJ8RL3xB04VpykQ`);
-// deleteItem("names","readwrite", `444-44-4444`);
-
-
-//-----getItem  doesnt work
-// getItem("lib","444-44-4444");
-// getItem("names","readwrite",2181801051);
-
-//------getIndex  doesnt work
-// getIndex("lib","readwrite", "name", 6);
 
 //-----------------add data--------------------
 
@@ -406,5 +354,3 @@ function getIndex(folder, method,key, value) {
     });
 
 }
-
-
