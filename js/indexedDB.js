@@ -237,7 +237,7 @@ function clearForm(){
 	// e.preventDefault();
 	document.whiskeyForm.reset();
 }
-})();
+})//();
 
 
 //-----------------add old variant data--------------------
