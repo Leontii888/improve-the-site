@@ -35,6 +35,8 @@
 }
 
 .showcase__down {
+        font-size: inherit;
+
 	position: relative;
     width: 9rem;
 
@@ -91,6 +93,8 @@
     overflow: hidden;
 }
 .showcase__down-el{
+    margin: 0;
+    font-size: inherit;
 }
 
 

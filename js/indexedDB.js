@@ -15,27 +15,6 @@ if (!window.indexedDB) {
     window.alert("Ваш браузер не поддерживает стабильную версию IndexedDB. Такие-то функции будут недоступны");
 }
 
-
-//manual data
-
-// const customerData = [
-//   { id:uid(),"ssn": "444-44-4444", name: "Bill", age: 35, email: "bill@company.com" },
-//   { id:uid(),"ssn": "555-55-5555", name: "Donna", age: 32, email: "donna@home.org" }
-// ];
-// const customerData2 = [
-//   { id:uid(),"ssn": "444-00-4444", name: "Billy", age: 30, email: "billy@company.com" },
-//   { id:uid(),"ssn": "555-00-5555", name: "Donnaroza", age: 72, email: "donnaroza@home.org" }
-// ];
-// const customerData3 = [
-//   { id:uid(),"ssn": "444", name: "yo", age: 3, email: "yo@company.com" },
-//   { id:uid(),"ssn": "555", name: "bro", age: 7, email: "bro@home.org" }
-// ];
-
-// stored data
-
-// console.log(library)
-// console.log(customerData)
-
 // uid-------------
 function uid() {
   let timing = Date.now().toString(36).toLocaleUpperCase();
@@ -46,34 +25,35 @@ function uid() {
 
 
 // //--------------delete base at all
- // let deleteRequest = indexedDB.deleteDatabase("linksDB");
+ // let deleteRequest = indexedDB.deleteDatabase("WhiskeyDB");
 
 
 //-------------init a base
 const IDB = (function init() {
   let db = null;
   let objectStore = null;
-  let DBOpenReq = indexedDB.open('WhiskeyDB', 9);
+  let DBOpenReq = indexedDB.open('WhiskeyDB', 1);
 
   DBOpenReq.addEventListener('error', (err) => {
     //Error occurred while trying to open DB
-    console.warn(err);
+    console.warn(err.target.error);
   });
-  DBOpenReq.addEventListener('success', (ev) => {
+  DBOpenReq.addEventListener('success', (e) => {
     //DB has been opened... after upgradeneeded
-    db = ev.target.result;
-    console.log('success', db);
+    db = e.target.result;
+    console.log('Success. DB has been opened...', db);
     buildList();
   });
-  DBOpenReq.addEventListener('upgradeneeded', (ev) => {
+  DBOpenReq.addEventListener('upgradeneeded', (e) => {
     //first time opening this DB
     //OR a new version was passed into open()
-    db = ev.target.result;
-    let oldVersion = ev.oldVersion;
-    let newVersion = ev.newVersion || db.version;
+    db = e.target.result;
+    let oldVersion = e.oldVersion;
+    let newVersion = e.newVersion || db.version;
     console.log('DB updated from version', oldVersion, 'to', newVersion);
 
     console.log('upgrade', db);
+    console.log('Event', e);
     if (!db.objectStoreNames.contains('whiskeyStore')) {
       objectStore = db.createObjectStore('whiskeyStore', {
         keyPath: 'id',
@@ -81,8 +61,8 @@ const IDB = (function init() {
     }
  });
 
- document.whiskeyForm.addEventListener('submit', (ev) => {
-    ev.preventDefault();
+document.querySelector("#whiskey__btn-add").addEventListener('click', (e) => {
+    e.preventDefault();
 
     let name = document.getElementById('whiskey__name').value.trim();
     let country = document.getElementById('whiskey__country').value.trim();
@@ -96,12 +76,8 @@ const IDB = (function init() {
       age,
       owned,
     };
-console.log(1)
     let tx = makeTX('whiskeyStore', 'readwrite');
-console.log(2)
-    tx.oncomplete = (ev) => {
-console.log(3)
-      console.log(ev);
+    tx.oncomplete = (e) => {
       buildList();
       clearForm();
     };
@@ -109,11 +85,11 @@ console.log(3)
     let store = tx.objectStore('whiskeyStore');
     let request = store.add(whiskey);
 
-    request.onsuccess = (ev) => {
+    request.onsuccess = (e) => {
       console.log('successfully added an object');
     };
     request.onerror = (err) => {
-      console.warn(err);
+      console.warn(err.target.error);
     };
  });
 
@@ -121,236 +97,172 @@ function buildList(){
  	let list = document.querySelector('.whiskey__wish-list');
  	list.innerHTML =`<li>Loading...</li>`;
  	let tx = makeTX('whiskeyStore','readonly');
- 	tx.oncomplete=(ev)=> {
- 		//do some on comlete
+ 	tx.oncomplete=(e)=> {
+ 		//do someth on comlete
+ 		// list.innerHTML =`<li>Loading now... for a while ...inside the store... </li>`;
  	}
  	let store = tx.objectStore('whiskeyStore');
  	let getReq = store.getAll();
  	// array, so need pass akey
- 	getReq.onsuccess=(ev)=>{
+ 	getReq.onsuccess=(e)=>{
  			//getall succsess
-	//getReq===ev.target
-	list.innerHTML = ev.target.result.map(whiskey => {
-						return `<li data-key ="${whiskey.id}"><span>${whiskey.name} </span><span>${whiskey.country} </span><span>${whiskey.age}</span></li>`
-					}).join('\n'); }
+	//getReq===e.target
+	list.innerHTML = e.target.result.map(whiskey => {
+						return `<li data-key ="${whiskey.id}">
+						<span>${whiskey.name} </span>
+						<span>${whiskey.country} </span>
+						<span>${whiskey.age}</span>
+						</li>`})
+									.join('\n');
+	}
+ 	
  	getReq.onerror=(err)=>{
-	console.warn(err)
+	console.warn(err.target.error)
  	}
 }
+//update--
+document.querySelector("#whiskey__btn-update").addEventListener('click', (e) => {
+    e.preventDefault();
 
-document.querySelector(".whiskey__wish-list").addEventListener("click", (ev => {
+    let name = document.getElementById('whiskey__name').value.trim();
+    let country = document.getElementById('whiskey__country').value.trim();
+    let age = parseInt(document.getElementById('whiskey__age').value);
+    let owned = document.getElementById('whiskey__isOwned').checked;
+    let key = document.whiskeyForm.getAttribute("data-key");
+    if(key){
+	    let whiskey = {
+	      id:key,
+	      name,
+	      country,
+	      age,
+	      owned,
+	    };
+	    let tx = makeTX('whiskeyStore', 'readwrite');
+	    tx.oncomplete = (e) => {
+	      buildList();
+	      clearForm();
+	    };
+
+	    let store = tx.objectStore('whiskeyStore');
+	    let request = store.put(whiskey);
+
+	    request.onsuccess = (e) => {
+	      console.log('successfully put an object');
+	    };
+	    request.onerror = (err) => {
+	      console.warn(err.target.error);
+	    };
+	} 
+});
+//delete--
+document.querySelector("#whiskey__btn-delete").addEventListener('click', (e) => {
+    e.preventDefault();
+     let key = document.whiskeyForm.getAttribute("data-key");
+    if(key){
+			    let tx = makeTX('whiskeyStore', 'readwrite');
+		    tx.oncomplete = (e) => {
+		      buildList();
+		      clearForm();
+		    };
+
+		    let store = tx.objectStore('whiskeyStore');
+		    let request = store.delete(key);
+
+		    request.onsuccess = (e) => {
+		      console.log('successfully deleted an object');
+		    };
+		    request.onerror = (err) => {
+		      console.warn(err.target.error);
+		    };
+	  };
+});
+document.querySelector(".whiskey__wish-list").addEventListener("click", (e => {
 	//closest having the [data-key]
-	let li = ev.target.closest("[data-key]");
+	let li = e.target.closest("[data-key]");
 	let id = li.getAttribute("data-key");
-	console.log(li, id);
-
+	// console.log(li, id);
 
 	let tx = makeTX('whiskeyStore','readonly');
 	let store = tx.objectStore('whiskeyStore');
 	let req = store.get(id);
 	
-	req.onsuccess=(ev) => {
+	req.onsuccess=(e) => {
 
-	let whiskey = ev.target.result;
-	document.getElementById('whiskey__name').value = whiskey.name;
-    document.getElementById('whiskey__country').value = whiskey.country;
-    document.getElementById('whiskey__age').value = whiskey.age;
-    document.getElementById('whiskey__isOwned').checked = whiskey.owned;
-    document.whiskeyForm.setAttribute("data-key", whiskey.id);
+		let whiskey = e.target.result;
+		document.getElementById('whiskey__name').value = whiskey.name;
+	    document.getElementById('whiskey__country').value = whiskey.country;
+	    document.getElementById('whiskey__age').value = whiskey.age;
+	    document.getElementById('whiskey__isOwned').checked = whiskey.owned;
+	    document.whiskeyForm.setAttribute("data-key", whiskey.id);
 
 	}
 	req.onerror = (err)=> {
-		console.warn(err);
+		console.warn(err.target.error);
 	}
-}))    
-
+}));
+function buildList(){
+ 	let list = document.querySelector('.whiskey__wish-list');
+ 	list.innerHTML =`<li>Loading...</li>`;
+ 	let tx = makeTX('whiskeyStore','readonly');
+ 	tx.oncomplete=(e)=> {
+ 		//do someth on comlete
+ 	}
+ 	let store = tx.objectStore('whiskeyStore');
+ 	let getReq = store.getAll();
+ 	// array, so need pass a key
+ 	getReq.onsuccess=(e)=>{
+		list.innerHTML = e.target.result.map(whiskeyItem => {
+							return `<li data-key ="${whiskeyItem.id}">
+							<span>${whiskeyItem.name} </span>
+							<span>${whiskeyItem.country} </span>
+							<span>${whiskeyItem.age}yrs.</span>
+							</li>`})
+										.join('\n');
+	}
+ 	
+ 	getReq.onerror=(err)=>{
+		console.warn(err.target.error)
+ 	}
+}
 function makeTX(storeName, mode) {
     let tx = db.transaction(storeName, mode);
-    tx.onerror = (err) => {
-      console.warn(err);
-    };
+	    tx.onerror = (err) => {
+	      console.warn(err.target.error);
+	    };
     return tx;
 }
 document.getElementById('whiskey__btn-clear').addEventListener('click', clearForm);
 
-function clearForm(ev){
-	if(ev) ev.preventDefault();
+function clearForm(){
+	// e.preventDefault();
 	document.whiskeyForm.reset();
 }
 })();
 
 
-//-----------------add data--------------------
+//-----------------add old variant data--------------------
 
-function addFile(folder, method, fileToPut) {
+// function addFile(folder, method, fileToPut) {
 
     
-    return new Promise((resolve, reject) => {
-      // новая транзакция
-	let action = db.transaction(folder, method)
-				.objectStore(folder)
-					.add(fileToPut);
+//     return new Promise((resolve, reject) => {
+//       // новая транзакция
+// 	let action = db.transaction(folder, method)
+// 				.objectStore(folder)
+// 					.add(fileToPut);
 		
 	      
-        resolve(action.onsuccess = () => {
+//         resolve(action.onsuccess = () => {
 
-        console.log(`Data has been added to the folder ${folder} succsessful!`); 
+//         console.log(`Data has been added to the folder ${folder} succsessful!`); 
         	
-        });
+//         });
 
      
-        reject( action.onerror = () => {
-		console.error(`Error on adding to ${folder}`, e.target.error);
-		});
+//         reject( action.onerror = () => {
+// 		console.error(`Error on adding to ${folder}`, e.target.error);
+// 		});
 
-	})	
+// 	})	
 	
-}
-//-----------------------put
-
-function putFolder(folder, method, fileToPut) {
-
-    return new Promise((resolve, reject) => {
-
-      // новая транзакция
-		let action = db.transaction(folder, method)
-							.objectStore(folder)
-								.put(fileToPut);
-     
-        resolve(action.onsuccess = (e) => {
-       	 console.log("Data have been upload by putting. Completed!"); 
-      	});
-
-      
-        reject(action.onerror = (e) => {
-			console.error(`Error on puting to ${folder}`, e.target.error);
-     	}); // ошибка
-
-    });
-
- }
-//-------delete
-
- function deleteItem(folder,method, value) {
-
-    return new Promise((resolve, reject) => {
-
-      // новая транзакция
-      let action = db.transaction([folder],method).objectStore(folder).delete(value);
-      
-      resolve(action.onsuccess = (e) => {
-				console.log(`Deleting ${value} completed!`); // успех
-	  });
-
-      
-        reject(action.onerror = (e) => {
-			console.error(`Error on Deleting item on ${value}`, e.target.error);
-
-        }); // ошибка
-    });
-
-  }
-
-
- //------------get
-// function getItem(folder, value){
-
-// 	let action = db.transaction([folder])
-// 		    		.objectStore(folder)						
-// 						.get(value);
-
-// 		console.log(`Gettin action succsesful!`);
-
-// 		action.onsuccess = function (e) {
-// 			if(e.target.result){
-// 				 console.log(`Gettin item on ${value} succsesful!`);
-// 		    	 console.log(e.target.result)
-// 			}
-		   
-// 		    console.log(e.target.result)
-// 			console.log(`FUCK!`);
-// 		}
-// 		action.oncomplete=() => {
-// 				console.log(`Gettin item on ${value} completed!`);
-// 		}
-// 	    action.onerror = function (e) {
-//     		console.log(`Error on gettin item   on ${value}`, e.target.error);
-//     	}
 // }
-
-
-
-
-function getItem(folder, method,value) {
-
-    return new Promise((resolve, reject) => {
-
-      // новая транзакция
-      let action = db.transaction([folder],method)
-		    		.objectStore(folder)						
-						.get(value);
-
-        resolve(
-			action.onsuccess = (e) => {
-				console.log(e)
-		});
-        
-        reject( action.onerror = () => {
-        	console.error(`Error on Getting all from ${folder}`, e.target.error);
- 		});
-     
-	})
-}
-//------------------------getAll
-
-
-function getAll(folder, method) {
-
-    return new Promise((resolve, reject) => {
-
-      // новая транзакция
-      let action = db.transaction([folder],method)
-		    		.objectStore(folder)						
-						.getAll();
-
-        resolve(action.onsuccess = (e) => {
-       		 console.log(e.target.result);
-        	 console.log(`Gettin all items completed!`); // успех
-        });
-
-     
-        reject( action.onerror = () => {
-			console.error(`Error on Getting all from ${folder}`, e.target.error);
-        }); 
-
-    });
-
-}
-
-
-//------------------------get-index doesnt work
-
-
-function getIndex(folder, method,key, value) {
-
-    return new Promise((resolve, reject) => {
-
-      // новая транзакция
-		let action = db.transaction(folder, method).objectStore(folder)
-																.index(key)
-																	.get(value);
-
-        resolve(action.onsuccess = (e) => {
-        console.log(e.target.result);
-        console.log(`Gettin index completed!`); // успех
-      });
-
-      
-        reject(action.onerror = () => {
-        				console.error(`Error on Getting all`, e.target.error);
-
-      });
-
-    });
-
-}
