@@ -37,9 +37,11 @@ function writeLinks(){
 			// return
 			} else {
 			let data = {
+				id: `${uid()}`,
 				address:newString[0],
 				comment:newString[1],
-				tms: new Date().toLocaleString() 
+
+				// tms: new Date().toLocaleString() 
 			}
 			modifiedData = JSON.stringify(data);
 			// console.log(modifiedData)
@@ -197,7 +199,7 @@ function saveIntoStorage() {
 
 
 // !!delete all in LS
-localStorage.clear()
+// localStorage.clear()
 
 
 

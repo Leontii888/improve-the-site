@@ -14,14 +14,14 @@
 if (!window.indexedDB) {
     window.alert("Ваш браузер не поддерживает стабильную версию IndexedDB. Такие-то функции будут недоступны");
 }
-
+console.log(`to work with IndexeDB turn on IIFE (init(){})()`)
 // uid-------------
-function uid() {
-  let timing = Date.now().toString(36).toLocaleUpperCase();
-  let randomising = parseInt(Math.random() * Number.MAX_SAFE_INTEGER);
-  randomising = randomising.toString(36).slice(0, 12).padStart(12, '0').toLocaleUpperCase();
-  return ''.concat(timing, '-', randomising);
-};
+// function uid() {
+//   let timing = Date.now().toString(36).toLocaleUpperCase();
+//   let randomising = parseInt(Math.random() * Number.MAX_SAFE_INTEGER);
+//   randomising = randomising.toString(36).slice(0, 12).padStart(12, '0').toLocaleUpperCase();
+//   return ''.concat(timing, '-', randomising);
+// };
 
 
 // //--------------delete base at all

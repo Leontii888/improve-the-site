@@ -15,7 +15,6 @@ function cleanInp(){
 				& el.id!=='minervini__count-main-graph'
 				& el.id!=='minervini__count-sub-graph'
 				& el.id!=='search'){
-				console.log(`B ${i} поле было записано ${el.value}`);
 				el.value = null;
 			}
 		})
@@ -38,7 +37,6 @@ function countOptimalLot(){
 			modalCalc.style.display ='block';
 		} else {
 			let pts = (loss/(35000/fp.value)).toFixed(1);
-			console.log(pts)
 			let stopLOssPrice = (fp.value- pts)
 			calcData.innerHTML=`S/l: ${stopLOssPrice}</br>
 			t/p: ${(stopLOssPrice+pts*3)}</br>
@@ -86,6 +84,14 @@ for (var i=0; i< showsubMenu.length; i++){
 			}
 		})
 }
+
+function uid() {
+  let timing = Date.now().toString(36).toLocaleUpperCase();
+  let randomising = parseInt(Math.random() * Number.MAX_SAFE_INTEGER);
+  randomising = randomising.toString(36).slice(0, 12).padStart(12, '0').toLocaleUpperCase();
+  return ''.concat(timing, '-', randomising);
+};
+
 		
 console.log('mySite070422.js')
 console.log((new Date).toLocaleDateString() );
