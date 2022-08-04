@@ -34,7 +34,7 @@ function modifyDataString(string) {
 function writeLinks(){
 		let newString = newlink.value.split(",");							
 		if(newString.length==1){
-			alert("ВВОДИТЕ ВНИМАТЕЛЬНО. ПОСЛЕ ССЫЛКИ НУЖНА ЗАПЯТАЯ И КОММЕНТАРИЙ")
+			alert("ВВОДИТЕ ВНИМАТЕЛЬНО. ПОСЛЕ ССЫЛКИ ЧЕРЕЗ ЗАПЯТУЮ ВНЕСИТЕ КОММЕНТАРИЙ И НАЗВАНИЕ РАЗДЕЛА!")
 			link = [];
 			wholeListbox__Text.innerHTML = ``;
 			// return
@@ -42,6 +42,7 @@ function writeLinks(){
 			let data = {
 				address:newString[0],
 				comment:newString[1],
+				chapter:newString[2],
 				id: `${uid()}`
 				// tms: new Date().toLocaleString() 
 			};
@@ -53,7 +54,9 @@ function writeLinks(){
 			// arrayBaseLinks = [...arrayBaseLinks, link};
 			newlink.value ='';
 		}
+		return newString;
 };
+
 function putSomelinks() {
 	if(flags.isDataSaved && flags.isPutMore){
 		link = [];
@@ -181,15 +184,37 @@ function saveIntoStorage() {
 										console.log("CLEAR ALL")
 										clearLinksInBox();
 									}
-						}else {
-								index =Math.floor(Math.random() * 10000000000).toString().padStart(10, "0")+(new Date().toLocaleString());
-										
-										console.log(`hi`)// localStorage.setItem(`myLinks (${index})`, JSON.stringify(arrayBaseLinks));
+					}else {
+										if(link.length==1){
+											let parsed = JSON.parse(link[0]);
+											
+										addToLibrary(parsed.address,parsed.comment,parsed.chapter);
+										console.log(`went one: ${parsed}`);
+										console.log(currentLibrary);
+										wholeListbox__Text.innerHTML += `<span>${parsed.chapter}: ${parsed}DOWNLOADED!</span><hr>`;
+											
+										} else {
+											link.forEach(el => {
+										let parsed = JSON.parse(el);		
+										addToLibrary(parsed.address,parsed.comment,parsed.chapter);
+										console.log(`went all: ${parsed}`);
+										wholeListbox__Text.innerHTML += `<span>${parsed.chapter}: ${parsed}DOWNLOADED!</span><hr>`;
+										console.log(currentLibrary)
+											})
+										}
+
+
+
+											//
+									// index =Math.floor(Math.random() * 10000000000).toString().padStart(10, "0")+(new Date().toLocaleString());
+										// localStorage.setItem(`myLinks (${index})`, JSON.stringify(arrayBaseLinks));
 											// const data = JSON.stringify(localStorage.getItem(`myLinks (${index})`));
 											// console.log(`ДАТА СОХРАНЕНА В БАЗУ ${modifyDataString(data)}`)
 											// 		wholeListbox__Text.innerHTML = `<span>ДАТА СОХРАНЕНА В LS:${modifyDataString(data)}</span>`;
 											// 			storageLength.innerHTML = `<span>${localStorage.length}</span>`;
-
+												localStorage.clear()
+												uploadToLocalStorage(titles, currentLibrary);
+												hostingToSite(downloadFromLS());
 															flags.isDataSaved= true;
 															flags.isRepeated = true;
 															flags.isPutMore=true;

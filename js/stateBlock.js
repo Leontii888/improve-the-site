@@ -170,6 +170,7 @@ linux:[
 let currentLibrary = {...library};
 
 
+console.log(currentLibrary)
 
 //prepare for adding to object library
 function  createObjForLibrary(addressLink,commentData){
@@ -183,7 +184,8 @@ function  createObjForLibrary(addressLink,commentData){
 /// adding to the Chapter in objectLibrary
 function addToLibrary(addressLink,commentData,chapter){
 	const adder =createObjForLibrary(addressLink,commentData);
-	let changedBase ={...currentLibrary,chapter:currentLibrary[chapter].unshift(adder)};
+	let changedBase ={...currentLibrary,
+						chapter: currentLibrary[chapter].unshift(adder)};
 	console.log(` Succsessfully added to ${chapter}`);
 
 	uploadToLocalStorage(titles, currentLibrary);
