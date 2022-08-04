@@ -2,7 +2,8 @@
 //============================================
 
 async function getWeather(point){
-	point = point || "Anadyr";
+	try{
+		point = point || "Anadyr";
 	weatherBlock.innerHTML= null;
 	const  {city,list} = await (await fetch(
 		`https://api.openweathermap.org/data/2.5/forecast?q=${point}&APPID=2281c7fed03ac47a4b272784c3b8ea80&units=metric`)).json();
@@ -12,13 +13,13 @@ async function getWeather(point){
 	
 	// console.log(city,list)
 
-const drawWeather = (placeToShow, city,list) => {
+	const drawWeather = (placeToShow, city,list) => {
 			const days = [0,7,24,39],
 					{
     				name,
     				coord:{lat: x},
     				coord:{lon:y}
-					} = city;
+			} = city;
 					
 					function getCondDifferentDays(day,data){
 						const {
@@ -30,10 +31,10 @@ const drawWeather = (placeToShow, city,list) => {
 		        				wind:{speed:windSp},
 		        				weather
 
-    						} = data[day],
-    						{main} = weather[0];
+    					} = data[day],
+    					{main} = weather[0];
 
-    						return {
+    					return {
     							dt_txt,
 		        				tm,
 		        				prs,
@@ -41,11 +42,11 @@ const drawWeather = (placeToShow, city,list) => {
 		        				cl,
 		        				hm,
 		        				windSp
-    						}
-						}
-					let weatherOnDays = days.map(day=> {
+    					}
+					}
+						let weatherOnDays = days.map(day=> {
 						return getCondDifferentDays(day,list)
-							});
+					});
 						// console.log(weatherOnDays);
 
 						[...document.querySelectorAll('.mapsWeather__item-data')].forEach((el,i)=>{
@@ -57,8 +58,8 @@ const drawWeather = (placeToShow, city,list) => {
 										<p>Cloudness: ${weatherOnDays[i].cl}</p>
 										<p>Humidity: ${weatherOnDays[i].hm}</p>
 										<p>Winds: ${weatherOnDays[i].windSp}</p>`
-							})
-						}
+						})
+	}
                 	drawWeather(weatherBlock,city,list);
 
 		mapboxgl.accessToken = 'pk.eyJ1IjoibGVvODg4IiwiYSI6ImNsNTJlZTJhYjBlbW0za3J5M3ozM3NmZ3IifQ.4IYOODVLOdWHJF8V4PAWsQ';
@@ -90,6 +91,11 @@ const drawWeather = (placeToShow, city,list) => {
 							map.addControl(new mapboxgl.FullscreenControl());
 
                 	console.log([city.coord.lat, city.coord.lon]);
+
+	} catch (e) {
+		console.warn(e.target)
+	}
+	
  };
 
 // console.log(`Ввод координат [lat, lon]. Для поиска на карте вызвать функцию getMap()`)
