@@ -1,13 +1,5 @@
 
-
-function showBitcoinRate(){
-	getRate();
-	setTimeout(()=> {
-		gr.innerHTML= ``;
-		myPoseBitcoin.innerHTML= ``;
-	},60000)
-};
-
+//price usd
 async function getRateUsd(){
 	try{
 		const {rates}= await (await fetch("https://openexchangerates.org/api/latest.json?app_id=950e7939546942c5b62a3bd284959545")).json();
@@ -17,54 +9,54 @@ async function getRateUsd(){
 					 let usd = (RUB*1.015).toFixed(1);
 					 return usd;
 		}catch(e){
-				console.warn(e.target.error)
+				console.warn(e)
 		}
 };
 
-console.log(`Смотрите также исторические данные getRateUsd`);
-console.log(`Смотрите также исторические данные getHistoryBitcoinRate(mydate)`);
 
-async function getRate(){
+// host to block on site
+async function hostRateinBlock(){
+						blockBitcoinRates.innerHTML= `Requesting data...`
 		try{
 			const {bpi,time} = await (await fetch("https://api.coindesk.com/v1/bpi/currentprice.json")).json();
-	// денег у меня в долларах,сколько могу купить, процент моей старой позы
-						let bitcoinRate =  bpi.USD.rate_float;
+						let bitcoinPrice =  bpi.USD.rate_float;
 							
-						getRateUsd().then(rate=> {
-									let myCurMoneyUsd =  150000/rate,
-									myPoseMayBe= myCurMoneyUsd/bitcoinRate,
-									procentFromOldPose = (myCurMoneyUsd*100/(bitcoinRate*0.334)).toFixed(1);
+						getRateUsd().then(usdPrice=> {
+									let myMoneyUsd =  150000/usdPrice,
+									myPoseMayBe= myMoneyUsd/bitcoinPrice,
+									partOldPose = (myMoneyUsd*100/(bitcoinPrice*0.334)).toFixed(1);
 
-									gr.innerHTML= `<div class="trade__rate-data"><p>Today\`s 
+									blockBitcoinRates.innerHTML= `<div class="trade__rate-data"><p>Today\`s 
 									<a  target='_blank' href ='https://www.worldcoinindex.com/coin/bitcoin'>bitcoin</a> stock price:
-									<span>$${(bitcoinRate).toFixed(0)} ($${rate})</span></p>`;
+									<span>$${(bitcoinPrice).toFixed(0)} ($${usdPrice})</span></p>`;
 
-									gr.innerHTML+= `<p>Could get (from RUB150_000)
+									blockBitcoinRates.innerHTML+= `<p>Could get (from RUB150_000)
 									${time.updated}:
-									<span>BTC${(myCurMoneyUsd/bitcoinRate).toFixed(8)}
-									(${procentFromOldPose}%)</span></p></div>`;
-									}).catch(e => console.warn(e));
-							 
-			
+									<span>BTC${(myMoneyUsd/bitcoinPrice).toFixed(8)}
+									(${partOldPose}%)</span></p></div>`;
+						})
 		}catch(e) {
-				console.warn(e.target.error)
+				console.warn(e)
 		}
 };
 
-//  исторические данные по битку
+console.log(`Смотреть также исторические данные Доллара и Биткойна(getRateUsd и getHistorybitcoinPrice(mydate))`);
+//  исторические данные по биткойну
 
-async function  getHistoryBitcoinRate(mydate){
+async function  getHistorybitcoinPrice(mydate){
 	try{
 		mydate = mydate ||"2019-01-01";
   		const startUrl = `https://api.coindesk.com/v1/bpi/historical/close.json?start=`,
-  		 endUrl = `&end=2021-12-07`,
-  		 url = startUrl+mydate+endUrl;
+  		 endUrl = `&end=2022-06-07`,
+  		 url = `${startUrl}${mydate}${endUrl}`;
 			const  data = await (await fetch(url)).json();
+
+			console.log(`Requesting data....`)
 			console.log(data)
 	}catch(e){
-			console.erorr(e)
+			console.warn(e)
 	}
   
 };
 
-// getHistoryBitcoinRate("2019-01-01")
+// getHistorybitcoinPrice("2015-01-01")

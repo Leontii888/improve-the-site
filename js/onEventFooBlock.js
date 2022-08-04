@@ -1,35 +1,35 @@
 
-abp.onclick= getmodal;			// открыть модальное окно
-mcl.onclick= closemodal;		// иконка закрытия модального окна
+aboutModal.onclick= getmodal;			// открыть модальное окно
+closeModal.onclick= closemodal;		// иконка закрытия модального окна
 modalCalc.onclick= closeCalc;		
 count.onclick = showChart;
 countInt.onclick = getSingleChartForInterest;
-fetchCurrencies.onclick = showBitcoinRate;
+fetchCurrencies.onclick = hostRateinBlock;
 
 
 
 
-losscount.addEventListener("keyup", function(event) {
-	event.preventDefault();
-	if (event.keyCode === 13) {
+lossCount.addEventListener("keyup", function(e) {
+	e.preventDefault();
+	if (e.keyCode === 13) {
 		countOptimalLot();
 	}
 });
-averagePrice.addEventListener("keyup", function(event) {
-	event.preventDefault();
-	if (event.keyCode === 13) {
+averagePrice.addEventListener("keyup", function(e) {
+	e.preventDefault();
+	if (e.keyCode === 13) {
 		countAveragePrice();
 	}
 });
-getReqWeather.addEventListener("keyup", function(event) {
-	event.preventDefault();
-	if (event.keyCode === 13) {
+getReqWeather.addEventListener("keyup", function(e) {
+	e.preventDefault();
+	if (e.keyCode === 13) {
 		getWeather(getReqWeather.value);
 	}
 });
 
-buts__putLink.addEventListener('click', putSomelinks);
-buts__getLink.addEventListener('click', showBaseLinks);
-wholeListbox__close.addEventListener('click', closeBaseBox);
-buts__clearBase.addEventListener('click', clearLinksInBox);
-buts__setStorage.addEventListener('click', saveIntoStorage);
+putLink.addEventListener('click', putSomelinks);
+getLink.addEventListener('click', showBaseLinks);
+showroomClose.addEventListener('click', closeBaseBox);
+clearBase.addEventListener('click', clearLinksInBox);
+saveToStorage.addEventListener('click', saveIntoStorage);

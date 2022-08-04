@@ -1,4 +1,4 @@
-
+//open m0dal window
 function getmodal() {
 	frontModal.style.display = 'block';
 }
@@ -20,13 +20,14 @@ function cleanInp(){
 		})
 };
 //
-console.log('посчитать стоплосс и тейкпрофит - задать цену покупки (инпут 1) и лосс (инпут 3)о, нажать enter')
+console.log('посчитать стоплосс и тейкпрофит - задать цену покупки (инпут 1) и лосс (инпут 3), нажать enter')
+//calc
 function countOptimalLot(){
-	let loss =losscount.value?losscount.value:2000;
-	if(sp.value){
-			const lot = Math.abs((loss/(fp.value-sp.value)).toFixed(1)),
-			fee = (fp.value*2*lot/1000000*330).toFixed(1),
-			fond = (fp.value*lot/1000000).toFixed(3);	
+	let loss =lossCount.value?lossCount.value:2000;
+	if(secondPricePose.value){
+			const lot = Math.abs((loss/(firstPricePose.value-secondPricePose.value)).toFixed(1)),
+			fee = (firstPricePose.value*2*lot/1000000*330).toFixed(1),
+			fond = (firstPricePose.value*lot/1000000).toFixed(3);	
 
 			calcData.innerHTML=`Искомый лот: ${lot}
 			Стоимость сделки: ${fond} млн.,
@@ -36,11 +37,11 @@ function countOptimalLot(){
 			
 			modalCalc.style.display ='block';
 		} else {
-			let pts = (loss/(35000/fp.value)).toFixed(1);
-			let stopLOssPrice = (fp.value- pts)
-			calcData.innerHTML=`S/l: ${stopLOssPrice}</br>
-			t/p: ${(stopLOssPrice+pts*3)}</br>
-			купить ${(35000/fp.value).toFixed(0)}шт.</br>
+			let pts = (loss/(35000/firstPricePose.value)).toFixed(1);
+			let stopLossPrice = (firstPricePose.value- pts)
+			calcData.innerHTML=`S/l: ${stopLossPrice}</br>
+			t/p: ${(stopLossPrice+pts*3)}</br>
+			купить ${(35000/firstPricePose.value).toFixed(0)}шт.</br>
 
 			при депозите 35_000,
 			лоссе ${loss}`
@@ -48,6 +49,7 @@ function countOptimalLot(){
 		}
 		
 };
+//calc
 function countAveragePrice(){
 		calcData.innerHTML=``;
 		if(averagePrice.value){
@@ -84,7 +86,7 @@ for (var i=0; i< showsubMenu.length; i++){
 			}
 		})
 }
-
+//uniq id generator
 function uid() {
   let timing = Date.now().toString(36).toLocaleUpperCase();
   let randomising = parseInt(Math.random() * Number.MAX_SAFE_INTEGER);
@@ -93,8 +95,7 @@ function uid() {
 };
 
 		
-console.log('mySite070422.js')
-console.log((new Date).toLocaleDateString() );
+console.log('base-javascript.js loaded', new Date().toLocaleDateString())
 
 
 

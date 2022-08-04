@@ -36,7 +36,7 @@ function writeLinks(){
 		if(newString.length==1){
 			alert("ВВОДИТЕ ВНИМАТЕЛЬНО. ПОСЛЕ ССЫЛКИ ЧЕРЕЗ ЗАПЯТУЮ ВНЕСИТЕ КОММЕНТАРИЙ И НАЗВАНИЕ РАЗДЕЛА!")
 			link = [];
-			wholeListbox__Text.innerHTML = ``;
+			showroomNote.innerHTML = ``;
 			// return
 			} else {
 			let data = {
@@ -49,7 +49,7 @@ function writeLinks(){
 			modifiedData = JSON.stringify(data);
 			// console.log(modifiedData)
 
-			wholeListbox__Text.innerHTML += `<span>${newString[2]}: ${modifiedData}ПОКА НЕ В БАЗЕ </span><hr>`;
+			showroomNote.innerHTML += `<span>${newString[2]}: ${modifiedData}ПОКА НЕ В БАЗЕ </span><hr>`;
 			link =[...link, modifiedData];
 			// arrayBaseLinks = [...arrayBaseLinks, link};
 			newlink.value ='';
@@ -60,7 +60,7 @@ function writeLinks(){
 function putSomelinks() {
 	if(flags.isDataSaved && flags.isPutMore){
 		link = [];
-		wholeListbox__Text.innerHTML = ``;
+		showroomNote.innerHTML = ``;
 
 		writeLinks();
 
@@ -83,11 +83,11 @@ function closeBaseBox() {
 	wholeListbox.style.display = 'none';
 	checkStorage.style.display = 'none';
 	newlink.value ='';
-	wholeListbox__Text.innerHTML = `НАЧНИТЕ ЗАНОСИТЬ</br>`;
+	showroomNote.innerHTML = `НАЧНИТЕ ЗАНОСИТЬ</br>`;
 	flags.isPutMore=false;
 };
 function clearLinksInBox() {
-	wholeListbox__Text.innerHTML = ``;
+	showroomNote.innerHTML = ``;
 	newlink.value ='';
 	link.length=0;
 
@@ -191,14 +191,14 @@ function saveIntoStorage() {
 										addToLibrary(parsed.address,parsed.comment,parsed.chapter);
 										console.log(`went one: ${parsed}`);
 										console.log(currentLibrary);
-										wholeListbox__Text.innerHTML += `<span>${parsed.chapter}: ${parsed}DOWNLOADED!</span><hr>`;
+										showroomNote.innerHTML += `<span>${parsed.chapter}: ${parsed}DOWNLOADED!</span><hr>`;
 											
 										} else {
 											link.forEach(el => {
 										let parsed = JSON.parse(el);		
 										addToLibrary(parsed.address,parsed.comment,parsed.chapter);
 										console.log(`went all: ${parsed}`);
-										wholeListbox__Text.innerHTML += `<span>${parsed.chapter}: ${parsed}DOWNLOADED!</span><hr>`;
+										showroomNote.innerHTML += `<span>${parsed.chapter}: ${parsed}DOWNLOADED!</span><hr>`;
 										console.log(currentLibrary)
 											})
 										}
@@ -210,7 +210,7 @@ function saveIntoStorage() {
 										// localStorage.setItem(`myLinks (${index})`, JSON.stringify(arrayBaseLinks));
 											// const data = JSON.stringify(localStorage.getItem(`myLinks (${index})`));
 											// console.log(`ДАТА СОХРАНЕНА В БАЗУ ${modifyDataString(data)}`)
-											// 		wholeListbox__Text.innerHTML = `<span>ДАТА СОХРАНЕНА В LS:${modifyDataString(data)}</span>`;
+											// 		showroomNote.innerHTML = `<span>ДАТА СОХРАНЕНА В LS:${modifyDataString(data)}</span>`;
 											// 			storageLength.innerHTML = `<span>${localStorage.length}</span>`;
 												localStorage.clear()
 												uploadToLocalStorage(titles, currentLibrary);

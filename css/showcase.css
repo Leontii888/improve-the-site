@@ -1,7 +1,7 @@
 .showcase {
 	background-color: rgba(197, 214, 40, .5);
     padding: 2rem;
-    margin: 0;
+    margin: 0 0 8rem 0;
 }
 .trade__title {
 }
@@ -9,6 +9,7 @@
 .showcase__container {
     padding: 0 2rem;
     width: 100%;
+    height: 40rem;
 }
 /*.showcase__block-outer {
     display: flex;
@@ -85,12 +86,11 @@
 }
 #showcase__links
 {
+    height: 30rem;
     
-    height: 40em;
     display: flex;
     flex-direction:row;
 
-    overflow: hidden;
 }
 .showcase__down-el{
     margin: 0;
@@ -101,10 +101,8 @@
 .link {
      display: none;
 
-     /*margin-right: .8rem;*/
-     /*padding: 2rem 1.25rem;*/
-
      flex: 0 1 33.333%;
+     overflow: auto;
 }
 .visible {
      display: block;

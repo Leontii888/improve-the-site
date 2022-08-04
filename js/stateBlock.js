@@ -168,9 +168,9 @@ linux:[
 
 //object for adding items
 let currentLibrary = {...library};
+// console.log(currentLibrary)
 
 
-console.log(currentLibrary)
 
 //prepare for adding to object library
 function  createObjForLibrary(addressLink,commentData){
