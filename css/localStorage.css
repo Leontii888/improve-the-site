@@ -18,13 +18,12 @@ color: #444
 margin: 0 0 2rem 0;
 }
 .storage__note{
-    width: 50%;
     /*background-color:#e2ea93;*/
     color: #444;
 
 
 }
-.storage__input{
+.storage__input {
     width: 100%;
     margin: 0;
 }

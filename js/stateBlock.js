@@ -3,6 +3,7 @@ let parents = [...document.querySelectorAll(".link")];
 let titles = parents.map(el=> el.getAttribute("data-title"));
 let preparedTempArr = [];
 
+
 //base------
 const library = {
 common:[
@@ -169,24 +170,37 @@ linux:[
 let currentLibrary = {...library};
 
 
+
 //prepare for adding to object library
 function  createObjForLibrary(addressLink,commentData){
 	return {
-		id:uid(),
+		
 		address: addressLink,
-		comment:commentData
+		comment:commentData,
+		id:uid()
 	};
 }
 /// adding to the Chapter in objectLibrary
-function addToLibrary(base, addressLink,commentData,chapter){
+function addToLibrary(addressLink,commentData,chapter){
 	const adder =createObjForLibrary(addressLink,commentData);
-	let changedBase ={...base,chapter:base[chapter].unshift(adder)};
-	console.log(` Succsessfully added to ${chapter}`)
+	let changedBase ={...currentLibrary,chapter:currentLibrary[chapter].unshift(adder)};
+	console.log(` Succsessfully added to ${chapter}`);
+
+	uploadToLocalStorage(titles, currentLibrary);
+
 	return changedBase
 }
-// console.log(addToLibrary(currentLibrary,'http://rbc.ru',' shit-site',"linux"))
+// console.log(addToLibrary('http://rbc.ru',' shit-site',"linux"))
 
 
+//get an id of a link-item
+
+// [...linkToShow].map(el => el.addEventListener("click", (e => {
+// 	e.preventDefault();
+// 	let li = e.target.closest("[data-position]");
+// 	let id = li.getAttribute("data-position");
+// }))
+// );
 
 //LS
 
@@ -259,6 +273,7 @@ function hostingToSite(obj){
 
 
 // host to site from Local Storage
+
 let downloadedFromLS = downloadFromLS()
 hostingToSite(downloadedFromLS);
 

@@ -6,7 +6,7 @@ let flags = {
 },
 	tempDinamicCreatedInfoEl = {},
 	link =[],
-	arrayBaseLinks = { link };
+	arrayBaseLinks = [];
 	index=0;
 
 
@@ -21,13 +21,16 @@ let flags = {
 // 	}
 // };
 // let counterFromTwenty =counterFrom(20);
+
+//remove slashes and spaces
 function modifyDataString(string) {
 	return string.split("")
-	.filter(e => e != "\\")
-	.filter(e => e != "\"")
+	.filter(el => el != "\\")
+	.filter(el => el != "\"")
 	.filter(Boolean)
 	.join("");
 }
+
 function writeLinks(){
 		let newString = newlink.value.split(",");							
 		if(newString.length==1){
@@ -37,18 +40,17 @@ function writeLinks(){
 			// return
 			} else {
 			let data = {
-				id: `${uid()}`,
 				address:newString[0],
 				comment:newString[1],
-
+				id: `${uid()}`
 				// tms: new Date().toLocaleString() 
-			}
+			};
 			modifiedData = JSON.stringify(data);
 			// console.log(modifiedData)
 
-			wholeListbox__Text.innerHTML += `<span>${modifiedData}ПОКА НЕ В БАЗЕ </span><hr>`;
+			wholeListbox__Text.innerHTML += `<span>${newString[2]}: ${modifiedData}ПОКА НЕ В БАЗЕ </span><hr>`;
 			link =[...link, modifiedData];
-			arrayBaseLinks = {t:`${new Date().toLocaleString()}`, link};
+			// arrayBaseLinks = [...arrayBaseLinks, link};
 			newlink.value ='';
 		}
 };
@@ -84,7 +86,7 @@ function closeBaseBox() {
 function clearLinksInBox() {
 	wholeListbox__Text.innerHTML = ``;
 	newlink.value ='';
-	arrayBaseLinks.link.length=0;
+	link.length=0;
 
 	flags.isRepeated =false;
 };
@@ -150,7 +152,7 @@ function closeWarnWindow(){
 }
 
 function saveIntoStorage() {
-		if(arrayBaseLinks.link.length===0){ return	}else{
+		if(link.length===0){ return	}else{
 					// if(localStorage.getItem(`myLinks (${flags.isRepeated})`)){
 					if(flags.isRepeated){
 									if(!flags.isWarningOpen){
@@ -180,12 +182,13 @@ function saveIntoStorage() {
 										clearLinksInBox();
 									}
 						}else {
-								index =Math.floor(Math.random() * 10000000000).toString().padStart(10, "0");
-										localStorage.setItem(`myLinks (${index})`, JSON.stringify(arrayBaseLinks));
-											const data = JSON.stringify(localStorage.getItem(`myLinks (${index})`));
-											console.log(`ДАТА СОХРАНЕНА В БАЗУ ${modifyDataString(data)}`)
-													wholeListbox__Text.innerHTML = `<span>ДАТА СОХРАНЕНА В LS:${modifyDataString(data)}</span>`;
-														storageLength.innerHTML = `<span>${localStorage.length}</span>`;
+								index =Math.floor(Math.random() * 10000000000).toString().padStart(10, "0")+(new Date().toLocaleString());
+										
+										console.log(`hi`)// localStorage.setItem(`myLinks (${index})`, JSON.stringify(arrayBaseLinks));
+											// const data = JSON.stringify(localStorage.getItem(`myLinks (${index})`));
+											// console.log(`ДАТА СОХРАНЕНА В БАЗУ ${modifyDataString(data)}`)
+											// 		wholeListbox__Text.innerHTML = `<span>ДАТА СОХРАНЕНА В LS:${modifyDataString(data)}</span>`;
+											// 			storageLength.innerHTML = `<span>${localStorage.length}</span>`;
 
 															flags.isDataSaved= true;
 															flags.isRepeated = true;

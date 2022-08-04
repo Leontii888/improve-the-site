@@ -38,7 +38,8 @@ form p {
 label {
   font-size: inherit;
 }
-input[type='text'] {
+/*input[type='text'] {*/
+  .whiskey__form-container input{
   padding: 0.2rem 1rem;
   font-size: inherit;
   line-height: 1.5;
