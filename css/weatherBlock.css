@@ -9,8 +9,9 @@
     margin: 0 2rem 2rem 2rem;
 }
 .mapsWeather__info{
-    height: 60rem;
-    overflow: auto;
+    height: 43rem;
+    /*overflow: auto;*/
+    background-color: rgba(255,255,255,0.4)
 }
 .mapWeather__info-title{
 margin-left: 2rem;

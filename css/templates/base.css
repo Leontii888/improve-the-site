@@ -4,7 +4,13 @@
 *::after {
   box-sizing: border-box;
 }
+.container
+{
+  margin: 0;
+  width: 100%;
 
+  padding: 0 2rem 2rem 2rem;
+}
 /* Убираем внутренние отступы */
 ul[class],
 ol[class] {
@@ -107,17 +113,10 @@ p{
 
 
 
-.container
-{
-	margin: 0;
-  width: 50%;
-}
+
 
 .clear
 {
 clear: both;
 }
-/*---styles---*/
-.style--textalign-center{
-text-align: center;
-}
+

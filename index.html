@@ -53,7 +53,8 @@
 
 	</header>
 	<section class="frontpage">
-				<div class="frontpage__title-box">
+		<div class="container">
+			<div class="frontpage__title-box">
 					<h1 class="frontpage__title">Needful things and lasyMe</h1>
 					<h3 class="frontpage__subtitle">All you need is code.</h3>
 					<h4 class="frontpage__sub-subtitle">(Little bit more often)</h4>
@@ -78,13 +79,17 @@
 						<img src="img/w-cross-close2.png" alt="closebutton">
 					</div>
 				</div>
+		</div>
+				
 	</section> 
 
 <section class="trade">
 	<a name="trade--ancor"></a>
-	<h3 class=" trade__title title">Trader's helpful</h3>
+		<h3 class="title trade__title ">Trader's helpful</h3>
+	<div class="container  trade__container">
 
-		<div class="  trade__container">
+
+		
 			<div class= "trade__calc">
 					<h5>Get calc pose</h5>
 					<div class="block-inputs trade__block-inputs ">
@@ -167,15 +172,13 @@
 				</div>
 				<div class="trade__article-image" >
 					<img src="img/trader/bitcoin_chart.png" alt="table"></div>
-				
 			</div>
 	</div>
 </section>
 <section class="showcase">
 	<a name="showcase--ancor"></a>
-
 	<h3 class=" trade__title title">Showcase of links</h3>
-	<div class=" container showcase__container">
+	<div class="container showcase__container">
 		<div class='showcase__block-outer'>
 			<h6>Tap good link to</h6>
 			<div class ="showcase__block-nav">
@@ -217,7 +220,6 @@
 			</div>	<!--links-block-nav-->
 		</div>
 		<!--links-block-->
-		
 		<div id="showcase__links">
 			<ul id="showcase__link-common"  data-title="common" class="link visible">Common<hr>
 			</ul>
@@ -237,13 +239,13 @@
 			</ul>
 			<ul id="showcase__link-linux" data-title="linux" class="link ">Linux<hr>
 			</ul>
-		</div> <!--showcase__links-->
+		</div>
 	</div>
 </section> <!--showcase-->
 
 <section class="minervini">
-		<h3 class=" title style--textalign-center"> Minervini graphs</h3>
-		<div class=" container minervini__container">
+		<h3 class="title"> Minervini graphs</h3>
+		<div class="container minervini__container">
 			
 			<canvas id="minervini__canvas-chart"></canvas>
 			<div class ="minervini__block-controls"> 
@@ -279,8 +281,8 @@
 
 <section class="storage">
 		<a name="storage--ancor"></a>
-		<h3 class=" title  storage__title style--textalign-center">Keep links</h3>
-		<div  id="storage__container" class=" container storage__container">
+		<h3 class="title  storage__title">Keep links</h3>
+		<div class="container storage__container">
 			
 			<!--сохранение ссылок в сторедже-->
 				<div class="storage__note">
@@ -309,8 +311,8 @@
 						Save to storage</button>
 				</div>
 				<div class="storage__check">
-					<div class="storage__length-title flex style--textalign-center">
-						<span> so far in localStorage:</span>
+					<div class="storage__length-title">
+						<span>so far in localStorage:</span>
 						<span class="storage__check-length"></span>
 					</div>
 					<div class="storage__info-box">
@@ -329,7 +331,7 @@
 	<section class="whiskey">
 		<a name="whiskey--ancor"></a>
 		<h3 class="title">List on IndexedDB</h3>
-		<div class="whiskey__container">
+		<div class="container whiskey__container">
 			<div class="whiskey__form-container">
 				<form name="whiskeyForm">
 			        <fieldset>
@@ -365,17 +367,16 @@
 	      		</form>
 			</div>
 			<div class="whiskey__show-base">
-		        <h3>List of Whiskeys</h3>
+		        <h5>List of Whiskeys:</h5>
 			        <ul class="whiskey__wish-list">
 			          <!-- build list here -->
 			        </ul>
 	     	 </div>
 		</div>
 	</section> 
-
 	<section class="newsblock">
 		<a name="newsblock--ancor"></a>
-		<h3 class=" title style--textalign-center">What else?</h3>
+		<h3 class="title">What else?</h3>
 		<div class="container newsblock__container">
 			<div class="newsblock__row  cards">
 			<div class="cards__item newsblock__item">
@@ -385,9 +386,8 @@
 				<div class="cards__title newsblock__title">
 					<h6><a href="https://google.github.io/styleguide/jsguide.html" target="_blank">Are you a profi? Check it up!</a></h6>
 				</div>
-				<div class="cards__text newsblock__text">This document serves as the complete definition of Google’s coding standards for source code in the JavaScript programming language. A JavaScript source file is described as being in Google Style if and only if it adheres to the rules herein.
-
-Like other programming style guides, the issues covered span not only aesthetic issues of formatting, but other types of conventions or coding standards as well. However, this document focuses primarily on the hard-and-fast rules that we follow universally, and avoids giving advice that isn't clearly enforceable (whether by human or tool).
+				<div class="cards__text newsblock__text"><p>This document serves as the complete definition of Google’s coding standards for source code in the JavaScript programming language. A JavaScript source file is described as being in Google Style if and only if it adheres to the rules herein.</p>
+				<p>Like other programming style guides, the issues covered span not only aesthetic issues of formatting, but other types of conventions or coding standards as well. However, this document focuses primarily on the hard-and-fast rules that we follow universally, and avoids giving advice that isn't clearly enforceable (whether by human or tool).</p>
 				</div>
 				<div class="cards__button-block newsblock__button-block">
 					<div class=" mybutton cards__button newsblock__button">Add</div>
@@ -400,7 +400,7 @@ Like other programming style guides, the issues covered span not only aesthetic 
 				<div class="cards__title newsblock__title">
 					<h6><a href="https://habr.com/ru/company/ruvds/blog/339820/" target="_blank">20 приёмов в CMD Linux</a></h6>
 				</div>
-				<div class="cards__text newsblock__text">Тема полезных приёмов работы в терминале Linux неисчерпаема. Казалось бы — всё устроено очень просто: приглашение оболочки, да введённые с клавиатуры команды. Однако, в этой простоте кроется бездна неочевидных, но полезных возможностей.
+				<div class="cards__text newsblock__text"><p>Тема полезных приёмов работы в терминале Linux неисчерпаема. Казалось бы — всё устроено очень просто: приглашение оболочки, да введённые с клавиатуры команды. Однако, в этой простоте кроется бездна неочевидных, но полезных возможностей.</p>
 				</div>
 				<div class="cards__button-block">
 					<div class=" mybutton cards__button newsblock__button">Add</div>
@@ -416,7 +416,7 @@ Like other programming style guides, the issues covered span not only aesthetic 
 				</div>
 				
 				
-				<div class="cards__text newsblock__text">Перед вами учебник по JavaScript, начиная с основ, включающий в себя много тонкостей и фишек JavaScript/DOM.
+				<div class="cards__text newsblock__text"><p>Перед вами учебник по JavaScript, начиная с основ, включающий в себя много тонкостей и фишек JavaScript/DOM.</p>
 					
 				.</div>
 				<div class="cards__button-block">
@@ -431,7 +431,7 @@ Like other programming style guides, the issues covered span not only aesthetic 
 				<div class="cards__title newsblock__title">
 					<h6><a href="https://10minutemail.net/"  target="_blank">10 minutes mail</a></h6>
 				</div>
-				<div class="cards__text newsblock__text">10minutemail.net — временная электронная почта. Ваша почта будет удалена через 10 минут, вы не сможете ею воспользоваться в дальнейшем. Вы можете взять дополнительные 10 минут. Данный сайт решит проблему анонимности вашего почтового ящика.
+				<div class="cards__text newsblock__text"><p>10minutemail.net — временная электронная почта. Ваша почта будет удалена через 10 минут, вы не сможете ею воспользоваться в дальнейшем. Вы можете взять дополнительные 10 минут. Данный сайт решит проблему анонимности вашего почтового ящика.</p>
 				</div>
 				<div class="cards__button-block">
 					<div class=" mybutton cards__button newsblock__button">Add</div>
@@ -442,7 +442,7 @@ Like other programming style guides, the issues covered span not only aesthetic 
 	</section> <!--newsblocks-->
 	<section class="mapsWeather">
 		<a name="mapsWeather"></a>
-		<h3 class=" title style--textalign-center">Weather and map</h3>
+		<h3 class=" title">Weather and map</h3>
 
 		<div class="  mapsWeather__container">
 			<div class="mapsWeather__info">

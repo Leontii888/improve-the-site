@@ -1,15 +1,17 @@
 .trade {
 	background-color: rgb(170,218,255,0.5)	;
 }
-
+.trade__title{
+	
+}
 .trade__container {
-		 width: 100%;
 		display: flex;
-		padding: 0 2rem 2rem 2rem;
+		
 }
 .trade__container h5{
 	margin: 0 0 2rem 0;
 }
+
 .trade__calc {
 
 	flex: 0 1 15%;

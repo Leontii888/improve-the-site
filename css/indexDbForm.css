@@ -1,6 +1,5 @@
 .whiskey__container{
   display: flex;
-  width: 50%;
   margin: 0 auto;
 
   background-color: rgba(51, 85, 204, .1);
@@ -13,8 +12,6 @@ flex: 0 1 50%;
 }
 
 p {
-/*  font-size: 1.2rem;
-  font-weight: 300;*/
     font-size: inherit;
   margin: 1rem 0;
 }
@@ -31,6 +28,7 @@ fieldset {
   padding: 0 4rem;
 }
 form p {
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -64,8 +62,8 @@ border: none;
   /*background-color: cornflowerblue;*/
 }
 .whiskey__show-base{
-  margin: 2rem;
+  margin: 1rem;
 
   flex: 0 1 50%;
-  justify-content:flex-start; 
+  justify-content:flex-end; 
 }
