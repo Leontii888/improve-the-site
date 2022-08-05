@@ -1,5 +1,7 @@
 .mapsWeather{
-    background: #E0EAFAFF;
+    /*background: #E0EAFAFF;*/
+        background-color: rgba(51, 85, 204, .2);
+
 }
 .mapsWeather__container{
     display: flex;

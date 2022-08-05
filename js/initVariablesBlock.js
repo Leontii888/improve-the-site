@@ -8,7 +8,6 @@ const	firstPricePose = document.getElementById('trade__data-first-price'),
 	aboutModal = document.querySelector('.header__item-about'),
 	headerSrc = document.getElementById('header-search'),
 
-	// btn = document.getElementById('trade__bitcoin-btn'),
 	blockBitcoinRates= document.getElementById('trade__bitcoin-rate'), 
 	myPoseBitcoin= document.getElementById('trade__bitcoin-mypose'),
 	 
@@ -28,6 +27,7 @@ const	firstPricePose = document.getElementById('trade__data-first-price'),
 	tendersBase = document.getElementById('showcase__link-tenders'),
 	showsubMenu = document.querySelectorAll(".showcase__down-el"),
 	linkToShow = document.getElementsByClassName('link'),
+	
 
 	count = document.getElementById('minervini__count-main-graph'),
 	dataBlock = document.getElementById('minervini__put-data-main-graph'),

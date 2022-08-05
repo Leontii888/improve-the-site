@@ -1,14 +1,17 @@
-
-aboutModal.onclick= getmodal;			// открыть модальное окно
-closeModal.onclick= closemodal;		// иконка закрытия модального окна
-modalCalc.onclick= closeCalc;		
+//front-modal
+aboutModal.onclick= getmodal;	
+closeModal.onclick= closemodal;	
+//trade
+modalCalc.onclick= closeCalc;
+//minervini		
 count.onclick = showChart;
 countInt.onclick = getSingleChartForInterest;
+//bitc
 fetchCurrencies.onclick = hostRateinBlock;
 
 
 
-
+//trade
 lossCount.addEventListener("keyup", function(e) {
 	e.preventDefault();
 	if (e.keyCode === 13) {
@@ -21,13 +24,15 @@ averagePrice.addEventListener("keyup", function(e) {
 		countAveragePrice();
 	}
 });
+
+// weather
 getReqWeather.addEventListener("keyup", function(e) {
 	e.preventDefault();
 	if (e.keyCode === 13) {
 		getWeather(getReqWeather.value);
 	}
 });
-
+//storage
 putLink.addEventListener('click', putSomelinks);
 getLink.addEventListener('click', showBaseLinks);
 showroomClose.addEventListener('click', closeBaseBox);

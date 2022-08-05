@@ -1,7 +1,6 @@
 .showcase {
 	background-color: rgba(197, 214, 40, .5);
     padding: 2rem;
-    margin: 0 0 8rem 0;
 }
 .trade__title {
 }
@@ -17,7 +16,7 @@
     flex-wrap: wrap;
 }*/
 .showcase__block-outer h6{
-    margin: 0 0 0 0;
+    margin: 0;
     flex-basis: 19%;
 }
 .showcase__block-nav {
@@ -27,6 +26,9 @@
 }
 .showcase__topmenu {
     margin: 0;
+
+    width: 80%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,7 +38,7 @@
 }
 
 .showcase__down {
-        font-size: inherit;
+    font-size: inherit;
 
 	position: relative;
     width: 9rem;
@@ -49,7 +51,7 @@
 .showcase__down:after
 {
     font-family: fontAwesome;
-        margin-left: .5rem;
+    margin-left: .5rem;
 
     content: ' \f107';
 }
@@ -65,7 +67,7 @@
     left: 0;
 
     width: 9rem;
-    padding: .35rem 0 .6rem 0;
+    /*padding: .35rem 0 .6rem 0;*/
 
     cursor: pointer;
     list-style: none;
@@ -75,14 +77,9 @@
 
 
     opacity: 0;
-    color: #fff;
-    background: rgba(64,56,45,.7);
-/*     visibility: hidden;
-    opacity: 0.2;
-    z-index: 5;*/
-
-/*    transform: translate(-50%, 20px);
-    transform: perspective(600px) rotateX(-90deg);*/
+    color: #222;
+    /*background: rgba(64,56,45,.7);*/
+  background-color: rgba(51, 85, 204, .1);
 }
 #showcase__links
 {
@@ -101,9 +98,20 @@
 .link {
      display: none;
 
-     flex: 0 1 33.333%;
-     overflow: auto;
+     flex: 1 1 11%;
+     /*overflow: auto;*/
 }
 .visible {
      display: block;
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+    /*flex: 1 1 40% ;     */
+}
+.biggest{
+/*background: blue;*/
+ flex: 1 1 35% ;     
+}
+.big{
+background: red;
 }

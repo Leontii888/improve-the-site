@@ -181,18 +181,37 @@ function  createObjForLibrary(addressLink,commentData){
 		id:uid()
 	};
 }
+
+let str1 = "qwwwwwwwwwwwwwwwwww";
+let str2 =str1.substring(0,5);
+console.log(str2)
+
+
+
+
 /// adding to the Chapter in objectLibrary
 function addToLibrary(addressLink,commentData,chapter){
+	//limit comments on 40chars
+	let limitedCommentsCurretLibrary;
+
+	titles.forEach(title => {
+
+		 limitedCommentsCurretLibrary ={
+			...currentLibrary,
+			title: currentLibrary[title].map(el => el.comment = el.comment.substring(0,35))
+		}
+		})
+
+	//add obj
 	const adder =createObjForLibrary(addressLink,commentData);
-	let changedBase ={...currentLibrary,
-						chapter: currentLibrary[chapter].unshift(adder)};
+	let changedBase ={...limitedCommentsCurretLibrary,
+						chapter: limitedCommentsCurretLibrary[chapter].unshift(adder)};
 	console.log(` Succsessfully added to ${chapter}`);
 
-	uploadToLocalStorage(titles, currentLibrary);
+	uploadToLocalStorage(titles, limitedCommentsCurretLibrary);
 
 	return changedBase
 }
-// console.log(addToLibrary('http://rbc.ru',' shit-site',"linux"))
 
 
 //get an id of a link-item
@@ -205,6 +224,7 @@ function addToLibrary(addressLink,commentData,chapter){
 // );
 
 //LS
+
 
 // upload To Local Storage
 function uploadToLocalStorage(chapters, base){

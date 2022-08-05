@@ -1,5 +1,7 @@
 .whiskey__container{
   display: flex;
+  width: 50%;
+  margin: 0 auto;
 
   background-color: rgba(51, 85, 204, .1);
 }

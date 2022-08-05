@@ -69,23 +69,56 @@ function closeCalc(){
 };
 
 
-// showcase mark-ups
-for (var i=0; i< showsubMenu.length; i++){
-		showsubMenu[i].setAttribute('data-position', i);
-		showsubMenu[i].addEventListener('click', function(e){
-			let pointed = this.getAttribute('data-position');
-			e.target.style.color= '#C5A639FF';
-	// open only 3 in row
-			let openedList = [...document.querySelectorAll(".visible")];
-			if(openedList.length < 3){
-			linkToShow[pointed].classList.toggle('visible');
-			} else {
+// showcase link-li mark-ups
 
-				openedList[0].classList.toggle('visible');
-				linkToShow[pointed].classList.toggle('visible')
-			}
+
+for (let i = 0; i < showsubMenu.length; i++){
+		showsubMenu[i].setAttribute('data-position', i);
+
+		showsubMenu[i].addEventListener('click', function(e){
+				let pointed = e.target.getAttribute('data-position');
+				e.target.style.color= '#375ead';
+
+				let visibles =document.querySelectorAll(".visible");
+				let openedList = [...visibles];
+				let quantityOfVisibleLi = openedList.reduce((q,el) => q= el.children.length + q,0)
+				console.log(quantityOfVisibleLi);
+
+				// let quantityOfLiOncePointed = linkToShow[pointed].reduce((q,el) => q= el.length + q,0)
+
+				//get optimal quantity of rows
+
+				//for long-rows li
+				if(linkToShow[pointed].children.length > 32){
+
+					linkToShow[pointed].classList.add('visible');
+					linkToShow[pointed].classList.add('biggest');
+
+					// delete extra(>7) el from row
+						if(openedList.length+1 > 4){
+							openedList[0].classList.remove('visible');
+						}
+					//for middle-long-rows li
+				} else if(linkToShow[pointed].children.length >16){
+
+						linkToShow[pointed].classList.add('visible');
+						linkToShow[pointed].classList.add('big');
+						if(openedList.length+1>4){
+							openedList[0].classList.remove('visible');
+						}
+
+				}else {
+					////for rest li
+						linkToShow[pointed].classList.add('visible');
+						if(openedList.length+1 > 4){
+							openedList[0].classList.remove('visible');
+						}
+
+					}
 		})
 }
+
+
 //uniq id generator
 function uid() {
   let timing = Date.now().toString(36).toLocaleUpperCase();
