@@ -73,10 +73,10 @@ margin: 0 0 2rem 0;
 }
 .trade__article-image img{
 	transition: 1s;
-	width: 42rem;
+	width: 35rem;
 }
 .trade__article-image img:hover{
-	transform: scale(1.6) translateX(-10rem) translateY(-10rem);
+	transform: scale(1.2) translateX(-10rem) translateY(-10rem);
 	transition: 3s;
 	width: 150rem;
 }

@@ -47,6 +47,9 @@ margin: 0 0 0.2rem 0;
 
 #mapsWeather__map{
     padding: 0;
-    height: 40rem;
+    height: 43rem;
     flex: 0 1 50%;
+}
+.mapboxgl-canvas{
+    height:600px
 }

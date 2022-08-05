@@ -1,15 +1,29 @@
-/* Указываем box sizing */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+min-height: 100vh;
+scroll-behavior: smooth;
+text-rendering: optimizeSpeed;
+line-height: 1.5;
+
+  /*    font-family: "Roboto","Helvetica","Helvetica Neue",  "Arial";
+sans-serif;*/
+margin: 0;
+padding: 0;
+background-image: url(D:/programming/java/mySite/img/techno-bg-op1.png);
 }
+/* Указываем box sizing */
+
 .container
 {
   margin: 0;
   width: 100%;
 
   padding: 0 2rem 2rem 2rem;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 /* Убираем внутренние отступы */
 ul[class],
@@ -34,19 +48,8 @@ dl,
 dd {
   margin: 0;
 }
-
-/* Выставляем основные настройки по-умолчанию для body */
-body {
-min-height: 100vh;
-scroll-behavior: smooth;
-text-rendering: optimizeSpeed;
-line-height: 1.5;
-
-  /*    font-family: "Roboto","Helvetica","Helvetica Neue",  "Arial";
-sans-serif;*/
-margin: 0;
-padding: 0;
-background-image: url(D:/programming/java/mySite/img/techno-bg-op1.png);
+canvas{
+  margin: 0 auto;
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/

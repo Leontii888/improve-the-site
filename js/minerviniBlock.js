@@ -7,7 +7,7 @@ let chartDiv = document.getElementById('minervini__canvas-chart');
 
 let buffer;
 let objInitial = getObjInitial();
-
+// create samle of tries
 function getObjInitial (sucsessTradesProportion=40, samples=10,ratio=2, deposit=100000,fee=720/1000000) {
 
 	let trades= [],
@@ -28,7 +28,7 @@ function getObjInitial (sucsessTradesProportion=40, samples=10,ratio=2, deposit=
 	}
 };
 
-
+// calc main task
 function getCountMainTaskArray ({sucsessTradesProportion,samples, trades,ratio,deposit,fee}) {
 	let 
 	chartCountData=[],
@@ -69,7 +69,6 @@ function getCountMainTaskArray ({sucsessTradesProportion,samples, trades,ratio,d
 							
 							isNextInterest =false;
 			}
-			// trades.map(trade => getTradeConstDepoArray(trade));
 			trades.map(trade => getTradeArray(trade));
 
 			chartCountData = [...chartCountData,{interest,depoProgressArray,earnProgressArray}];
@@ -78,13 +77,14 @@ function getCountMainTaskArray ({sucsessTradesProportion,samples, trades,ratio,d
 	}
 	return chartCountData		
 };
+
 function putDataToChart(scaleXArray,scaleYArray,label,textLine){
 	const {
-					sucsessTradesProportion,
-					samples,
-					trades,
-					ratio
-					} = buffer;
+			sucsessTradesProportion,
+			samples,
+			trades,
+			ratio
+			} = buffer;
 					// 0,170,255,
 		let data = {
 					type: 'bar',
@@ -96,11 +96,13 @@ function putDataToChart(scaleXArray,scaleYArray,label,textLine){
 			    		// ось Y
 			    		data: scaleYArray,
 			    		backgroundColor: [
-			    		'rgba(0,170,255, 0.2)'
+			    		// 'rgba(0,170,255, 0.2)'
+			    		'rgba(51, 85, 204, .4)'
 			    		],
 
 			    		borderColor: [
-			    		'rgba(0,170,255, 100)'
+			    		'rgba(51, 85, 204, .4)'
+			    		// 'rgba(0,170,255, 100)'
 			    		],
 			    		borderWidth: 1
 			    	}]
@@ -121,7 +123,7 @@ function putDataToChart(scaleXArray,scaleYArray,label,textLine){
 			    			color: '#f35',
 			    			text: `interes`
 			    		},
-			    		backgroundColor: 'rgba(255, 255, 255, 0.75)'
+			    		backgroundColor: 'rgba(255, 255, 255, 1)'
 			    	},
 			    	y: {
 			    		title: {
@@ -129,7 +131,6 @@ function putDataToChart(scaleXArray,scaleYArray,label,textLine){
 			    			text: `earnings`
 			    		},
 			    		beginAtZero: true,
-
 			    	}
 			    }
 			};
@@ -159,19 +160,20 @@ function showChart (){
 								buffer= newobjInitial;
 								if(chart){
 										chart.destroy();
-											chart = new Chart(ctx, putDataToChart(interestscale,earningsSamplesFinalValues,"% earnings",
-												`% earn at ${sucsessTradesProportion }% win-trades (ratio ${ratio}/1). Best result  ${earningsBestValue}% at interest ${bestInterestValue}% on ${samples} attempts.`));
-											chart.canvas.parentNode.style.width = "70%";
-											chart.canvas.parentNode.style.height ='30rem';
-											chartDiv.style.opacity =1;
+											createChart();
 								} else {
-										chart = new Chart(ctx, putDataToChart(interestscale,earningsSamplesFinalValues,"% earnings",
-											`% earn at ${sucsessTradesProportion }% win-trades (ratio ${ratio}/1). Best result  ${earningsBestValue}% at interest ${bestInterestValue}% on ${samples} attempts.`));
-										chart.canvas.parentNode.style.width = "70%";
-										chart.canvas.parentNode.style.height ='30rem';
-										chartDiv.style.opacity =1;
-														}
+										createChart()
+								}
+	function createChart(){
+		chart = new Chart(ctx, putDataToChart(interestscale,earningsSamplesFinalValues,"% earnings",
+			`% earn at ${sucsessTradesProportion }% win-trades (ratio ${ratio}/1). Best result  ${earningsBestValue}% at interest ${bestInterestValue}% on ${samples} attempts.`));
+		chart.canvas.parentNode.style.width = "70%";
+		chart.canvas.parentNode.style.height ='30rem';
+		chartDiv.style.opacity =1;
+		return chart;
+	}
 };
+//calc task for const interest
 function getSingleChartForInterest(){
 	let interestRate = +singleInt.value;
 	console.log(interestRate)
@@ -188,6 +190,7 @@ function getSingleChartForInterest(){
 		chart.canvas.parentNode.style.width = "70%";
 		chart.canvas.parentNode.style.height ='30rem';
 };
+
 function prepareObjForChartData (chartCountData){
 
 	let resArr = getCountMainTaskArray(chartCountData),
