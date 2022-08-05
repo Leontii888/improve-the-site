@@ -167,7 +167,7 @@ function showChart (){
 	function createChart(){
 		chart = new Chart(ctx, putDataToChart(interestscale,earningsSamplesFinalValues,"% earnings",
 			`% earn at ${sucsessTradesProportion }% win-trades (ratio ${ratio}/1). Best result  ${earningsBestValue}% at interest ${bestInterestValue}% on ${samples} attempts.`));
-		chart.canvas.parentNode.style.width = "70%";
+		chart.canvas.parentNode.style.width = "100%";
 		chart.canvas.parentNode.style.height ='30rem';
 		chartDiv.style.opacity =1;
 		return chart;
@@ -187,7 +187,7 @@ function getSingleChartForInterest(){
 
 		chart.destroy();
 		chart = new Chart(ctx, putDataToChart(scaleX,interestAllCountsArray[interestRate-1].depoProgressArray,"depo",`Deposit max/min ${maxDepo}/${minDepo} at const interest ${interestRate}%, win-trades ${sucsessTradesProportion }% (ratio ${ratio}/1) to ${interestAllCountsArray[interestRate-1].depoProgressArray[scaleX.length-1].toFixed(1)} on ${scaleX.length} tries`));
-		chart.canvas.parentNode.style.width = "70%";
+		chart.canvas.parentNode.style.width = "100%";
 		chart.canvas.parentNode.style.height ='30rem';
 };
 
