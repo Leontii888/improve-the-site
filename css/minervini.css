@@ -6,19 +6,19 @@ margin:  0 auto;
 
 #minervini__canvas-chart{
     width:40rem;
-    margin: 0 2rem 2rem 2rem;
+
+    margin: 0 auto 2rem;
     background-color: #aadaff;
     opacity: 0.5
 }
 .minervini__block-controls{
+    margin: 0 auto;
     width:40rem;
-    margin: 1rem 0 0 2rem
 }
 
 .minervini__block-controls input{
-    
-    padding-right: 2rem;
     margin-right: 1rem;
+    line-height: normal;
 }
 
 .minervini__controls-main-graph{
@@ -31,16 +31,11 @@ margin:  0 auto;
     align-items: center;
 }
 
-.minervini__put-main-button{
-   
-}
 .minervini__count-main-button{
-    margin: 0 2rem;
     width:9rem;
+    margin: 0 2rem;
 }
-.minervini__put-subdata-button{
-    
-}
+
 .minervini__count-subdata-button{
  width:9rem;
  margin: 0 2rem;

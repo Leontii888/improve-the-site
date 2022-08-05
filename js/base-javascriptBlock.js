@@ -84,10 +84,7 @@ for (let i = 0; i < showsubMenu.length; i++){
 				let quantityOfVisibleLi = openedList.reduce((q,el) => q= el.children.length + q,0)
 				console.log(quantityOfVisibleLi);
 
-				// let quantityOfLiOncePointed = linkToShow[pointed].reduce((q,el) => q= el.length + q,0)
-
 				//get optimal quantity of rows
-
 				//for long-rows li
 				if(linkToShow[pointed].children.length > 32){
 
@@ -113,8 +110,7 @@ for (let i = 0; i < showsubMenu.length; i++){
 						if(openedList.length+1 > 4){
 							openedList[0].classList.remove('visible');
 						}
-
-					}
+				}
 		})
 }
 

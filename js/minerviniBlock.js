@@ -1,8 +1,6 @@
 //Миннервини расчеты  и графики
-//==============================================================
 //
 let chartDiv = document.getElementById('minervini__canvas-chart');
-// console.log(data);
 	let ctx = chartDiv.getContext('2d');
 	let chart =null;
 
@@ -98,7 +96,7 @@ function putDataToChart(scaleXArray,scaleYArray,label,textLine){
 			    		// ось Y
 			    		data: scaleYArray,
 			    		backgroundColor: [
-			    		'rgba(0,170,255,, 0.2)'
+			    		'rgba(0,170,255, 0.2)'
 			    		],
 
 			    		borderColor: [
@@ -162,13 +160,13 @@ function showChart (){
 								if(chart){
 										chart.destroy();
 											chart = new Chart(ctx, putDataToChart(interestscale,earningsSamplesFinalValues,"% earnings",
-												`% earnings at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) and best result  ${earningsBestValue} at interest ${bestInterestValue}%, at samples ${samples} `));
+												`% earn at ${sucsessTradesProportion }% win-trades (ratio ${ratio}/1). Best result  ${earningsBestValue}% at interest ${bestInterestValue}% on ${samples} attempts.`));
 											chart.canvas.parentNode.style.width = "70%";
 											chart.canvas.parentNode.style.height ='30rem';
 											chartDiv.style.opacity =1;
 								} else {
 										chart = new Chart(ctx, putDataToChart(interestscale,earningsSamplesFinalValues,"% earnings",
-											`% earnings at ${sucsessTradesProportion }% succsess trades (ratio ${ratio}) and best result  ${earningsBestValue} at interest ${bestInterestValue}%, at samples ${samples} `));
+											`% earn at ${sucsessTradesProportion }% win-trades (ratio ${ratio}/1). Best result  ${earningsBestValue}% at interest ${bestInterestValue}% on ${samples} attempts.`));
 										chart.canvas.parentNode.style.width = "70%";
 										chart.canvas.parentNode.style.height ='30rem';
 										chartDiv.style.opacity =1;
@@ -186,7 +184,7 @@ function getSingleChartForInterest(){
 	let minDepo =((Math.min.apply(null,interestAllCountsArray[interestRate-1].depoProgressArray) - deposit)*100/deposit).toFixed(1);
 
 		chart.destroy();
-		chart = new Chart(ctx, putDataToChart(scaleX,interestAllCountsArray[interestRate-1].depoProgressArray,"depo",`Changing the deposit max/min = ${maxDepo}/${minDepo}  at constant interest ${interestRate},  succsess trades ${sucsessTradesProportion }% (ratio ${ratio}) to ${interestAllCountsArray[interestRate-1].depoProgressArray[scaleX.length-1].toFixed(1)} at samples ${scaleX.length} `));
+		chart = new Chart(ctx, putDataToChart(scaleX,interestAllCountsArray[interestRate-1].depoProgressArray,"depo",`Deposit max/min ${maxDepo}/${minDepo} at const interest ${interestRate}%, win-trades ${sucsessTradesProportion }% (ratio ${ratio}/1) to ${interestAllCountsArray[interestRate-1].depoProgressArray[scaleX.length-1].toFixed(1)} on ${scaleX.length} tries`));
 		chart.canvas.parentNode.style.width = "70%";
 		chart.canvas.parentNode.style.height ='30rem';
 };

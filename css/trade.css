@@ -5,16 +5,14 @@
 .trade__container {
 		 width: 100%;
 		display: flex;
-		padding: 0 0 2rem 0;
+		padding: 0 2rem 2rem 2rem;
 }
 .trade__container h5{
 	margin: 0 0 2rem 0;
 }
 .trade__calc {
 
-	padding: 0 2rem;
-	/*border: 1px solid rgba(170,218,255,0.2);*/
-	flex: 0 1 23%;
+	flex: 0 1 15%;
 	height:  41rem;
 }
 
@@ -73,19 +71,15 @@ margin: 0 0 2rem 0;
 }
 .trade__article-image{
 	height: 10rem;
-
-
 }
 .trade__article-image img{
 	transition: 1s;
 	width: 42rem;
-
 }
 .trade__article-image img:hover{
 	transform: translateX(-10rem) translateY(-10rem);
 	transition: 3s;
 	width: 150rem;
-
 }
 .trade__title-text{
 	margin: 0 0 2rem 0;

@@ -13,10 +13,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.js"></script>
 
 	<title>mySite.Links.Maps.Weather</title>
-
-
-	<!-- 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css"> -->
-	<!-- 	<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script> -->
 </head>
 <body>
 	<a name="top"></a>
@@ -26,20 +22,19 @@
 				<img  src="img/earthWhite.png" alt="logo-picture" />
 		</div>
 		<form 
-			class=" header__form"
+			class="header__form"
 			action="https://duckduckgo.com/"
-			method="GET">
+			method="GET"
+			target ="_blank">
 			<label for="header__search">Search on DuckDuckGo</label>
 			<input
 			class="header__search"
 			name="header__search"
 			placeholder="Search some..."
 			type="text">
-
 			<button 
 			type="submit"
-			target='_blank'
-			class ='header__button'>Go</button>
+			class ="header__button">Go</button>
 		</form>
 		<nav class="nav-block header__nav-block">
 			<ul class="nav-block__list header__list ">
@@ -179,7 +174,7 @@
 <section class="showcase">
 	<a name="showcase--ancor"></a>
 
-	<h3 class=" trade__title title style--textalign-center">Showcase of links</h3>
+	<h3 class=" trade__title title">Showcase of links</h3>
 	<div class=" container showcase__container">
 		<div class='showcase__block-outer'>
 			<h6>Tap good link to</h6>
@@ -250,7 +245,7 @@
 		<h3 class=" title style--textalign-center"> Minervini graphs</h3>
 		<div class=" container minervini__container">
 			
-			<canvas id="minervini__canvas-chart" style="height: 2rem" ></canvas>
+			<canvas id="minervini__canvas-chart"></canvas>
 			<div class ="minervini__block-controls"> 
 				<div class ="minervini__controls-main-graph">
 					<input id= "minervini__put-data-main-graph"
