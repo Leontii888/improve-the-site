@@ -64,12 +64,9 @@ margin: 0 0 2rem 0;
 .trade__bitcoin-item span{
 	 font-weight: bold;
 }
-
 .trade__article{
 	flex:  0 1 50%;
 	height: 41rem;
-	/*padding: 0 2rem 2rem 2rem;*/
-
 }
 .trade__article-image{
 	height: 10rem;
@@ -79,7 +76,7 @@ margin: 0 0 2rem 0;
 	width: 42rem;
 }
 .trade__article-image img:hover{
-	transform: translateX(-10rem) translateY(-10rem);
+	transform: scale(1.6) translateX(-10rem) translateY(-10rem);
 	transition: 3s;
 	width: 150rem;
 }
