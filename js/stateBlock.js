@@ -182,12 +182,6 @@ function  createObjForLibrary(addressLink,commentData){
 	};
 }
 
-let str1 = "qwwwwwwwwwwwwwwwwww";
-let str2 =str1.substring(0,5);
-console.log(str2)
-
-
-
 
 /// adding to the Chapter in objectLibrary
 function addToLibrary(addressLink,commentData,chapter){

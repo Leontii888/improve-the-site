@@ -1,3 +1,6 @@
+
+
+
 //open m0dal window
 function getmodal() {
 	frontModal.style.display = 'block';
