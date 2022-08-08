@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Didact+Gothic');
 @import "templates/base.css" screen;
+@import "templates/closeIcon.css" screen;
 @import "templates/logo.css" screen;
 @import "templates/title.css" screen;
 @import "templates/modals.css" screen;
