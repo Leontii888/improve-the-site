@@ -2,4 +2,8 @@
 readme.md
 css/alias.js
 test.html
-test1.html
+/node_modules
+package-lock.json
+/public
+server-express.js
+
