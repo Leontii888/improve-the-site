@@ -2,35 +2,39 @@
 }
 
 .monteverdi__container {
+margin: 0 auto;
+padding: 0 2rem;
 }
 .grid {
-height: 100vh;
+height: 50rem;
 display: grid;
 grid-template-rows:repeat(4,25%);
 grid-template-columns:repeat(4,25%);
+overflow: hidden;
 }
 .grid__item {
-overflow: hidden;
-box-shadow: 5px 5px  5px black;
+
+box-shadow: 8px 7px  30px  2px black;
 /*outline: 1px solid red;*/
 }
+
 .grid__item:nth-child(2){
 grid-area: 1/2/3/4;
 }
 .grid__item:nth-child(3){
 grid-area: 1/4/4/5;
-box-shadow: none;
+/*height: 150vh;*/
 }
 .grid__item:nth-child(3) img{
-	height: 100%;
+height:  100%;
 }
+
 .grid__item:nth-child(5){
 grid-area: 3/1/4/3;
 }
 .grid__item:nth-child(9){
 grid-area: -1/3/-2/5;
 }
-
 .grid__item img{
 	object-fit: cover;
 }
