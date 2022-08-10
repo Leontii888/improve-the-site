@@ -12,13 +12,13 @@ fetchCurrencies.onclick = hostRateinBlock;
 
 
 //trade
-lossCount.addEventListener("keyup", function(e) {
+lossCount.addEventListener("keyup", (e) => {
 	e.preventDefault();
 	if (e.keyCode === 13) {
 		countOptimalLot();
 	}
 });
-averagePrice.addEventListener("keyup", function(e) {
+averagePrice.addEventListener("keyup", (e) => {
 	e.preventDefault();
 	if (e.keyCode === 13) {
 		countAveragePrice();
@@ -26,12 +26,13 @@ averagePrice.addEventListener("keyup", function(e) {
 });
 
 // weather
-getReqWeather.addEventListener("keyup", function(e) {
+getReqWeather.addEventListener("keyup", (e) => {
 	e.preventDefault();
 	if (e.keyCode === 13) {
 		getWeather(getReqWeather.value);
 	}
 });
+
 //storage
 putLink.addEventListener('click', putSomelinks);
 getLink.addEventListener('click', showBaseLinks);

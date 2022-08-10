@@ -1,10 +1,17 @@
 // погодный блок и карты
 //============================================
 
+const DEFAULT_CITY ="Anadyr";
+const START_ZOOM =13;
+const START_MAP_PLACE =[11.255, 43.77];
+
+
+
 async function getWeather(point){
 	try{
-		point = point || "Anadyr";
+	point = point || DEFAULT_CITY;
 	weatherBlock.innerHTML= null;
+
 	const  {city,list} = await (await fetch(
 		`https://api.openweathermap.org/data/2.5/forecast?q=${point}&APPID=2281c7fed03ac47a4b272784c3b8ea80&units=metric`)).json();
 	
@@ -60,7 +67,7 @@ async function getWeather(point){
 										<p>Winds: ${weatherOnDays[i].windSp}</p>`
 						})
 	}
-                	drawWeather(weatherBlock,city,list);
+drawWeather(weatherBlock,city,list);
 
 		mapboxgl.accessToken = 'pk.eyJ1IjoibGVvODg4IiwiYSI6ImNsNTJlZTJhYjBlbW0za3J5M3ozM3NmZ3IifQ.4IYOODVLOdWHJF8V4PAWsQ';
 								//+++++++++++++++++1++++++++++++++++
@@ -84,8 +91,8 @@ async function getWeather(point){
 								const map = new mapboxgl.Map({
 							container: 'mapsWeather__map', // container ID
 							style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
-							center: [11.255, 43.77], // starting position
-							zoom: 13 // starting zoom
+							center:START_MAP_PLACE, // starting position
+							zoom: START_ZOOM // starting zoom
 							});
 							 
 							map.addControl(new mapboxgl.FullscreenControl());

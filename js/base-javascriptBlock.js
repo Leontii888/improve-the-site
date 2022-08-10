@@ -1,3 +1,12 @@
+const MINIMAL_ACCEPTED_LOSS= 2000;
+const MILLION= 1000000;
+const MILLION_TRADE_FEE= 330;
+const TRADES= 2;
+const DEPOSIT= 35000;
+const RATIO= 3;
+const LIS_IN_BIG_CHAPTER= 32;
+const LIS_IN_MID_CHAPTER= 16;
+const CHAPTERS_SHOWED= 4;
 
 
 
@@ -26,11 +35,11 @@ function cleanInp(){
 console.log('посчитать стоплосс и тейкпрофит - задать цену покупки (инпут 1) и лосс (инпут 3), нажать enter')
 //calc
 function countOptimalLot(){
-	let loss =lossCount.value?lossCount.value:2000;
+	let loss =lossCount.value?lossCount.value:MINIMAL_ACCEPTED_LOSS;
 	if(secondPricePose.value){
 			const lot = Math.abs((loss/(firstPricePose.value-secondPricePose.value)).toFixed(1)),
-			fee = (firstPricePose.value*2*lot/1000000*330).toFixed(1),
-			fond = (firstPricePose.value*lot/1000000).toFixed(3);	
+			fee = (firstPricePose.value*TRADES*lot/MILLION*MILLION_TRADE_FEE).toFixed(1),
+			fond = (firstPricePose.value*lot/MILLION).toFixed(3);	
 
 			calcData.innerHTML=`Искомый лот: ${lot}
 			Стоимость сделки: ${fond} млн.,
@@ -40,11 +49,11 @@ function countOptimalLot(){
 			
 			modalCalc.style.display ='block';
 		} else {
-			let pts = (loss/(35000/firstPricePose.value)).toFixed(1);
+			let pts = (loss/(DEPOSIT/firstPricePose.value)).toFixed(1);
 			let stopLossPrice = (firstPricePose.value- pts)
 			calcData.innerHTML=`S/l: ${stopLossPrice}</br>
-			t/p: ${(stopLossPrice+pts*3)}</br>
-			купить ${(35000/firstPricePose.value).toFixed(0)}шт.</br>
+			t/p: ${(stopLossPrice+pts*RATIO)}</br>
+			купить ${(DEPOSIT/firstPricePose.value).toFixed(0)}шт.</br>
 
 			при депозите 35_000,
 			лоссе ${loss}`
@@ -89,28 +98,28 @@ for (let i = 0; i < showsubMenu.length; i++){
 
 				//get optimal quantity of rows
 				//for long-rows li
-				if(linkToShow[pointed].children.length > 32){
+				if(linkToShow[pointed].children.length > LIS_IN_BIG_CHAPTER){
 
 					linkToShow[pointed].classList.add('visible');
 					linkToShow[pointed].classList.add('biggest');
 
 					// delete extra(>7) el from row
-						if(openedList.length+1 > 4){
+						if(openedList.length+1 > CHAPTERS_SHOWED){
 							openedList[0].classList.remove('visible');
 						}
 					//for middle-long-rows li
-				} else if(linkToShow[pointed].children.length >16){
+				} else if(linkToShow[pointed].children.length > LIS_IN_MID_CHAPTER){
 
 						linkToShow[pointed].classList.add('visible');
 						linkToShow[pointed].classList.add('big');
-						if(openedList.length+1>4){
+						if(openedList.length+1>CHAPTERS_SHOWED){
 							openedList[0].classList.remove('visible');
 						}
 
 				}else {
 					////for rest li
 						linkToShow[pointed].classList.add('visible');
-						if(openedList.length+1 > 4){
+						if(openedList.length+1 > CHAPTERS_SHOWED){
 							openedList[0].classList.remove('visible');
 						}
 				}

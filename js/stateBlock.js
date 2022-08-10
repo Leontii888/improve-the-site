@@ -168,14 +168,11 @@ linux:[
 
 //object for adding items
 let currentLibrary = {...library};
-// console.log(currentLibrary)
-
 
 
 //prepare for adding to object library
 function  createObjForLibrary(addressLink,commentData){
 	return {
-		
 		address: addressLink,
 		comment:commentData,
 		id:uid()
@@ -217,8 +214,8 @@ function addToLibrary(addressLink,commentData,chapter){
 // }))
 // );
 
-//LS
 
+//LS
 
 // upload To Local Storage
 function uploadToLocalStorage(chapters, base){
@@ -293,8 +290,3 @@ function hostingToSite(obj){
 let downloadedFromLS = downloadFromLS()
 hostingToSite(downloadedFromLS);
 
-
-
-
-
-//-----------------

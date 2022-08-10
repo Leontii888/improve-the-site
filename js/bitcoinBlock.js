@@ -1,3 +1,6 @@
+const INCREASE_FIFTEEN_PERSENT =1.015;
+const RUB_DEPOSIT_AVAIL =150000;
+const BITCOIN_DEPOSIT_AVAIL =.334;
 
 //price usd
 async function getRateUsd(){
@@ -6,7 +9,7 @@ async function getRateUsd(){
 			
 					const {RUB} = rates;
 					// привожу к наличному доллару в обменнике (купить за рубли)
-					 let usd = (RUB*1.015).toFixed(1);
+					 let usd = (RUB*INCREASE_FIFTEEN_PERSENT).toFixed(1);
 					 return usd;
 		}catch(e){
 				console.warn(e)
@@ -22,9 +25,9 @@ async function hostRateinBlock(){
 						let bitcoinPrice =  bpi.USD.rate_float;
 							
 						getRateUsd().then(usdPrice=> {
-									let myMoneyUsd =  150000/usdPrice,
+									let myMoneyUsd =  RUB_DEPOSIT_AVAIL/usdPrice,
 									myPoseMayBe= myMoneyUsd/bitcoinPrice,
-									partOldPose = (myMoneyUsd*100/(bitcoinPrice*0.334)).toFixed(1);
+									partOldPose = (myMoneyUsd*100/(bitcoinPrice*BITCOIN_DEPOSIT_AVAIL)).toFixed(1);
 
 									blockBitcoinRates.innerHTML= `<div class="trade__rate-data"><p>Today\`s 
 									<a  target='_blank' href ='https://www.worldcoinindex.com/coin/bitcoin'>bitcoin</a> stock price:

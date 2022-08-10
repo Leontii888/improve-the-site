@@ -2,9 +2,9 @@
 
 .logo
 {
-    width: 6%;
+    max-width: 6%;
  }
  
 .logo img{
-  height: 2.4rem;
+  max-width:  2.4rem;
 }

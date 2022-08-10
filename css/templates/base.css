@@ -15,6 +15,7 @@ background:url("../../img/techno-bg-op1.png") 0 0 / 30% ;
 
 .container
 {
+  height: 60rem;
   margin: 0;
   width: 100%;
 

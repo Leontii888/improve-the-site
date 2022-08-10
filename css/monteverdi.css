@@ -1,4 +1,6 @@
 .monteverdi {
+	margin: 0;
+	padding: 0;
 }
 
 .monteverdi__container {
@@ -7,15 +9,20 @@ padding: 0 2rem;
 }
 .grid {
 height: 50rem;
+
 display: grid;
 grid-template-rows:repeat(4,25%);
 grid-template-columns:repeat(4,25%);
+
 overflow: hidden;
 }
 .grid__item {
 
-box-shadow: 8px 7px  30px  2px black;
+box-shadow: 5px 5px  20px   rgba(0, 0, 0, .7);
 /*outline: 1px solid red;*/
+/*padding-bottom: 100%;*/
+
+/*position: relative;*/
 }
 
 .grid__item:nth-child(2){
@@ -23,10 +30,10 @@ grid-area: 1/2/3/4;
 }
 .grid__item:nth-child(3){
 grid-area: 1/4/4/5;
-/*height: 150vh;*/
-}
-.grid__item:nth-child(3) img{
-height:  100%;
+
+background: url("../img/monteverdi/19 - CD2.jpg") 0 0/  115% no-repeat;
+
+box-shadow: none;
 }
 
 .grid__item:nth-child(5){
@@ -36,5 +43,10 @@ grid-area: 3/1/4/3;
 grid-area: -1/3/-2/5;
 }
 .grid__item img{
-	object-fit: cover;
+/*position: absolute;
+top:0%;
+left: 0%;
+*/
+object-fit: cover;
+/*object-position: top;
 }
