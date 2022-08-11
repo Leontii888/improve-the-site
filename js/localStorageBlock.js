@@ -94,6 +94,8 @@ function clearLinksInBox() {
 	flags.isRepeated =false;
 };
 //ПЕРЕПИСАТЬ НА КЛАССАХ!
+
+
 function warnModalAbsolutePosition(	tag,
 									parent,
 									top,
@@ -123,7 +125,7 @@ function warnModalAbsolutePosition(	tag,
 
 		parent.style.position ="relative";
 		parent.appendChild(createdItem);
-		let querylink =document.querySelector(`.${className}`)
+		let querylink =document.querySelector(`.${className}`);
 		tempDinamicCreatedInfoEl = {
 									tag,
 									parent,
