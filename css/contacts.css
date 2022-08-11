@@ -18,7 +18,8 @@ margin:  2rem 4rem 2rem 2rem;
 height: 45rem;
 
 flex: 1 1 70%;
-background: url("../img/monteverdi/01 - front.jpg") 0 0  / 90% ;
+background: url("../img/monteverdi/folder.jpg") 30% 0%  /  100%  no-repeat;
+background-position: cover;
 }
 
 .contacts__form-container {
