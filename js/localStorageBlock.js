@@ -25,10 +25,10 @@ let flags = {
 //remove slashes and spaces
 function modifyDataString(string) {
 	return string.split("")
-	.filter(el => el != "\\")
-	.filter(el => el != "\"")
-	.filter(Boolean)
-	.join("");
+					.filter(el => el != "\\")
+						.filter(el => el != "\"")
+							.filter(Boolean)
+								.join("");
 }
 
 function writeLinks(){
