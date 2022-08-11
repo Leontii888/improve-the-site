@@ -3,7 +3,7 @@ const MILLION= 1000000;
 const MILLION_TRADE_FEE= 330;
 const TRADES= 2;
 const DEPOSIT= 35000;
-const RATIO= 3;
+const RATIO= 2;
 const LIS_IN_BIG_CHAPTER= 32;
 const LIS_IN_MID_CHAPTER= 16;
 const CHAPTERS_SHOWED= 4;
@@ -35,7 +35,7 @@ function cleanInp(){
 console.log('посчитать стоплосс и тейкпрофит - задать цену покупки (инпут 1) и лосс (инпут 3), нажать enter')
 //calc
 function countOptimalLot(){
-	let loss =lossCount.value?lossCount.value:MINIMAL_ACCEPTED_LOSS;
+	let loss =lossCount.value ? lossCount.value : MINIMAL_ACCEPTED_LOSS;
 	if(secondPricePose.value){
 			const lot = Math.abs((loss/(firstPricePose.value-secondPricePose.value)).toFixed(1)),
 			fee = (firstPricePose.value*TRADES*lot/MILLION*MILLION_TRADE_FEE).toFixed(1),
@@ -50,7 +50,7 @@ function countOptimalLot(){
 			modalCalc.style.display ='block';
 		} else {
 			let pts = (loss/(DEPOSIT/firstPricePose.value)).toFixed(1);
-			let stopLossPrice = (firstPricePose.value- pts)
+			let stopLossPrice = (firstPricePose.value - pts)
 			calcData.innerHTML=`S/l: ${stopLossPrice}</br>
 			t/p: ${(stopLossPrice+pts*RATIO)}</br>
 			купить ${(DEPOSIT/firstPricePose.value).toFixed(0)}шт.</br>
@@ -81,7 +81,7 @@ function closeCalc(){
 };
 
 
-// showcase link-li mark-ups
+// showcase link-li mark-ups and expand
 
 
 for (let i = 0; i < showsubMenu.length; i++){
