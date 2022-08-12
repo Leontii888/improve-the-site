@@ -1,7 +1,7 @@
 //--------vars---
-let parents = [...document.querySelectorAll(".link")];
-let titles = parents.map(el=> el.getAttribute("data-title"));
-let preparedTempArr = [];
+let parentBlockToHostLinks = [...document.querySelectorAll(".link")];
+let chaptersArray = parentBlockToHostLinks.map(el=> el.getAttribute("data-title"));
+let modifiedForSiteLinksArray = [];
 
 
 //base------
@@ -185,7 +185,7 @@ function addToLibrary(addressLink,commentData,chapter){
 	//limit comments on 40chars
 	let limitedCommentsCurretLibrary;
 
-	titles.forEach(title => {
+	chaptersArray.forEach(title => {
 
 		 limitedCommentsCurretLibrary ={
 			...currentLibrary,
@@ -199,7 +199,7 @@ function addToLibrary(addressLink,commentData,chapter){
 						chapter: limitedCommentsCurretLibrary[chapter].unshift(adder)};
 	console.log(` Succsessfully added to ${chapter}`);
 
-	uploadToLocalStorage(titles, limitedCommentsCurretLibrary);
+	uploadToLocalStorage(chaptersArray, limitedCommentsCurretLibrary);
 
 	return changedBase
 }
@@ -232,7 +232,7 @@ function uploadToLocalStorage(chapters, base){
 function downloadFromLS(){
 	let chapter = new Object;
 	for (let item in localStorage){
-			if(titles.includes(item)){
+			if(chaptersArray.includes(item)){
 				let flat = JSON.parse(localStorage.getItem(item));
 					
 				if(flat){
@@ -253,21 +253,21 @@ function prepareList(arr){
  			blank = ` " target = "_blank" data-position="${uid()}">`,
  			endString = `</a></li>`;
 
-	preparedTempArr = arr.map(({address,comment}) =>  `${startString}${address}${blank}${comment}${endString}`);
-	return preparedTempArr 
+	modifiedForSiteLinksArray = arr.map(({address,comment}) =>  `${startString}${address}${blank}${comment}${endString}`);
+	return modifiedForSiteLinksArray 
 };
 
 //insert element to parent block
 function insertToBlock(parent){
-	return  preparedTempArr.forEach(el => parent.insertAdjacentHTML('beforeend', el ))
+	return  modifiedForSiteLinksArray.forEach(el => parent.insertAdjacentHTML('beforeend', el ))
 }
 
 //hosting to site
 function hostingToSite(obj){
-	return titles.forEach((title,i) => {
+	return chaptersArray.forEach((title,i) => {
 				titleToObj = obj[title];
 				prepareList(titleToObj);
-				insertToBlock(parents[i]);
+				insertToBlock(parentBlockToHostLinks[i]);
 	});
 }
 
@@ -276,17 +276,24 @@ function hostingToSite(obj){
 
 
 //uploaded to ls
-// uploadToLocalStorage(titles, currentLibrary);
+// uploadToLocalStorage(chaptersArray, currentLibrary);
 
 
 
-//host to site from the file( object "library")
-// hostingToSite(library);
 
 
 
 // host to site from Local Storage
-
 let downloadedFromLS = downloadFromLS()
+currentLibrary = downloadedFromLS;
 hostingToSite(downloadedFromLS);
 
+
+//DIRECT WAY: Upload to site from main object(Library)
+//host to site from from main object(Library)
+// hostingToSite(library);
+
+
+//to reset:
+// comment -> hostingToSite(downloadedFromLS);
+//uncomment -> hostingToSite(library);

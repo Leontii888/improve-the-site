@@ -208,8 +208,10 @@ function saveIntoStorage() {
 											})
 										}
 												localStorage.clear()
-												uploadToLocalStorage(titles, currentLibrary);
+												uploadToLocalStorage(chaptersArray, currentLibrary);
 												hostingToSite(downloadFromLS());
+												currentLibrary =downloadFromLS();
+
 															flags.isDataSaved= true;
 															flags.isRepeated = true;
 															flags.isPutMore=true;
