@@ -1,5 +1,5 @@
 //CONDITIONS of window
-let baseConditions = {
+let commonOptions = {
 		tag:"div",
 		top:0,
 		left:0,
@@ -32,9 +32,14 @@ class Options {
 		this.text=conditions.text
 	}
 };
-
 //
-class CreateSomeBlock {
+class ModalSetting extends Options{
+	constructor(){
+		super(commonOptions)
+	}
+};
+//
+class Block {
 	constructor(options){
 		this.tag =options.tag;
 		this.top =options.top;
@@ -83,4 +88,3 @@ class CreateSomeBlock {
 	}
 
 }
-

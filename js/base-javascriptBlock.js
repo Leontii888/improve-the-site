@@ -11,13 +11,13 @@ const CHAPTERS_SHOWED= 4;
 
 
 //open m0dal window
-function getmodal() {
-	frontModal.style.display = 'block';
-}
+// function getmodal() {
+// 	frontModal.style.display = 'block';
+// }
 
-function closemodal() {
-	frontModal.style.display = 'none';
-}
+// function closemodal() {
+// 	frontModal.style.display = 'none';
+// }
 
 
 	//clean inputs
@@ -31,8 +31,22 @@ function cleanInp(){
 			}
 		})
 };
-//
-console.log('посчитать стоплосс и тейкпрофит - задать цену покупки (инпут 1) и лосс (инпут 3), нажать enter')
+
+// modal
+let modalWinSetting = new ModalSetting;
+	modalWinSetting.padding =0;
+	modalWinSetting.className ="linkTradeModal";
+class TradeModal extends Block{
+		constructor(modalWinSetting){
+			super(commonOptions)
+		}
+};
+let tradeModal = new TradeModal;
+tradeModal.className =`tradeModalWin`;
+let tradeModalEl = tradeModal.create();
+tradeModal.addRelativeParent(tradeBlockInp)
+
+
 //calc
 function countOptimalLot(){
 	let loss =lossCount.value ? lossCount.value : MINIMAL_ACCEPTED_LOSS;
@@ -40,27 +54,52 @@ function countOptimalLot(){
 			const lot = Math.abs((loss/(firstPricePose.value-secondPricePose.value)).toFixed(1)),
 			fee = (firstPricePose.value*TRADES*lot/MILLION*MILLION_TRADE_FEE).toFixed(1),
 			fond = (firstPricePose.value*lot/MILLION).toFixed(3);	
-
-			calcData.innerHTML=`Искомый лот: ${lot}
-			Стоимость сделки: ${fond} млн.,
-			в том числе комиссия ${fee} рублей`;
-			console.log(`Лот ${lot}, стоимость  ${fond} млн
-			 и  комиссы  ${fee} руб`);
+//modal
+				tradeModal.text =`<p>Искомый лот: ${lot}
+				Стоимость сделки: ${fond} млн.,
+				в том числе комиссия ${fee} рублей</p>`;
 			
-			modalCalc.style.display ='block';
-		} else {
+				tradeModal.appendTo(tradeBlockInp);
+				console.log(`Лот ${lot}, стоимость  ${fond} млн
+				 и  комиссы  ${fee} руб`);
+
+					// close modal, remove listener
+					tradeBlockInp.addEventListener("click", () => {
+						let tradeModalWin =document.querySelector(".tradeModalWin");
+						tradeBlockInp.removeChild(tradeModalWin);
+						cleanInp();
+					},{once: true});
+			// calcData.innerHTML=``);
+			// modalCalc.style.display ='block';
+	} else {
 			let pts = (loss/(DEPOSIT/firstPricePose.value)).toFixed(1);
-			let stopLossPrice = (firstPricePose.value - pts)
-			calcData.innerHTML=`S/l: ${stopLossPrice}</br>
+			let stopLossPrice = (firstPricePose.value - pts);
+
+			tradeModal.text =`<p>S/l: ${stopLossPrice}</br>
 			t/p: ${(stopLossPrice+pts*RATIO)}</br>
 			купить ${(DEPOSIT/firstPricePose.value).toFixed(0)}шт.</br>
+			при депозите 35_000, максимальном лоссе ${loss}</p>`;
+			tradeModal.appendTo(tradeBlockInp);
 
-			при депозите 35_000,
-			лоссе ${loss}`
-			modalCalc.style.display ='block';
-		}
+			tradeBlockInp.addEventListener("click", () => {
+					let tradeModalWin =document.querySelector(".tradeModalWin");
+					tradeBlockInp.removeChild(tradeModalWin);
+					cleanInp();
+			},{once: true})
+			console.log(`S/l: ${stopLossPrice}, t/p: ${(stopLossPrice+pts*RATIO)} купить ${(DEPOSIT/firstPricePose.value).toFixed(0)}штук при депозите 35_000, максимальном лоссе ${loss}`);
+
+			// calcData.innerHTML=`S/l: ${stopLossPrice}</br>
+			// t/p: ${(stopLossPrice+pts*RATIO)}</br>
+			// купить ${(DEPOSIT/firstPricePose.value).toFixed(0)}шт.</br>
+
+			// при депозите 35_000,
+			// лоссе ${loss}`
+			// modalCalc.style.display ='block';
+	}
 		
 };
+
+
 //calc
 function countAveragePrice(){
 		calcData.innerHTML=``;
@@ -68,17 +107,27 @@ function countAveragePrice(){
 			const cleanArray   = averagePrice.value.split(',').filter(Boolean);
 			const quantity= cleanArray.length;
 					sum = cleanArray.map(Number).reduce((sum, el)=> sum+el,0);
-			calcData.innerHTML = `Средняя цена лота:${(sum/quantity).toFixed(1)}`;
-			modalCalc.style.display ='block';
+					//modal
+					tradeModal.text =`<p>Средняя цена лота:${(sum/quantity).toFixed(1)}</p>`
+					tradeModal.appendTo(tradeBlockInp);
+					// close modal, remove listener
+					tradeBlockInp.addEventListener("click", ()=> {
+						let tradeModalWin =document.querySelector(".tradeModalWin");
+						tradeBlockInp.removeChild(tradeModalWin);
+						cleanInp();
+					},{once: true})
+			// calcData.innerHTML = `Средняя цена лота:${(sum/quantity).toFixed(1)}`;
+			// modalCalc.style.display ='block';
 			console.log(`Средняя цена лота:${(sum/quantity).toFixed(1)}`);
 		} else {
 			alert(`Введено неверное значение! Проверьте ввод цифр`)
 		}
 };
-function closeCalc(){
-		modalCalc.style.display ='none';
-		cleanInp()
-};
+
+// function closeCalc(){
+// 		modalCalc.style.display ='none';
+// 		cleanInp()
+// };
 
 
 // showcase link-li mark-ups and expand
@@ -148,7 +197,11 @@ function modifyDataString(string) {
 }
 
 
+//curry foos
+//update contexts
 
-
-
+// let changeTextOnId = class => content => document.querySelector(`.${class}`).textContent=content;
+// let updateContent = changeTextOnId("trade__title-text");
+// updateContent("bla bla")
+//
 

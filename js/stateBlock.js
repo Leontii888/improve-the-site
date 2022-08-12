@@ -250,7 +250,7 @@ function downloadFromLS(){
 //prepare  custom string for a-link for site
 function prepareList(arr){
 	const startString = `<li><a href="`,
- 			blank = ` " target = "_blank" data-position="${uid()}">`,
+ 			blank = ` " target = "_blank" rel="noopener" data-position="${uid()}">`,
  			endString = `</a></li>`;
 
 	modifiedForSiteLinksArray = arr.map(({address,comment}) =>  `${startString}${address}${blank}${comment}${endString}`);

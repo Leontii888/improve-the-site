@@ -86,3 +86,9 @@ margin: 0 0 2rem 0;
 .trade__title-text p{
 	margin: 0 0 1rem 0;
 }
+.tradeModalWin{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+}

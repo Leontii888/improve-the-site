@@ -1,8 +1,8 @@
 //front-modal
-aboutModal.onclick= getmodal;	
-closeModal.onclick= closemodal;	
+// aboutModal.onclick= getmodal;	
+// closeModal.onclick= closemodal;	
 //trade
-modalCalc.onclick= closeCalc;
+// modalCalc.onclick= closeCalc;
 //minervini		
 count.onclick = showChart;
 countInt.onclick = getSingleChartForInterest;

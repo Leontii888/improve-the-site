@@ -8,27 +8,28 @@ let flags = {
 	link =[],
 	arrayBaseLinks = [],
 	index=0,
-	//modal settings
-	modalWarnSetting = new Options(baseConditions),
-	//modal window
-	mymodal = new CreateSomeBlock(modalWarnSetting),
-	//link
-	querylink;
-;
+	querylink,
+	modalWarnSetting = new ModalSetting;
+//modal window
+class ModalWarn extends Block{
+	constructor(modalWarnSetting){
+		super(commonOptions)
+	}
+};
+let modalWarn = new ModalWarn;
 
 // create the obj
-mymodal.create();
+modalWarn.create();
+
+// define parent
+modalWarn.addRelativeParent(storage);
 
 //set text
-mymodal.text =`<div class="warn__list">	<div class ="warn__item">WOW! YOU HAVE ALREADY PUT THE LINK!</div>
+modalWarn.text =`<div class="warn__list">	<div class ="warn__item">WOW! YOU HAVE ALREADY PUT THE LINK!</div>
 			 <div class ="warn__item">LOCAL STORAGE UPLOAD IT!</div> 
 			 <div class ="warn__item">DO NOT DOUBLE INFORMATION.</div> 
 			<div class ="warn__item">PLEASE, <span>CLEAR PANEL</span> UP.</div>
 			</div>`;
-
-
-
-
 
 function writeLinks(){
 		let newString = newlink.value.split(",");							
@@ -92,56 +93,6 @@ function clearLinksInBox() {
 
 	flags.isRepeated =false;
 };
-//ПЕРЕПИСАТЬ НА КЛАССАХ!
-
-
-// function warnModalAbsolutePosition(	tag,
-// 									parent,
-// 									top,
-// 									left,
-// 									className,
-// 									background,
-// 									width,
-// 									height,
-// 									padding,
-// 									opacity,
-// 									warning){
-// 	let createdItem = document.createElement(tag);
-// 		createdItem.style.position = "absolute";
-
-// 		createdItem.className = className;
-// 		createdItem.innerHTML =warning;
-
-// 		createdItem.style.background = background;
-// 		createdItem.style.opacity = opacity;
-// 		createdItem.style.width = width;
-// 		createdItem.style.height = height;
-// 		createdItem.style.borderRadius = "2px";
-
-// 		createdItem.style.padding = padding;
-// 		createdItem.style.top = top;
-// 		createdItem.style.left = left;
-
-// 		parent.style.position ="relative";
-// 		parent.appendChild(createdItem);
-// 		let querylink =document.querySelector(`.${className}`);
-// 		tempDinamicCreatedInfoEl = {
-// 									tag,
-// 									parent,
-// 									top,
-// 									left,
-// 									className,
-// 									background,
-// 									width,
-// 									height,
-// 									padding,
-// 									opacity,
-// 									warning,
-// 									querylink
-
-// 		};
-// 			return createdItem
-// }
 
 function closeWarnWindow(){
 					if(flags.isWarningOpen){
@@ -156,40 +107,22 @@ function closeWarnWindow(){
 }
 
 function saveIntoStorage() {
-		if(link.length===0){ return	}else{
-					if(flags.isRepeated){
-									if(!flags.isWarningOpen){
-										// define parent
-										mymodal.addRelativeParent(storage);
+		if(link.length===0){ return	} else {
+					if( flags.isRepeated ){
+									if( !flags.isWarningOpen ){
+										
 										//append to
-										mymodal.appendTo(storage);
-										querylink =document.querySelector(`.${mymodal.classNameEl}`)
-										// warnModalAbsolutePosition("div",
-										// 							storage,
-										// 							"0",
-										// 							"0",
-										// 							'warn',
-										// 							"#000",
-										// 							"100%",
-										// 							"100%",
-										// 							"50px",
-										// 							0.7,
-										// 							 `<div class="warn__list">
-										// 							 <div class ="warn__item">WOW! YOU HAVE ALREADY PUT THE LINK!</div>
-										// 							 <div class ="warn__item">LOCAL STORAGE UPLOAD IT!</div> 
-										// 							 <div class ="warn__item">DO NOT DOUBLE INFORMATION.</div> 
-										// 							<div class ="warn__item">PLEASE, <span>CLEAR PANEL</span> UP.</div>
-										// 							</div>`);
-											setTimeout(()=> {
+										modalWarn.appendTo(storage);
+										querylink =document.querySelector(`.${modalWarn.classNameEl}`);
+										setTimeout(()=> {
 												flags.isWarningOpen= true;
-
 												storage.addEventListener("click", closeWarnWindow)
-											},1000);
-									}else{
+										},1000);
+									} else {
 										console.log("CLEAR ALL")
 										clearLinksInBox();
 									}
-					}else {
+					} else {
 										if(link.length==1){
 											let parsed = JSON.parse(link[0]);
 											
