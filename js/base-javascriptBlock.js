@@ -138,7 +138,14 @@ function uid() {
 		
 console.log('base-javascript.js loaded', new Date().toLocaleDateString())
 
-
+//remove slashes and spaces
+function modifyDataString(string) {
+	return string.split("")
+					.filter(el => el != "\\")
+						.filter(el => el != "\"")
+							.filter(Boolean)
+								.join("");
+}
 
 
 

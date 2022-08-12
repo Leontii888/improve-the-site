@@ -6,30 +6,29 @@ let flags = {
 },
 	tempDinamicCreatedInfoEl = {},
 	link =[],
-	arrayBaseLinks = [];
-	index=0;
+	arrayBaseLinks = [],
+	index=0,
+	//modal settings
+	modalWarnSetting = new Options(baseConditions),
+	//modal window
+	mymodal = new CreateSomeBlock(modalWarnSetting),
+	//link
+	querylink;
+;
+
+// create the obj
+mymodal.create();
+
+//set text
+mymodal.text =`<div class="warn__list">	<div class ="warn__item">WOW! YOU HAVE ALREADY PUT THE LINK!</div>
+			 <div class ="warn__item">LOCAL STORAGE UPLOAD IT!</div> 
+			 <div class ="warn__item">DO NOT DOUBLE INFORMATION.</div> 
+			<div class ="warn__item">PLEASE, <span>CLEAR PANEL</span> UP.</div>
+			</div>`;
 
 
-// counterFrom
-//---------------------
-// function counterFrom(base){
-// 	 let increment = 0;
-// 	return function(){
-// 		 let total = base+=increment;
-// 		 increment++;
-// 		 return total
-// 	}
-// };
-// let counterFromTwenty =counterFrom(20);
 
-//remove slashes and spaces
-function modifyDataString(string) {
-	return string.split("")
-					.filter(el => el != "\\")
-						.filter(el => el != "\"")
-							.filter(Boolean)
-								.join("");
-}
+
 
 function writeLinks(){
 		let newString = newlink.value.split(",");							
@@ -96,57 +95,57 @@ function clearLinksInBox() {
 //ПЕРЕПИСАТЬ НА КЛАССАХ!
 
 
-function warnModalAbsolutePosition(	tag,
-									parent,
-									top,
-									left,
-									className,
-									background,
-									width,
-									height,
-									padding,
-									opacity,
-									warning){
-	let createdItem = document.createElement(tag);
-		createdItem.style.position = "absolute";
+// function warnModalAbsolutePosition(	tag,
+// 									parent,
+// 									top,
+// 									left,
+// 									className,
+// 									background,
+// 									width,
+// 									height,
+// 									padding,
+// 									opacity,
+// 									warning){
+// 	let createdItem = document.createElement(tag);
+// 		createdItem.style.position = "absolute";
 
-		createdItem.className = className;
-		createdItem.innerHTML =warning;
+// 		createdItem.className = className;
+// 		createdItem.innerHTML =warning;
 
-		createdItem.style.background = background;
-		createdItem.style.opacity = opacity;
-		createdItem.style.width = width;
-		createdItem.style.height = height;
-		createdItem.style.borderRadius = "2px";
+// 		createdItem.style.background = background;
+// 		createdItem.style.opacity = opacity;
+// 		createdItem.style.width = width;
+// 		createdItem.style.height = height;
+// 		createdItem.style.borderRadius = "2px";
 
-		createdItem.style.padding = padding;
-		createdItem.style.top = top;
-		createdItem.style.left = left;
+// 		createdItem.style.padding = padding;
+// 		createdItem.style.top = top;
+// 		createdItem.style.left = left;
 
-		parent.style.position ="relative";
-		parent.appendChild(createdItem);
-		let querylink =document.querySelector(`.${className}`);
-		tempDinamicCreatedInfoEl = {
-									tag,
-									parent,
-									top,
-									left,
-									className,
-									background,
-									width,
-									height,
-									padding,
-									opacity,
-									warning,
-									querylink
+// 		parent.style.position ="relative";
+// 		parent.appendChild(createdItem);
+// 		let querylink =document.querySelector(`.${className}`);
+// 		tempDinamicCreatedInfoEl = {
+// 									tag,
+// 									parent,
+// 									top,
+// 									left,
+// 									className,
+// 									background,
+// 									width,
+// 									height,
+// 									padding,
+// 									opacity,
+// 									warning,
+// 									querylink
 
-		};
-			return createdItem
-}
+// 		};
+// 			return createdItem
+// }
 
 function closeWarnWindow(){
 					if(flags.isWarningOpen){
-						storage.removeChild(tempDinamicCreatedInfoEl.querylink);
+						storage.removeChild(querylink);
 
 						flags.isWarningOpen= false;
 
@@ -158,25 +157,29 @@ function closeWarnWindow(){
 
 function saveIntoStorage() {
 		if(link.length===0){ return	}else{
-					// if(localStorage.getItem(`myLinks (${flags.isRepeated})`)){
 					if(flags.isRepeated){
 									if(!flags.isWarningOpen){
-										warnModalAbsolutePosition("div",
-																	storage,
-																	"0",
-																	"0",
-																	'warn',
-																	"#000",
-																	"100%",
-																	"100%",
-																	"50px",
-																	0.7,
-																	 `<div class="warn__list">
-																	 <div class ="warn__item">WOW! YOU HAVE ALREADY PUT THE LINK!</div>
-																	 <div class ="warn__item">LOCAL STORAGE UPLOAD IT!</div> 
-																	 <div class ="warn__item">DO NOT DOUBLE INFORMATION.</div> 
-																	<div class ="warn__item">PLEASE, <span>CLEAR PANEL</span> UP.</div>
-																	</div>`);
+										// define parent
+										mymodal.addRelativeParent(storage);
+										//append to
+										mymodal.appendTo(storage);
+										querylink =document.querySelector(`.${mymodal.classNameEl}`)
+										// warnModalAbsolutePosition("div",
+										// 							storage,
+										// 							"0",
+										// 							"0",
+										// 							'warn',
+										// 							"#000",
+										// 							"100%",
+										// 							"100%",
+										// 							"50px",
+										// 							0.7,
+										// 							 `<div class="warn__list">
+										// 							 <div class ="warn__item">WOW! YOU HAVE ALREADY PUT THE LINK!</div>
+										// 							 <div class ="warn__item">LOCAL STORAGE UPLOAD IT!</div> 
+										// 							 <div class ="warn__item">DO NOT DOUBLE INFORMATION.</div> 
+										// 							<div class ="warn__item">PLEASE, <span>CLEAR PANEL</span> UP.</div>
+										// 							</div>`);
 											setTimeout(()=> {
 												flags.isWarningOpen= true;
 
@@ -204,16 +207,6 @@ function saveIntoStorage() {
 										console.log(currentLibrary)
 											})
 										}
-
-
-
-											//
-									// index =Math.floor(Math.random() * 10000000000).toString().padStart(10, "0")+(new Date().toLocaleString());
-										// localStorage.setItem(`myLinks (${index})`, JSON.stringify(arrayBaseLinks));
-											// const data = JSON.stringify(localStorage.getItem(`myLinks (${index})`));
-											// console.log(`ДАТА СОХРАНЕНА В БАЗУ ${modifyDataString(data)}`)
-											// 		showroomNote.innerHTML = `<span>ДАТА СОХРАНЕНА В LS:${modifyDataString(data)}</span>`;
-											// 			storageLength.innerHTML = `<span>${localStorage.length}</span>`;
 												localStorage.clear()
 												uploadToLocalStorage(titles, currentLibrary);
 												hostingToSite(downloadFromLS());
