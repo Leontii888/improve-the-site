@@ -88,7 +88,7 @@ background-color: rgba(51, 85, 204, .1);
 .link {
      display: none;
 
-     flex: 1 1 11%;
+     flex: 1 1 8%;
 }
 .visible {
      display: block;
@@ -97,6 +97,6 @@ background-color: rgba(51, 85, 204, .1);
      flex-wrap: wrap;
 }
 .biggest{
- flex: 1 1 35% ;     
+ flex: 1 0 60% ;     
 }
 

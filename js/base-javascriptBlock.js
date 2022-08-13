@@ -6,7 +6,7 @@ const DEPOSIT= 35000;
 const RATIO= 2;
 const LIS_IN_BIG_CHAPTER= 32;
 const LIS_IN_MID_CHAPTER= 16;
-const CHAPTERS_SHOWED= 4;
+const CHAPTERS_SHOWED= 3;
 
 
 
@@ -143,7 +143,7 @@ for (let i = 0; i < showsubMenu.length; i++){
 				let visibles =document.querySelectorAll(".visible");
 				let openedList = [...visibles];
 				let quantityOfVisibleLi = openedList.reduce((q,el) => q= el.children.length + q,0)
-				console.log(quantityOfVisibleLi);
+				// console.log(quantityOfVisibleLi);
 
 				//get optimal quantity of rows
 				//for long-rows li

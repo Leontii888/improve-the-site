@@ -36,28 +36,25 @@ position: relative;
 	height: 15rem;
 	padding: 2rem;
 }
-.trade__calc-output {
-
-}
 
 .trade__block-modal-close {
 	top: 10%;
 	left: 84%;
 }
 .trade__bitcoin {
-	flex:  0 1 25%;
+	padding: 0;
+	flex:  0 1 23%;
 	height: 41rem;
 
 	display: flex;
 	flex-direction: column;
 
-	margin: 0 4rem 0 0;
+	margin: 0 2rem 0 0;
 }
 .trade__button{
 margin: 0 0 2rem 0;
 }
 .trade__bitcoin-item{
-	  /*width:9rem;*/
 	margin: 0 0 2rem 0;
 
 }
@@ -65,7 +62,7 @@ margin: 0 0 2rem 0;
 	 font-weight: bold;
 }
 .trade__article{
-	flex:  0 1 50%;
+	flex:  0 1 35%;
 	height: 41rem;
 }
 .trade__article-image{
@@ -73,7 +70,7 @@ margin: 0 0 2rem 0;
 }
 .trade__article-image img{
 	transition: 1s;
-	width: 35rem;
+	width: 44rem;
 }
 .trade__article-image img:hover{
 	transform: scale(1.2);
@@ -84,11 +81,15 @@ margin: 0 0 2rem 0;
 	margin: 0 0 2rem 0;
 }
 .trade__title-text p{
-	margin: 0 0 1rem 0;
+	margin: 0 2rem 1rem 0;
 }
 .tradeModalWin{
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: #fff;
+}
+.vsc-initialized {
+	/*margin: 2rem;*/
+	overflow: none;
 }

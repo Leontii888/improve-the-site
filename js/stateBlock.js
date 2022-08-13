@@ -291,9 +291,12 @@ hostingToSite(downloadedFromLS);
 
 //DIRECT WAY: Upload to site from main object(Library)
 //host to site from from main object(Library)
+// !!delete all in LS
+// localStorage.clear()
 // hostingToSite(library);
 
 
 //to reset:
 // comment -> hostingToSite(downloadedFromLS);
+//>localstorage.clear()
 //uncomment -> hostingToSite(library);
