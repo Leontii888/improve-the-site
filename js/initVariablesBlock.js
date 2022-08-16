@@ -55,4 +55,12 @@ const		aboutModal = document.querySelector('.header__item-about'),
 	checkStorage = document.querySelector('.storage__check-length'),
 	showroomNote = document.querySelector('.storage__showroom-note'),
 	showroomClose = document.querySelector('.storage__close'),
-	saveLinkTime = `${new Date().toLocaleString()}`;
+	saveLinkTime = `${new Date().toLocaleString()}`,
+
+	//contacts
+	contactsName = document.querySelector('.contacts__input-name'),
+	contactsLastName = document.querySelector('.contacts__input-lastname'),
+	contactsEmail = document.querySelector('.contacts__input-email'),
+	contactsArea = document.querySelector('#contacts__area'),
+	contactsButtonSubmit = document.querySelector('.contacts__button-submit');
+

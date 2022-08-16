@@ -11,7 +11,8 @@
 	<link rel="stylesheet" href="css/styles.css"/>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.js"></script>
-	<base target="_blank" >
+	<!-- add target_blank -->
+	<!-- <base target="_blank" > -->
 
 
 	<title>mySite.Links.Maps.Weather</title>
@@ -540,19 +541,17 @@
 						</p>
 				</div>
 				<h5>Contact me</h5>
-				<form action="https://rbc.ru/"
-						method="GET"
-						target ="_blank"
+				<form 
 						class="contacts__form"
 						name="contacts">
-						<input class="contacts__input" type="text" placeholder="name" >
-						<input class="contacts__input" type="text" placeholder="last name">
-						<input class="contacts__input" type="text" placeholder="email">
+						<input class="contacts__input contacts__input-name" type="text" placeholder="name" >
+						<input class="contacts__input contacts__input-lastname" type="text" placeholder="last name">
+						<input class="contacts__input contacts__input-email" type="text" placeholder="email">
 						
 						<textarea name="" id="contacts__area" cols="30" rows="8"></textarea>
 						<div class= "contacts__box-buttons">
-							<button class="mybutton contacts__button" type="reset">Reset</button>
-						<button class="mybutton contacts__button" type="submit">Submit</button>
+						<button class="mybutton contacts__button" type="reset">Reset</button>
+						<button class="mybutton contacts__button contacts__button-submit" type="submit">Submit</button>
 						</div>
 				</form>
 			</div>
@@ -604,8 +603,8 @@
 <script   src="js/localStorageBlock.js"></script>
 <script   src="js/minerviniBlock.js"></script>
 <script   src="js/weatherBlock.js"></script>
-<script   src="js/onEventFooBlock.js"></script>
 <script   src="js/indexedDB.js"></script>
 <script   src="js/contacts.js"></script>
+<script   src="js/onEventFooBlock.js"></script>
 </body>
 </html>

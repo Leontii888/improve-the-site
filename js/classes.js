@@ -88,3 +88,15 @@ class Block {
 	}
 
 }
+
+//contacts
+class Contacts{
+	constructor(form){
+		this.ts =new Date().toLocaleString(),
+		this.name = form.name,
+		this.lastname = form.lastname,
+		this.email = form.email,
+		this.note = form.note
+	}
+
+}

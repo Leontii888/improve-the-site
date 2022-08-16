@@ -8,6 +8,9 @@ count.onclick = showChart;
 countInt.onclick = getSingleChartForInterest;
 //bitc
 fetchCurrencies.onclick = hostRateinBlock;
+//contacts
+contactsButtonSubmit.onclick = gatherContacts;
+
 
 
 
