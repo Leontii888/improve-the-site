@@ -47,6 +47,9 @@ margin-bottom: 2rem;
 .contacts__input{
 width: 50%;
 }
+.contacts__input-span{
+display: none;
+}
 .contacts__button{
 	width: 8.7rem;
 margin: 0;

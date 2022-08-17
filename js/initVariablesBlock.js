@@ -58,6 +58,7 @@ const		aboutModal = document.querySelector('.header__item-about'),
 	saveLinkTime = `${new Date().toLocaleString()}`,
 
 	//contacts
+	contactsForm = document.querySelector('.contacts__form'),
 	contactsName = document.querySelector('.contacts__input-name'),
 	contactsLastName = document.querySelector('.contacts__input-lastname'),
 	contactsEmail = document.querySelector('.contacts__input-email'),

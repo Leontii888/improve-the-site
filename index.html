@@ -6,6 +6,7 @@
 
 	<link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet">
 	<script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+	<!-- <script src="https://kit.fontawesome.com/d4fbb21366.js" crossorigin="anonymous"></script> -->
 
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 	<link rel="stylesheet" href="css/styles.css"/>
@@ -541,14 +542,12 @@
 						</p>
 				</div>
 				<h5>Contact me</h5>
-				<form 
-						class="contacts__form"
-						name="contacts">
-						<input class="contacts__input contacts__input-name" type="text" placeholder="name" >
-						<input class="contacts__input contacts__input-lastname" type="text" placeholder="last name">
-						<input class="contacts__input contacts__input-email" type="text" placeholder="email">
+				<form class="contacts__form">
+						<input class="contacts__input contacts__input-name" type="text" data-rule="name" placeholder="name" ><span class="contacts__input-span" data-flag="name">&#10003;</span>
+						<input class="contacts__input contacts__input-lastname" type="text" data-rule="lastname" placeholder="last name"><span class="contacts__input-span" data-flag="lastname">&#10003;</span>
+						<input class="contacts__input contacts__input-email" type="text" data-rule="email" placeholder="email"><span class="contacts__input-span" data-flag="email">&#10003;</span>
 						
-						<textarea name="" id="contacts__area" cols="30" rows="8"></textarea>
+						<textarea id="contacts__area" cols="30" rows="8"></textarea>
 						<div class= "contacts__box-buttons">
 						<button class="mybutton contacts__button" type="reset">Reset</button>
 						<button class="mybutton contacts__button contacts__button-submit" type="submit">Submit</button>

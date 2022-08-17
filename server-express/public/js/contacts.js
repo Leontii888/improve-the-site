@@ -1,6 +1,11 @@
 let stringified = object => JSON.stringify(object);
 
+
+
 function gatherContacts() {
+
+
+  
 	let dataForm = {
 		name: contactsName.value,
 		lastname: contactsLastName.value,
