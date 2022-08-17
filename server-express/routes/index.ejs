@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<link rel="stylesheet" href="css/styles.css"/>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.js"></script>
+	<!-- <base target="_blank" > -->
+
+
+	<title>mySite.Links.Maps.Weather</title>
+</head>
+<body>
+	<a name="top"></a>
+	<header class=" header">
+		<div class="header__logo
+					logo ">
+				<img  src="img/earthWhite.png" alt="logo-picture" />
+		</div>
+		<form 
+			class="header__form"
+			action="https://duckduckgo.com/"
+			method="GET"
+			target ="_blank">
+			<label for="header__search">Search on DuckDuckGo</label>
+			<input
+			class="header__search"
+			name="header__search"
+			placeholder="Search some..."
+			type="text">
+			<button 
+			type="submit"
+			class ="header__button">Go</button>
+		</form>
+		<nav class="nav-block header__nav-block">
+			<ul class="nav-block__list header__list ">
+				<li class="nav-block__item header__item header__item-about">About</li>
+				<li class="nav-block__item header__item"><a href="#trade--ancor">Trade-info</a></li>
+				<li class="nav-block__item header__item"><a href="#showcase--ancor">my Links</a></li>
+				<li class="nav-block__item header__item"><a href="#storage--ancor">Keeper</a></li>
+				<li class="nav-block__item header__item"><a href="#whiskey--ancor">Whiskey</a></li>
+				<li class="nav-block__item header__item"><a href="#newsblock--ancor">News</a></li>
+				<li class="nav-block__item header__item"><a
+										 
+										href="https://www.windy.com/ru/-%D0%94%D0%BE%D0%B6%D0%B4%D1%8C-%D0%B3%D1%80%D0%BE%D0%B7%D0%B0-rain?rain,55.738,37.845,14,m:fd3ahei">MapsWeather</a>
+				</li>
+				<li class="nav-block__item header__item"><a href="#contacts--ancor">Contacts</a></li>
+			</ul>
+		</nav>
+
+	</header>
+	<section class="frontpage">
+
+		<div class="container">
+			<div class="frontpage__title-box">
+					<h1 class="frontpage__title">Needful things and lasyMe</h1>
+					<h3 class="frontpage__subtitle">All you need is code.</h3>
+					<h4 class="frontpage__sub-subtitle">(Little bit more often)</h4>
+				</div>
+				<div class="modalBlock frontpage__block-modal">
+					<h5>А зачем?</h5>
+					<div>
+						<p>В одном месте собрать полезные настройки, графики, расчетные калькуляторы. Сохранять данные в браузере.</p>
+					</div>
+					<h5>История</h5>
+					<div>
+						<p> Несколько лет назад увидел рекламу о доходных сайтах. Сайтах, которые можно покупать , продавать, сдавать в аренду, получать доход, с доходом от аренды недвижимости. Начав разбираться с оценкой сайта при покупке, вдруг с удивлением обнаружил, что сайт можно  сделать своими руками. Для этого нужно изучить HTML, CSS, Javascript, Nodejs. Начал изучать и понял что это очень интересно, особенно программирование на JS</p>
+						<p>
+						Огромное коичество обучающих материалов, учителей, популяризаторов, дурачков. Изучал все это с огромным энтузиазмом и большим интересом круглые сутки. В итоге, в какой-то момент, я понял что могу уже делать чтото сам. Мне по-прежнему это  интересно, но я трачу на пустяки слишком много времени.
+						</p>
+					</div>
+					<div>
+						<p>Москва, сеть. 2019</p>
+					</div>
+					<div class="closeIcon
+								frontpage__block-modal-close ">
+						<img src="img/w-cross-close2.png" alt="closebutton">
+					</div>
+				</div>
+		</div>
+				
+	</section> 
+
+<section class="trade">
+	<a name="trade--ancor"></a>
+		<h3 class="title trade__title ">Trader's helpful</h3>
+	<div class="container  trade__container">
+
+
+		
+			<div class= "trade__calc">
+					<h5>Get calc pose</h5>
+					<div class="block-inputs trade__block-inputs ">
+						<div class="block-inputs__item trade__input">
+							<label for="data-first-price">Price In</label>
+							<input
+							id="trade__data-first-price"
+							class="tocount"
+							type="text"
+							name ="data-first-price"
+							title="type start price"
+							value="">
+						</div> 
+
+						<div class="block-inputs__item trade__input">
+							<label for="data-second-price">Price Out</label>
+							<input
+							id="trade__data-second-price"
+							class="trade__count"
+							type="text"
+							name="data-second-price"
+							title="type finish price"
+							value="">
+						</div> 
+						<div class="block-inputs__item trade__input">
+							<label for="loss" >Loss, RUB.</label>
+							<input
+							id="trade__loss"
+							title="default =RUB2000, to count press Enter" name="loss"
+							placeholder="2000"
+							type="text">
+						</div>
+						<div class="block-inputs__item trade__input">
+							<label for="makeCount">Listing lots (1,2,...)</label>
+							<input
+							id="trade__averagePrice"
+							name="makeCount"
+							title="to count press Enter"
+							placeholder="1,2..."
+							type="text">
+						</div>
+					</div>
+					<div class="trade__modal-parent">
+							<div class="modalBlock trade__modalCalc ">
+							<!-- <p class="calc-data"></p> -->
+								<p class="trade__calc-output"></p>
+								<div class="closeIcon
+											trade__block-modal-close ">
+									<!-- change icon add folder img/close-->
+									<img src="img/close.png" alt="closebut">
+								</div>
+							</div> 
+					</div>
+			</div>
+<!-- calc-->
+			<div class="trade__bitcoin">
+				<h5>Get bitcoin rate</h5>
+				<div class="trade__title-text">
+					<p>Today’s Bitcoin price is $20,646.45 with a 24-hour trading volume of $29,316,673,936. The current CoinMarketCap ranking is #1, with a live market cap of $394,214,162,012. It has a circulating supply of 19,093,556 BTC coins and a max. supply of 21,000,000 BTC coins.</p>
+					<p><span>This rise could happen eventually as, only during February, the price change of one BTC increased by more than 70 percent leading to its all-time high. You might recall that the Bitcoin price reached a new all-time high of $50,000. Bitcoin is back above $60,000 as Coinbase gets ready to go public on the stock market. The all-time high price of $64,800 was reached on 14 April 2021.</span>
+					</p>
+				</div>
+
+				<button class="mybutton trade__button   fetch-currencies">Fetch rate</button>
+				<div  class="trade__bitcoin-item">
+					<div id="trade__bitcoin-rate"></div>
+				</div>
+				<div class="trade__bitcoin-item">
+					<div id="trade__bitcoin-mypose"></div>
+				</div>
+				<div id="trade__bitcoin-btn" class="trade__bitcoin-item"></div>
+			</div>
+<!-- bitcoin-->
+			<div class="trade__article">
+				<h5><a href="https://www.cryptopolitan.com/bitcoin-price-forecast/" rel="noopener"  >Bitcoin Price Prediction 2022-2031</a>: Will Bitcoin Bulls Rally?</h5>
+				<div class="trade__title-text">
+					<p>Launched over thirteen years ago in 2009, Bitcoin is a decentralized virtual currency powered by blockchain technology. Satoshi Nakamoto created the coin to overcome the shortcomings of government-issued currencies without requiring a controlling authority.</p>
+					<p><span>Bitcoin (BTC) was created out of the need for a cryptography-based e-payment system rather than the conventional trust-based system. The cryptocurrency acts as a store of value and a payment method for any transaction process in the crypto space. It is often dubbed “digital gold.”</span>
+					</p>
+				</div>
+				<div class="trade__article-image" >
+					<img src="img/trader/bitcoin_chart.png" alt="table" loading="lasy"></div>
+			</div>
+			<div>
+				<script type="text/javascript">
+							let cf_widget_size = "large";
+							let cf_widget_from = "BTC";
+							let cf_widget_to = "usd";
+							let cf_widget_name = "Bitcoin";
+							let cf_clearstyle = true;
+				</script>
+				<script src="https://www.worldcoinindex.com/content/widgets/js/render_widget-min.js" type="text/javascript">
+				</script>
+			</div>
+	</div>
+</section>
+<section class="showcase">
+	<a name="showcase--ancor"></a>
+	<h3 class=" trade__title title">Showcase of links</h3>
+	<div class="container showcase__container">
+		<div class='showcase__block-outer'>
+			<h6>Tap good link to</h6>
+			<div class ="showcase__block-nav">
+				<ul class="showcase__topmenu">
+					<li class="mybutton showcase__down">
+						<ul class="showcase__down-submenu">
+							<li class="showcase__down-el showcase__sub-common ">Common</li>
+						</ul>
+					Common</li>	 
+					<li class="mybutton showcase__down">
+						<ul class="showcase__down-submenu">
+							<li class=" showcase__down-el showcase__sub-css">Css</li>
+							<li class=" showcase__down-el showcase__sub-js">JavaScript</li>
+							<li class=" showcase__down-el showcase__sub-html">Html</li>
+							<li class=" showcase__down-el showcase__sub-design">Design</li>
+						</ul>	
+					FrontEnd</li>
+					<li class="mybutton showcase__down">
+						<ul class="showcase__down-submenu">
+							<li class=" showcase__down-el showcase__sub-pows">PowerShell</li>
+						</ul>	
+					PowerShell</li>
+					<li class="mybutton showcase__down">
+						<ul class="showcase__down-submenu">
+							<li class=" showcase__down-el showcase__sub-trading">Trading</li>
+						</ul>	
+					Trading</li>
+					<li class="mybutton showcase__down">
+						<ul class="showcase__down-submenu">
+							<li class=" showcase__down-el showcase__sub-youtube">YouTubeGuru</li>
+						</ul>	
+					YouTube</li>
+					<li class="mybutton showcase__down">
+						<ul class="showcase__down-submenu">
+							<li class=" showcase__down-el showcase__sub-youtube">Linux</li>
+						</ul>	
+					Linux</li>
+				</ul>
+			</div>	<!--links-block-nav-->
+		</div>
+		<!--links-block-->
+		<div id="showcase__links">
+			<ul id="showcase__link-common"  data-title="common" class="link visible">Common<hr>
+			</ul>
+			<ul id="showcase__link-css" data-title="css" class="link">Css<hr>
+			</ul>
+			<ul id="showcase__link-javascript" data-title="javascript" class="link">Javascript<hr>
+			</ul>
+			<ul id="showcase__link-html" data-title="html" class="link">Html<hr>
+			</ul>
+			<ul id="showcase__link-design" data-title="design" class="link">Design<hr>
+			</ul>
+			<ul id="showcase__link-PowS" data-title="powershell" class="link">PowerShell<hr>
+			</ul>
+			<ul id = "showcase__link-trading" data-title="trading" class="link visible ">Trading<hr>
+			</ul>
+			<ul id="showcase__link-youtube" data-title="youtube" class="link">YouTubeGurus<hr>
+			</ul>
+			<ul id="showcase__link-linux" data-title="linux" class="link ">Linux<hr>
+			</ul>
+		</div>
+	</div>
+</section> <!--showcase-->
+
+<section class="minervini">
+		<h3 class="title"> Minervini graphs</h3>
+		<div class="container minervini__container">
+			<div class="minervini__graph">
+				<div class="minervini__visual">
+					<canvas id="minervini__canvas-chart" ">
+					</canvas>
+					<div class ="minervini__block-controls"> 
+						<div class ="minervini__controls-main-graph">
+							<input id= "minervini__put-data-main-graph"
+							class="minervini__put-main-button" 
+							type="text"
+							placeholder="40,10,2"
+							title="Процент успешных сделок из 100, количество сделок 10, соотношение величин прибыли и убытка для депозита 100К">
+							
+							<input id="minervini__count-main-graph"
+							class=" mybutton minervini__count-main-button" 
+							type="button"
+							value="ShowAll">
+						</div>
+						<div class ="minervini__controls-sub-graph">
+							<input id= "minervini__put-data-sub-graph"
+							class="minervini__put-subdata-button"
+							type="text"
+							placeholder="interest,%"
+							title="Процент прибыли в каждой сделке">
+
+							<input id="minervini__count-sub-graph"
+							class=" mybutton minervini__count-subdata-button" 
+							type="button"
+							value="ShowSingle">
+						</div>		
+					</div>
+				</div>	
+				<div class="minervini__content">
+					<h5>MINERVINI SAID</h5>
+					<div class="minervini__content-text">
+						<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque odio amet neque praesentium rerum qui sunt, tempora iure hic a harum, quae et veniam unde consequatur, cupiditate? Consectetur, ducimus, praesentium.</span>
+						<span>Enim fuga ea, sed. Nemo eligendi corporis doloremque officiis incidunt omnis fuga magnam eius a repellendus enim, recusandae ex voluptatum. Eveniet odio unde, nulla rem possimus perferendis cumque similique blanditiis!</span>
+						<span>Voluptatibus laboriosam non totam voluptate in accusantium et aliquid, dolorem amet harum a vitae adipisci quas eligendi dicta? Dicta ab quam, fuga nam accusamus atque suscipit minus, officia tenetur doloremque.</span>
+						<span>Perspiciatis voluptatibus officia modi. Magnam nesciunt vero quos provident, dolorum ex illo blanditiis unde sint maiores! A corporis distinctio tempora quas vero nulla pariatur, error facere necessitatibus quibusdam! Quidem, atque?</span></p><p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad omnis veritatis odio reprehenderit, laboriosam officiis, eaque suscipit neque. Beatae, repellat quisquam aperiam atque accusantium obcaecati iure deserunt quam nihil ipsum.</span>
+						<span>Recusandae dolore quidem dolor soluta facere dolorum voluptates ut, quisquam sequi rem unde consectetur optio minus eum rerum repellendus veniam. Ipsa aut pariatur sequi eum dolores obcaecati, commodi labore rerum!</span>
+						<span>Iusto fuga quos nulla cupiditate hic laborum inventore molestiae recusandae, eaque eveniet qui ipsam ipsum dolor. Laboriosam accusantium atque soluta ea a ex architecto, blanditiis id accusamus consequuntur dicta impedit!</span></p>
+					</div>
+
+					
+				</div>
+			</div>
+		</div>
+</section>
+
+
+<section class="storage">
+		<a name="storage--ancor"></a>
+		<h3 class="title  storage__title">Keep links</h3>
+		<div class="container storage__container">
+			
+			<!--сохранение ссылок в сторедже-->
+				<div class="storage__note">
+					<h5 class="storage__note-title">Save links here</h5>
+					<input class="storage__input"
+							type="text"
+							placeholder="type some link..." >
+				</div>
+				
+				<div class="storage__but-list">
+					<button
+						class="mybutton storage__put-link
+						storage__but-list-item">
+						Put link</button>
+					<button
+						class="mybutton storage__get-link
+						storage__but-list-item">
+						Show base</button>
+					<button
+						class="mybutton storage__clear-input
+						storage__but-list-item">
+						Clear note</button>
+					<button
+						class="mybutton storage__save-to-storage
+						storage__but-list-item">
+						Save to storage</button>
+				</div>
+				<div class="storage__check">
+					<div class="storage__length-title">
+						<span>so far in localStorage:</span>
+						<span class="storage__check-length"></span>
+					</div>
+					<div class="storage__info-box">
+						<div class="storage__showroom">
+							<p class="storage__showroom-note"></p>
+						</div>
+						<div class="closeIcon
+									storage__close">
+							<img src="img/close.png" alt="closebutton">
+						</div>
+					</div>
+				</div>
+		</div>
+</section > <!--main-books-->
+
+	<section class="whiskey">
+		<a name="whiskey--ancor"></a>
+		<h3 class="title">List on IndexedDB</h3>
+		<div class="container whiskey__container">
+			<div class="whiskey__form-container">
+				<form name="whiskeyForm">
+			        <fieldset>
+			          <p>
+			            <label for="name">Whiskey: </label>
+			            <input type="text" id="whiskey__name" placeholder="Whiskey Name" required />
+			          </p>
+			          <p>
+			            <label for="country">Country of Origin: </label>
+			            <input type="text" id="whiskey__country" value="" required />
+			          </p>
+			          <p>
+			            <label for="age">Years Old: </label>
+			            <input
+			              type="text"
+			              inputmode="numeric"
+			              pattern="[\d]+"
+			              id="whiskey__age"
+			              required
+			            />
+			          </p>
+			          <p>
+			            <label for="isOwned">Owned: </label>
+			            <input type="checkbox" id="whiskey__isOwned" value="yes" />
+			          </p>
+			          <p>
+			            <button class= "mybutton whiskey__button" id="whiskey__btn-add">Add</button>
+			            <button class= "mybutton whiskey__button" id="whiskey__btn-update">Update </button>
+			            <button class= "mybutton whiskey__button" id="whiskey__btn-delete">Delete </button>
+			            <button class= "mybutton whiskey__button" id="whiskey__btn-clear">Reset</button>
+			          </p>
+			        </fieldset>
+	      		</form>
+			</div>
+			<div class="whiskey__show-base">
+		        <h5>List of Whiskeys:</h5>
+			        <ul class="whiskey__wish-list">
+			          <!-- build list here -->
+			        </ul>
+	     	 </div>
+		</div>
+	</section> 
+	<section class="newsblock">
+		<a name="newsblock--ancor"></a>
+		<h3 class="title">What else?</h3>
+		<div class="container newsblock__container">
+			<div class="newsblock__row  cards">
+			<div class="cards__item newsblock__item">
+				<div class="cards__image newsblock__image">
+					<img src="img/newsblock/git_branch.png">
+				</div>
+				<div class="cards__title newsblock__title">
+					<h6><a href="https://google.github.io/styleguide/jsguide.html" rel="noopener">Are you a profi? Check it up!</a></h6>
+				</div>
+				<div class="cards__text newsblock__text"><p>This document serves as the complete definition of Google’s coding standards for source code in the JavaScript programming language. A JavaScript source file is described as being in Google Style if and only if it adheres to the rules herein.</p>
+				<p>Like other programming style guides, the issues covered span not only aesthetic issues of formatting, but other types of conventions or coding standards as well. However, this document focuses primarily on the hard-and-fast rules that we follow universally, and avoids giving advice that isn't clearly enforceable (whether by human or tool).</p>
+				</div>
+				<div class="cards__button-block newsblock__button-block">
+					<div class=" mybutton cards__button newsblock__button">Add</div>
+				</div>		
+			</div>
+						<div class="cards__item newsblock__item">
+				<div class="cards__image newsblock__image">
+					<img src="img/newsblock/linux_log.png">
+				</div>
+				<div class="cards__title newsblock__title">
+					<h6><a href="https://habr.com/ru/company/ruvds/blog/339820/" rel="noopener">20 приёмов в CMD Linux</a></h6>
+				</div>
+				<div class="cards__text newsblock__text"><p>Тема полезных приёмов работы в терминале Linux неисчерпаема. Казалось бы — всё устроено очень просто: приглашение оболочки, да введённые с клавиатуры команды. Однако, в этой простоте кроется бездна неочевидных, но полезных возможностей.</p>
+				</div>
+				<div class="cards__button-block">
+					<div class=" mybutton cards__button newsblock__button">Add</div>
+				</div>		
+			</div>
+			<div class="cards__item newsblock__item">
+				
+				<div class="cards__image newsblock__image">
+					<img  src="img/newsblock/file_js_thin_icon.png">
+				</div>
+				<div class="cards__title newsblock__title">
+					<h6><a href="https://learn.javascript.ru/" rel="noopener">Google style guide</a></h6>
+				</div>
+				
+				
+				<div class="cards__text newsblock__text"><p>Перед вами учебник по JavaScript, начиная с основ, включающий в себя много тонкостей и фишек JavaScript/DOM.</p>
+					
+				.</div>
+				<div class="cards__button-block">
+					<div class=" mybutton cards__button newsblock__button">Add</div>
+				</div>	
+			</div>
+			
+			<div class="cards__item newsblock__item">
+				<div class="cards__image newsblock__image">
+					<img   src="img/newsblock/mail_email_envelope_icon.png">
+				</div>
+				<div class="cards__title newsblock__title">
+					<h6><a href="https://10minutemail.net/"    rel="noopener">10 minutes mail</a></h6>
+				</div>
+				<div class="cards__text newsblock__text"><p>10minutemail.net — временная электронная почта. Ваша почта будет удалена через 10 минут, вы не сможете ею воспользоваться в дальнейшем. Вы можете взять дополнительные 10 минут. Данный сайт решит проблему анонимности вашего почтового ящика.</p>
+				</div>
+				<div class="cards__button-block">
+					<div class=" mybutton cards__button newsblock__button">Add</div>
+				</div>	
+			</div>
+		</div>
+
+	</section> <!--newsblocks-->
+	<section class="mapsWeather">
+		<a name="mapsWeather"></a>
+		<h3 class=" title">Weather and map</h3>
+
+		<div class="container  mapsWeather__container">
+			<div class="mapsWeather__info">
+				<div class="mapWeather__info-title">
+					<label>
+						Search city:<input type="text"
+						id="mapsWeather__city"
+						class="mapsWeather__city"
+						target="adsa"
+						value=""
+						title="type city"
+						placeholder = "Moscow"/>
+					</label>
+					<p class="mapsWeather__show">Weather in</p>
+				</div>
+				<div class="mapsWeather__conditions">
+					<div class="mapsWeather__item-data"><p></p></div>	
+					<div class="mapsWeather__item-data"><p></p></div>	
+					<div class="mapsWeather__item-data"><p></p></div>	
+					<div class="mapsWeather__item-data"><p></p></div>	
+				</div>	
+			</div>
+			<div id="mapsWeather__map">
+			</div>
+		</div>
+
+	</section>
+<section class="monteverdi">
+		<a href="monteverdi--ancor"></a>
+		<h3 class= "title">Monteverdi!</h3>
+		<div class="container monteverdi__container">
+			<div class="monteverdi__pictures grid">
+				<div class="grid__item"><img src="./img/monteverdi/06 - p.04-05.jpg" loading="lasy" alt=""></div>
+				<div class="grid__item"><img src="./img/monteverdi/01 - front.jpg" loading="lasy" alt=""></div>
+				<div class="grid__item"><img src="#" alt=""></div>
+				<div class="grid__item"><img src="./img/monteverdi/14 - p.20-21.jpg" loading="lasy" alt=""></div>
+				<div class="grid__item"><img src="./img/monteverdi/04 - p.01-28.jpg" loading="lasy" alt=""></div>
+				<div class="grid__item"><img src="./img/monteverdi/11 - p.14-15.jpg" loading="lasy" alt=""></div>
+				<div class="grid__item"><img src="./img/monteverdi/08 - p.08-09.jpg" loading="lasy" alt=""></div>
+				<div class="grid__item"><img src="./img/monteverdi/07 - p.06-07.jpg" loading="lasy" alt=""></div>
+				<div class="grid__item"><img src="./img/monteverdi/02 - back.jpg" loading="lasy" alt=""></div>
+				<!-- <div class="grid__item"><img src="./img/monteverdi/09 - p.10-11.jpg" alt=""></div> -->
+				<!-- <div class="grid__item"><img src="./img/monteverdi/10 - p.12-13.jpg" alt=""></div> -->
+<!-- 				<div class="grid__item"><img src="./img/monteverdi/11 - p.14-15.jpg" alt=""></div>
+				<div class="grid__item"><img src="./img/monteverdi/12 - p.16-17.jpg" alt=""></div>
+				<div class="grid__item"><img src="./img/monteverdi/13 - p.18-19.jpg" alt=""></div>
+				<div class="grid__item"><img src="./img/monteverdi/14 - p.20-21.jpg" alt=""></div>
+				<div class="grid__item"><img src="./img/monteverdi/15 - p.22-23.jpg" alt=""></div> -->
+			</div>
+		</div>
+</section>
+	<section class="contacts">
+		<a name="contacts--ancor"></a>
+		
+		<h3 class="title">Contacts</h3>
+		<div class="container contacts__container">
+			<div class="contacts__picture">
+				
+			</div>
+			<div class="contacts__form-container">
+				<div class="contacts__review">
+					<h5>Review</h5>
+						<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, ipsum incidunt.</span><span>Eos doloremque soluta inventore impedit amet ipsam expedita natus dolore non iure rerum nemo adipisci vitae ea nisi facere ex, ipsum beatae eligendi. Perferendis delectus voluptas.</span>
+						</p>
+				</div>
+				<h5>Contact me</h5>
+				<form 
+						class="contacts__form"
+						name="contacts">
+						<input class="contacts__input contacts__input-name" type="text" placeholder="name" >
+						<input class="contacts__input contacts__input-lastname" type="text" placeholder="last name">
+						<input class="contacts__input contacts__input-email" type="text" placeholder="email">
+						
+						<textarea name="" id="contacts__area" cols="30" rows="8"></textarea>
+						<div class= "contacts__box-buttons">
+						<button class="mybutton contacts__button" type="reset">Reset</button>
+						<button class="mybutton contacts__button contacts__button-submit" type="submit">Submit</button>
+						</div>
+				</form>
+			</div>
+
+		</div>
+	</section>
+<footer>
+	<div class="container footer__container">
+			<div class="logo footer__logo ">
+				<img src="img/earthWhite.png" alt="footer-logo" class="logo-picture ">
+			</div>
+			<div class="footer__info">
+					<div>
+						<p>NEEDFUL STUFF SITE</p>
+						<p>2019 / All rights reserved<span>&ensp;&copy;</span></p>
+						<p><a href="#">Privacy policy</a></p>
+						<p>My post&ensp;&#9993;: <a href="mailto:comm2011@yandex.ru">&ensp; comm2011@yandex.ru</a></p>
+				</div>
+				<nav class="nav-block footer__socials">
+						<ul class="nav-block__list footer__list ">
+							<li class="nav-block__item footer__item"><a    rel="noopener" href="https://twitter.com/8thpiper">Twitter</li>
+							<li class="nav-block__item footer__item"><a    rel="noopener" href="https://www.facebook.com/nrykalin">Facebook</a></li>
+							<li class="nav-block__item footer__item"><a    rel="noopener" href="https://www.pinterest.ru/news_hub/4940064254991542922/">Pinterest</a></li>
+							<li class="nav-block__item footer__item"><a    rel="noopener" href="https://github.com/Leontii888?tab=repositories">GitHub</a></li>
+							<li class="nav-block__item footer__item"><a    rel="noopener" href="https://www.codewars.com/kata/stop-the-zombie-apocalypse/train/javascript">CodeWars</a></li>
+							<li class="nav-block__item footer__item"><a    rel="noopener" href="https://vk.com/amguema">Vk</a></li>
+							<li class="nav-block__item footer__item"><a	 	rel="noopener" href="https://www.youtube.com/channel/UCWR-uSfGiCFGqahN27k-6AQ">YouTube</a>
+								<!-- add tel -->
+								<li class="nav-block__item footer__item"><a rel="noopener" href="tel:{phone}">Call me</a>
+									<li class="nav-block__item footer__item"><a rel="noopener" href="sms:{phone}?body={content}">Send me a message</a>
+
+							</li>
+						</ul>
+				</nav>
+			</div>
+			<div class="back">
+			<a href="#top">upward&ensp;&#9650;<span></span></a><br>
+			<!-- 	<a href="#" onclick="this.innerHTML =  history.length+ ' items in your history' ; return false">View history.length</a> -->
+			</div>
+	</div>
+	
+</footer>
+
+<script   src=" js/initVariablesBlock.js"></script>
+<script   src=" js/classes.js"></script>
+<script   src=" js/base-javascriptBlock.js"></script>
+<script   src=" js/stateBlock.js"></script>
+<script   src=" js/bitcoinBlock.js"></script>
+<script   src=" js/localStorageBlock.js"></script>
+<script   src=" js/minerviniBlock.js"></script>
+<script   src=" js/weatherBlock.js"></script>
+<script   src=" js/indexedDB.js"></script>
+<script   src=" js/contacts.js"></script>
+<script   src=" js/onEventFooBlock.js"></script>
+</body>
+</html>

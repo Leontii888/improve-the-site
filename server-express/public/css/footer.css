@@ -1,0 +1,66 @@
+footer
+{
+  height: 20rem;
+  max-height: 20rem;
+  background-color: #010120FF;
+  
+  padding:  2rem;
+}
+.footer__container{
+  padding: 2rem 0 0 0;
+}
+.footer__logo{
+    float: left;
+    height: 15rem;
+    margin: 0 2rem 0 0; 
+}
+.footer__info {
+  color: #ddd;
+}
+
+.footer__info a{
+ margin: 0;
+
+ color: #ddd;
+}
+
+.footer__info p{
+  font-size: .9rem;
+
+  margin:0;
+  margin-bottom: 0.8rem;
+}
+.footer__info a:hover{
+  color: #F67908;
+}
+
+.footer__socials {
+  margin: 0;
+  padding:  0 1.5rem 0 0;
+}
+
+.footer__item
+{
+  font-size: .9rem;
+
+  margin: 0;
+  padding-right:2rem ;
+
+  display: inline-block;
+  cursor: pointer;
+
+}
+
+.back
+{
+position: fixed;
+top: 88%;
+left: calc(100vw - 500px)/2);
+
+margin:2rem; 
+}
+
+.back a{
+color: #ff6a00;
+}
+

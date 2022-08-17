@@ -1,0 +1,22 @@
+/*flexes------*/
+.flex{
+display: flex;
+flex-wrap: wrap;
+}
+.flex--nowrap{
+flex-wrap: nowrap;
+}
+.flex--align-center{
+align-items: center;
+}
+.flex--align-top{
+align-items: top;
+}
+.flex--space-between
+{
+justify-content: space-between;
+}
+.flex--dir-col{
+flex-direction: column;
+}
+

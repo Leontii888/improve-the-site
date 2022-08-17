@@ -1,0 +1,33 @@
+/*---card-icon---*/
+.cards{
+display: flex;
+margin: 0 4rem 0 0;
+/*flex-wrap: wrap*/
+}
+.cards__item{
+display: flex;
+flex-direction: column;
+}
+
+.cards__image{
+
+}
+.cards__image img{
+width:100%;
+}
+.cards__title{
+display: flex;
+align-items: flex-start;
+}
+
+.cards__text{
+flex: 0 1 15rem;
+line-height: 1.9rem;
+
+overflow: hidden;
+}
+.cards__button-block{
+flex: 0 1 5%;
+}
+.cards__button{
+}

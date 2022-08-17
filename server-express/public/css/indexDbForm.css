@@ -1,0 +1,73 @@
+.whiskey{
+    background-color: rgba(51, 85, 204, .3);
+}
+.whiskey__container{
+  display: flex;
+  margin: 0 auto;
+  width: 70%;
+
+  background-color: rgba(255,255,255, .4);
+}
+.whiskey__form-container{
+display: flex;
+justify-content: flex-end;
+
+flex: 0 1 50%;
+}
+
+.whiskeyForm p {
+    font-size: inherit;
+  margin: 1rem 0;
+}
+li {
+  list-style-position: inside;
+  margin-left: 2rem;
+  font-size: inherit;
+  /*font-weight: 500;*/
+}
+form {
+  padding: 1rem 1rem;
+}
+fieldset {
+  padding: 0 4rem;
+}
+form p {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /*margin: 1rem 0;*/
+}
+label {
+  font-size: inherit;
+}
+/*input[type='text'] {*/
+  .whiskey__form-container input{
+  padding: 0.2rem 1rem;
+  font-size: inherit;
+  line-height: 1.5;
+  width: 30ch;
+}
+input[type='checkbox'] {
+  font-size: inherit;
+  /*line-height: 1.5;*/
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.whiskey__button {
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 1rem 0;
+font-size: inherit;
+border: none;
+  /*color: white;*/
+  /*background-color: cornflowerblue;*/
+}
+.whiskey__show-base{
+  margin: 1rem;
+
+  flex: 0 1 50%;
+  justify-content:flex-end; 
+}

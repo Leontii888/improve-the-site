@@ -1,0 +1,7 @@
+/*---modal---*/
+.modalBlock{
+	display: none;
+	background-color: #ff3;
+    position: absolute;
+
+}

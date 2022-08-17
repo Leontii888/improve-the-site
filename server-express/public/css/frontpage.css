@@ -1,0 +1,64 @@
+.frontpage
+{
+   position: relative;
+   
+    height: 100vh;
+    filter: blur(1px);
+         /*contain ,*/
+    background: url("../img/flowerBlue_only.png")-15% 220%/ 35% no-repeat;
+    /*,url("../img/techno-bg-op1.png")0 0/30% ;*/
+}
+.frontpage__title-box{
+margin: 5% 0 0 0;
+}
+.frontpage__title
+{
+    margin: 0 0 4rem 0; 
+    font-size: 8rem;
+
+    text-align: center;
+}
+.frontpage__subtitle
+{
+    margin: 0 0 4rem 0; 
+    text-align: center;
+}
+.frontpage__sub-subtitle
+{
+    text-align: center;
+}
+
+
+.frontpage__block{
+    padding: 0;
+}
+/*modal window*/
+.frontpage__block-modal
+{
+    top: 0;
+    left: 70%;
+
+    color: #fff;
+    background-color:  #35c;
+
+    width: 30%;
+    height: 100vh;
+
+    padding:  4rem;
+
+}
+.frontpage__block-modal p
+{
+   width: 90%;
+   text-align: left;
+}
+.frontpage__block-modal h5
+{
+}
+.frontpage__block-modal-close
+{
+    top: 5%;
+    left: 92%;
+}
+
+

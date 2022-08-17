@@ -1,0 +1,61 @@
+
+.minervini__container{
+/*width: 100% ; */
+}
+.minervini__graph{
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+.minervini__visual{
+    flex: 0 1 50%;
+}
+#minervini__canvas-chart{
+    width: 100%;
+    margin:  0 0 2rem 0;
+    background-color: rgba(51, 85, 204, .3);
+    opacity: 0.5
+}
+.minervini__block-controls{
+    /*margin: 0 auto;*/
+    /*width:40rem;*/
+}
+
+.minervini__block-controls input{
+    /*margin-right: 1rem;*/
+    line-height: normal;
+}
+
+.minervini__controls-main-graph{
+    display: flex;
+    align-items: center;
+    margin: 0 0 2rem 0
+}
+.minervini__controls-sub-graph{
+    display: flex;
+    align-items: center;
+}
+
+.minervini__count-main-button{
+    width:9rem;
+    margin: 0 2rem;
+}
+
+.minervini__count-subdata-button{
+ width:9rem;
+ margin: 0 2rem;
+}
+.minervini__content{
+    padding: 
+    outline: 1px solid red;
+    flex: 0 1 50%;
+}
+.minervini__content h5 {
+margin:0 0 2rem 2rem;
+}
+.minervini__content-text{
+margin:0 0 2rem 2rem;
+}

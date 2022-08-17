@@ -1,0 +1,55 @@
+.monteverdi {
+margin: 0;
+padding: 0;
+}
+.monteverdi__pictures{
+max-width:  100%;
+
+}
+
+.monteverdi__container {
+	height: 60rem;
+margin: 0 auto;
+}
+.grid {
+max-height: 95vh;
+
+display: grid;
+grid-template:repeat(4, 25%)/repeat(4, 25%);
+
+overflow: hidden;
+
+
+}
+.grid__item {
+overflow: hidden;
+box-shadow: 1px 1px  20px 1px    rgba(0, 0, 0, .3);
+padding-bottom: 10%;
+
+/*position: relative;*/
+}
+
+.grid__item:nth-child(2){
+grid-area: 1/2/3/4;
+}
+
+.grid__item:nth-child(3){
+grid-area: 1/4/4/5;
+
+background: url("../img/monteverdi/19 - CD2.jpg") 0 0 /  160%  no-repeat;
+}
+
+.grid__item:nth-child(5){
+grid-area: 3/1/4/3;
+}
+.grid__item:nth-child(9){
+grid-area: -1/3/-2/5;
+}
+.grid__item img{
+/*position: absolute;
+top:0%;
+left: 0%;*/
+
+object-fit: cover;
+/*object-position: top;*/
+}

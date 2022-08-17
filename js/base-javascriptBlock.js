@@ -11,13 +11,13 @@ const CHAPTERS_SHOWED= 3;
 
 
 //open m0dal window
-// function getmodal() {
-// 	frontModal.style.display = 'block';
-// }
+function getmodal() {
+	frontModal.style.display = 'block';
+}
 
-// function closemodal() {
-// 	frontModal.style.display = 'none';
-// }
+function closemodal() {
+	frontModal.style.display = 'none';
+}
 
 
 	//clean inputs
