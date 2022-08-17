@@ -88,15 +88,20 @@ background-color: rgba(51, 85, 204, .1);
 .link {
      display: none;
 
-     flex: 1 1 8%;
+     flex: 1 1 10%;
 }
 .visible {
-     display: block;
-     display: flex;
-     flex-direction: column;
-     flex-wrap: wrap;
+display: block;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+color:  red; 
 }
 .biggest{
- flex: 1 0 60% ;     
+ flex: 0 1 50%;
+   
+}
+.big{
+ flex: 0 1 40% ;     
 }
 
