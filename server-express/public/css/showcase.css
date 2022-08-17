@@ -98,9 +98,9 @@ background-color: rgba(51, 85, 204, .1);
      flex-wrap: wrap;
 }
 .biggest{
- flex: 0 1 50% ;     
+ flex: 0 3 50% ;     
 }
 
 .big{
- flex: 0 1 40% ;     
+ flex: 0 2 40% ;     
 }

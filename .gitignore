@@ -4,6 +4,6 @@ css/alias.js
 test.html
 /node_modules
 package-lock.json
-/public
-server-express.js
+contactsData.json
+state.json
 
