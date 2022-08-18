@@ -1,38 +1,29 @@
-function clientScrollTillY(){
-	return window.scrollY;
-}//=> 7300px
+// let clientScrollTillY = () => window.pageYOffset 
+//=> 7300px
 
-let stringified = object => {
-	return JSON.stringify(object);
-}
+let stringified = object => JSON.stringify(object);
 
-
-
-
+//
 let isInputCheckedOk =false;
 let inputContactsCollection = document.querySelectorAll(".contacts__input");
 let spanCollection = document.querySelectorAll(".contacts__input-span");
-let clientPlaceArrived = clientScrollTillY();
-const SECTION_CONTACTS_Y =7295;
 
 //add listener when arrived to the section
-if(clientPlaceArrived>SECTION_CONTACTS_Y){
-	for (let el of inputContactsCollection){
+
+for (let el of inputContactsCollection){
 	el.addEventListener("blur", function(){
-		check(el, el.dataset.rule);
-		})
-	}
+		checkFormFilled(el, el.dataset.rule);
+	})
 }
 
-function getCheckboxSpan(collection, property){
+function getCheckedSpan(collection, property){
  return item = [...collection].filter(el => el.dataset.flag === property)[0]
 };
 
-function check(el, prop){
+function checkFormFilled(el, prop){
 	if (prop==="name"){
 					if(!el.value.match(/^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$/)){
 					  el.style.border ="1px solid red";
-					 
 					  isInputCheckedOk= false;
 					  return
 					}
@@ -51,23 +42,23 @@ function check(el, prop){
 	}	
 	console.log(`Test OK: ${prop}`);
 	//checkbox
-	let elemTestedOk =  getCheckboxSpan(spanCollection,prop);
+	let elemTestedOk =  getCheckedSpan(spanCollection,prop);
 	elemTestedOk.style.display= "block";
 	elemTestedOk.style.color= "#0a9901";
 	//remove red border input
 	el.style.borderColor ="rgb(118, 118, 118)";
 	isInputCheckedOk= true;
 }
-function clearInputs(cls){
-		contactsForm.reset();
-		isInputCheckedOk = false;
-	return [...document.querySelectorAll(cls)].forEach(el => {
+
+function removeCheckedProperties(){
+	[...spanCollection].forEach(el=> el.style.display = "none");
+	[...document.querySelectorAll(".contacts__input")].forEach(el => {
 		el.style.borderColor ="rgb(118, 118, 118";
 	});
+	isInputCheckedOk = false;
 }
 
 function gatherContacts() {
-
 	if(isInputCheckedOk){
 		let data = {
 				name: contactsName.value,
@@ -75,13 +66,11 @@ function gatherContacts() {
 				email: contactsEmail.value,
 				note: contactsArea.value
 			};
- 		
  		let gatheredData =new Contacts(data);
  		console.log(gatheredData);
 
- 		clearInputs(".contacts__input");
- 		//checkbox spans turn off
- 		[...spanCollection].forEach(el=> el.style.display = "none")
+ 		//clesr all and  turn off checkbox spans
+ 		removeCheckedProperties();
 
  		return gatheredData
 	} else {

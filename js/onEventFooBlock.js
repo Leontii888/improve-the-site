@@ -11,6 +11,7 @@ countInt.onclick = getSingleChartForInterest;
 fetchCurrencies.onclick = hostRateinBlock;
 //contacts
 contactsButtonSubmit.onclick = gatherContacts;
+contactsButtonReset.onclick = removeCheckedProperties;
 
 
 

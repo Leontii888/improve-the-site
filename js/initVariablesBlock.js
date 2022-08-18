@@ -64,4 +64,5 @@ const		aboutModal = document.querySelector('.header__item-about'),
 	contactsEmail = document.querySelector('.contacts__input-email'),
 	contactsArea = document.querySelector('#contacts__area'),
 	contactsButtonSubmit = document.querySelector('.contacts__button-submit');
+	contactsButtonReset = document.querySelector('.contacts__button-reset');
 
