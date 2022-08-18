@@ -1,6 +1,6 @@
 const		aboutModal = document.querySelector('.header__item-about'),
 	headerSrc = document.getElementById('header-search'),
-
+    //trade
 	firstPricePose = document.getElementById('trade__data-first-price'),
 	secondPricePose = document.getElementById('trade__data-second-price'),
 	calcData = document.querySelector('.trade__calc-output'),
@@ -16,7 +16,7 @@ const		aboutModal = document.querySelector('.header__item-about'),
 	submenu = document.getElementsByClassName('submenu'),
 	frontModal = document.querySelector('.frontpage__block-modal'),
 	closeModal = document.querySelector('.frontpage__block-modal-close'),
-
+	//showcase
 	commonBase = document.getElementById('showcase__link-common'),
 	tradingBase = document.getElementById('showcase__link-trading'),
 	cssBase = document.getElementById('showcase__link-css'),
@@ -29,18 +29,18 @@ const		aboutModal = document.querySelector('.header__item-about'),
 	showsubMenu = document.querySelectorAll(".showcase__down-el"),
 	linkToShow = document.getElementsByClassName('link'),
 	
-
+	//minervini
 	count = document.getElementById('minervini__count-main-graph'),
 	dataBlock = document.getElementById('minervini__put-data-main-graph'),
 	countInt = document.getElementById('minervini__count-sub-graph'),
 	singleInt = document.getElementById('minervini__put-data-sub-graph'),
 	
 	fetchCurrencies = document.querySelector('.fetch-currencies'),
-	// arr = [],
-	
+	//weather
 	weatherBlock = document.querySelector('.mapsWeather__show'),
 	getReqWeather = document.querySelector('#mapsWeather__city'),
 	mapsDataConditions = document.querySelector('.mapsWeather__item-data'),
+	containerWeather = document.querySelector('#mapsWeather__map'),
 	// storage block
 
 	newlink = document.querySelector('.storage__input'),
@@ -56,10 +56,13 @@ const		aboutModal = document.querySelector('.header__item-about'),
 	showroomNote = document.querySelector('.storage__showroom-note'),
 	showroomClose = document.querySelector('.storage__close'),
 	saveLinkTime = `${new Date().toLocaleString()}`,
-	
+
 	//contacts
+	contactsForm = document.querySelector('.contacts__form'),
 	contactsName = document.querySelector('.contacts__input-name'),
 	contactsLastName = document.querySelector('.contacts__input-lastname'),
 	contactsEmail = document.querySelector('.contacts__input-email'),
 	contactsArea = document.querySelector('#contacts__area'),
 	contactsButtonSubmit = document.querySelector('.contacts__button-submit');
+	contactsButtonReset = document.querySelector('.contacts__button-reset');
+

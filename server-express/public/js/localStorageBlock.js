@@ -155,10 +155,10 @@ function saveIntoStorage() {
 												    body: stringifiedLibraryForLogFile
 												  })
 
-															flags.isDataSaved= true;
-															flags.isRepeated = true;
-															flags.isPutMore=true;
-										}
+									flags.isDataSaved= true;
+									flags.isRepeated = true;
+									flags.isPutMore=true;
+				}	
 		}
 };
 

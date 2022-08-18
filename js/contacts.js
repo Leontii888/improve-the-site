@@ -55,6 +55,7 @@ function removeCheckedProperties(){
 	[...document.querySelectorAll(".contacts__input")].forEach(el => {
 		el.style.borderColor ="rgb(118, 118, 118";
 	});
+	contactsForm.reset();
 	isInputCheckedOk = false;
 }
 

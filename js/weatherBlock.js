@@ -21,55 +21,54 @@ async function getWeather(point){
 	// console.log(city,list)
 
 	const drawWeather = (placeToShow, city,list) => {
-			const days = [0,7,24,39],
-					{
+			const days = [0,7,24,39];
+			const {
     				name,
     				coord:{lat: x},
     				coord:{lon:y}
 			} = city;
 					
-					function getCondDifferentDays(day,data){
-						const {
-		        				dt_txt,
-		        				clouds:{all:cl},
-		        				main:{humidity:hm},
-		        				main:{pressure:prs},
-		        				main:{temp:tm},
-		        				wind:{speed:windSp},
-		        				weather
+			function getCondDifferentDays(day,data){
+				const {
+        				dt_txt,
+        				clouds:{all:cl},
+        				main:{humidity:hm},
+        				main:{pressure:prs},
+        				main:{temp:tm},
+        				wind:{speed:windSp},
+        				weather
 
-    					} = data[day],
-    					{main} = weather[0];
+				} = data[day],
+				{main} = weather[0];
 
-    					return {
-    							dt_txt,
-		        				tm,
-		        				prs,
-		        				main,
-		        				cl,
-		        				hm,
-		        				windSp
-    					}
-					}
-						let weatherOnDays = days.map(day=> {
-						return getCondDifferentDays(day,list)
-					});
-						// console.log(weatherOnDays);
+				return {
+						dt_txt,
+        				tm,
+        				prs,
+        				main,
+        				cl,
+        				hm,
+        				windSp
+				}
+			}
+			let weatherOnDays = days.map(day=> {
+				return getCondDifferentDays(day,list)
+			});
+			// console.log(weatherOnDays);
 
-						[...document.querySelectorAll('.mapsWeather__item-data')].forEach((el,i)=>{
-									placeToShow =el; 
-										placeToShow.innerHTML = `<p><span>On date:</span> ${weatherOnDays[i].dt_txt}</p>
-										<p><span>Temperature:</span> <font color="#f35">${weatherOnDays[i].tm}</font></p>
-										<p>Atmosphere pressure: ${(weatherOnDays[i].prs/1.333).toFixed(1)}</p>
-										<p>Other: ${weatherOnDays[i].main}</p>
-										<p>Cloudness: ${weatherOnDays[i].cl}</p>
-										<p>Humidity: ${weatherOnDays[i].hm}</p>
-										<p>Winds: ${weatherOnDays[i].windSp}</p>`
-						})
+			[...document.querySelectorAll('.mapsWeather__item-data')].forEach((el,i)=>{
+						placeToShow =el; 
+							placeToShow.innerHTML = `<p><span>On date:</span> ${weatherOnDays[i].dt_txt}</p>
+							<p><span>Temperature:</span> <font color="#f35">${weatherOnDays[i].tm}</font></p>
+							<p>Atmosphere pressure: ${(weatherOnDays[i].prs/1.333).toFixed(1)}</p>
+							<p>Other: ${weatherOnDays[i].main}</p>
+							<p>Cloudness: ${weatherOnDays[i].cl}</p>
+							<p>Humidity: ${weatherOnDays[i].hm}</p>
+							<p>Winds: ${weatherOnDays[i].windSp}</p>`
+			})
 	}
-drawWeather(weatherBlock,city,list);
-
-		mapboxgl.accessToken = 'pk.eyJ1IjoibGVvODg4IiwiYSI6ImNsNTJlZTJhYjBlbW0za3J5M3ozM3NmZ3IifQ.4IYOODVLOdWHJF8V4PAWsQ';
+	drawWeather(weatherBlock,city,list);
+	mapboxgl.accessToken = 'pk.eyJ1IjoibGVvODg4IiwiYSI6ImNsNTJlZTJhYjBlbW0za3J5M3ozM3NmZ3IifQ.4IYOODVLOdWHJF8V4PAWsQ';
 								//+++++++++++++++++1++++++++++++++++
 								// const map = new mapboxgl.Map({
 								// container: 'maps_mapBoxCom',
@@ -88,21 +87,19 @@ drawWeather(weatherBlock,city,list);
 								// .setLngLat([12.65147, 55.608166])
 								// .addTo(map);
 								//+++++++++++++++++++++++++++
-								const map = new mapboxgl.Map({
-							container: 'mapsWeather__map', // container ID
-							style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
-							center:START_MAP_PLACE, // starting position
-							zoom: START_ZOOM // starting zoom
-							});
-							 
-							map.addControl(new mapboxgl.FullscreenControl());
+	containerWeather.innerHTML="";				
+		const map = new mapboxgl.Map({
+			container: 'mapsWeather__map', // container ID
+			style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
+			center:START_MAP_PLACE, // starting position
+			zoom: START_ZOOM // starting zoom
+		});
+		map.addControl(new mapboxgl.FullscreenControl());
 
-                	console.log([city.coord.lat, city.coord.lon]);
-
-	} catch (e) {
-		console.warn(e.target)
-	}
-	
+		console.log([city.coord.lat, city.coord.lon]);
+			} catch (e) {
+				console.warn(e)
+			}
  };
 
 // console.log(`Ввод координат [lat, lon]. Для поиска на карте вызвать функцию getMap()`)

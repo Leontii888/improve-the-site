@@ -34,7 +34,7 @@ flex: 1 1 30%;
 margin-bottom: 4rem;
 }
 .contacts__form-container form *{
-margin-bottom: 1rem;
+margin-bottom: .5rem;
 }
 .contacts__form-container form{
 display: flex;
@@ -44,11 +44,22 @@ flex-direction: column;
 width: 50%;
 margin-bottom: 2rem;
 }
+.contacts__input-pair{
+	position: relative;
+width: 70%;
+}
 .contacts__input{
-width: 50%;
+	position: relative;
+width: 70%;
+}
+.contacts__input-span{
+	position: absolute;
+	left: 80%;
+	top: 0%;
+display: none;
 }
 .contacts__button{
-	width: 8.7rem;
-margin: 0;
+	width: 8.8rem;
+margin: 0.3rem;
 }
 

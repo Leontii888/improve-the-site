@@ -88,6 +88,7 @@ drawWeather(weatherBlock,city,list);
 								// .setLngLat([12.65147, 55.608166])
 								// .addTo(map);
 								//+++++++++++++++++++++++++++
+								containerWeather.innerHTML="";
 								const map = new mapboxgl.Map({
 							container: 'mapsWeather__map', // container ID
 							style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
@@ -100,7 +101,7 @@ drawWeather(weatherBlock,city,list);
                 	console.log([city.coord.lat, city.coord.lon]);
 
 	} catch (e) {
-		console.warn(e.target)
+		console.warn(e)
 	}
 	
  };

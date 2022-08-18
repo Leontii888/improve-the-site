@@ -9,7 +9,7 @@ const path = require('path');
 const app = express();
 const bodyParser =require('body-parser')
 const PATH = 3333;
-let dataPosted = {
+let passedData = {
     ts:"--",
     name:"--",
     lastname: "--",
@@ -25,24 +25,49 @@ app.use(express.static('public'))
 // app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.json())
 
+function calcChars(string){
+  return string.replace(/o/g,'').length
+}
 
-
-function posted(url,filename){
+function loggerPostTo(url,filename){
     app.post(url, jsonParser,(req, res) => {
       if(!req.body) {
         res.sendStatus(400).end("no body!");
       }
-      let  bodyStringified = JSON.stringify(req.body);
-      let data =`${new Date().toLocaleString()}-- (length:${bodyStringified.split(" ").length}): ${bodyStringified}\n\n\n------------------------------\n`;
+      passedData = req.body;
+      let  bodyStringified = JSON.stringify(passedData);
+      let data =`${new Date().toLocaleString()}-- (length:${calcChars(bodyStringified)}): ${bodyStringified}\n\n\n------------------------------\n`;
       //place to file
       fs.appendFile(filename, data, function(err,data) {
         if(err) throw err; 
       });
-      res.sendStatus(200)
-      res.end(`${filename} BEEN FILLED`)
+      readRecievedFile(`${filename}`);
+      res.end(console.log(`${filename} has been posted`))
    });
 }
-function readMyFile(filename){
+function loggerPutTo(url,filename){
+  app.put(url, (req, res)=> {
+    if(!req.body) {
+          res.sendStatus(400).send("no body!").end();
+        } else{
+          res.header(200);
+          //update
+          passedData = req.body;
+          res.status(200).send(passedData);
+          //logging
+          let  bodyStringified = JSON.stringify(passedData);
+          let data =`${new Date().toLocaleString()}-- (length:${calcChars(bodyStringified)}): ${bodyStringified}\n\n\n------------------------------\n`;
+          
+          fs.appendFile(filename, data, function(err,data) {
+                if(err) throw err; 
+          });
+          //info about file
+          readRecievedFile(`${filename}`);
+          res.end(console.log(`${filename} has been updated`))
+      }
+  })
+}
+function readRecievedFile(filename){
     fs.readFile(`${__dirname}/`+filename,'utf8',  function(error,data){
         fs.stat(filename,(err,stats) => {
           if (err) throw err; 
@@ -53,12 +78,6 @@ function readMyFile(filename){
     });
 }
 
-//
-posted('/state',"state.json");
-readMyFile("state.json");
-//
-posted('/mypost',"contactsData.json");
-readMyFile("contactsData.json");
 
 app.get('/', (req, res) => {
     // res.send({ message: 'Hello WWW!' });
@@ -67,25 +86,23 @@ app.get('/', (req, res) => {
     res.end;
 });
 app.get("/state", (req, res) => {
-  res.render(`state`, dataPosted);
+  res.render(`state`, passedData);
      res.end;
 })
 app.get("/mypost", (req, res) => {
-  res.render(`mypost`,dataPosted);
+  res.render(`mypost`,passedData);
    res.end;
 });
-app.put("/mypost", (req, res)=> {
-  if(!req.body) {
-        res.sendStatus(400).send("no body!").end();
-        return
-      } else{
-        res.header(200);
-        dataPosted = req.body;
-        res.status(200).send(dataPosted)
-        // res.send(`mypost`,req.body)
-        res.end;
-    }
-})
+
+//
+loggerPostTo('/state',"state.json");
+loggerPutTo('/mypost',"contactsData.json");
+
+readRecievedFile("state.json");
+readRecievedFile("contactsData.json");
+//
+
+
 
  //rename
 //  fs.rename("1.txt", "new.txt", function(err){

@@ -10,6 +10,8 @@ countInt.onclick = getSingleChartForInterest;
 fetchCurrencies.onclick = hostRateinBlock;
 //contacts
 contactsButtonSubmit.onclick = gatherContacts;
+contactsButtonReset.onclick = removeCheckedProperties;
+
 
 
 
@@ -32,7 +34,7 @@ averagePrice.addEventListener("keyup", (e) => {
 getReqWeather.addEventListener("keyup", (e) => {
 	e.preventDefault();
 	if (e.keyCode === 13) {
-		getWeather(getReqWeather.value);
+		getWeather(getReqWeather.value).then(data=> data);
 	}
 });
 

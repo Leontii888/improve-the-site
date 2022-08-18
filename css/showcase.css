@@ -98,10 +98,10 @@ flex-wrap: wrap;
 color:  red; 
 }
 .biggest{
- flex: 0 1 50%;
+ flex: 3 1 50%;
    
 }
 .big{
- flex: 0 1 40% ;     
+ flex: 1 1 40% ;     
 }
 
