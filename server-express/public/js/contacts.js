@@ -89,7 +89,7 @@ function gatherContacts() {
     removeCheckedProperties();
     //update
     //-------------
-    fetch('mypost/', {
+    fetch('/', {
         method: 'PUT',
         headers: {
         'Content-Type': 'application/json;charset=utf-8'

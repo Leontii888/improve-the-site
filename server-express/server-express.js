@@ -7,28 +7,47 @@ const fs = require('fs')
 const path = require('path');
 
 const app = express();
-const bodyParser =require('body-parser')
+const bodyParser =require('body-parser');
 const PATH = 3333;
 let passedData = {
     ts:"--",
     name:"--",
-    lastname: "--",
+    lastname:"--",
     email:"--",
-    note: "--"
-  };
-let jsonParser = bodyParser.json()
+    note:"--"
+};
+let jsonParser = bodyParser.json();
+
+//----------
+function calcChars(string){
+  return string.replace(/o/g,'').length
+}
+//--------
 
 app.set("view engine", "ejs")
 app.set("views", "./routes")
 
+app.use(bodyParser.json())
 app.use(express.static('public'))
 // app.use(express.static(path.join(__dirname, 'public')))
-app.use(bodyParser.json())
 
-function calcChars(string){
-  return string.replace(/o/g,'').length
-}
+//------
+app.get('/', (req, res) => {
+    // res.send({ message: 'Hello WWW!' });
+    // res.sendFile(`${__dirname}/public/index.html`);
+    res.render(`index`);
+    res.end;
+});
+app.get("/state", (req, res) => {
+  res.render(`state`, passedData);
+     res.end;
+})
+app.get("/mypost", (req, res) => {
+  res.render(`mypost`, passedData);
+   res.end;
+});
 
+//---------------
 function loggerPostTo(url,filename){
     app.post(url, jsonParser,(req, res) => {
       if(!req.body) {
@@ -78,41 +97,21 @@ function readRecievedFile(filename){
     });
 }
 
-
-app.get('/', (req, res) => {
-    // res.send({ message: 'Hello WWW!' });
-    // res.sendFile(`${__dirname}/public/index.html`);
-    res.render(`index`);
-    res.end;
-});
-app.get("/state", (req, res) => {
-  res.render(`state`, passedData);
-     res.end;
-})
-app.get("/mypost", (req, res) => {
-  res.render(`mypost`,passedData);
-   res.end;
-});
-
-//
-loggerPostTo('/state',"state.json");
-loggerPutTo('/mypost',"contactsData.json");
-
 readRecievedFile("state.json");
 readRecievedFile("contactsData.json");
-//
 
+//----------
+loggerPutTo('/state',"state.json");
+loggerPutTo('/',"contactsData.json");
 
-
- //rename
+//----------
+//rename
 //  fs.rename("1.txt", "new.txt", function(err){
 // if(err) throw err;
 //  })
  //delete
-//   fs.unlink("new.txt", function(err){
+// fs.unlink("new.txt", function(err){
 // if(err) throw err;
 //  })
 
-app.listen(PATH, () => {
-    console.log(`Application listening on port ${PATH}!`);
-});
+app.listen(PATH, () => console.log(`Application listening on port ${PATH}!`));
