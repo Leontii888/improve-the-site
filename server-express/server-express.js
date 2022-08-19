@@ -28,8 +28,8 @@ app.set("view engine", "ejs")
 app.set("views", "./routes")
 
 app.use(bodyParser.json())
-app.use(express.static(path.join(__dirname, 'public')))
-// app.use(express.static('public'))
+// app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('public'))
 
 //------
 app.get('/', (req, res) => {
@@ -60,7 +60,7 @@ function loggerPostTo(url,filename){
       fs.appendFile(filename, data, function(err,data) {
         if(err) throw err; 
       });
-      readRecievedFile(`${filename}`);
+      readLoggedFile(`${filename}`);
       res.end(console.log(`${filename} has been posted`))
    });
 }
@@ -77,18 +77,18 @@ function loggerPutTo(url,filename){
           let  bodyStringified = JSON.stringify(passedData);
           let data =`${new Date().toLocaleString()}-- (length:${calcChars(bodyStringified)}): ${bodyStringified}\n\n\n------------------------------\n`;
           
-          fs.appendFile(filename, data, function(err,data) {
+          fs.appendFile(`${__dirname}/public/incomingData/${filename}`, data, function(err,data) {
                 if(err) throw err; 
           });
           //info about file
-          readRecievedFile(`${filename}`);
+          readLoggedFile(`${filename}`);
           res.end(console.log(`${filename} has been updated`))
       }
   })
 }
-function readRecievedFile(filename){
-    fs.readFile(`${__dirname}/`+filename,'utf8',  function(error,data){
-        fs.stat(filename,(err,stats) => {
+function readLoggedFile(filename){
+    fs.readFile(`${__dirname}/public/incomingData/${filename}`,'utf8',  function(error,data){
+        fs.stat(`${__dirname}/public/incomingData/${filename}`,(err,stats) => {
           if (err) throw err; 
             console.log(`${filename} size: `,stats.size)
         });
@@ -97,8 +97,8 @@ function readRecievedFile(filename){
     });
 }
 
-readRecievedFile("state.json");
-readRecievedFile("contactsData.json");
+readLoggedFile(`state.json`);
+readLoggedFile(`contactsData.json`);
 
 //----------
 loggerPutTo('/state',"state.json");
