@@ -28,8 +28,8 @@ app.set("view engine", "ejs")
 app.set("views", "./routes")
 
 app.use(bodyParser.json())
-app.use(express.static('public'))
-// app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')))
+// app.use(express.static('public'))
 
 //------
 app.get('/', (req, res) => {
@@ -114,4 +114,9 @@ loggerPutTo('/',"contactsData.json");
 // if(err) throw err;
 //  })
 
-app.listen(PATH, () => console.log(`Application listening on port ${PATH}!`));
+app.use((req,res,next) => {
+  res.status(404).type("text/plain")
+  res.send("Not found")
+})
+
+app.listen(PATH, () => console.log(`Application is listening Localhost:${PATH}!`));
