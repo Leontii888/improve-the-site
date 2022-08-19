@@ -6,6 +6,7 @@ name: null,
         email: null,
         note:null
 };
+
 let gatheredData =new Contacts(initialData);
 
 function stringified(object){
@@ -89,7 +90,7 @@ function gatherContacts() {
     removeCheckedProperties();
     //update
     //-------------
-    fetch('/', {
+    fetch('users/posted', {
         method: 'PUT',
         headers: {
         'Content-Type': 'application/json;charset=utf-8'

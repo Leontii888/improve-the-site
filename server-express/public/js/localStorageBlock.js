@@ -147,7 +147,7 @@ function saveIntoStorage() {
 												let stringifiedLibraryForLogFile = JSON.stringify(currentLibrary);
 												console.log(`stringifiedLibraryForLogFile: `,typeof stringifiedLibraryForLogFile);
 												//-------------post to server logging
-												fetch('state/', {
+												fetch('/users/state/', {
 												    method: 'PUT',
 												    headers: {
 												      'Content-Type': 'application/json;charset=utf-8'
