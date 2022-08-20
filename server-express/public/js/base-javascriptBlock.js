@@ -1,3 +1,5 @@
+
+
 const MINIMAL_ACCEPTED_LOSS= 2000;
 const MILLION= 1000000;
 const MILLION_TRADE_FEE= 330;
@@ -211,4 +213,3 @@ function modifyDataString(string) {
 // let updateContent = changeTextOnId("trade__title-text");
 // updateContent("bla bla")
 //
-

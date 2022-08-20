@@ -15,10 +15,10 @@ const PATH = 3333;
 
 let passedData = {
     ts:"--",
-    name:"tetja",
-    lastname:"motya",
+    name:"--",
+    lastname:"LORELEI",
     email:"--",
-    note:"01"
+    note:"77"
 };
 
 //--------
@@ -30,8 +30,9 @@ let jsonParser = bodyParser.json();
 app.use(bodyParser.json())
 // app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static('public'))
-app.use("/public",express.static(path.join(__dirname, 'public')))
+app.use("/public", express.static(path.join(__dirname, 'public')))
 app.use("/", router);
+
 
 //------
 app.get('/', (req, res) => {
@@ -39,13 +40,7 @@ app.get('/', (req, res) => {
     // res.sendFile(`${__dirname}/public/index.html`);
   return  res.render(`index`);
 });
-// app.get("users/posted",(req,  res) => {
-//     return  res.render(`posted`, passedData);
-//     })
-// app.get("users/state",(req,  res) => {
-//    return   res.render(`state`, passedData);
-// })
-// ----------------
+
 router.route('/users/posted/')
     .get((req, res) => {
      res.render(`posted`, passedData);
@@ -165,46 +160,7 @@ function calcChars(string){
 //    res.end;
 // });
 
-//---------------
 
-// function loggerPostTo(url,filename){
-//     app.post(url, jsonParser,(req, res) => {
-//       if(!req.body) {
-//         res.sendStatus(400).end("no body!");
-//       }
-//       passedData = req.body;
-//       let  bodyStringified = JSON.stringify(passedData);
-//       let data =`${new Date().toLocaleString()}-- (length:${calcChars(bodyStringified)}): ${bodyStringified}\n\n\n------------------------------\n`;
-//       //place to file
-//       fs.appendFile(filename, data, function(err,data) {
-//         if(err) throw err; 
-//       });
-//       readLoggedFile(`${filename}`);
-//       res.end(console.log(`${filename} has been posted`))
-//    });
-// }
-// function loggerPutTo(url,filename){
-//   app.put(url, (req, res)=> {
-//     if(!req.body) {
-//           res.sendStatus(400).send("no body!").end();
-//         } else{
-//           res.header(200);
-//           //update
-//           passedData = req.body;
-//           res.status(200).send(passedData);
-//           //logging
-//           let  bodyStringified = JSON.stringify(passedData);
-//           let data =`${new Date().toLocaleString()}-- (length:${calcChars(bodyStringified)}): ${bodyStringified}\n\n\n------------------------------\n`;
-          
-//           fs.appendFile(`${__dirname}/public/incomingData/${filename}`, data, function(err,data) {
-//                 if(err) throw err; 
-//           });
-//           //info about file
-//           readLoggedFile(`${filename}`);
-//           res.end(console.log(`${filename} has been updated`))
-//       }
-//   })
-// }
 function readLoggedFile(filename){
     fs.readFile(`${__dirname}/public/incomingData/${filename}`,'utf8',  function(error,data){
         fs.stat(`${__dirname}/public/incomingData/${filename}`,(err,stats) => {
@@ -233,7 +189,7 @@ readLoggedFile(`contactsData.json`);
 // if(err) throw err;
 //  })
 
-app.use((req,res,next) => {
+app.use((req,res) => {
   res.status(404).type("text/plain")
   res.send("Not found")
 })
