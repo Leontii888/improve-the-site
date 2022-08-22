@@ -69,7 +69,7 @@ async function getWeather(point){
 	}
 drawWeather(weatherBlock,city,list);
 
-		mapboxgl.accessToken = 'pk.eyJ1IjoibGVvODg4IiwiYSI6ImNsNTJlZTJhYjBlbW0za3J5M3ozM3NmZ3IifQ.4IYOODVLOdWHJF8V4PAWsQ';
+		mapboxgl.accessToken = '++++';
 								//+++++++++++++++++1++++++++++++++++
 								// const map = new mapboxgl.Map({
 								// container: 'maps_mapBoxCom',
