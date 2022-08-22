@@ -13,7 +13,7 @@ async function getWeather(point){
 	weatherBlock.innerHTML= null;
 
 	const  {city,list} = await (await fetch(
-		`https://api.openweathermap.org/data/2.5/forecast?q=${point}&APPID=2281c7fed03ac47a4b272784c3b8ea80&units=metric`)).json();
+		`https://api.openweathermap.org/data/2.5/forecast?q=${point}&APPID=HERE_WAS_A_TOKEN&units=metric`)).json();
 	
  	weatherBlock.innerHTML = `<span><font color="#f35">Weather in ${city.name}</font>
  	 (altitude ${city.coord.lat}, longitude ${city.coord.lon})</span>`
@@ -68,7 +68,7 @@ async function getWeather(point){
 			})
 	}
 	drawWeather(weatherBlock,city,list);
-	mapboxgl.accessToken = 'pk.eyJ1IjoibGVvODg4IiwiYSI6ImNsNTJlZTJhYjBlbW0za3J5M3ozM3NmZ3IifQ.4IYOODVLOdWHJF8V4PAWsQ';
+	mapboxgl.accessToken = 'HERE WAS A TOKEN';
 								//+++++++++++++++++1++++++++++++++++
 								// const map = new mapboxgl.Map({
 								// container: 'maps_mapBoxCom',
