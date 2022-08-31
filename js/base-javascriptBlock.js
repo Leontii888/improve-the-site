@@ -1,9 +1,9 @@
 const MINIMAL_ACCEPTED_LOSS= 2000;
 const MILLION= 1000000;
 const MILLION_TRADE_FEE= 330;
-const TRADES= 2;
+const TRADES_PAIR= 2;
 const DEPOSIT= 35000;
-const RATIO= 2;
+const RATIO= 3;
 const LIS_IN_BIG_CHAPTER= 32;
 const LIS_IN_MID_CHAPTER= 16;
 const CHAPTERS_SHOWED= 3;
@@ -50,10 +50,12 @@ tradeModal.addRelativeParent(tradeBlockInp)
 //calc
 function countOptimalLot(){
 	let loss =lossCount.value ? lossCount.value : MINIMAL_ACCEPTED_LOSS;
-	if(secondPricePose.value){
-			const lot = Math.abs((loss/(firstPricePose.value-secondPricePose.value)).toFixed(1)),
-			fee = (firstPricePose.value*TRADES*lot/MILLION*MILLION_TRADE_FEE).toFixed(1),
-			fond = (firstPricePose.value*lot/MILLION).toFixed(3);	
+	let fPrice = firstPricePose.value,
+		sPrice = secondPricePose.value;
+	if(sPrice){
+			const lot = Math.abs((loss/(fPrice-sPrice)).toFixed(1)),
+			fee = (fPrice*TRADES_PAIR*lot/MILLION*MILLION_TRADE_FEE).toFixed(1),
+			fond = (fPrice*lot/MILLION).toFixed(3);	
 //modal
 				tradeModal.text =`<p>Искомый лот: ${lot}
 				Стоимость сделки: ${fond} млн.,
@@ -72,13 +74,15 @@ function countOptimalLot(){
 			// calcData.innerHTML=``);
 			// modalCalc.style.display ='block';
 	} else {
-			let pts = (loss/(DEPOSIT/firstPricePose.value)).toFixed(1);
-			let stopLossPrice = (firstPricePose.value - pts);
+			let pts = (loss/(DEPOSIT/fPrice)).toFixed(1);
+		console.log(fPrice)
+			console.log(pts)
+			let stopLossPrice = (fPrice - pts);
 
 			tradeModal.text =`<p>S/l: ${stopLossPrice}</br>
-			t/p: ${(stopLossPrice+pts*RATIO)}</br>
-			купить ${(DEPOSIT/firstPricePose.value).toFixed(0)}шт.</br>
-			при депозите 35_000, максимальном лоссе ${loss}</p>`;
+			t/p: ${+fPrice + pts*RATIO}</br>
+			купить ${(DEPOSIT/fPrice).toFixed(0)}шт.</br>
+			при депозите 35_000, максимальном лоссе ${loss}  и соотношении прибыль/убыток = 3.</br> Прибыль ${Math.floor(-100+100*(+fPrice+pts*RATIO)/+fPrice)}%</br>БРАТЬ НЕ БОЛЕЕ 12% ПРИБЫЛИ!</p>`;
 			tradeModal.appendTo(tradeBlockInp);
 
 			tradeBlockInp.addEventListener("click", () => {
@@ -86,7 +90,7 @@ function countOptimalLot(){
 					tradeBlockInp.removeChild(tradeModalWin);
 					cleanInp();
 			},{once: true})
-			console.log(`S/l: ${stopLossPrice}, t/p: ${(stopLossPrice+pts*RATIO)} купить ${(DEPOSIT/firstPricePose.value).toFixed(0)}штук при депозите 35_000, максимальном лоссе ${loss}`);
+			console.log(`S/l: ${stopLossPrice}, t/p: ${+fPrice+pts*RATIO} купить ${(DEPOSIT/fPrice).toFixed(0)}штук при депозите 35_000, максимальном лоссе ${loss}`);
 
 			// calcData.innerHTML=`S/l: ${stopLossPrice}</br>
 			// t/p: ${(stopLossPrice+pts*RATIO)}</br>
